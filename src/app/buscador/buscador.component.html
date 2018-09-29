@@ -1,0 +1,84 @@
+<div class="buscador">
+    <h2>Registro de Asistentes</h2>
+    <div class="row">
+        <div class="col-lg-3">
+            
+        </div>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input #txtBusqueda id="txtBusqueda" type="text" class="form-control" title="Buscar por cedula o por nombre" 
+                    placeholder="Cédula o Nombre " (keyup.enter)="buscarAsistente(txtBusqueda.value); txtBusqueda.value=''">
+                    &nbsp;
+                <span class="input-group-btn">
+                    <button id="btnBuscar" class="btn btn-outline-primary" type="button" 
+                        (click)="buscarAsistente(txtBusqueda.value); txtBusqueda.value=''">Buscar
+                    </button>
+                    <button id="btnNuevo" class="btn btn-outline-success" type="button" 
+                        data-toggle="modal" data-target="#myModal"
+                        (click)="crearRegistro(); txtBusqueda.value=''">Nuevo
+                    </button>
+                </span>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+        <div class="col-lg-3">    
+            <select (change)="seleccionarImpresora();" class="form-control" id="cbo_impresoras" [(ngModel)]="impresoraSeleccionada">
+                <option *ngFor="let impresora of impresoras" [ngValue]="impresora">{{impresora.nombre}}</option>
+            </select>
+        </div>
+    </div><!-- /.row -->
+</div><!-- /.buscador -->
+<br/>
+<div style="text-align: left" *ngIf="asistentes.length > 0" id="resultadoBuscador">
+    <table class="table table-hover" id="tablaAsistentes">
+        <caption>{{asistentes.length}} resultados encontrados</caption>
+        <thead>
+            <th scope="col">Identificacion</th>
+            <th scope="col" *ngFor="let campo of camposEvento">{{campo.nombre}}</th>
+            <!--
+            <th>Imprimir</th>
+            <th>Registrar</th>
+            -->
+        </thead>
+        <tbody>
+        <tr *ngFor="let asistente of asistentes" id='asistente_{{asistente.identificacion}}' 
+            data-toggle="modal" data-target="#myModal" 
+            (click)="onSelect(asistente)">
+            <th scope="row" 
+                [ngClass]="{'table-success': asistente.registrado}" >{{asistente.identificacion}}</th>
+            <td [ngClass]="{'table-success': asistente.registrado}" 
+                *ngFor="let atributo of asistente.atributos">{{atributo.valor}}</td>
+            <!--
+            <td><span class='glyphicon glyphicon-print' aria-hidden='true'></span></td>
+            <td><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></td>
+            -->
+            </tr>
+        </tbody>
+    </table>
+    <span class="bg-success">
+        Registrados &nbsp;
+    </span>
+</div>
+<!-- Modal -->
+<div id="modalNuevo" [ngClass]="{'visible': popUpNuevo, 'invisible': !popUpNuevo}" 
+    tabindex="-1" (keyup.escape)="ocultar(false)" class="invisible">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Asistente no encontrado</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" (click)="ocultar(false)">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Asistente <b>{{criterioBusqueda}}</b> no encontrado. ¿Desea ingresarlo?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
+                    (click)="ocultar(true)" id="botonCrear">Crear</button>
+                <button type="button" class="btn btn-secondary" (click)="ocultar(false)" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Detalle Asistente Seleccionado -->
+<app-detalle-asistente [asistente]="selectedAsistente" [camposEvento]="camposEvento" [nuevo]="nuevoRegistro"></app-detalle-asistente>

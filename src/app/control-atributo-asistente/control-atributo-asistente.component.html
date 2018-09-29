@@ -1,0 +1,12 @@
+<label for='pop_{{atributo.nombre}}' class='control-label'>{{atributo.nombre}}</label>
+<!-- TipoCampo.CajaDeTexto-->
+<div *ngIf="campo.tipocampo == 1">
+  <input [(ngModel)]="atributo.valor" type='text' 
+    class='form-control' placeholder="{{atributo.nombre}}" name="pop_{{atributo.nombre}}">
+</div>
+<!-- TipoCampo.SeleccionUnica-->
+<div *ngIf="campo.tipocampo == 2">
+  <select class="form-control" id="pop_{{atributo.nombre}}" [(ngModel)]="atributo.valor">
+    <option *ngFor="let posibleValor of campo.posiblesvalores">{{posibleValor.valor}}</option>
+  </select>
+</div>

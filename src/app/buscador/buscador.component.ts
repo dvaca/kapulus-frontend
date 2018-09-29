@@ -1,0 +1,97 @@
+import { Component, OnInit} from '@angular/core';
+import { Asistente } from '../asistente';
+import { RegistroService } from '../registro.service';
+import { AtributoAsistente } from '../atributosasistente';
+import { CampoEvento } from '../camposevento';
+import { ConfiguracionEvento } from '../configuracionEvento';
+import { Impresora } from '../impresora';
+
+@Component({
+  selector: 'app-buscador',
+  templateUrl: './buscador.component.html',
+  styleUrls: ['./buscador.component.css']
+})
+export class BuscadorComponent implements OnInit {
+  asistentes: Asistente[];
+  selectedAsistente: Asistente;
+  camposEvento: CampoEvento[];
+  popUpNuevo: boolean;
+  nuevoRegistro: boolean;
+  criterioBusqueda: string;
+  impresoras: Impresora[];
+  impresoraSeleccionada: Impresora;
+
+  constructor(private registroService: RegistroService, private config: ConfiguracionEvento) { 
+  }
+
+  ngOnInit() {
+    this.cargarCamposEvento();
+    this.cargarImpresoras();
+    this.buscarAsistente("");
+    this.asistentes = new Array<Asistente>();
+  }
+
+  buscarAsistente(criterio: string): void {
+    criterio = criterio.trim();
+    this.criterioBusqueda = criterio;
+    if (!criterio) { 
+      this.popUpNuevo = false;
+      return; 
+    }
+    //this.asistentes = this.registroService.getAsistentesMock(criterio);
+    this.registroService.getAsistentes(criterio)
+    .subscribe(asistentes =>{this.asistentes = asistentes;
+      if(this.asistentes.length == 0){
+        this.popUpNuevo = true;
+        var modalNuevo = document.getElementById("botonCrear");
+        modalNuevo.focus();
+      }else{
+        this.popUpNuevo = false;
+      }});
+  }
+
+  cargarCamposEvento(): void {
+    this.config.getCamposEvento().subscribe(camposEvento => {
+      this.camposEvento = camposEvento;
+    });
+  }
+
+  cargarImpresoras(): void {
+    this.config.getImpresoras().subscribe(x => this.impresoras = x);
+  }
+
+  onSelect(asistente: Asistente): void {
+    this.selectedAsistente = asistente;
+    this.nuevoRegistro = false;
+  }
+
+  ocultar(nuevoAsistente: boolean): void {
+    this.popUpNuevo = false;
+    if(nuevoAsistente){
+      this.selectedAsistente = new Asistente();
+      this.selectedAsistente.registrado = false;
+      this.selectedAsistente.preinscrito = false;
+      this.selectedAsistente.atributos = new Array<AtributoAsistente>();
+      this.camposEvento.forEach(campoEvento => {
+        var atributo = new AtributoAsistente();  
+        atributo.idcampo = campoEvento.id;
+        atributo.nombre = campoEvento.nombre;
+        this.selectedAsistente.atributos.push(atributo); 
+      });
+      
+      if(! isNaN(parseInt(this.criterioBusqueda))){
+        this.selectedAsistente.identificacion = parseInt(this.criterioBusqueda);
+      }
+      this.nuevoRegistro = true;
+    }
+  }
+
+  crearRegistro(): void {
+    this.criterioBusqueda="";
+    this.ocultar(true);
+  }
+  
+  seleccionarImpresora(): void {
+    this.config.variables.impresoraSeleccionada = this.impresoraSeleccionada;
+  }
+}

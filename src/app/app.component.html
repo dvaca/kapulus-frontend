@@ -1,0 +1,42 @@
+<div style="text-align:center">
+  <div> 
+      <img src="../assets/resources/LogoKapulus.png" class="img-fluid" style="max-width: 25%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
+          alt="CAPULUS">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1">
+      </div>
+      <div class="col-lg-10">
+        <ul class="nav nav-pills nav-fill" id="v-pills-tab">
+            <li class="nav-item">
+                <a routerLink="/registro" class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="false">Registro</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/estadisticas" class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Estadisticas</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/control-acceso" class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Control de Acceso</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col-lg-1">
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+    <div>
+        <div class="row">        
+            <div class="col-lg-4">
+                <span class="d-block p-2 bg-dark text-white">versión 1.1.2</span>
+            </div>
+            <div class="col-lg-4">
+                <span class="d-block p-2 bg-dark text-white">Kapulus Inc.</span>
+            </div>
+            <div class="col-lg-4">
+                <span class="d-block p-2 bg-dark text-white">Developed By <img src="../assets/resources/cow.png" class="img-fluid" style="max-width: 25%; height: auto;" 
+                    alt="The Smart Cow Labs" class="cow-labs"> Smart Cow Labs</span>
+            </div>
+        </div>
+    </div>
+  </div><!-- /.container -->
+

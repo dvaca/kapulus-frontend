@@ -1,0 +1,89 @@
+<h2>Estadísticas</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="alert alert-warning" role="alert">
+                Total de asistentes: <b>{{totalAsistentes}}</b>
+            </div>         
+        </div>
+        <div class="col-lg-3">         
+            <div class="alert alert-success" role="alert">
+                Asistentes registrados: <b>{{asistentesRegistrados}}</b>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="alert alert-danger" role="alert">
+                No registrados: <b>{{asistentesNoRegistrados}}</b>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="alert alert-secondary" role="alert">
+                Certificados entregados: <b>{{certificadosEntregados}}</b>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div>
+                <canvas id="chartRegistrados" width="300" height="300"></canvas>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div>
+                <canvas id="chartAsistentes" width="300" height="300"></canvas>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div>
+                <canvas id="chartActualizados" width="300" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let campo of camposEstadisticas" class="col-lg-6">
+            <app-grafico-campo [campo]="campo"></app-grafico-campo>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <canvas id="chartLineaTiempo" width="1000" height="300"></canvas>
+        </div>
+    </div>
+    <div *ngFor="let conteo of conteoZonaOperacion" class="row">
+        <div class="col-lg-3">
+                <h4>{{conteo.zona.nombre}}</h4>
+            <div *ngIf="conteo.zona.validaentrada == 1" class="alert alert-success" role="alert">
+                Cantidad de ingresos: <b>{{conteo.totalIngresos}}</b>
+            </div>         
+            <div *ngIf="conteo.zona.validasalida == 1" class="alert alert-warning" role="alert">
+                Actualmente en la zona: <b>{{conteo.totalActualZona}}</b>
+            </div>         
+            <div *ngIf="conteo.zona.entregaregalo == 1" class="alert alert-warning" role="alert">
+                Entregas realizadas: <b>{{conteo.totalEntregas}}</b>
+            </div>
+        </div>
+        <br/>
+        <div class="col-lg-10">
+            <canvas id="chartLineaTiempoZonas{{conteo.zona.id}}" width="1000" height="300"></canvas>
+        </div>
+    </div>
+
+    <div class="row" style="text-align: center">
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-4">
+            <span class="input-group-btn">
+                <button (click)="exportar()" id="exportarButton" type="button" class="btn btn-outline-success">Exportar</button>
+                <button (click)="cargarEstadisticas()" id="estadisticasButton" type="button" class="btn btn-outline-primary">Actualizar Estadisticas</button>
+            </span>
+        </div>
+        <div class="col-lg-4">      
+        </div>
+    </div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+
+</div>
+

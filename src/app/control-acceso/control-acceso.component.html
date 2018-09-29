@@ -1,0 +1,63 @@
+<div>
+    <h2>Control de Acceso</h2>
+    <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8">
+            <select (change)="actualizarEstadisticas();" class="form-control" id="pop_zonas" [(ngModel)]="zonaActual">
+                <option *ngFor="let zona of zonas" [ngValue]="zona">{{zona.nombre}}</option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-lg-2">
+            <div *ngIf="zonaActual">
+                <div *ngIf="zonaActual.validaentrada == 1" class="alert alert-success" role="alert">
+                    Cantidad de ingresos: <b>{{totalIngresos}}</b>
+                </div>         
+                <div *ngIf="zonaActual.validasalida == 1" class="alert alert-warning" role="alert">
+                    Actualmente en la zona: <b>{{totalActualZona}}</b>
+                </div>         
+                <div *ngIf="zonaActual.entregaregalo == 1" class="alert alert-warning" role="alert">
+                    Entregas realizadas: <b>{{totalRegalos}}</b>
+                </div>         
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="input-group">
+                <input #txtBusqueda id="txtBusqueda" type="text" class="form-control form-control-lg" title="Buscar por cédula" 
+                    placeholder="Cédula " (keyup.enter)="registrarAcceso(txtBusqueda.value); txtBusqueda.value=''">
+                    &nbsp;
+                <span class="input-group-btn">
+                    <button id="btnBuscar" class="btn btn-outline-primary btn-lg boton-grande" type="button" 
+                        (click)="registrarAcceso(txtBusqueda.value); txtBusqueda.value=''">Buscar
+                    </button>
+                </span>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-8 -->
+        <div class="col-lg-2">
+        </div>
+    </div><!-- /.row -->
+    <br/>
+    <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8">
+            <h1>{{nombreAsistente}}</h1>
+            <div *ngFor="let alerta of alertas" class="alert alert-warning" role="alert">
+                <h1>{{alerta}}</h1>
+            </div>
+            <div *ngFor="let mensaje of mensajes" class="alert alert-success" role="alert">
+                <h1>{{mensaje}}</h1>
+            </div>
+            <div *ngFor="let problema of problemas" class="alert alert-danger" role="alert">
+                <h1>{{problema}}</h1>
+            </div>
+        </div><!-- /.col-lg-6 -->
+        <div class="col-lg-2">
+        </div>
+    </div><!-- /.row -->
+</div>

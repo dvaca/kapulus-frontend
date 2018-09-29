@@ -1,0 +1,12 @@
+<div id="formEscarapela" class="invisible collapse" style="width: 400px; height: 200px;">
+  <p *ngFor="let atributo of asistenteImpresion.atributos" 
+    [style.margin-top.px]="atributo.campo.yescarapela*10" 
+    [style.margin-left.px]="atributo.campo.xescarapela*10"
+    [style.font-size.px]="atributo.campo.tamanoescarapela*10"
+    [style.font-weight]="atributo.campo.negritaescarapela == true ? 'bold' : 'normal'">
+      {{atributo.valor}}
+  </p>
+  <div style="text-align: center;">
+    <ngx-barcode [bc-value]="asistenteImpresion.identificacion" [bc-display-value]="true" [bc-height]="60"></ngx-barcode>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div id="formCertificado" class="invisible collapse" style="width: 400px; height: 200px;">
+  <p *ngFor="let atributo of asistenteImpresion.atributos" 
+    [style.margin-top.px]="atributo.campo.ycertificado*10" 
+    [style.margin-left.px]="atributo.campo.xcertificado*10"
+    [style.font-size.px]="atributo.campo.tamanocertificado*10"
+    [style.font-weight]="atributo.campo.negritacertificado == true ? 'bold' : 'normal'">
+      {{atributo.valor}}
+  </p>
+</div>
