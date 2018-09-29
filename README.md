@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # RegistroEventos
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
@@ -32,3 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Wait more information
 Eventos
 >>>>>>> a126a3ad1f552cf5f0e4691747aa69f2bff5e5f2
+=======
+# kapulus-frontend
+Kapulus Frontend
+>>>>>>> 60be193020fa6f07c3bfedf877cff4feff026f44
