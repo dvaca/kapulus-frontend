@@ -13,7 +13,7 @@ export class EstadisticasService {
   //private backendUrl = 'http://localhost:4000';
   //private backendUrl = 'http://169.254.168.35:4000'; //PEER TO PEER
   //private backendUrl = 'http://192.168.0.100:4000'; //CAPULUS
-  private backendUrl = 'http://192.168.0.6:4000'; //LOCAL
+  private backendUrl = 'https://kapulus-backend.herokuapp.com'; //LOCAL
   //private backendUrl = 'http://192.168.0.102:4000'; //ADRIAN
   //private backendUrl = 'http://192.168.0.7:4000'; //INTERNET
   
