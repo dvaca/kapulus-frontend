@@ -9,11 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-<<<<<<< HEAD
-    "postinstall": "ng build --env = prod"
-=======
     "postinstall": "ng build --env=prod"
->>>>>>> ed2c75cbd47d006c1a9b4a4ef43f09a0a9be44bf
   },
   "private": true,
   "dependencies": {
