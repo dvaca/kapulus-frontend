@@ -11,8 +11,8 @@ import { TipoCampo } from '../enums';
 export class ControlAtributoAsistenteComponent implements OnInit, OnChanges {
   @Input() atributo: AtributoAsistente;
   @Input() camposEvento: CampoEvento[];
-  private campo: CampoEvento;
-  private tipoCampo: TipoCampo;
+  public campo: CampoEvento;
+  public tipoCampo: TipoCampo;
 
   constructor() { }
 

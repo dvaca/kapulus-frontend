@@ -48,8 +48,6 @@
                     (click)="guardarAsistente(true);">Registrar</button>
                 <button type="button" class="btn btn-outline-primary" id="btnGuardar"
                     (click)="guardarAsistente(false)">Guardar</button>
-                <button *ngIf="1 == 0" type="button" class="btn btn-outline-info" data-dismiss="modal" id="btnImprimirBrowser" 
-                    (click)="guardarAsistente(false);imprimirBrowser('formEscarapela');">Escarapela</button>
                 <button *ngIf="asistente.registrado == true && guardado == true" type="button" class="btn btn-outline-info" data-dismiss="modal" id="btnImprimirDymo" 
                     (click)="imprimirServicioDymo('formEscarapela');">Escarapela</button>
                 <button *ngIf="asistente.registrado == true && guardado == true" type="button" class="btn btn-outline-secondary" data-dismiss="modal" id="btnCertificado" 
