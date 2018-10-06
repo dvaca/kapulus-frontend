@@ -6,6 +6,8 @@ const app = express();
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/registro-eventos'));
+app.use('/js', express.static(__dirname + '/dist/js'));
+app.use('/css', express.static(__dirname + '/dist/css'));
 
 app.get('/*', function(req,res) {
     
