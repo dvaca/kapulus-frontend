@@ -44,13 +44,21 @@
                 <app-escarapela [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-escarapela>
                 <app-certificado [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-certificado>
                 <!--<app-escarapela [asistente]="asistente"></app-escarapela>-->
-                <button *ngIf="asistente.registrado == false" type="button" class="btn btn-outline-success" data-dismiss="modal" id="btnGuardarYRegistrar"
+                <button *ngIf="asistente.registrado == false && origen == 'interno'" type="button" class="btn btn-outline-success" data-dismiss="modal" id="btnGuardarYRegistrar"
                     (click)="guardarAsistente(true);">Registrar</button>
-                <button type="button" class="btn btn-outline-primary" id="btnGuardar"
+                <button *ngIf="origen == 'interno'" 
+                    type="button" class="btn btn-outline-primary" id="btnGuardar"
                     (click)="guardarAsistente(false)">Guardar</button>
-                <button *ngIf="asistente.registrado == true && guardado == true" type="button" class="btn btn-outline-info" data-dismiss="modal" id="btnImprimirDymo" 
+                <button *ngIf="origen == 'online'" data-dismiss="modal"
+                    type="button" class="btn btn-outline-primary" id="btnGuardarOnline"
+                    (click)="guardarAsistente(false)">Guardar</button>
+                <button *ngIf="origen == 'noAplica'" type="button" class="btn btn-outline-info" data-dismiss="modal" id="btnImprimirBrowser" 
+                    (click)="guardarAsistente(false);imprimirBrowser('formEscarapela');">Escarapela</button>
+                <button *ngIf="asistente.registrado == true && guardado == true && origen == 'interno'" 
+                    type="button" class="btn btn-outline-info" data-dismiss="modal" id="btnImprimirDymo" 
                     (click)="imprimirServicioDymo('formEscarapela');">Escarapela</button>
-                <button *ngIf="asistente.registrado == true && guardado == true" type="button" class="btn btn-outline-secondary" data-dismiss="modal" id="btnCertificado" 
+                <button *ngIf="asistente.registrado == true && guardado == true && origen == 'interno'" 
+                    type="button" class="btn btn-outline-secondary" data-dismiss="modal" id="btnCertificado" 
                     (click)="guardarAsistente(false);imprimir('formCertificado');">Certificado</button>
                 <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
             </div>

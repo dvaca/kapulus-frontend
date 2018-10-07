@@ -20,6 +20,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
   asistenteImpresion: Asistente;
   @Input() camposEvento: CampoEvento[];
   @Input() nuevo: boolean;
+  @Input() origen: string;
+  @Input() mensajes: string[];
+  @Input() errores: string[];
   guardado: boolean;
   existe: boolean;
 
@@ -56,6 +59,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
             this.existe = false;
           }else{
             this.existe = true;
+            this.errores.push("Lo sentimos. El asistente " + this.asistente.identificacion + " ya fue registrado previamente");
           }
         if(this.existe == false ){
           this.registroService.addAsistente(this.asistente)
@@ -75,6 +79,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
                       this.asistenteImpresion.atributos.forEach(atr => {
                         atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
                       });
+                      this.mensajes.push("Sus datos han sido guardados exitosamente!");
                     });
             });
           });

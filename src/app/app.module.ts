@@ -19,6 +19,7 @@ import { GraficoCampoComponent } from './grafico-campo/grafico-campo.component';
 import { ControlAccesoComponent } from './control-acceso/control-acceso.component';
 import { EstadisticasService } from './estadisticas.service';
 import { ImpresionService } from './impresion.service';
+import { RegistroOnlineComponent } from './registro-online/registro-online.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ImpresionService } from './impresion.service';
     CertificadoComponent,
     EstadisticasComponent,
     GraficoCampoComponent,
-    ControlAccesoComponent
+    ControlAccesoComponent,
+    RegistroOnlineComponent
   ],
   imports: [
     BrowserModule,

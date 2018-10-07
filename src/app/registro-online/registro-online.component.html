@@ -1,0 +1,33 @@
+<h2>Formulario de autoregistro</h2>
+<div class="row">
+  <div class="col-lg-5">
+  </div>
+  <div class="col-lg-2">
+    <button id="btnNuevo" class="btn btn-outline-success" type="button" 
+        data-toggle="modal" data-target="#myModal"
+        (click)="crearRegistro(); txtBusqueda.value=''">Comenzar
+    </button>
+  </div>
+  <div class="col-lg-5">    
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-4">
+  </div>
+  <div class="col-lg-4">
+      <div *ngFor="let mensaje of mensajes" class="alert alert-success" role="alert">
+          {{mensaje}}
+      </div>
+      <div *ngFor="let error of errores" class="alert alert-danger" role="alert">
+          {{error}}
+      </div>
+  </div>
+  <div class="col-lg-4">
+  </div>
+</div>
+<div>
+  &nbsp;
+</div>
+<!-- Detalle Asistente Nuevo -->
+<app-detalle-asistente [asistente]="nuevoAsistente" [camposEvento]="camposEvento" [nuevo]="true" 
+  [origen]="'online'" [mensajes]="mensajes" [errores]="errores"></app-detalle-asistente>
