@@ -25,6 +25,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
   @Input() errores: string[];
   guardado: boolean;
   existe: boolean;
+  habeasDataAceptado: boolean;
 
   constructor(private registroService: RegistroService, private impresionService: ImpresionService, private config: VariablesEvento) { }
 
@@ -33,6 +34,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 
   ngOnChanges(){
     this.guardado = false;
+    this.habeasDataAceptado = false;
     this.existe = false;
     if(!this.nuevo){
       let asistencia = new AsistenciaZona();
@@ -80,6 +82,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
                         atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
                       });
                       this.mensajes.push("Sus datos han sido guardados exitosamente!");
+                      this.mensajes.push("Recibirá un correo electrónico con la información y el código QR de acceso al evento");
                     });
             });
           });
@@ -166,5 +169,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     }catch(error){
       alert(error);
     }
+  }
+
+  aceptarHabeasData(){
+    this.habeasDataAceptado = true;
   }
 }
