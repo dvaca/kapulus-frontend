@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { NgxBarcodeModule, NgxBarcodeComponent } from 'ngx-barcode';
+import { QRCodeModule } from 'ng-qrcode';
 
 import { AppComponent } from './app.component';
 import { BuscadorComponent } from './buscador/buscador.component';
@@ -20,6 +21,7 @@ import { ControlAccesoComponent } from './control-acceso/control-acceso.componen
 import { EstadisticasService } from './estadisticas.service';
 import { ImpresionService } from './impresion.service';
 import { RegistroOnlineComponent } from './registro-online/registro-online.component';
+import { CorreoComponent } from './correo/correo.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +34,15 @@ import { RegistroOnlineComponent } from './registro-online/registro-online.compo
     EstadisticasComponent,
     GraficoCampoComponent,
     ControlAccesoComponent,
-    RegistroOnlineComponent
+    RegistroOnlineComponent,
+    CorreoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     NgxBarcodeModule,
+    QRCodeModule,
     AppRoutingModule
   ],
   providers: [

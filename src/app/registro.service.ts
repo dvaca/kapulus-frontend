@@ -12,6 +12,7 @@ import { AsistenciaZona } from './asistenciazona';
 import { ConfiguracionEvento } from './configuracionEvento';
 import { VariablesEvento } from './variablesEvento';
 import { Impresora } from './impresora';
+import { Correo } from './correo';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -129,6 +130,15 @@ export class RegistroService {
     const url = `${this.backendUrl}/asistenciazona/${this.config.idevento}/${asistencia.idasistente}/${asistencia.idzona}/${asistencia.idoperacion}`;    
     return this.http.get<AsistenciaZona>(url).pipe(
       catchError(this.handleError<AsistenciaZona>('getUltimaAsistenciaZona'))
+    );
+  }
+
+  enviarCorreo(correo: Correo): Observable<string>{
+    const url = `${this.backendUrl}/correo/${this.config.idevento}`;   
+    alert(url);
+    return this.http.post<string>(url, correo, httpOptions)
+    .pipe(
+      catchError(this.handleError<string>('enviarCorreo'))
     );
   }
 

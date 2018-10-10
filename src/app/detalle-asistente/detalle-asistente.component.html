@@ -43,15 +43,16 @@
             <div class="modal-footer">
                 <app-escarapela [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-escarapela>
                 <app-certificado [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-certificado>
+				<app-correo></app-correo>
                 <!--<app-escarapela [asistente]="asistente"></app-escarapela>-->
                 <button *ngIf="asistente.registrado == false && origen == 'interno'" type="button" class="btn btn-outline-success" data-dismiss="modal" id="btnGuardarYRegistrar"
                     (click)="guardarAsistente(true);">Registrar</button>
                 <button *ngIf="origen == 'interno'" 
                     type="button" class="btn btn-outline-primary" id="btnGuardar"
-                    (click)="guardarAsistente(false)">Guardar</button>
+                    (click)="guardarAsistente(false);">Guardar</button>
                 <button *ngIf="origen == 'online' && habeasDataAceptado == true" data-dismiss="modal"
                     type="button" class="btn btn-outline-primary" id="btnGuardarOnline"
-                    (click)="guardarAsistente(false)">Guardar</button>
+                    (click)="guardarAsistente(false);enviarCorreo();">Guardar</button>
                 <button *ngIf="origen == 'online' && habeasDataAceptado == false" 
                     type="button" class="btn btn-outline-primary" id="btnHabeasData"
                     data-toggle="modal" data-target="#modalHabeasData" >Siguiente</button>

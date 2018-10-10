@@ -9,6 +9,7 @@ import { ConfiguracionEvento } from '../configuracionEvento';
 import { VariablesEvento } from '../variablesEvento';
 import { Impresion } from '../impresion';
 import { ImpresionService } from '../impresion.service';
+import { Correo } from '../correo';
 
 @Component({
   selector: 'app-detalle-asistente',
@@ -173,5 +174,13 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 
   aceptarHabeasData(){
     this.habeasDataAceptado = true;
+  }
+
+  enviarCorreo(): void{
+    var plantilla = document.getElementById("plantillaCorreo").innerHTML;
+    let correo = new Correo();
+    correo.html = plantilla;
+    this.registroService.enviarCorreo(correo).subscribe(mensaje =>{
+    });
   }
 }
