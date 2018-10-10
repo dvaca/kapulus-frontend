@@ -33,6 +33,7 @@
     "enhanced-resolve": "^3.3.0",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
+    "ng-qrcode": "^1.1.2",
     "ngx-barcode": "^0.2.4",
     "path": "^0.12.7",
     "popper.js": "^1.14.3",
