@@ -43,7 +43,6 @@
             <div class="modal-footer">
                 <app-escarapela [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-escarapela>
                 <app-certificado [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-certificado>
-				<app-correo></app-correo>
                 <!--<app-escarapela [asistente]="asistente"></app-escarapela>-->
                 <button *ngIf="asistente.registrado == false && origen == 'interno'" type="button" class="btn btn-outline-success" data-dismiss="modal" id="btnGuardarYRegistrar"
                     (click)="guardarAsistente(true);">Registrar</button>
@@ -103,3 +102,4 @@
         </div>
     </div>
 </div>
+<app-correo></app-correo>
