@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { NgxBarcodeModule, NgxBarcodeComponent } from 'ngx-barcode';
-import { QRCodeModule } from 'ng-qrcode';
+//import { QRCodeModule } from 'ng-qrcode';
+import { QRCodeModule} from 'angular2-qrcode';
 
 import { AppComponent } from './app.component';
 import { BuscadorComponent } from './buscador/buscador.component';
