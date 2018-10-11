@@ -45,7 +45,8 @@ import { RouterModule } from '@angular/router';
     NgxBarcodeModule,
     QRCodeModule,
     AppRoutingModule,
-    RouterModule.forRoot([{ path: 'callcenter_token_7D5H3N9Y4F', redirectTo: '/registro', pathMatch: 'full' }])
+    RouterModule.forRoot([{ path: 'callcenter_token_7D5H3N9Y4F', redirectTo: '/registro', pathMatch: 'full' },
+    { path: 'registro', component: BuscadorComponent }])
   ],
   providers: [
     RegistroService,
