@@ -65,7 +65,7 @@
                 <button *ngIf="asistente.registrado == true && guardado == true && origen == 'interno'" 
                     type="button" class="btn btn-outline-secondary" data-dismiss="modal" id="btnCertificado" 
                     (click)="guardarAsistente(false);imprimir('formCertificado');">Certificado</button>
-                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
+                <button *ngIf="confirmado == false" type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>

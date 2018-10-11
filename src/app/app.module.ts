@@ -3,10 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { NgxBarcodeModule, NgxBarcodeComponent } from 'ngx-barcode';
-//import { QRCodeModule } from 'ng-qrcode';
 import { QRCodeModule} from 'angular2-qrcode';
-
-//import { NgxKjuaModule } from 'ngx-kjua';
 
 import { AppComponent } from './app.component';
 import { BuscadorComponent } from './buscador/buscador.component';
@@ -25,6 +22,7 @@ import { EstadisticasService } from './estadisticas.service';
 import { ImpresionService } from './impresion.service';
 import { RegistroOnlineComponent } from './registro-online/registro-online.component';
 import { CorreoComponent } from './correo/correo.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -46,8 +44,8 @@ import { CorreoComponent } from './correo/correo.component';
     HttpClientModule,
     NgxBarcodeModule,
     QRCodeModule,
-    //NgxKjuaModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot([{ path: 'callcenter_token_7D5H3N9Y4F', redirectTo: '/registro', pathMatch: 'full' }])
   ],
   providers: [
     RegistroService,
