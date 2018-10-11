@@ -22,7 +22,6 @@ import { EstadisticasService } from './estadisticas.service';
 import { ImpresionService } from './impresion.service';
 import { RegistroOnlineComponent } from './registro-online/registro-online.component';
 import { CorreoComponent } from './correo/correo.component';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -44,9 +43,7 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     NgxBarcodeModule,
     QRCodeModule,
-    AppRoutingModule,
-    RouterModule.forRoot([{ path: 'callcenter_token_7D5H3N9Y4F', redirectTo: '/registro', pathMatch: 'full' },
-    { path: 'registro', component: BuscadorComponent }])
+    AppRoutingModule
   ],
   providers: [
     RegistroService,

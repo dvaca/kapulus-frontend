@@ -13,6 +13,10 @@ app.use("/", express.static(__dirname+'/dist'));
 //res.sendFile(path.join(__dirname+'/dist/index.html'));
 //});
 
+app.get('/callcenter_token_7D5H3N9Y4F', function(req,res) {    
+	res.sendFile(path.join(__dirname+'/dist/index.html'));
+});
+
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
