@@ -43,15 +43,17 @@
             <div class="modal-footer">
                 <app-escarapela [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-escarapela>
                 <app-certificado [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-certificado>
-                <!--<app-escarapela [asistente]="asistente"></app-escarapela>-->
                 <button *ngIf="asistente.registrado == false && origen == 'interno'" type="button" class="btn btn-outline-success" data-dismiss="modal" id="btnGuardarYRegistrar"
                     (click)="guardarAsistente(true);">Registrar</button>
                 <button *ngIf="origen == 'interno'" 
                     type="button" class="btn btn-outline-primary" id="btnGuardar"
                     (click)="guardarAsistente(false);">Guardar</button>
-                <button *ngIf="origen == 'online' && habeasDataAceptado == true" data-dismiss="modal"
+                <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true" data-dismiss="modal"
                     type="button" class="btn btn-outline-primary" id="btnGuardarOnline"
-                    (click)="guardarAsistente(false);enviarCorreo();">Guardar</button>
+                    (click)="enviarCorreo();">Terminar</button>
+                <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == false"
+                    type="button" class="btn btn-outline-primary" id="btnConfirmar"
+                    (click)="guardarAsistente(false);">Confirmar</button>
                 <button *ngIf="origen == 'online' && habeasDataAceptado == false" 
                     type="button" class="btn btn-outline-primary" id="btnHabeasData"
                     data-toggle="modal" data-target="#modalHabeasData" >Siguiente</button>
@@ -102,4 +104,4 @@
         </div>
     </div>
 </div>
-<app-correo></app-correo>
+<app-correo [asistente]="asistente" [nombreAsistente]="nombreAsistente" [asistenteImpresion]="asistenteImpresion"></app-correo>

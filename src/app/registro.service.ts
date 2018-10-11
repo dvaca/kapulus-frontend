@@ -95,10 +95,10 @@ export class RegistroService {
     );
   }
 
-  getAsistenteNombre(identificacion: number): Observable<AtributoAsistente> {
-    const url = `${this.backendUrl}/asistente/${this.config.idevento}/nombre/` + identificacion;    
+  getAsistenteAtributo(identificacion: number, atributo: string): Observable<AtributoAsistente> {
+    const url = `${this.backendUrl}/asistente/${this.config.idevento}/${identificacion}/atributo/${atributo}`;    
     return this.http.get<AtributoAsistente>(url).pipe(
-      catchError(this.handleError<AtributoAsistente>('getAsistenteNombre'))
+      catchError(this.handleError<AtributoAsistente>('getAsistenteAtributo'))
     );
   }
 
@@ -135,7 +135,6 @@ export class RegistroService {
 
   enviarCorreo(correo: Correo): Observable<string>{
     const url = `${this.backendUrl}/correo/${this.config.idevento}`;   
-    alert(url);
     return this.http.post<string>(url, correo, httpOptions)
     .pipe(
       catchError(this.handleError<string>('enviarCorreo'))

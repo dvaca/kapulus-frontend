@@ -26,5 +26,6 @@ export enum Operacion {
   Busqueda = 7,
   Entrada = 8,
   Salida = 9,
-  Entrega = 10
+  Entrega = 10,
+  Correo = 11
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Asistente } from '../asistente';
 
 @Component({
   selector: 'app-correo',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./correo.component.css']
 })
 export class CorreoComponent implements OnInit {
+  @Input() asistente: Asistente;
+  @Input() asistenteImpresion: Asistente;
+  @Input() nombreAsistente: string;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges(){
   }
 
 }

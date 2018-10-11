@@ -6,6 +6,8 @@ import { NgxBarcodeModule, NgxBarcodeComponent } from 'ngx-barcode';
 //import { QRCodeModule } from 'ng-qrcode';
 import { QRCodeModule} from 'angular2-qrcode';
 
+//import { NgxKjuaModule } from 'ngx-kjua';
+
 import { AppComponent } from './app.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { RegistroService } from './registro.service';
@@ -44,6 +46,7 @@ import { CorreoComponent } from './correo/correo.component';
     HttpClientModule,
     NgxBarcodeModule,
     QRCodeModule,
+    //NgxKjuaModule,
     AppRoutingModule
   ],
   providers: [

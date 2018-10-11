@@ -27,6 +27,8 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
   guardado: boolean;
   existe: boolean;
   habeasDataAceptado: boolean;
+  confirmado: boolean;
+  nombreAsistente: string;
 
   constructor(private registroService: RegistroService, private impresionService: ImpresionService, private config: VariablesEvento) { }
 
@@ -36,7 +38,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
   ngOnChanges(){
     this.guardado = false;
     this.habeasDataAceptado = false;
+    this.confirmado = false;
     this.existe = false;
+    this.nombreAsistente = "";
     if(!this.nuevo){
       let asistencia = new AsistenciaZona();
       asistencia.idasistente = this.asistente.id;
@@ -82,8 +86,14 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
                       this.asistenteImpresion.atributos.forEach(atr => {
                         atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
                       });
-                      this.mensajes.push("Sus datos han sido guardados exitosamente!");
-                      this.mensajes.push("Recibirá un correo electrónico con la información y el código QR de acceso al evento");
+                      this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE").subscribe(
+                        nombre => {
+                          this.nombreAsistente = nombre.valor;
+                          this.confirmado = true;
+                          this.mensajes.push("Sus datos han sido guardados exitosamente!");
+                          this.mensajes.push("Recibirá un correo electrónico con la información y el código QR de acceso al evento");
+                        }
+                      );
                     });
             });
           });
@@ -180,7 +190,17 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     var plantilla = document.getElementById("plantillaCorreo").innerHTML;
     let correo = new Correo();
     correo.html = plantilla;
-    this.registroService.enviarCorreo(correo).subscribe(mensaje =>{
+    this.registroService.getAsistenteAtributo(this.asistente.identificacion, "EMAIL").subscribe(
+      email => {
+        correo.email = email.valor;
+        this.registroService.enviarCorreo(correo).subscribe(mensaje =>{
+          let asistencia = new AsistenciaZona();
+          asistencia.idasistente = this.asistente.id;
+          asistencia.idoperacion = Operacion.Correo;
+          asistencia.idzona = this.config.idZonaRegistro;
+          this.registroService.addAsistenciaZona(asistencia)
+          .subscribe(asistenciaZona => {});
+      });
     });
   }
 }
