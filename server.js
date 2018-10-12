@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static(__dirname + '/dist/registro-eventos'));
 app.use("/", express.static(__dirname+'/dist'));
 app.use("/callcenter_token_7D5H3N9Y4F", express.static(__dirname+'/dist'));
-app.use("/registro", express.static(__dirname+'/dist'));
+app.use("/callcenter_token_9B0I4J8R2T", express.static(__dirname+'/dist'));
 
 //app.get('/*', function(req,res) {
     
