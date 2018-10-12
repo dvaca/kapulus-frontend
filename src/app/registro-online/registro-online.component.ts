@@ -22,7 +22,7 @@ export class RegistroOnlineComponent implements OnInit {
   }
 
   cargarCamposEvento(): void {
-    this.config.getCamposEvento().subscribe(camposEvento => {
+    this.config.getCamposEventoWeb().subscribe(camposEvento => {
       this.camposEvento = camposEvento;
     });
   }

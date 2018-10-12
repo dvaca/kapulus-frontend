@@ -57,6 +57,14 @@ export class RegistroService {
     );
   }
 
+  getCamposEventoWeb(): Observable<CampoEvento[]>{
+    const url = `${this.backendUrl}/camposeventoweb/${this.config.idevento}`;
+    return this.http.get<CampoEvento[]>(url)
+    .pipe(
+      catchError(this.handleError('getCamposEventoWeb', []))
+    );
+  }
+
   getZonas(): Observable<Zona[]>{
     const url = `${this.backendUrl}/zonas/${this.config.idevento}`;
     return this.http.get<Zona[]>(url)

@@ -10,6 +10,7 @@ import { Impresora } from "./impresora";
 @Injectable()
 export class ConfiguracionEvento{
   public static camposEvento: CampoEvento[];
+  public static camposEventoWeb: CampoEvento[];
   public static zonas: Zona[];
   public static impresoras: Impresora[];
   
@@ -27,6 +28,16 @@ export class ConfiguracionEvento{
       return x;
     }else{
       return Observable.of(ConfiguracionEvento.camposEvento);
+    }
+  }
+
+  getCamposEventoWeb(): Observable<CampoEvento[]>{
+    if (ConfiguracionEvento.camposEventoWeb == null){
+      var x = this.registroService.getCamposEventoWeb(); 
+      x.subscribe(x => ConfiguracionEvento.camposEventoWeb = x);
+      return x;
+    }else{
+      return Observable.of(ConfiguracionEvento.camposEventoWeb);
     }
   }
 
