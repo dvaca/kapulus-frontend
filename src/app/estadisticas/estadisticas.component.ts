@@ -169,7 +169,7 @@ export class EstadisticasComponent implements OnInit {
     this.actualizarOperacionesZonas();
 
     //Campos marcados para estadisticas
-    this.camposEstadisticas = this.camposEvento.filter(campo => campo.estadisticas == 1);
+    this.camposEstadisticas = this.camposEvento.filter(campo => campo.estadisticas == true);
     //TimeLine Zonas
     this.zonas.forEach(zona => {
       if(zona.validaentrada == true || zona.validasalida == true || zona.entregaregalo == true){
