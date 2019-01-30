@@ -51,7 +51,7 @@
                 <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true" data-dismiss="modal"
                     type="button" class="btn btn-outline-primary" id="btnGuardarOnline"
                     (click)="enviarCorreo();">Terminar</button>
-				<button data-dismiss="modal"
+				<button data-dismiss="modal" *ngIf="origen == 'interno'"
                     type="button" class="btn btn-outline-danger" id="btnEnviarCorreo"
                     (click)="enviarCorreo();">Enviar Correo</button>
                 <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == false"
