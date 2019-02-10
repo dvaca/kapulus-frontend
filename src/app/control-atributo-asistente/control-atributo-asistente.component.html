@@ -1,11 +1,33 @@
 <label for='pop_{{atributo.nombre}}' class='control-label'>{{atributo.nombre}}</label>
 <!-- TipoCampo.CajaDeTexto-->
-<div *ngIf="campo.tipocampo == 1">
-  <input [(ngModel)]="atributo.valor" type='text' 
-    class='form-control' placeholder="{{atributo.nombre}}" name="pop_{{atributo.nombre}}">
-</div>
+<div *ngIf="campo.tipocampo == tiposCampo.CajaDeTexto">
+  <div *ngIf="campo.tipodato == tiposDato.Texto">
+      <input [(ngModel)]="atributo.valor" type='text' maxlength="{{campo.longitud}}"
+        class='form-control' placeholder="{{atributo.nombre}}" name="pop_{{atributo.nombre}}">
+  </div>
+  <div *ngIf="campo.tipodato == tiposDato.Celular">
+      <input [(ngModel)]="atributo.valor" type='text' maxlength="{{campo.longitud}}" pattern="[3][0-9]{9}"
+        class='form-control' placeholder="{{atributo.nombre}}" name="pop_{{atributo.nombre}}" #pop="ngModel">
+      <div *ngIf="pop.errors?.pattern" class="validacion">
+          Campo {{atributo.nombre}} no es un número de celular válido.
+      </div>
+  </div>
+  <div *ngIf="campo.tipodato == tiposDato.Correo">
+      <input [(ngModel)]="atributo.valor" type='email' email required maxlength="{{campo.longitud}}"
+        class='form-control' placeholder="{{atributo.nombre}}" 
+        name="pop_{{atributo.nombre}}" #pop="ngModel">
+        <div *ngIf="pop.errors?.email" class="validacion">
+            Campo {{atributo.nombre}} no es válido.
+       </div>
+       <div *ngIf="pop.errors?.required" class="validacion">
+          Campo {{atributo.nombre}} es requerido.
+      </div>
+      <div *ngIf="pop.errors?.maxlength" class="validacion">
+          Campo {{atributo.nombre}} debe ser máximo de {{campo.longitud}}.
+      </div> 
+  </div>
 <!-- TipoCampo.SeleccionUnica-->
-<div *ngIf="campo.tipocampo == 2">
+<div *ngIf="campo.tipocampo == tiposCampo.SeleccionUnica">
   <select class="form-control" id="pop_{{atributo.nombre}}" [(ngModel)]="atributo.valor">
     <option *ngFor="let posibleValor of campo.posiblesvalores">{{posibleValor.valor}}</option>
   </select>

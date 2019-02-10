@@ -28,6 +28,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
   existe: boolean;
   habeasDataAceptado: boolean;
   confirmado: boolean;
+  terminado: boolean;
   nombreAsistente: string;
 
   constructor(private registroService: RegistroService, private impresionService: ImpresionService, private config: VariablesEvento) { }
@@ -39,6 +40,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     this.guardado = false;
     this.habeasDataAceptado = false;
     this.confirmado = false;
+	this.terminado = false;
     this.existe = false;
     this.nombreAsistente = "";
     if(!this.nuevo){
@@ -190,9 +192,17 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     this.habeasDataAceptado = true;
   }
 
-  enviarCorreo(): void{
-    var plantilla = document.getElementById("plantillaCorreo").innerHTML;
+  enviarCorreo(terminar: boolean): void{
+    var plantilla;
     let correo = new Correo();
+    this.terminado = terminar;
+    if(this.origen == "online"){
+      plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
+      correo.subject = "Confirmación de Registro - Congreso de Actualización en Propiedad Horizontal";
+    }else{
+      plantilla = document.getElementById("plantillaCorreoInvitacion").innerHTML;
+      correo.subject = "Invitación - Congreso de Actualización en Propiedad Horizontal";
+    }
     correo.html = plantilla;
     this.registroService.getAsistenteAtributo(this.asistente.identificacion, "EMAIL").subscribe(
       email => {

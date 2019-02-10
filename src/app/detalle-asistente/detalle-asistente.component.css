@@ -5,3 +5,17 @@
   max-width: 100%;
   display: block;
 }
+
+.modal-body{
+  background-color: #fafafa;
+}
+
+.modal-header{
+  background-color: mediumblue;
+  color: white;
+}
+
+.close{
+  color: white;
+  opacity: 1;
+}

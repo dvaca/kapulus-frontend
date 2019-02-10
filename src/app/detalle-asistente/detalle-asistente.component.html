@@ -3,17 +3,16 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Formulario de registro</h4>
+                <h2 class="modal-title" id="myModalLabel">Registro de asistentes</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-8">
-                        <form class="form-horizontal" id="formAsistente">
+                        <form class="form-horizontal" #atributosForm="ngForm">
                             <div class="form-group">
                                 <div class='row'>
                                     <div class='col-sm-12'>
-                                        <h2>Registro de asistentes</h2>
                                         <div *ngIf="existe == true" class="alert alert-danger" role="alert">
                                             El asistente {{asistente.identificacion}} ya existe
                                         </div>
@@ -37,6 +36,8 @@
                         </form>
                     </div>
                     <div  class="col-lg-4" style="padding: 5% 0;">
+						<img src="../assets/resources/LogoLegis.png" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
+                            alt="LEGIS">
                     </div>
                 </div>
             </div>
@@ -45,19 +46,28 @@
                 <app-certificado [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-certificado>
                 <button *ngIf="asistente.registrado == false && origen == 'interno'" type="button" class="btn btn-outline-success" data-dismiss="modal" id="btnGuardarYRegistrar"
                     (click)="guardarAsistente(true);">Registrar</button>
-                <button *ngIf="origen == 'interno'" 
+                <button *ngIf="origen == 'interno'"  [disabled]="!atributosForm.form.valid"
                     type="button" class="btn btn-outline-primary" id="btnGuardar"
                     (click)="guardarAsistente(false);">Guardar</button>
-                <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true" data-dismiss="modal"
+                <!--
+                    <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true" data-dismiss="modal"
                     type="button" class="btn btn-outline-primary" id="btnGuardarOnline"
                     (click)="enviarCorreo();">Terminar</button>
+                -->
+                <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == false"
+                    type="button" class="btn btn-outline-primary" id="btnGuardarOnline"
+                    (click)="enviarCorreo(true);">Terminar</button>
+                <a href="https://biz.payulatam.com/B0bfff0717E8FB9" target="_blank"
+                    *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == true" >
+                    <img src="http://www.payulatam.com/img-secure-2015/boton_pagar_grande.png">
+                </a>
 				<button data-dismiss="modal" *ngIf="origen == 'interno'"
                     type="button" class="btn btn-outline-danger" id="btnEnviarCorreo"
-                    (click)="enviarCorreo();">Enviar Correo</button>
+                    (click)="enviarCorreo(false);">Enviar Correo</button>
                 <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == false"
                     type="button" class="btn btn-outline-primary" id="btnConfirmar"
                     (click)="guardarAsistente(false);">Confirmar</button>
-                <button *ngIf="origen == 'online' && habeasDataAceptado == false" 
+                <button *ngIf="origen == 'online' && habeasDataAceptado == false" [disabled]="!atributosForm.form.valid"
                     type="button" class="btn btn-outline-primary" id="btnHabeasData"
                     data-toggle="modal" data-target="#modalHabeasData" >Siguiente</button>
                 <button *ngIf="origen == 'noAplica'" type="button" class="btn btn-outline-info" data-dismiss="modal" id="btnImprimirBrowser" 

@@ -1,7 +1,9 @@
 export enum TipoDato {
   Texto = 1,
   Numerico = 2,
-  Fecha = 3
+  Fecha = 3,
+  Correo = 4,
+  Celular = 5
 }
 
 export enum TipoCampo {
