@@ -27,7 +27,7 @@
       </div> 
   </div>
 <!-- TipoCampo.SeleccionUnica-->
-<div *ngIf="campo.tipocampo == tiposCampo.SeleccionUnica">
+<div *ngIf="campo.tipocampo == 2">
   <select class="form-control" id="pop_{{atributo.nombre}}" [(ngModel)]="atributo.valor">
     <option *ngFor="let posibleValor of campo.posiblesvalores">{{posibleValor.valor}}</option>
   </select>
