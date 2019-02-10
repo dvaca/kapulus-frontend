@@ -15,8 +15,8 @@ export class ControlAtributoAsistenteComponent implements OnInit, OnChanges {
   @Input() camposEvento: CampoEvento[];
   public campo: CampoEvento;
   public tipoCampo: TipoCampo;
-  private tiposCampo = TipoCampo;
-  private tiposDato = TipoDato;
+  public tiposCampo = TipoCampo;
+  public tiposDato = TipoDato;
 
   constructor() { }
 
