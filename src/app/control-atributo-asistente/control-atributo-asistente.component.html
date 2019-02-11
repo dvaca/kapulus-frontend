@@ -26,8 +26,9 @@
           Campo {{atributo.nombre}} debe ser máximo de {{campo.longitud}}.
       </div> 
   </div>
+</div>  
 <!-- TipoCampo.SeleccionUnica-->
-<div *ngIf="campo.tipocampo == 2">
+<div *ngIf="campo.tipocampo == tiposCampo.SeleccionUnica">
   <select class="form-control" id="pop_{{atributo.nombre}}" [(ngModel)]="atributo.valor">
     <option *ngFor="let posibleValor of campo.posiblesvalores">{{posibleValor.valor}}</option>
   </select>
