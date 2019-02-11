@@ -11,6 +11,9 @@
       <div *ngIf="pop.errors?.pattern" class="validacion">
           Campo {{atributo.nombre}} no es un número de celular válido.
       </div>
+	  <div *ngIf="pop.errors?.required" class="validacion">
+          Campo {{atributo.nombre}} es requerido.
+      </div>
   </div>
   <div *ngIf="campo.tipodato == tiposDato.Correo">
       <input [(ngModel)]="atributo.valor" type='email' email [required]="campo.obligatorio == true" maxlength="{{campo.longitud}}"
