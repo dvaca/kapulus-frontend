@@ -14,6 +14,8 @@ import { ControlContainer, NgForm } from '@angular/forms';
 export class ControlAtributoAsistenteComponent implements OnInit, OnChanges {
   @Input() atributo: AtributoAsistente;
   @Input() camposEvento: CampoEvento[];
+  @Input() validar: boolean;
+  
   public campo: CampoEvento;
   public tipoCampo: TipoCampo;
   public tiposCampo = TipoCampo;
