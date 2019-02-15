@@ -85,16 +85,11 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
             .subscribe(asistenciaZona => {
               this.registroService.getAsistenteImpresion(this.asistente.identificacion).subscribe(
                 x => {this.asistenteImpresion = x; 
-						alert("a");
-					alert(this.asistenteImpresion.atributos);
-					alert(this.asistenteImpresion.atributos.length);
                       this.asistenteImpresion.atributos.forEach(atr => {
                         atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
                       });
                       this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE").subscribe(
                         nombre => {
-							alert("1");
-							alert(nombre.valor);
                           this.nombreAsistente = nombre.valor;
                           this.confirmado = true;
                           this.mensajes.push("Sus datos han sido guardados exitosamente!");
@@ -122,15 +117,10 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
         .subscribe(asistenciaZona => {
           this.registroService.getAsistenteImpresion(this.asistente.identificacion).subscribe(
             x => {this.asistenteImpresion = x; 
-					alert("b");
-					alert(this.asistenteImpresion.atributos);
-					alert(this.asistenteImpresion.atributos.length);
                   this.asistenteImpresion.atributos.forEach(atr => {
                   atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
 				  this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE").subscribe(
                     nombre => {
-						alert("2");
-						alert(nombre.valor);
                       this.nombreAsistente = nombre.valor;
                   });
                 });

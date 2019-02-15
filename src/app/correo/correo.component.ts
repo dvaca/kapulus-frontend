@@ -19,7 +19,6 @@ export class CorreoComponent implements OnInit {
   }
 
   ngOnChanges(){
-    alert(this.nombreAsistente);
 	if(isUndefined(this.nombreAsistente)){
       this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE").subscribe(
         nombre => {
