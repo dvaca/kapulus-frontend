@@ -7,8 +7,9 @@ import { ControlContainer, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-control-atributo-asistente',
   templateUrl: './control-atributo-asistente.component.html',
-  styleUrls: ['./control-atributo-asistente.component.css'],
-  viewProviders: [ { provide: ControlContainer, useExisting: NgForm } ]
+  styleUrls: ['./control-atributo-asistente.component.css']
+  /*,
+  viewProviders: [ { provide: ControlContainer, useExisting: NgForm } ]*/
 })
 export class ControlAtributoAsistenteComponent implements OnInit, OnChanges {
   @Input() atributo: AtributoAsistente;
