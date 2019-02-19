@@ -1,11 +1,9 @@
-import { Component, OnInit, OnChanges, Input, ComponentFactory } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, OnInit, OnChanges, Input} from '@angular/core';
 import { Asistente } from '../asistente';
 import { RegistroService } from '../registro.service';
 import { CampoEvento } from '../camposevento';
 import { AsistenciaZona } from '../asistenciazona';
 import { Operacion } from '../enums';
-import { ConfiguracionEvento } from '../configuracionEvento';
 import { VariablesEvento } from '../variablesEvento';
 import { Impresion } from '../impresion';
 import { ImpresionService } from '../impresion.service';
@@ -30,6 +28,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
   confirmado: boolean;
   terminado: boolean;
   nombreAsistente: string;
+  identificacion: string;
 
   constructor(private registroService: RegistroService, private impresionService: ImpresionService, private config: VariablesEvento) { }
 
@@ -91,6 +90,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
                       this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE").subscribe(
                         nombre => {
                           this.nombreAsistente = nombre.valor;
+						  this.identificacion = this.asistente.identificacion.toString();
                           this.confirmado = true;
                           this.mensajes.push("Sus datos han sido guardados exitosamente!");
                           this.mensajes.push("Recibirá un correo electrónico con la información y el código QR de acceso al evento");
@@ -122,6 +122,8 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 				  this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE").subscribe(
                     nombre => {
                       this.nombreAsistente = nombre.valor;
+					  this.identificacion = this.asistente.identificacion.toString();
+                      this.confirmado = true;
                   });
                 });
             });

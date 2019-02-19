@@ -4,24 +4,30 @@
   </div>
   <div class="col-lg-8 alert alert-success" role="alert">
       <span>
-        Debes registrar tus datos dando click en <b>Comenzar</b>, sigue todos los pasos hasta <b>Terminar</b>, y posteriormente podrás hacer tu pago en línea dando click en <b>Paga con PayU</b>
+        Debes ingresar tu número de identificación. Dando click en <b>Comenzar</b>, sigue todos los pasos hasta <b>Terminar</b>, y posteriormente podrás hacer tu pago en línea dando click en <b>Paga con PayU</b>
       </span>
   </div>
   <div class="col-lg-2">
   </div>
 </div>
 <div class="row">
-  <div class="col-lg-5">
+  <div class="col-lg-4">
   </div>
-  <div class="col-lg-2">
+  <div class="col-lg-4">
+    <label for='txtBusqueda' class='control-label'>Ingrese su número de Identificación</label>  
+    <input #txtBusqueda id="txtBusqueda" type="text" class="form-control" title="Número de identificación" 
+      placeholder="Número de identificación" name="txtBusqueda">
+      <br>
+      &nbsp;
     <button id="btnNuevo" class="btn btn-outline-success" type="button" 
         data-toggle="modal" data-target="#myModal"
-        (click)="crearRegistro();">Comenzar
+        (click)="crearRegistro(txtBusqueda.value);txtBusqueda.value='';">Comenzar
     </button>
   </div>
-  <div class="col-lg-5">    
+  <div class="col-lg-4">    
   </div>
 </div>
+<br>
 <div class="row">
   <div class="col-lg-4">
   </div>
@@ -44,6 +50,5 @@
   <img src="../assets/resources/imagenCongreso.jpg" class="img-fluid" style="max-width: 75%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
         alt="1er Congreso de Propiedad Horizontal">
 </div>
-<!-- Detalle Asistente Nuevo -->
-<app-detalle-asistente [asistente]="nuevoAsistente" [camposEvento]="camposEvento" [nuevo]="true" 
-  [origen]="'online'" [mensajes]="mensajes" [errores]="errores"></app-detalle-asistente>
+<app-detalle-asistente [asistente]="nuevoAsistente" [camposEvento]="camposEvento" 
+[nuevo]="nuevo" [origen]="'online'" [mensajes]="mensajes" [errores]="errores"></app-detalle-asistente>

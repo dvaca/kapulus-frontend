@@ -10,8 +10,8 @@ import { RegistroService } from '../registro.service';
 })
 export class CorreoComponent implements OnInit {
   @Input() asistente: Asistente;
-  @Input() asistenteImpresion: Asistente;
   @Input() nombreAsistente: string;
+  @Input() identificacion: string;
 
   constructor(private registroService: RegistroService) { }
 
