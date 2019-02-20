@@ -102,6 +102,13 @@ export class RegistroService {
       catchError(this.handleError<Asistente>('getAsistenteControlAcceso'))
     );
   }
+  
+    getAsistenteOnline(identificacion: number): Observable<Asistente> {
+    const url = `${this.backendUrl}/asistente/${this.config.idevento}/online/${identificacion}`;    
+    return this.http.get<Asistente>(url).pipe(
+      catchError(this.handleError<Asistente>('getAsistenteOnline'))
+    );
+  }
 
   getAsistenteAtributo(identificacion: number, atributo: string): Observable<AtributoAsistente> {
     const url = `${this.backendUrl}/asistente/${this.config.idevento}/${identificacion}/atributo/${atributo}`;    

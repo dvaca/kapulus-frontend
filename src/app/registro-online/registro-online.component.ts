@@ -39,11 +39,13 @@ export class RegistroOnlineComponent implements OnInit {
     criterio = criterio.trim();
     if (!criterio) { 
       this.errores.push("Debe ingresar un número");
+	  return;
     }
     if(isNaN(parseInt(criterio)) || parseInt(criterio).toString() != criterio){
       this.errores.push("Debe ingresar un número");
+	  return;
     }
-    this.registroService.getAsistenteControlAcceso(parseInt(criterio))
+    this.registroService.getAsistenteOnline(parseInt(criterio))
     .subscribe(asistente =>{
       if(isUndefined(asistente.identificacion)){
         this.errores.push("La cédula ingresada no fue encontrada");
@@ -54,6 +56,7 @@ export class RegistroOnlineComponent implements OnInit {
       }
       if(asistente.registrado){
         this.errores.push("El asistente ya se encuentra registrado");
+		return;
       }
       if(this.nuevo){
         this.nuevoAsistente = new Asistente();
