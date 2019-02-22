@@ -5,6 +5,7 @@ import { AtributoAsistente } from '../atributosasistente';
 import { CampoEvento } from '../camposevento';
 import { ConfiguracionEvento } from '../configuracionEvento';
 import { Impresora } from '../impresora';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-buscador',
@@ -21,10 +22,22 @@ export class BuscadorComponent implements OnInit {
   impresoras: Impresora[];
   impresoraSeleccionada: Impresora;
 
-  constructor(private registroService: RegistroService, private config: ConfiguracionEvento) { 
+  constructor( private route: ActivatedRoute, 
+    private registroService: RegistroService, 
+    private config: ConfiguracionEvento) { 
   }
 
   ngOnInit() {
+	let url = this.route.snapshot.url.toString();
+    if(url == 'callcenter_token_9B0I4J8R2T'){
+      this.cargarEvento(5);
+    }
+    if(url == 'callcenter_token_6J2N4P6Q3K'){
+      this.cargarEvento(6);
+    }
+	if(url == 'callcenter_token_3N8P3H6V1L'){
+      this.cargarEvento(7);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
@@ -50,6 +63,10 @@ export class BuscadorComponent implements OnInit {
       }});
   }
 
+  cargarEvento(idevento: number): void {
+    this.config.cargarEvento(idevento);
+  }
+  
   cargarCamposEvento(): void {
     this.config.getCamposEvento().subscribe(camposEvento => {
       this.camposEvento = camposEvento;

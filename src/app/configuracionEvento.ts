@@ -70,4 +70,8 @@ export class ConfiguracionEvento{
       return Observable.of(ConfiguracionEvento.impresoras);
     }
   }
+  
+  cargarEvento(idevento: number): void {
+    this.variables.idevento = idevento;
+  }
 }

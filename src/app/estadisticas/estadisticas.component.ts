@@ -9,6 +9,7 @@ import { EstadisticasService } from '../estadisticas.service';
 import { Zona } from '../zona';
 import { ConteoZonaOperacion } from '../conteoZonaOperacion';
 import { Operacion } from '../enums';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-estadisticas',
@@ -27,15 +28,30 @@ export class EstadisticasComponent implements OnInit {
   zonas: Zona[];
   conteoZonaOperacion: ConteoZonaOperacion[];
 
-  constructor(private registroService: RegistroService, 
+  constructor(private route: ActivatedRoute, 
+    private registroService: RegistroService, 
     private estadisticasService: EstadisticasService,
     private config: ConfiguracionEvento) { }
 
   ngOnInit() {
+	let url = this.route.snapshot.url.toString();
+    if(url == 'callcenter_token_7D5H3N9Y4F'){
+      this.cargarEvento(5);
+    }
+    if(url == 'callcenter_token_4B5O2S8Z0L'){
+      this.cargarEvento(6);
+    }
+	if(url == 'callcenter_token_1T9Y7X1M9A'){
+      this.cargarEvento(7);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
 
+  cargarEvento(idevento: number): void {
+    this.config.cargarEvento(idevento);
+  }
+  
   cargarCamposEvento(): void {
     this.config.getCamposEvento().subscribe(camposEvento => {
       this.camposEvento = camposEvento;
