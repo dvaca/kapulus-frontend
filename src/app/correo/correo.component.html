@@ -48,7 +48,7 @@
     <img src="cid:logolegis" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
       alt="LEGIS">
   </div>
-  <div>
+  <div *ngIf="variables.idevento == 5">
     Hola
     <b>{{nombreAsistente}}</b>,
     <br>
@@ -57,6 +57,30 @@
     <br> Haz click <b><a href="https://superdirectorios.com/congreso_ph_2019/">aquí</a></b> y encontrarás información ampliada, así como el formulario de inscripción para que hagas parte de este gran evento.
 	<br>	
     <br> Descarga los archivos adjuntos para mayor información.
+    <br>
+  </div>
+  <div *ngIf="variables.idevento == 6">
+    Hola
+    <b>{{nombreAsistente}}</b>,
+    <br>
+    <br> Legis te invita a los siguientes eventos que se realizarán próximamente en la ciudad de Bogotá.
+    <br>
+    <br> Si deseas asistir a cualquiera de éstos eventos, solo debes dar clic en la imagen correspondiente, e inmediatamente podrás hacer el pago del mismo mediante canales electrónicos.
+    <br>
+    <div style="text-align:center">
+      <a href="https://biz.payulatam.com/L0bfff0D81C3C41" target="_blank">
+        <img src="cid:invitacioncerveza" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+        alt="TALLER DE LA CERVEZA">
+      </a>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <a href="https://biz.payulatam.com/L0bfff0CE3099E9" target="_blank">
+        <img src="cid:invitacionflores" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+        alt="TALLER DE ORQUIDEAS Y SUCULENTAS">
+      </a>
+    </div>
+    <br> Cancelando hoy, el taller de orquídeas y suculentas tendrá un valor de $80.000. Aprovecha ésta oportunidad.
     <br>
   </div>
 </div>

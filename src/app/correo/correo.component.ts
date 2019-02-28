@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Asistente } from '../asistente';
 import { isUndefined } from 'util';
 import { RegistroService } from '../registro.service';
+import { VariablesEvento } from '../variablesEvento';
 
 @Component({
   selector: 'app-correo',
@@ -13,7 +14,7 @@ export class CorreoComponent implements OnInit {
   @Input() nombreAsistente: string;
   @Input() identificacion: string;
 
-  constructor(private registroService: RegistroService) { }
+  constructor(private registroService: RegistroService, public variables: VariablesEvento) { }
 
   ngOnInit() {
   }

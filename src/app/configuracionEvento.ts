@@ -71,7 +71,8 @@ export class ConfiguracionEvento{
     }
   }
   
-  cargarEvento(idevento: number): void {
+  cargarEvento(idevento: number, idzona:number): void {
     this.variables.idevento = idevento;
+    this.variables.idZonaRegistro = idzona;
   }
 }

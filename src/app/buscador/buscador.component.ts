@@ -30,13 +30,13 @@ export class BuscadorComponent implements OnInit {
   ngOnInit() {
 	let url = this.route.snapshot.url.toString();
     if(url == 'callcenter_token_9B0I4J8R2T'){
-      this.cargarEvento(5);
+      this.cargarEvento(5, 4);
     }
     if(url == 'callcenter_token_6J2N4P6Q3K'){
-      this.cargarEvento(6);
+      this.cargarEvento(6, 5);
     }
 	if(url == 'callcenter_token_3N8P3H6V1L'){
-      this.cargarEvento(7);
+      this.cargarEvento(7, 6);
     }
     this.cargarCamposEvento();
     this.cargarImpresoras();
@@ -63,8 +63,8 @@ export class BuscadorComponent implements OnInit {
       }});
   }
 
-  cargarEvento(idevento: number): void {
-    this.config.cargarEvento(idevento);
+  cargarEvento(idevento: number, idzona: number): void {
+    this.config.cargarEvento(idevento, idzona);
   }
   
   cargarCamposEvento(): void {

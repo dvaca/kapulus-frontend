@@ -36,20 +36,20 @@ export class EstadisticasComponent implements OnInit {
   ngOnInit() {
 	let url = this.route.snapshot.url.toString();
     if(url == 'callcenter_token_7D5H3N9Y4F'){
-      this.cargarEvento(5);
+      this.cargarEvento(5, 4);
     }
     if(url == 'callcenter_token_4B5O2S8Z0L'){
-      this.cargarEvento(6);
+      this.cargarEvento(6, 5);
     }
 	if(url == 'callcenter_token_1T9Y7X1M9A'){
-      this.cargarEvento(7);
+      this.cargarEvento(7, 6);
     }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
 
-  cargarEvento(idevento: number): void {
-    this.config.cargarEvento(idevento);
+  cargarEvento(idevento: number, idzona: number): void {
+    this.config.cargarEvento(idevento, idzona);
   }
   
   cargarCamposEvento(): void {
