@@ -203,7 +203,11 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
       correo.subject = "Confirmación de Registro - Congreso de Actualización en Propiedad Horizontal";
     }else{
       plantilla = document.getElementById("plantillaCorreoInvitacion").innerHTML;
-      correo.subject = "Invitación - Congreso de Actualización en Propiedad Horizontal";
+      if(this.config.idevento == 5){
+        correo.subject = "Invitación - Congreso de Actualización en Propiedad Horizontal";
+      }else{
+        correo.subject = "Invitación - Orquídeas & Suculentas & Taller de la Cerveza";
+      }
     }
     correo.html = plantilla;
     this.registroService.getAsistenteAtributo(this.asistente.identificacion, "EMAIL").subscribe(
