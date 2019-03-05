@@ -61,10 +61,6 @@
                     *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == true" >
                     <img src="http://www.payulatam.com/img-secure-2015/boton_pagar_grande.png">
                 </a>
-				<a href="https://biz.payulatam.com/L0bfff0565665FF" target="_blank" role="button" class="btn btn-primary"
-                    *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == true" >
-                    Pagar con PayU
-                </a>
 				<button data-dismiss="modal" *ngIf="origen == 'interno' && guardado"
                     type="button" class="btn btn-outline-danger" id="btnEnviarCorreo"
                     (click)="enviarCorreo(false);">Enviar Correo</button>
