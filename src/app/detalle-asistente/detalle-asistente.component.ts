@@ -206,7 +206,15 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
       if(this.config.idevento == 5){
         correo.subject = "Invitación - Congreso de Actualización en Propiedad Horizontal";
       }else{
-        correo.subject = "Invitación - Orquídeas & Suculentas & Taller de la Cerveza";
+		if(this.config.idevento == 8){
+			correo.subject = "Invitación - Taller de la Cerveza";
+		}else{
+			if(this.config.idevento == 9){
+				correo.subject = "Invitación - Taller Orquídeas & Suculentas";
+			}else{	  
+				correo.subject = "Invitación - Orquídeas & Suculentas & Taller de la Cerveza";
+			}
+		  }  
       }
     }
     correo.html = plantilla;
