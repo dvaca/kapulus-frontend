@@ -38,6 +38,12 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_token_3N8P3H6V1L'){
       this.cargarEvento(7, 6);
     }
+	if(url == 'callcenter_registro_cerveza'){
+      this.cargarEvento(8, 7);
+    }
+	if(url == 'callcenter_registro_orquideas'){
+      this.cargarEvento(9, 8);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

@@ -59,7 +59,7 @@
     <br> Descarga los archivos adjuntos para mayor información.
     <br>
   </div>
-  <div *ngIf="variables.idevento == 6">
+  <div *ngIf="variables.idevento == 6 || variables.idevento == 8 || variables.idevento == 9">
     Hola
     <b>{{nombreAsistente}}</b>,
     <br>
@@ -67,29 +67,23 @@
     <br>
     <br> Si deseas asistir a cualquiera de éstos eventos, solo debes dar clic en la imagen correspondiente, e inmediatamente podrás hacer el pago del mismo mediante canales electrónicos.
     <br>
-    <div style="text-align:center">
+    <div style="text-align:center" *ngIf="variables.idevento == 6 || variables.idevento == 9">
       <a href="https://biz.payulatam.com/L0bfff0CE3099E9" target="_blank">
         <img src="cid:invitacionflores" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
         alt="TALLER DE ORQUIDEAS Y SUCULENTAS">
       </a>
     </div>
     <br>
-    <div style="text-align:center">
+    <div style="text-align:center" *ngIf="variables.idevento == 6 || variables.idevento == 9">
       <a href="https://biz.payulatam.com/L0bfff0CE3099E9" target="_blank">
           <img src="http://www.payulatam.com/img-secure-2015/boton_pagar_grande.png" alt="TALLER DE ORQUIDEAS Y SUCULENTAS">
       </a>
     </div>
     <br>
-	<div style="text-align:center">
-      <a href="https://biz.payulatam.com/L0bfff0D81C3C41" target="_blank">
+	<div style="text-align:center" *ngIf="variables.idevento == 6 || variables.idevento == 8">
+      <a href="https://www.catering.com.co/taller-de-cerveza/" target="_blank">
         <img src="cid:invitacioncerveza" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
         alt="TALLER DE LA CERVEZA">
-      </a>
-    </div>
-    <br>
-    <div style="text-align:center">
-      <a href="https://biz.payulatam.com/L0bfff0D81C3C41" target="_blank">
-          <img src="http://www.payulatam.com/img-secure-2015/boton_pagar_grande.png" alt="TALLER DE LA CERVEZA">
       </a>
     </div>
     <br>

@@ -44,6 +44,12 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_token_1T9Y7X1M9A'){
       this.cargarEvento(7, 6);
     }
+	if(url == 'callcenter_estadisticas_cerveza'){
+      this.cargarEvento(8, 7);
+    }
+	if(url == 'callcenter_estadisticas_orquideas'){
+      this.cargarEvento(9, 8);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
