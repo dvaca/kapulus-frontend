@@ -13,6 +13,7 @@ app.use("/callcenter_token_1T9Y7X1M9A", express.static(__dirname+'/dist'));
 app.use("/callcenter_token_9B0I4J8R2T", express.static(__dirname+'/dist'));
 app.use("/callcenter_token_6J2N4P6Q3K", express.static(__dirname+'/dist'));
 app.use("/callcenter_token_3N8P3H6V1L", express.static(__dirname+'/dist'));
+app.use("/registro-plus-superior", express.static(__dirname+'/dist'));
 
 //app.get('/*', function(req,res) {
     

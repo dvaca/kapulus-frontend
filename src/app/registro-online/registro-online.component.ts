@@ -5,6 +5,7 @@ import { AtributoAsistente } from '../atributosasistente';
 import { CampoEvento } from '../camposevento';
 import { ConfiguracionEvento } from '../configuracionEvento';
 import { RegistroService } from '../registro.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-registro-online',
@@ -18,13 +19,26 @@ export class RegistroOnlineComponent implements OnInit {
   errores: string[];
   nuevo: boolean;
 
-  constructor(private registroService: RegistroService, private config: ConfiguracionEvento) { }
+  constructor(private route: ActivatedRoute,
+    private registroService: RegistroService, 
+    private config: ConfiguracionEvento) { }
 
   ngOnInit() {
+	let url = this.route.snapshot.url.toString();
+    if(url == 'registro-online'){
+      this.cargarEvento(5, 4);
+    }
+    if(url == 'registro-plus-superior'){
+      this.cargarEvento(7, 6);
+    }
     this.cargarCamposEvento();
 	this.nuevo = true;
   }
 
+  cargarEvento(idevento: number, idzona: number): void {
+    this.config.cargarEvento(idevento, idzona);
+  }
+  
   cargarCamposEvento(): void {
     this.config.getCamposEventoWeb().subscribe(camposEvento => {
       this.camposEvento = camposEvento;
