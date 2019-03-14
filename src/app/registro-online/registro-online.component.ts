@@ -21,7 +21,7 @@ export class RegistroOnlineComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private registroService: RegistroService, 
-    private config: ConfiguracionEvento) { }
+    public config: ConfiguracionEvento) { }
 
   ngOnInit() {
 	let url = this.route.snapshot.url.toString();
