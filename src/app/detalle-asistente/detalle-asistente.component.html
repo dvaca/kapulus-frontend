@@ -58,7 +58,7 @@
                     type="button" class="btn btn-outline-primary" id="btnGuardarOnline"
                     (click)="enviarCorreo(true);">Terminar</button>
                 <a href="https://biz.payulatam.com/L0bfff0565665FF" target="_blank"
-                    *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == true" >
+                    *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == true && config.idevento != 7" >
                     <img src="http://www.payulatam.com/img-secure-2015/boton_pagar_grande.png">
                 </a>
 				<button data-dismiss="modal" *ngIf="origen == 'interno' && guardado"
