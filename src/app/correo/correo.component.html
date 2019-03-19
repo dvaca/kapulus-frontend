@@ -1,4 +1,39 @@
 <div id="plantillaCorreoConfirmacion" class="invisible collapse">
+  <div *ngIf="variables.idevento == 7">
+    <div style="text-align:center">
+      <img src="cid:logoplussuperior" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+        alt="+SUPERIOR">
+    </div>  
+    <div>
+      Hola
+      <b>{{nombreAsistente}}</b>,
+      <br>
+      <br>
+      <div style="text-align:center">
+        <img src="cid:pruebaqr" class="img-fluid" style="max-width: 25%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+          alt="QR">
+        <qr-code [value]="identificacion" [size]="300"></qr-code>
+        <br> {{identificacion}}
+      </div>
+      <br>
+      <br> Ya haces parte del cambio, este es tú código QR el cual debes presentar junto con tú documento de identidad al momento de ingresar a +SUPERIOR Education Forum. Puedes presentarlo en tú celular.
+      <br>  
+      <br> #yosoy4punto0
+      <br>
+      <div style="text-align:center">
+        <img src="cid:invitacionplusuperior" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+          alt="+SUPERIOR EDUCATION FORUM">
+      </div>
+      <br>
+      <hr />
+      <br>
+      <br>Este formulario de registro y confirmación es un producto de:
+      <a href="http://www.kapulusinternational.com">www.kapulusinternational.com</a>
+      <br>
+      <hr />
+    </div>
+  </div>
+  <div *ngIf="variables.idevento != 7">
   <div style="text-align:center">
     <img src="cid:logolegis" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
       alt="LEGIS">
@@ -42,13 +77,14 @@
     <br>
     <hr />
   </div>
+  </div>
 </div>
 <div id="plantillaCorreoInvitacion" class="invisible collapse">
-  <div style="text-align:center">
-    <img src="cid:logolegis" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-      alt="LEGIS">
-  </div>
   <div *ngIf="variables.idevento == 5">
+    <div style="text-align:center">
+      <img src="cid:logolegis" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+        alt="LEGIS">
+    </div>
     Hola
     <b>{{nombreAsistente}}</b>,
     <br>
@@ -60,6 +96,10 @@
     <br>
   </div>
   <div *ngIf="variables.idevento == 6 || variables.idevento == 8 || variables.idevento == 9">
+    <div style="text-align:center">
+      <img src="cid:logolegis" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+        alt="LEGIS">
+    </div>
     Hola
     <b>{{nombreAsistente}}</b>,
     <br>
@@ -87,5 +127,39 @@
       </a>
     </div>
     <br>
+  </div>
+  <div *ngIf="variables.idevento == 7">
+    <div style="text-align:center">
+      <img src="cid:logoplussuperior" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+        alt="+SUPERIOR">
+    </div>  
+    <div>
+      Hola
+      <b>{{nombreAsistente}}</b>,
+      <br>
+      <br>
+      <div style="text-align:center">
+        <img src="cid:pruebaqr" class="img-fluid" style="max-width: 25%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+          alt="QR">
+        <qr-code [value]="identificacion" [size]="300"></qr-code>
+        <br> {{identificacion}}
+      </div>
+      <br>
+      <br> Ya haces parte del cambio, este es tú código QR el cual debes presentar junto con tú documento de identidad al momento de ingresar a +SUPERIOR Education Forum. Puedes presentarlo en tú celular.
+      <br>  
+      <br> #yosoy4punto0
+      <br>
+      <div style="text-align:center">
+        <img src="cid:invitacionplusuperior" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+          alt="+SUPERIOR EDUCATION FORUM">
+      </div>
+      <br>
+      <hr />
+      <br>
+      <br>Este formulario de registro y confirmación es un producto de:
+      <a href="http://www.kapulusinternational.com">www.kapulusinternational.com</a>
+      <br>
+      <hr />
+    </div>
   </div>
 </div>
