@@ -54,12 +54,16 @@
                     type="button" class="btn btn-outline-primary" id="btnGuardarOnline"
                     (click)="enviarCorreo();">Terminar</button>
                 -->
-                <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == false && config.idevento != 7"
+                <div *ngIf="config.idevento != 7">
+                    <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == false"
                     type="button" class="btn btn-outline-primary" id="btnGuardarOnline"
                     (click)="enviarCorreo(true);">Terminar</button>
-                <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == false && config.idevento == 7"
+                </div>
+                <div *ngIf="config.idevento == 7">
+                    <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == false"
                     type="button" class="btn btn-outline-primary" id="btnGuardarOnline" data-dismiss="modal"
                     (click)="enviarCorreo(true);">Terminar</button>
+                </div>
                 <a href="https://biz.payulatam.com/L0bfff0565665FF" target="_blank"
                     *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == true && config.idevento != 7" >
                     <img src="http://www.payulatam.com/img-secure-2015/boton_pagar_grande.png">
