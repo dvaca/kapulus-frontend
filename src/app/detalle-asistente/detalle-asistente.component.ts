@@ -212,7 +212,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     if(this.origen == "online"){
       plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
       if(this.config.idevento == 7){
-        correo.subject = "Falta 1 día - Este es tú código de ingreso a +SUPERIOR Education Forum";
+        correo.subject = "Este es tu Código de ingreso a +SUPERIOR Education Forum";
       }else{
         correo.subject = "Confirmación de Registro - Congreso de Actualización en Propiedad Horizontal";
       }
@@ -228,7 +228,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 				correo.subject = "Invitación - Taller Orquídeas & Suculentas";
 			}else{	  
 				if(this.config.idevento == 7){
-					correo.subject = "Falta 1 día - Este es tú código de ingreso a +SUPERIOR Education Forum";
+					correo.subject = "Este es tu Código de ingreso a +SUPERIOR Education Forum";
 				}else{
 					correo.subject = "Invitación - Orquídeas & Suculentas & Taller de la Cerveza";
 				}
