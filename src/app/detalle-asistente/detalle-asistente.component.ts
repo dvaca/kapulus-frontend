@@ -28,6 +28,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
   confirmado: boolean;
   terminado: boolean;
   nombreAsistente: string;
+  apellidoAsistente: string;
   identificacion: string;
 
   constructor(private registroService: RegistroService, private impresionService: ImpresionService, private config: VariablesEvento) { }
@@ -42,6 +43,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 	this.terminado = false;
     this.existe = false;
     this.nombreAsistente = "";
+    this.apellidoAsistente = "";
     if(!this.nuevo){
       let asistencia = new AsistenciaZona();
       asistencia.idasistente = this.asistente.id;
@@ -89,11 +91,16 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
                       });
                       this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE").subscribe(
                         nombre => {
-                          this.nombreAsistente = nombre.valor;
-						  this.identificacion = this.asistente.identificacion.toString();
-                          this.confirmado = true;
-                          this.mensajes.push("Sus datos han sido guardados exitosamente!");
-                          this.mensajes.push("Recibirá un correo electrónico con la información y el código QR de acceso al evento");
+                          this.registroService.getAsistenteAtributo(this.asistente.identificacion, "APELLIDO").subscribe(
+                            apellido => {
+                              this.nombreAsistente = nombre.valor;
+                              this.apellidoAsistente = apellido.valor;
+                              this.identificacion = this.asistente.identificacion.toString();
+                              this.confirmado = true;
+                              this.mensajes.push("Sus datos han sido guardados exitosamente!");
+                              this.mensajes.push("Recibirá un correo electrónico con la información y el código QR de acceso al evento");
+                            }
+                          );
                         }
                       );
                     });

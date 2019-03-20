@@ -12,6 +12,7 @@ import { VariablesEvento } from '../variablesEvento';
 export class CorreoComponent implements OnInit {
   @Input() asistente: Asistente;
   @Input() nombreAsistente: string;
+  @Input() apellidoAsistente: string;
   @Input() identificacion: string;
 
   constructor(private registroService: RegistroService, public variables: VariablesEvento) { }
@@ -24,6 +25,12 @@ export class CorreoComponent implements OnInit {
       this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE").subscribe(
         nombre => {
           this.nombreAsistente = nombre.valor;
+      });
+    }
+    if(isUndefined(this.apellidoAsistente)){
+      this.registroService.getAsistenteAtributo(this.asistente.identificacion, "APELLIDO").subscribe(
+        apellido => {
+          this.apellidoAsistente = apellido.valor;
       });
     }
   }
