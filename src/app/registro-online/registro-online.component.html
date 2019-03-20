@@ -16,7 +16,7 @@
   <div class="col-lg-4">
     <label for='txtBusqueda' class='control-label'>Ingrese su número de Identificación</label>  
     <input #txtBusqueda id="txtBusqueda" type="text" class="form-control" title="Número de identificación" 
-      placeholder="Número de identificación" name="txtBusqueda">
+      placeholder="Número de identificación" name="txtBusqueda" (keyup.enter)="crearRegistro(txtBusqueda.value); txtBusqueda.value='';">
       <br>
       &nbsp;
     <button id="btnNuevo" class="btn btn-outline-success" type="button" 

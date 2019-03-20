@@ -127,10 +127,14 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
                   this.asistenteImpresion.atributos.forEach(atr => {
                   atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
 				  this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE").subscribe(
-                    nombre => {
-                      this.nombreAsistente = nombre.valor;
-					  this.identificacion = this.asistente.identificacion.toString();
+            nombre => {
+              this.registroService.getAsistenteAtributo(this.asistente.identificacion, "APELLIDO").subscribe(
+                apellido => {
+                  this.nombreAsistente = nombre.valor;
+                  this.apellidoAsistente = apellido.valor;
+					        this.identificacion = this.asistente.identificacion.toString();
                       this.confirmado = true;
+                    });    
                   });
                 });
             });
