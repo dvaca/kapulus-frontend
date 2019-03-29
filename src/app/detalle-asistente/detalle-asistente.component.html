@@ -19,7 +19,6 @@
                                         <div *ngIf="asistente.registrado == true" class="alert alert-success" role="alert">
                                             El asistente {{asistente.identificacion}} se encuentra registrado
                                         </div>
-                                        <div *ngIf="terminado == true" class="alert alert-success" role="alert">Registro exitoso.</div>
                                     </div>
                                     <div class='col-sm-6'>
                                         <label for='pop_documento' class='control-label'>Identificacion</label>  
@@ -37,6 +36,7 @@
                         </form>
                     </div>
                     <div  class="col-lg-4" style="padding: 5% 0;">
+                      <div *ngIf="terminado == true" class="alert alert-success" role="alert">Registro exitoso.</div>
 						<img src="../assets/resources/LogoLegisSmall.png" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
                             alt="LEGIS">
                     </div>
