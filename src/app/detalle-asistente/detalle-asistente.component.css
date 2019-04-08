@@ -7,15 +7,15 @@
 }
 
 .modal-body{
-  background-color: #fafafa;
+  background-color: white;
 }
 
 .modal-header{
-  background-color: mediumblue;
+  background-color: white;
   color: white;
 }
 
 .close{
-  color: white;
+  color: black;
   opacity: 1;
 }
