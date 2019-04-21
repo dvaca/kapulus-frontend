@@ -9,4 +9,5 @@ export class Asistente {
   preinscrito: boolean;
   actualizado: boolean;
   atributos: AtributoAsistente[];
+  nuevo: boolean;
 }

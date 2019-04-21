@@ -3,11 +3,14 @@ import { Asistente } from '../asistente';
 import { RegistroService } from '../registro.service';
 import { CampoEvento } from '../camposevento';
 import { AsistenciaZona } from '../asistenciazona';
-import { Operacion } from '../enums';
+import { Operacion, TipoCorreo } from '../enums';
 import { VariablesEvento } from '../variablesEvento';
 import { Impresion } from '../impresion';
 import { ImpresionService } from '../impresion.service';
 import { Correo } from '../correo';
+import { isUndefined } from 'util';
+import * as jsPDF from 'jspdf'; 
+import html2canvas from 'html2canvas';  
 
 @Component({
   selector: 'app-detalle-asistente',
@@ -30,6 +33,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
   nombreAsistente: string;
   apellidoAsistente: string;
   identificacion: string;
+  public tiposCorreo = TipoCorreo;
 
   constructor(private registroService: RegistroService, private impresionService: ImpresionService, private config: VariablesEvento) { }
 
@@ -44,6 +48,15 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     this.existe = false;
     this.nombreAsistente = "";
     this.apellidoAsistente = "";
+	if(isUndefined(this.asistente)){
+      this.nuevo = true;
+    }else{
+      if(this.asistente.nuevo){
+        this.nuevo = true;
+      }else{
+        this.nuevo = false;
+      }
+    }
     if(!this.nuevo){
       let asistencia = new AsistenciaZona();
       asistencia.idasistente = this.asistente.id;
@@ -58,10 +71,6 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     let asistencia: AsistenciaZona;
     let asistenteExistente: Asistente;
     this.existe = false;
-    if(registrar){
-      this.asistente.registrado = true;
-    }
-    //this.registroService.guardarAsistenteMock(this.asistente);
     if(this.nuevo){
       this.registroService.getAsistenteImpresion(this.asistente.identificacion).subscribe(
         x => {asistenteExistente = x; 
@@ -72,8 +81,12 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
             this.errores.push("Lo sentimos. El asistente " + this.asistente.identificacion + " ya fue registrado previamente");
           }
         if(this.existe == false ){
+		  if(registrar){
+            this.asistente.registrado = true;
+          }
           this.registroService.addAsistente(this.asistente)
           .subscribe(asistente => {this.asistente = asistente;
+		    this.nuevo = false;
             asistencia = new AsistenciaZona();
             asistencia.idasistente = this.asistente.id;
             if(registrar){
@@ -110,6 +123,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
       });
     }else{
       this.asistente.actualizado = true;
+	  if(registrar){
+        this.asistente.registrado = true;
+      }
       this.registroService.updAsistente(this.asistente)
       .subscribe(asistente => {this.asistente = asistente;
         asistencia = new AsistenciaZona();
@@ -205,38 +221,31 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     this.habeasDataAceptado = true;
   }
 
-  enviarCorreo(terminar: boolean): void{
+  enviarCorreo(terminar: boolean, tipoCorreo: TipoCorreo): void{
     var plantilla;
     let correo = new Correo();
     this.terminado = terminar;
     if(this.origen == "online"){
       plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
-      if(this.config.idevento == 7){
-        correo.subject = "Este es tu Código de ingreso a +SUPERIOR Education Forum";
-      }else{
-        correo.subject = "Confirmación de Registro - Congreso de Actualización en Propiedad Horizontal";
-      }
+      correo.subject = "Bienvenido a la ceremonia: Premio de Periodismo Regional";
     }else{
-      plantilla = document.getElementById("plantillaCorreoInvitacion").innerHTML;
+      if(tipoCorreo == TipoCorreo.Invitacion){
+        plantilla = document.getElementById("plantillaCorreoInvitacion").innerHTML;
+        correo.subject = "Conozca a los ganadores del Premio de Periodismo Regional Semana - Grupo Argos este 9 de mayo en Medellín.";
+      }else{
+        plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
+        correo.subject = "Bienvenido a la ceremonia: Premio de Periodismo Regional";
+      }
+      /*
       if(this.config.idevento == 5){
         correo.subject = "Invitación - Congreso de Actualización en Propiedad Horizontal";
       }else{
-		if(this.config.idevento == 8){
-			correo.subject = "Invitación - Taller de la Cerveza";
-		}else{
-			if(this.config.idevento == 9){
-				correo.subject = "Invitación - Taller Orquídeas & Suculentas";
-			}else{	  
-				if(this.config.idevento == 7){
-					correo.subject = "Este es tu Código de ingreso a +SUPERIOR Education Forum";
-				}else{
-					correo.subject = "Invitación - Orquídeas & Suculentas & Taller de la Cerveza";
-				}
-			}
-		}  
+        correo.subject = "Invitación - Orquídeas & Suculentas & Taller de la Cerveza";
       }
+      */
     }
     correo.html = plantilla;
+    correo.tipo = tipoCorreo;
     this.registroService.getAsistenteAtributo(this.asistente.identificacion, "EMAIL").subscribe(
       email => {
         correo.email = email.valor;

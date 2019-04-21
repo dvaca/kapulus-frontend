@@ -31,3 +31,8 @@ export enum Operacion {
   Entrega = 10,
   Correo = 11
 }
+
+export enum TipoCorreo {
+  Confirmacion,
+  Invitacion
+}

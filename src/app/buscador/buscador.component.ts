@@ -86,10 +86,12 @@ export class BuscadorComponent implements OnInit {
   onSelect(asistente: Asistente): void {
     this.selectedAsistente = asistente;
     this.nuevoRegistro = false;
+	this.selectedAsistente.nuevo = false;
   }
 
   ocultar(nuevoAsistente: boolean): void {
     this.popUpNuevo = false;
+	this.nuevoRegistro = false;
     if(nuevoAsistente){
       this.selectedAsistente = new Asistente();
       this.selectedAsistente.registrado = false;
@@ -105,7 +107,9 @@ export class BuscadorComponent implements OnInit {
       if(! isNaN(parseInt(this.criterioBusqueda))){
         this.selectedAsistente.identificacion = parseInt(this.criterioBusqueda);
       }
-      this.nuevoRegistro = true;
+      this.selectedAsistente.nuevo = true;
+    }else{
+      this.selectedAsistente.nuevo = false;
     }
   }
 

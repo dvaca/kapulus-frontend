@@ -1,0 +1,50 @@
+<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
+<div *ngIf="mensajes" class="row">
+  <div class="col-lg-4">
+  </div>
+  <div class="col-lg-4">
+      <div *ngFor="let mensaje of mensajes" class="alert alert-success" role="alert">
+          {{mensaje}}
+      </div>
+      <div *ngFor="let error of errores" class="alert alert-danger" role="alert">
+          {{error}}
+      </div>
+  </div>
+  <div class="col-lg-4">
+  </div>
+</div>
+<div class="modal fade show" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" show="true"
+  focus="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">Acceso Clientes</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span
+            aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-4">
+            <form>
+              <div class="form-group">
+                <label for="lblUsuario">Usuario</label>
+                <input type="text" [(ngModel)]="usuario.nombre" class="form-control" id="txtUsuario" name="txtUsuario"
+                  placeholder="Digite su usuario">
+              </div>
+              <div class="form-group">
+                <label for="lblContrasena">Contraseña</label>
+                <input type="password" class="form-control" [(ngModel)]="usuario.contrasena" id="txtContrasena"
+                  placeholder="Digite su contraseña" name="txtContrasena">
+              </div>
+              <button type="submit" class="btn btn-primary" (click)="ingresar();" data-dismiss="modal">Ingresar</button>
+            </form>
+          </div>
+          <div class="col-lg-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

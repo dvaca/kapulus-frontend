@@ -4,9 +4,11 @@ import { BuscadorComponent } from './buscador/buscador.component';
 import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 import { ControlAccesoComponent } from './control-acceso/control-acceso.component';
 import { RegistroOnlineComponent } from './registro-online/registro-online.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/registro-online', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   { path: 'callcenter_token_9B0I4J8R2T', component: BuscadorComponent },
   { path: 'callcenter_token_6J2N4P6Q3K', component: BuscadorComponent },
   { path: 'callcenter_token_3N8P3H6V1L', component: BuscadorComponent },

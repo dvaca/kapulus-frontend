@@ -1,79 +1,34 @@
-<div id="plantillaCorreoConfirmacion" class="invisible collapse">
-  <div *ngIf="variables.idevento == 7">
-    <div style="text-align:center">
-      <img src="cid:logoplussuperior" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-        alt="+SUPERIOR">
-    </div>  
-    <div>
-      Hola
-      <b>{{nombreAsistente}}&nbsp;{{apellidoAsistente}}</b>,
-      <br>
-      <br>
-      <div style="text-align:center">
-        <img src="cid:pruebaqr" class="img-fluid" style="max-width: 25%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-          alt="QR">
-        <qr-code [value]="identificacion" [size]="300"></qr-code>
-        <br> {{identificacion}}
-      </div>
-      <br>
-      <br> Ya haces parte del cambio, este es tu código QR el cual debes presentar junto con tu documento de identidad al momento de ingresar a +SUPERIOR Education Forum.
-      <br>  
-	    <br><b>Fecha:</b> Sábado 23 de marzo de 2019
-	    <br><b>Lugar:</b> Hotel Sonesta
-	    <br><b>Hora:</b> 11:00 AM a 7:00 PM
-	    <br><b>Dirección:</b> <a href="https://maps.google.com/?q=Carrera+15A+%23125-26&entry=gmail&source=g">Carrera 15A #125-26</a>
-	    <br>
-      <br> <b>#yosoy4punto0</b>
-      <br>
-      <div style="text-align:center">
-        <img src="cid:invitacionplusuperior" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-          alt="+SUPERIOR EDUCATION FORUM">
-      </div>
-      <br>
-      <hr />
-      <br>
-      <br>Este formulario de registro y confirmación es un producto de:
-      <a href="http://www.kapulusinternational.com">www.kapulusinternational.com</a>
-      <br>
-      <hr />
-    </div>
+<div id="plantillaCorreoConfirmacion" class="invisible collapse" style="width: 100%; height: 100vh; text-align: center;">
+  <div style="text-align: center;">
+    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:30 a.m.</b>
   </div>
-  <div *ngIf="variables.idevento != 7">
   <div style="text-align:center">
-    <img src="cid:logosemana" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-      alt="LEGIS">
+    <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+      alt="Premio de Periodismo Regional">
   </div>
-  <div>
-    Hola
-    <b>{{nombreAsistente}}</b>,
+  <div style="text-align: center;">
+    <b>ESTIMADO(A)</b>
     <br>
-    <br> No olvides presentar este código QR junto con tú cédula al ingreso. Puedes llevarlo en tú celular o impreso. Te lo pedirán a la entrada y será indispensable para el acceso al evento. Recuerda que este código será válido una vez se registre tu pago.
+    <b>{{nombreAsistente}}</b>
+    <br>
+    <br> Le invitamos a presentar este código en el registro del foro para agilizar su proceso de acreditación.
     <br>
     <br>
     <div style="text-align:center">
-      <img src="cid:pruebaqr" class="img-fluid" style="max-width: 25%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+      <img src="cid:qr" class="img-fluid" style="max-width: 25%; height: auto; padding-bottom: 20px; padding-top: 20px;"
         alt="QR">
-      <qr-code [value]="identificacion" [size]="300"></qr-code>
-      <br> {{identificacion}}
+      <qr-code #myQR [value]="identificacion" [size]="300"></qr-code>
+      <!--<br> {{identificacion}}-->
     </div>
     <br>
     <br>
-    <ul>
-      <li>
-        Opción 1: Puedes
-        <b>llevarla impresa</b>. Imprime este correo.
-      </li>
-      <li>
-        Opción 2: Si prefieres
-        <b>llevarla digital</b> utilizando este email, que te permitirá mostrar el código QR desde tu teléfono en el Centro de Convenciones Cafam.
-        Ahorra tiempo, solo presenta este email y ya estará tu registro en el evento. No solo ahorras tiempo sino que cuidas
-        el medio ambiente, imprímelo si es estrictamente necesario.
-      </li>
-    </ul>
+    <b>GRACIAS POR PARTICIPACIÓN</b>
     <br>
-    <br> Es indispensable llevar tu documento de identificación.
     <br>
-    <br> Esta tarjeta es personal e intransferible, de presentarse un caso de duplicidad el evento se reserva el derecho de admisión.
+    <div style="text-align:center">
+      <img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+      alt="Premio de Periodismo Regional">
+    </div>
     <br>
     <hr />
     <br>
@@ -82,94 +37,25 @@
     <br>
     <hr />
   </div>
-  </div>
 </div>
-<div id="plantillaCorreoInvitacion" class="invisible collapse">
-  <div *ngIf="variables.idevento == 5">
-    <div style="text-align:center">
-      <img src="cid:logosemana" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-        alt="LEGIS">
-    </div>
-    Hola
-    <b>{{nombreAsistente}}</b>,
+<div id="plantillaCorreoInvitacion" class="invisible collapse" style="width: 100%; height: 100vh; text-align: center;">
+  <div style="text-align:center">
+    <img src="cid:forossemana" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+      alt="Foros Semana">
+  </div>
+  <div style="text-align: center;">
     <br>
-    <br> Legis te invita al encuentro con expertos en Propiedad Horizontal, para fortalecer y actualizar los conocimientos teorico prácticos integrales de administración.
+    <br>Estimado (a) <b>{{nombreAsistente}}</b>,
     <br>
-    <br> Haz click <b><a href="https://superdirectorios.com/congreso_ph_2019/">aquí</a></b> y encontrarás información ampliada, así como el formulario de inscripción para que hagas parte de este gran evento.
-	<br>	
-    <br> Descarga los archivos adjuntos para mayor información.
+    <br> El próximo jueves 9 de mayo será la ceremonia de la décima segunda edición del Premio de Periodismo Regional Semana - Grupo Argos, en donde se conocerán los ganadores de las categorías: Mejor reportaje escrito, Mejor reportaje en televisión, Mejor reportaje en radio y Mejor fotografía. 
+    <br>
+    <br>También se entregará el premio Amparo Díaz, al mejor medio comunitario, y el Premio Orlando Sierra ‘al coraje de un periodista’.
+    <br>
+    <br>Inscríbase para asistir a la ceremonia que será en Medellín.
     <br>
   </div>
-  <div *ngIf="variables.idevento == 6 || variables.idevento == 8 || variables.idevento == 9">
-    <div style="text-align:center">
-      <img src="cid:logosemana" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-        alt="LEGIS">
-    </div>
-    Hola
-    <b>{{nombreAsistente}}</b>,
-    <br>
-    <br> Legis te invita a los siguientes eventos que se realizarán próximamente en la ciudad de Bogotá.
-    <br>
-    <br> Si deseas asistir a cualquiera de éstos eventos, solo debes dar clic en la imagen correspondiente, e inmediatamente podrás hacer el pago del mismo mediante canales electrónicos.
-    <br>
-    <div style="text-align:center" *ngIf="variables.idevento == 6 || variables.idevento == 9">
-      <a href="https://biz.payulatam.com/L0bfff0CE3099E9" target="_blank">
-        <img src="cid:invitacionflores" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-        alt="TALLER DE ORQUIDEAS Y SUCULENTAS">
-      </a>
-    </div>
-    <br>
-    <div style="text-align:center" *ngIf="variables.idevento == 6 || variables.idevento == 9">
-      <a href="https://biz.payulatam.com/L0bfff0CE3099E9" target="_blank">
-          <img src="http://www.payulatam.com/img-secure-2015/boton_pagar_grande.png" alt="TALLER DE ORQUIDEAS Y SUCULENTAS">
-      </a>
-    </div>
-    <br>
-	<div style="text-align:center" *ngIf="variables.idevento == 6 || variables.idevento == 8">
-      <a href="https://www.catering.com.co/taller-de-cerveza/" target="_blank">
-        <img src="cid:invitacioncerveza" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-        alt="TALLER DE LA CERVEZA">
-      </a>
-    </div>
-    <br>
-  </div>
-  <div *ngIf="variables.idevento == 7">
-    <div style="text-align:center">
-      <img src="cid:logoplussuperior" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-        alt="+SUPERIOR">
-    </div>  
-    <div>
-      Hola
-      <b>{{nombreAsistente}}&nbsp;{{apellidoAsistente}}</b>,
-      <br>
-      <br>
-      <div style="text-align:center">
-        <img src="cid:pruebaqr" class="img-fluid" style="max-width: 25%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-          alt="QR">
-        <qr-code [value]="identificacion" [size]="300"></qr-code>
-        <br> {{identificacion}}
-      </div>
-      <br>
-      <br> Ya haces parte del cambio, este es tu código QR el cual debes presentar junto con tu documento de identidad al momento de ingresar a +SUPERIOR Education Forum.
-      <br>  
-	    <br><b>Fecha:</b> Sábado 23 de marzo de 2019
-	    <br><b>Lugar:</b> Hotel Sonesta
-	    <br><b>Hora:</b> 11:00 AM a 7:00 PM
-	    <br><b>Dirección:</b> <a href="https://maps.google.com/?q=Carrera+15A+%23125-26&entry=gmail&source=g">Carrera 15A #125-26</a>
-	    <br>
-      <br> <b>#yosoy4punto0</b>
-      <br>
-      <div style="text-align:center">
-        <img src="cid:invitacionplusuperior" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-          alt="+SUPERIOR EDUCATION FORUM">
-      </div>
-      <br>
-      <hr />
-      <br>
-      <br>Este formulario de registro y confirmación es un producto de:
-      <a href="http://www.kapulusinternational.com">www.kapulusinternational.com</a>
-      <br>
-      <hr />
-    </div>
+  <div style="text-align:center">
+    <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+    alt="Premio de Periodismo Regional">
   </div>
 </div>
