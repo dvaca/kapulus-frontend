@@ -1,3 +1,5 @@
+import { TipoCorreo } from "./enums";
+
 export class Correo {
   html: string;
   email: string;
