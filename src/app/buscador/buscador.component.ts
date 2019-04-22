@@ -44,6 +44,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_orquideas'){
       this.cargarEvento(9, 8);
     }
+	if(url == 'callcenter_registro_semana'){
+      this.cargarEvento(10, 9);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
