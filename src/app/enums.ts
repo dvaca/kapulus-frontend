@@ -29,7 +29,8 @@ export enum Operacion {
   Entrada = 8,
   Salida = 9,
   Entrega = 10,
-  Correo = 11
+  CorreoInvitacion = 11,
+  CorreoConfirmacion = 12
 }
 
 export enum TipoCorreo {

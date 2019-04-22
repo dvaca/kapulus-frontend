@@ -252,7 +252,11 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
         this.registroService.enviarCorreo(correo).subscribe(mensaje =>{
           let asistencia = new AsistenciaZona();
           asistencia.idasistente = this.asistente.id;
-          asistencia.idoperacion = Operacion.Correo;
+          if(tipoCorreo == TipoCorreo.Invitacion){
+            asistencia.idoperacion = Operacion.CorreoInvitacion;
+          }else{
+            asistencia.idoperacion = Operacion.CorreoConfirmacion;
+          }
           asistencia.idzona = this.config.idZonaRegistro;
           this.registroService.addAsistenciaZona(asistencia)
           .subscribe(asistenciaZona => {});
