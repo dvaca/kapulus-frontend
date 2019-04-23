@@ -53,6 +53,7 @@ export class RegistroOnlineComponent implements OnInit {
     this.mensajes = [];
     this.errores = [];
 	this.nuevoAsistente = new Asistente();
+	this.nuevoAsistente.nuevo = true;
     criterio = criterio.trim();
     if (!criterio) { 
       this.errores.push("Debe ingresar un número");
@@ -80,6 +81,7 @@ export class RegistroOnlineComponent implements OnInit {
         this.nuevoAsistente.identificacion = parseInt(criterio);
         this.nuevoAsistente.registrado = false;
         this.nuevoAsistente.preinscrito = false;
+		this.nuevoAsistente.nuevo = true;
         this.nuevoAsistente.atributos = new Array<AtributoAsistente>();
         this.camposEvento.forEach(campoEvento => {
           var atributo = new AtributoAsistente();  
@@ -90,6 +92,7 @@ export class RegistroOnlineComponent implements OnInit {
       }
       else{
         this.nuevoAsistente = asistente;
+		this.nuevoAsistente.nuevo = false;
       }
     });  
   }

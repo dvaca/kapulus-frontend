@@ -57,7 +57,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
         this.nuevo = false;
       }
     }
-    if(!this.nuevo){
+    if(!this.nuevo && !isUndefined(this.asistente)){
       let asistencia = new AsistenciaZona();
       asistencia.idasistente = this.asistente.id;
       asistencia.idoperacion = Operacion.Busqueda;
