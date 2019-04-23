@@ -31,6 +31,9 @@ export class RegistroOnlineComponent implements OnInit {
     if(url == 'registro-plus-superior'){
       this.cargarEvento(7, 6);
     }
+	if(url == 'registro-foros-semana'){
+      this.cargarEvento(10, 9);
+    }
     this.cargarCamposEvento();
 	this.nuevo = true;
   }

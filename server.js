@@ -14,6 +14,7 @@ app.use("/callcenter_token_9B0I4J8R2T", express.static(__dirname+'/dist'));
 app.use("/callcenter_token_6J2N4P6Q3K", express.static(__dirname+'/dist'));
 app.use("/callcenter_token_3N8P3H6V1L", express.static(__dirname+'/dist'));
 app.use("/registro-plus-superior", express.static(__dirname+'/dist'));
+app.use("/registro-foros-semana", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_cerveza", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_orquideas", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_cerveza", express.static(__dirname+'/dist'));
