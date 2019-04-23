@@ -23,7 +23,8 @@ const routes: Routes = [
   { path: 'callcenter_estadisticas_semana', component: EstadisticasComponent },
   { path: 'control-acceso', component: ControlAccesoComponent },
   { path: 'registro-online', component: RegistroOnlineComponent },
-  { path: 'registro-plus-superior', component: RegistroOnlineComponent }
+  { path: 'registro-plus-superior', component: RegistroOnlineComponent },
+  { path: 'registro-foros-semana', component: RegistroOnlineComponent }
 ]
 
 @NgModule({
