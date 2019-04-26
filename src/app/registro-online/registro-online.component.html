@@ -20,9 +20,9 @@
       <br>
       &nbsp;
     <button id="btnNuevo" class="btn btn-outline-success" type="button" 
-        data-toggle="modal" data-target="#myModal"
         (click)="crearRegistro(txtBusqueda.value);txtBusqueda.value='';">Comenzar
     </button>
+	<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
   </div>
   <div class="col-lg-4">    
   </div>

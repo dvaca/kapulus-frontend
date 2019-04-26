@@ -95,5 +95,6 @@ export class RegistroOnlineComponent implements OnInit {
 		this.nuevoAsistente.nuevo = false;
       }
     });  
+	document.getElementById("openModalButton").click();
   }
 }
