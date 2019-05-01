@@ -234,7 +234,12 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
         correo.subject = "Conozca a los ganadores del Premio de Periodismo Regional Semana - Grupo Argos este 9 de mayo en Medellín.";
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
-        correo.subject = "Bienvenido a la ceremonia: Premio de Periodismo Regional";
+		if(this.config.idevento == 10){
+			correo.subject = "Bienvenido a la ceremonia: Premio de Periodismo Regional";	
+		}
+		if(this.config.idevento == 11){
+			correo.subject = "Bienvenido al Foro ‘Ciudadanía y participación: El rol de los bolivarenses en La democracia’";	
+		}
       }
       /*
       if(this.config.idevento == 5){
