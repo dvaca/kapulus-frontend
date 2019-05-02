@@ -15,7 +15,12 @@
     <br>
     <b>{{nombreAsistente}}&nbsp;{{apellidoAsistente}}</b>
     <br>
+	<div *ngIf="variables.idevento == 10">
     <br> Le invitamos a presentar este código en el registro de la ceremonia para agilizar su proceso de acreditación.
+	</div>
+	<div *ngIf="variables.idevento == 11">
+    <br> Le invitamos a presentar este código en el registro del Foro para agilizar su proceso de acreditación.
+	</div>
     <br>
     <br>
     <div style="text-align:center">
