@@ -5,6 +5,7 @@ import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 import { ControlAccesoComponent } from './control-acceso/control-acceso.component';
 import { RegistroOnlineComponent } from './registro-online/registro-online.component';
 import { LoginComponent } from './login/login.component';
+import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-local.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/registro-online', pathMatch: 'full' },
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'control-acceso', component: ControlAccesoComponent },
   { path: 'registro-online', component: RegistroOnlineComponent },
   { path: 'registro-plus-superior', component: RegistroOnlineComponent },
-  { path: 'registro-foros-semana', component: RegistroOnlineComponent }
+  { path: 'registro-foros-semana', component: RegistroOnlineComponent },
+  { path: 'evento_estadisticas_semana', component: EstadisticasLocalComponent }
 ]
 
 @NgModule({

@@ -23,6 +23,7 @@ import { ImpresionService } from './impresion.service';
 import { RegistroOnlineComponent } from './registro-online/registro-online.component';
 import { CorreoComponent } from './correo/correo.component';
 import { LoginComponent } from './login/login.component';
+import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-local.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { LoginComponent } from './login/login.component';
     ControlAccesoComponent,
     RegistroOnlineComponent,
     CorreoComponent,
-    LoginComponent
+    LoginComponent,
+    EstadisticasLocalComponent
   ],
   imports: [
     BrowserModule,

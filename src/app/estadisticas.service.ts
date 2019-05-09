@@ -6,6 +6,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { VariablesEvento } from './variablesEvento';
 import { CampoEvento } from './camposevento';
 import { Zona } from './zona';
+import { Estadistica } from './estadistica';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class EstadisticasService {
@@ -84,6 +89,15 @@ export class EstadisticasService {
       );
     }
   
+    //#endregion
+	//#region sincronizar
+    getEstadisticasLocal(): Observable<Estadistica[]>{
+      const url = `${this.backendUrl}/sincronizar/estadisticas/${this.config.idevento}`;
+      return this.http.get<Estadistica[]>(url)
+      .pipe(
+        catchError(this.handleError<Estadistica[]>('getEstadisticasLocal'))
+      );
+    }
     //#endregion
 
     private handleError<T> (operation = 'operation', result?: T) {

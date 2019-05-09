@@ -23,6 +23,7 @@ app.use("/callcenter_registro_semana", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_cartagena", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_cartagena", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 
 //app.get('/*', function(req,res) {
     
