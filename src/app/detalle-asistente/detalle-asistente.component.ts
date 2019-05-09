@@ -235,7 +235,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
 		if(this.config.idevento == 10){
-			correo.subject = "Bienvenido a la ceremonia: Premio de Periodismo Regional";	
+			correo.subject = "Bienvenido al Premio de Periodismo Regional - No olvide presentar su código QR de acceso";	
 		}
 		if(this.config.idevento == 11){
 			correo.subject = "Bienvenido al Foro ‘Ciudadanía y participación: El rol de los bolivarenses en La democracia’";	
