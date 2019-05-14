@@ -50,6 +50,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_cartagena'){
       this.cargarEvento(11, 10);
     }
+	if(url == 'callcenter_registro_coosalud'){
+      this.cargarEvento(12, 11);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

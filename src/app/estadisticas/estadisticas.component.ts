@@ -56,6 +56,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_cartagena'){
       this.cargarEvento(11, 10);
     }
+	if(url == 'callcenter_estadisticas_coosalud'){
+      this.cargarEvento(12, 11);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
