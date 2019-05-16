@@ -53,6 +53,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_coosalud'){
       this.cargarEvento(12, 11);
     }
+	if(url == 'callcenter_registro_coosalud_bquilla'){
+      this.cargarEvento(13, 12);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

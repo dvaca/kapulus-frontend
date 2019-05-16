@@ -6,9 +6,12 @@
   <div *ngIf="variables.idevento == 11" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m.</b> 
   </div>
+  <div *ngIf="variables.idevento == 13" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 9:00 a.m.</b> 
+  </div>
   <div style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-      alt="Premio de Periodismo Regional">
+      alt="Rendición de cuentas Coosalud">
   </div>
   <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>ESTIMADO(A)</b>
@@ -20,6 +23,9 @@
 	</div>
 	<div *ngIf="variables.idevento == 11">
     <br> Le invitamos a presentar este código en el registro del Foro para agilizar su proceso de acreditación.
+	</div>
+	<div *ngIf="variables.idevento == 13">
+    <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
 	</div>
     <br>
     <br>
@@ -36,7 +42,7 @@
     <br>
     <div style="text-align:center">
       <img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-      alt="Premio de Periodismo Regional">
+      alt="Rendición de cuentas Coosalud">
     </div>
 <!--
     <br>
