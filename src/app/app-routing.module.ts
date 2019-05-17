@@ -32,7 +32,8 @@ const routes: Routes = [
   { path: 'registro-online', component: RegistroOnlineComponent },
   { path: 'registro-plus-superior', component: RegistroOnlineComponent },
   { path: 'registro-foros-semana', component: RegistroOnlineComponent },
-  { path: 'evento_estadisticas_semana', component: EstadisticasLocalComponent }
+  { path: 'evento_estadisticas_semana', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_coosalud', component: EstadisticasLocalComponent }
 ]
 
 @NgModule({
