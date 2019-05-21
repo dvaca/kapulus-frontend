@@ -68,6 +68,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_autonomia_medica'){
       this.cargarEvento(15, 14);
     }
+	if(url == 'callcenter_estadisticas_columnistas'){
+      this.cargarEvento(16, 15);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }

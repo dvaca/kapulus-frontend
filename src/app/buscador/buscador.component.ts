@@ -62,6 +62,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_autonomia_medica'){
       this.cargarEvento(15, 14);
     }
+	if(url == 'callcenter_registro_columnistas'){
+      this.cargarEvento(16, 15);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

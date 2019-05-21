@@ -5,7 +5,7 @@
 	<div class="col-lg-1">
 	</div>
 	<div class="col-lg-5" style="text-align:left">    
-		<div *ngIf="config.variables.idevento != 12 && config.variables.idevento != 13 && config.variables.idevento != 14"> 
+		<div *ngIf="config.variables.idevento != 12 && config.variables.idevento != 13 && config.variables.idevento != 14 && config.variables.idevento != 16"> 
 			<!--<img src="../assets/resources/LogoLegis.png" class="img-fluid" style="max-width: 25%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
 				alt="LEGIS">-->
 			<img src="../assets/resources/logoSemana.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
@@ -16,6 +16,10 @@
 				alt="LEGIS">-->
 			<img src="../assets/resources/logoCoosalud.png" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
 				alt="COOSALUD">
+		</div>
+		<div *ngIf="config.variables.idevento == 16"> 
+			<img src="../assets/resources/BannerFormulario.jpg" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
+				alt="Más en vivo que nunca">
 		</div>
 	</div>
 	<div class="col-lg-5" style="text-align:right">    

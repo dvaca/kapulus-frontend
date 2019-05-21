@@ -240,6 +240,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 15){
 			correo.subject = "Invitación al foro: LA RESPONSABILIDAD DE LOS ACTORES DEL SISTEMA DE SALUD: AUTONOMÍA MÉDICA, CALIDAD Y AUTORREGULACIÓN";
 		}
+		if(this.config.idevento == 16){
+			correo.subject = " Acompañe a los columnistas de Semana este 26 de mayo";
+		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
 		if(this.config.idevento == 10){
@@ -253,6 +256,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		}
 		if(this.config.idevento == 14){
 			correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Bucaramanga";	
+		}
+		if(this.config.idevento == 16){
+			correo.subject = "Bienvenido al Foro: Más en vivo que nunca";	
 		}
       }
       /*

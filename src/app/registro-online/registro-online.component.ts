@@ -40,6 +40,9 @@ export class RegistroOnlineComponent implements OnInit {
 	if(url == 'registro-autonomia-medica'){
       this.cargarEvento(15, 14);
     }
+	if(url == 'registro-foro-columnistas'){
+      this.cargarEvento(16, 15);
+    }
     this.cargarCamposEvento();
 	this.nuevo = true;
   }
