@@ -103,11 +103,11 @@ export class RegistroOnlineComponent implements OnInit {
         this.nuevoAsistente = asistente;
 		this.nuevoAsistente.nuevo = false;
       }
+	  if(this.config.variables.idevento == 16 && !this.nuevo){
+		document.getElementById("openModalButton").click();
+	  }else{
+		document.getElementById("openModalButton").click();
+	  }
     });  
-	if(this.config.variables.idevento == 16 && !this.nuevo){
-		document.getElementById("openModalButton").click();
-	}else{
-		document.getElementById("openModalButton").click();
-	}
   }
 }
