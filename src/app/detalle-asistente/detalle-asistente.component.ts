@@ -96,7 +96,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
             }
             asistencia.idzona = this.config.idZonaRegistro;
 			var campo = "NOMBRE COMPLETO";
-			if(this.config.idEvento == 16){
+			if(this.config.idevento == 16){
 				campo = "NOMBRE COMPLETO";
 			}else{
 				campo = "PRIMER NOMBRE";	
