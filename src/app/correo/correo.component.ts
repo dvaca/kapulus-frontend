@@ -22,10 +22,18 @@ export class CorreoComponent implements OnInit {
 
   ngOnChanges(){
 	if(isUndefined(this.nombreAsistente)){
+		this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE COMPLETO").subscribe(
+        nombre => {
+          this.nombreAsistente = nombre.valor;
+      });
+	  if(this.variables.idevento == 16){
+		  
+	  }else{
       this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
         nombre => {
           this.nombreAsistente = nombre.valor;
       });
+	  }
     }
     if(isUndefined(this.apellidoAsistente)){
       this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
