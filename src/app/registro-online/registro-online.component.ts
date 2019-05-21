@@ -34,6 +34,12 @@ export class RegistroOnlineComponent implements OnInit {
 	if(url == 'registro-foros-semana'){
       this.cargarEvento(10, 9);
     }
+	if(url == 'registro-coosalud-bucaramanga'){
+      this.cargarEvento(14, 13);
+    }
+	if(url == 'registro-autonomia-medica'){
+      this.cargarEvento(15, 14);
+    }
     this.cargarCamposEvento();
 	this.nuevo = true;
   }

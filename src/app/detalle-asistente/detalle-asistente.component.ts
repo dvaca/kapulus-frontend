@@ -231,7 +231,15 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     }else{
       if(tipoCorreo == TipoCorreo.Invitacion){
         plantilla = document.getElementById("plantillaCorreoInvitacion").innerHTML;
-        correo.subject = "Conozca a los ganadores del Premio de Periodismo Regional Semana - Grupo Argos este 9 de mayo en Medellín.";
+		if(this.config.idevento == 10){
+			correo.subject = "Conozca a los ganadores del Premio de Periodismo Regional Semana - Grupo Argos este 9 de mayo en Medellín.";
+		}
+		if(this.config.idevento == 14){
+			correo.subject = "¿Cómo construir un mejor sistema de salud? Entérese este 31 de mayo en Bucaramanga.";
+		}
+		if(this.config.idevento == 15){
+			correo.subject = "Invitación al foro: LA RESPONSABILIDAD DE LOS ACTORES DEL SISTEMA DE SALUD: AUTONOMÍA MÉDICA, CALIDAD Y AUTORREGULACIÓN";
+		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
 		if(this.config.idevento == 10){
@@ -242,6 +250,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		}
 		if(this.config.idevento == 13){
 			correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Barranquilla";	
+		}
+		if(this.config.idevento == 14){
+			correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Bucaramanga";	
 		}
       }
       /*

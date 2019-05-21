@@ -62,6 +62,12 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_coosalud_bquilla'){
       this.cargarEvento(13, 12);
     }
+	if(url == 'callcenter_estadisticas_coosalud_bmanga'){
+      this.cargarEvento(14, 13);
+    }
+	if(url == 'callcenter_estadisticas_autonomia_medica'){
+      this.cargarEvento(15, 14);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }

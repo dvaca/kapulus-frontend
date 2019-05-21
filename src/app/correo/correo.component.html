@@ -9,6 +9,9 @@
   <div *ngIf="variables.idevento == 13" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 8:30 a.m. para el proceso de registro</b> 
   </div>
+  <div *ngIf="variables.idevento == 14" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 8:30 a.m. para el proceso de registro</b> 
+  </div>
   <div style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
       alt="Rendición de cuentas Coosalud">
@@ -26,6 +29,12 @@
 	</div>
 	<div *ngIf="variables.idevento == 13">
     <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
+	</div>
+	<div *ngIf="variables.idevento == 14">
+    <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
+	</div>
+	<div *ngIf="variables.idevento == 15">
+    <br> Le invitamos a presentar este código en el registro del foro para agilizar su proceso de acreditación.
 	</div>
     <br>
     <br>
@@ -68,18 +77,33 @@
     <br>
     <br>Estimado (a) <b>{{nombreAsistente}}&nbsp;{{apellidoAsistente}}</b>,
     <br>
-    <br> El próximo <b>jueves 9 de mayo</b> será la ceremonia de la décima segunda edición del <b>Premio de Periodismo Regional Semana - Grupo Argos</b>, en donde se conocerán los ganadores de las categorías: Mejor reportaje escrito, Mejor reportaje en televisión, Mejor reportaje en radio y Mejor fotografía. 
-    <br>
-    <br>También se entregará el <b>Premio Amparo Díaz</b>, al <b>mejor medio comunitario</b>, y el <b>Premio Orlando Sierra ‘al coraje de un periodista’</b>.
+	<div *ngIf="variables.idevento == 14">
+		<br> Coosalud lo invita a conocer de qué manera los colombianos podemos construir un mejor sistema de salud el próximo 31 de mayo en Bucaramanga en la Rendición de cuentas a la ciudadanía. 
+	</div>
+	<div *ngIf="variables.idevento == 15">
+		<br> Foros Semana y ABBVIE le invitan al foro <b>“LA RESPONSABILIDAD DE LOS ACTORES DEL SISTEMA DE SALUD: AUTONOMÍA MÉDICA, CALIDAD Y AUTORREGULACIÓN</b> que se llevará a cabo el miércoles <b>5 de junio de 2019 en Bogotá.</b> Con el objetivo de analizar e invitar a la reflexión sobre la necesidad de proteger la autonomía médica y que esta prevalezca en momentos de presión financiera.
+	</div>
     <br>
   </div>
   <div style="text-align:center">
 	<br><b>Clic en la imagen para confirmar su asistencia</b>
 	<br>
-    <a href="https://kapulus.herokuapp.com/registro-foros-semana" target="_blank">
-      <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-        alt="Premio de Periodismo Regional">
-    </a>
+	<div *ngIf="variables.idevento == 14">
+		<!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSe5Sv5cbmCD4s4bztrgKR216fIyN3Mz6z-3IIUPvqs9ad5Phg/viewform?vc=0&c=0&w=1" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Coosalud">
+		</a>-->
+		<a href="https://kapulus.herokuapp.com/registro-coosalud-bucaramanga" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Coosalud">
+		</a>
+	</div>
+	<div *ngIf="variables.idevento == 15">
+		<a href="https://kapulus.herokuapp.com/registro-autonomia-medica" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Foro Autonomía Médica">
+		</a>
+	</div>
   </div>
   </div>  
 </div>

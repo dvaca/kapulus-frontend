@@ -15,6 +15,8 @@ app.use("/callcenter_token_6J2N4P6Q3K", express.static(__dirname+'/dist'));
 app.use("/callcenter_token_3N8P3H6V1L", express.static(__dirname+'/dist'));
 app.use("/registro-plus-superior", express.static(__dirname+'/dist'));
 app.use("/registro-foros-semana", express.static(__dirname+'/dist'));
+app.use("/registro-coosalud-bucaramanga", express.static(__dirname+'/dist'));
+app.use("/registro-autonomia-medica", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_cerveza", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_orquideas", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_cerveza", express.static(__dirname+'/dist'));
@@ -26,9 +28,14 @@ app.use("/callcenter_estadisticas_cartagena", express.static(__dirname+'/dist'))
 app.use("/callcenter_registro_coosalud", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_coosalud", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_coosalud_bquilla", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_coosalud_bmanga", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_autonomia_medica", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_coosalud_bquilla", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_coosalud_bmanga", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_autonomia_medica", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_coosalud_bmanga", express.static(__dirname+'/dist'));
 
 //app.get('/*', function(req,res) {
     
