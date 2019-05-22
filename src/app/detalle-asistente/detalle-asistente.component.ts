@@ -58,22 +58,26 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
       }
     }
     if(!this.nuevo && !isUndefined(this.asistente)){
+	  this.registroService.getAsistenteImpresion(this.asistente.identificacion).subscribe(
+		x => {this.asistenteImpresion = x; 
+		  this.asistenteImpresion.atributos.forEach(atr => {
+			atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
+			if(atr.nombre =="PRIMER NOMBRE"){
+				this.nombreAsistente = atr.valor;
+				alert(this.nombreAsistente);
+			}
+			if(atr.nombre =="PRIMER APELLIDO"){
+				this.apellidoAsistente = atr.valor;
+			}
+		  });
+		}
+	   );
       let asistencia = new AsistenciaZona();
       asistencia.idasistente = this.asistente.id;
       asistencia.idoperacion = Operacion.Busqueda;
       asistencia.idzona = this.config.idZonaRegistro;
       this.registroService.addAsistenciaZona(asistencia)
       .subscribe(asistenciaZona => {});
-	  this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
-		nombre => {
-		  this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
-			apellido => {
-			  this.nombreAsistente = nombre.valor;
-			  this.apellidoAsistente = apellido.valor;
-			}
-		  );
-		}
-	  );
     }
   }
 
