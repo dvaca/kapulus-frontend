@@ -156,6 +156,8 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
                 apellido => {
                   this.nombreAsistente = nombre.valor;
                   this.apellidoAsistente = apellido.valor;
+				  alert(this.nombreAsistente);
+				  alert(this.apellidoAsistente);
 					        this.identificacion = this.asistente.identificacion.toString();
                       this.confirmado = true;
                     });    
