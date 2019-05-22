@@ -306,7 +306,8 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     this.registroService.getAsistenteAtributo(this.asistente.identificacion, "EMAIL").subscribe(
       email => {
         correo.email = email.valor;
-        //this.registroService.enviarCorreo(correo).subscribe(mensaje =>{
+		if(terminar){
+		//this.registroService.enviarCorreo(correo).subscribe(mensaje =>{
           let asistencia = new AsistenciaZona();
           asistencia.idasistente = this.asistente.id;
           if(tipoCorreo == TipoCorreo.Invitacion){
@@ -317,7 +318,21 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
           asistencia.idzona = this.config.idZonaRegistro;
           this.registroService.addAsistenciaZona(asistencia)
           .subscribe(asistenciaZona => {});
-      //});
+		//});	
+		}else{
+          this.registroService.enviarCorreo(correo).subscribe(mensaje =>{
+          let asistencia = new AsistenciaZona();
+          asistencia.idasistente = this.asistente.id;
+          if(tipoCorreo == TipoCorreo.Invitacion){
+            asistencia.idoperacion = Operacion.CorreoInvitacion;
+          }else{
+            asistencia.idoperacion = Operacion.CorreoConfirmacion;
+          }
+          asistencia.idzona = this.config.idZonaRegistro;
+          this.registroService.addAsistenciaZona(asistencia)
+          .subscribe(asistenciaZona => {});
+		  });
+		}
     });
   }
 }
