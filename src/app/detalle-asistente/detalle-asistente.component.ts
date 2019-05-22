@@ -233,7 +233,12 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     this.terminado = terminar;
     if(this.origen == "online"){
       plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
-      correo.subject = "Bienvenido a la ceremonia: Premio de Periodismo Regional";
+	  if(this.config.idevento == 15){
+		correo.subject = "Bienvenido a la ceremonia: Premio de Periodismo Regional";
+	  }
+	  if(this.config.idevento == 16){
+		correo.subject = "Bienvenido al conversatorio 'Más en vivo que nunca'";
+	  }
     }else{
       if(tipoCorreo == TipoCorreo.Invitacion){
         plantilla = document.getElementById("plantillaCorreoInvitacion").innerHTML;
