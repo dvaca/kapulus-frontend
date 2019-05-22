@@ -23,8 +23,8 @@ export class CorreoComponent implements OnInit {
   ngOnChanges(){
 	  if(!isUndefined(this.asistente)){
 	  this.registroService.getAsistenteImpresion(this.asistente.identificacion).subscribe(
-		x => {this.asistenteImpresion = x; 
-		  this.asistenteImpresion.atributos.forEach(atr => {
+		x => {
+		  x.atributos.forEach(atr => {
 			if(atr.nombre =="PRIMER NOMBRE"){
 				this.nombreAsistente = atr.valor;
 			}
