@@ -95,12 +95,14 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
               asistencia.idoperacion = Operacion.Creacion;
             }
             asistencia.idzona = this.config.idZonaRegistro;
+			/*
 			var campo = "NOMBRE COMPLETO";
 			if(this.config.idevento == 16){
 				campo = "NOMBRE COMPLETO";
 			}else{
 				campo = "PRIMER NOMBRE";	
 			}
+			*/
             this.registroService.addAsistenciaZona(asistencia)
             .subscribe(asistenciaZona => {
               this.registroService.getAsistenteImpresion(this.asistente.identificacion).subscribe(
@@ -108,7 +110,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
                       this.asistenteImpresion.atributos.forEach(atr => {
                         atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
                       });
-                      this.registroService.getAsistenteAtributo(this.asistente.identificacion, campo).subscribe(
+                      this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
                         nombre => {
                           this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
                             apellido => {
