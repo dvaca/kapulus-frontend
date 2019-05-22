@@ -25,7 +25,6 @@ export class CorreoComponent implements OnInit {
 	  this.registroService.getAsistenteImpresion(this.asistente.identificacion).subscribe(
 		x => {this.asistenteImpresion = x; 
 		  this.asistenteImpresion.atributos.forEach(atr => {
-			atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
 			if(atr.nombre =="PRIMER NOMBRE"){
 				this.nombreAsistente = atr.valor;
 			}
