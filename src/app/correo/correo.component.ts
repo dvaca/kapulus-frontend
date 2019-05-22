@@ -33,8 +33,6 @@ export class CorreoComponent implements OnInit {
           this.apellidoAsistente = apellido.valor;
       });
     }
-	alert(this.apellidoAsistente);
-	alert(this.nombreAsistente);
   }
 
 }

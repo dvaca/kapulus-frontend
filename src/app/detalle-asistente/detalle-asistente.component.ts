@@ -64,6 +64,16 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
       asistencia.idzona = this.config.idZonaRegistro;
       this.registroService.addAsistenciaZona(asistencia)
       .subscribe(asistenciaZona => {});
+	  this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
+		nombre => {
+		  this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
+			apellido => {
+			  this.nombreAsistente = nombre.valor;
+			  this.apellidoAsistente = apellido.valor;
+			}
+		  );
+		}
+	  );
     }
   }
 
