@@ -64,7 +64,6 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 			atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
 			if(atr.nombre =="PRIMER NOMBRE"){
 				this.nombreAsistente = atr.valor;
-				alert(this.nombreAsistente);
 			}
 			if(atr.nombre =="PRIMER APELLIDO"){
 				this.apellidoAsistente = atr.valor;

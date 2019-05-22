@@ -30,7 +30,6 @@ export class CorreoComponent implements OnInit {
 			}
 			if(atr.nombre =="PRIMER APELLIDO"){
 				this.apellidoAsistente = atr.valor;
-				alert(this.apellidoAsistente);
 			}
 		  });
 		}
@@ -48,7 +47,6 @@ export class CorreoComponent implements OnInit {
           this.apellidoAsistente = apellido.valor;
       });
     }
-	alert(this.apellidoAsistente);
   }
 
 }
