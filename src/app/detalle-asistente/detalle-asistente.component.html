@@ -37,11 +37,11 @@
                     </div>
                     <div  class="col-lg-4" style="padding: 5% 0;">
 					  <div *ngIf="terminado == true" class="alert alert-success" role="alert">Registro exitoso.</div>
-					  <div *ngIf="config.idevento != 12 && config.idevento != 13 && config.idevento != 14 && config.idevento != 16"> 
+					  <div *ngIf="config.idevento != 12 && config.idevento != 13 && config.idevento != 14 && config.idevento != 16 && config.idevento != 17"> 
 						<img src="../assets/resources/forosSemanaDetalle.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
                             alt="FOROS SEMANA">
 					  </div>
-					  <div *ngIf="config.idevento == 12 || config.idevento == 13 || config.idevento == 14"> 
+					  <div *ngIf="config.idevento == 12 || config.idevento == 13 || config.idevento == 14 || config.idevento == 17"> 
 						<img src="../assets/resources/logoCoosaludSmall.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
                             alt="COOSALUD">
 					  </div>
@@ -153,9 +153,16 @@ Sus datos personales se almacenarán de manera segura, habiendo tomado todas las
 Por medio de la presente aceptación, Usted declara expresamente que la finalidad de la utilización por SEMANA de sus datos personales, le ha sido plenamente informada y autoriza de modo expreso que sus datos sean compartidos con terceros, debidamente autorizados por SEMANA y entregados conforme a las disposiciones de la ley.
                         </textarea>
                         <br>
+						<div *ngIf="config.idevento == 16">
+                        <span>
+                            Ver políticas de privacidad en <a href="https://www.semana.com/Modal/ModalPolicies.html" target="_blank">https://www.semana.com/</a>
+                        </span>
+						</div>
+						<div *ngIf="config.idevento != 16">
                         <span>
                             Ver políticas de privacidad en <a href="https://www.forossemana.com/habeas-data" target="_blank">https://www.forossemana.com/habeas-data</a>
                         </span>
+						</div>
                     </div>
                 </div>
             </div>

@@ -292,6 +292,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 16){
 			correo.subject = "Bienvenido al conversatorio 'Más en vivo que nunca'";	
 		}
+		if(this.config.idevento == 17){
+			correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Medellín";	
+		}
       }
       /*
       if(this.config.idevento == 5){
