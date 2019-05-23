@@ -283,11 +283,17 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 11){
 			correo.subject = "Bienvenido al Foro ‘Ciudadanía y participación: El rol de los bolivarenses en La democracia’";	
 		}
+		if(this.config.idevento == 12){
+			correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Cartagena";	
+		}
 		if(this.config.idevento == 13){
 			correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Barranquilla";	
 		}
 		if(this.config.idevento == 14){
 			correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Bucaramanga";	
+		}
+		if(this.config.idevento == 15){
+			correo.subject = "Bienvenido al foro ‘LA RESPONSABILIDAD DE LOS ACTORES DEL SISTEMA DE SALUD: AUTONOMÍA MÉDICA, CALIDAD Y AUTORREGULACIÓN’";	
 		}
 		if(this.config.idevento == 16){
 			correo.subject = "Bienvenido al conversatorio 'Más en vivo que nunca'";	
