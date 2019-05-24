@@ -17,7 +17,7 @@ app.use("/registro-plus-superior", express.static(__dirname+'/dist'));
 app.use("/registro-foros-semana", express.static(__dirname+'/dist'));
 app.use("/registro-coosalud-bucaramanga", express.static(__dirname+'/dist'));
 app.use("/registro-autonomia-medica", express.static(__dirname+'/dist'));
-app.use("/registro-foro-columnistas", express.static(__dirname+'/dist'));
+//app.use("/registro-foro-columnistas", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_cerveza", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_orquideas", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_cerveza", express.static(__dirname+'/dist'));
