@@ -4,6 +4,7 @@ import { CampoEvento } from '../camposevento';
 import { EstadisticasService } from '../estadisticas.service';
 import { Estadistica } from '../estadistica';
 import { EstadisticasComponent } from '../estadisticas/estadisticas.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-estadisticas-local',
@@ -17,11 +18,20 @@ export class EstadisticasLocalComponent implements OnInit {
   asistentesRegistrados: number;
   asistentesNoRegistrados: number;
 
-  constructor(private config: ConfiguracionEvento,
+  constructor(private route: ActivatedRoute, 
+			  private config: ConfiguracionEvento,
               private estadisticasService: EstadisticasService) { }
 
   ngOnInit() {
+    let url = this.route.snapshot.url.toString();
+	if(url == 'evento_estadisticas_coosalud_medellin'){
+      this.cargarEvento(17, 16);
+    }
     this.cargarCamposEvento();
+  }
+  
+  cargarEvento(idevento: number, idzona: number): void {
+    this.config.cargarEvento(idevento, idzona);
   }
 
   cargarEstadisticas(): void{

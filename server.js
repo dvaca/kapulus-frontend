@@ -43,6 +43,7 @@ app.use("/callcenter_estadisticas_coosalud_medellin", express.static(__dirname+'
 
 app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_coosalud_medellin", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud_bmanga", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_columnistas", express.static(__dirname+'/dist'));
 

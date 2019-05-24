@@ -45,7 +45,8 @@ const routes: Routes = [
   { path: 'registro-autonomia-medica', component: RegistroOnlineComponent },
   { path: 'evento_estadisticas_semana', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_coosalud', component: EstadisticasLocalComponent },
-  { path: 'evento_estadisticas_coosalud_bmanga', component: EstadisticasLocalComponent }
+  { path: 'evento_estadisticas_coosalud_bmanga', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_coosalud_medellin', component: EstadisticasLocalComponent }
 ]
 
 @NgModule({
