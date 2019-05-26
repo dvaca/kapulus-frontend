@@ -27,6 +27,9 @@ export class EstadisticasLocalComponent implements OnInit {
 	if(url == 'evento_estadisticas_coosalud_medellin'){
       this.cargarEvento(17, 16);
     }
+	if(url == 'evento_estadisticas_columnistas'){
+      this.cargarEvento(16, 15);
+    }	
     this.cargarCamposEvento();
   }
   
