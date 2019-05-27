@@ -43,6 +43,9 @@ export class RegistroOnlineComponent implements OnInit {
 	if(url == 'registro-foro-columnistas'){
       this.cargarEvento(16, 15);
     }
+	if(url == 'registro-foro-mujeres'){
+      this.cargarEvento(18, 17);
+    }
     this.cargarCamposEvento();
 	this.nuevo = true;
   }

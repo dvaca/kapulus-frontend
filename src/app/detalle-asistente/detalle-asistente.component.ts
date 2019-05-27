@@ -260,6 +260,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 	  if(this.config.idevento == 16){
 		correo.subject = "Bienvenido al conversatorio 'Más en vivo que nunca'";
 	  }
+	  if(this.config.idevento == 18){
+		correo.subject = "Bienvenido al foro 'Mujeres Colombianas: Mujeres que inspiran'";
+	  }
     }else{
       if(tipoCorreo == TipoCorreo.Invitacion){
         plantilla = document.getElementById("plantillaCorreoInvitacion").innerHTML;
@@ -274,6 +277,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		}
 		if(this.config.idevento == 16){
 			correo.subject = " Acompañe a los columnistas de Semana este 26 de mayo";
+		}
+		if(this.config.idevento == 18){
+			correo.subject = "Invitación | Foro 'Mujeres colombianas: mujeres que inspiran' en Bogotá el 19 de junio";
 		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
@@ -300,6 +306,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		}
 		if(this.config.idevento == 17){
 			correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Medellín";	
+		}
+		if(this.config.idevento == 18){
+		    correo.subject = "Bienvenido al foro 'Mujeres Colombianas: Mujeres que inspiran'";
 		}
       }
       /*

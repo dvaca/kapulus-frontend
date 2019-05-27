@@ -74,6 +74,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_coosalud_medellin'){
       this.cargarEvento(17, 16);
     }
+	if(url == 'callcenter_estadisticas_mujeres'){
+      this.cargarEvento(18, 17);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }

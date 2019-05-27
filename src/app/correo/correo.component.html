@@ -24,9 +24,11 @@
   <div *ngIf="variables.idevento == 17" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 8:00 a.m. para el proceso de registro</b> 
   </div>
+  <div *ngIf="variables.idevento == 18" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m. para el proceso de registro</b> 
+  </div>
   <div style="text-align:center">
-    <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-      alt="Rendición de cuentas Coosalud">
+    <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
   <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>ESTIMADO(A) </b>
@@ -57,6 +59,9 @@
 	<div *ngIf="variables.idevento == 17">
     <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
 	</div>
+	<div *ngIf="variables.idevento == 18">
+    <br> Le invitamos a presentar este código en el registro del foro para agilizar su proceso de acreditación.
+	</div>
     <br>
     <br>
     <div style="text-align:center">
@@ -78,8 +83,7 @@
 	<br>
 	</div>
     <div style="text-align:center">
-      <img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
-      alt="Rendición de cuentas Coosalud">
+      <img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
     </div>
 <!--
     <br>
@@ -114,6 +118,11 @@
 	<div *ngIf="variables.idevento == 16">
 		<br> Acompañe a los columnistas de Semana este 26 de mayo 
 	</div>
+	<div *ngIf="variables.idevento == 18">
+		<br> En las últimas décadas el ingreso de las mujeres al mundo laboral ha tenido un desarrollo e incremento notable; sin embargo, su crecimiento en cuanto a puestos directivos ha sido más pausado.
+		<br>
+		<br>Con el objetivo de resaltar el rol de las mujeres y su creciente liderazgo profesional y social, Foros Semana, Belcorp, Dinero, Fucsia y Semana Sostenible, con el apoyo de Lenovo, Pepsico y 3M, realizarán el foro “<b>Mujeres Colombianas, Mujeres que inspiran</b>”, el <b>próximo 19 de junio</b> en el <b>hotel JW Marriott de Bogotá</b>.
+	</div>
     <br>
   </div>
   <div style="text-align:center">
@@ -139,6 +148,12 @@
 		<a href="https://kapulus.herokuapp.com/registro-foro-columnistas" target="_blank">
 		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
 			alt="Foro Más en vivo que nunca">
+		</a>
+	</div>
+	<div *ngIf="variables.idevento == 18">
+		<a href="https://kapulus.herokuapp.com/registro-foro-mujeres" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Foro Mujeres colombianas, mujeres que inspiran">
 		</a>
 	</div>
   </div>
