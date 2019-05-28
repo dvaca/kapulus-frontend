@@ -29,6 +29,9 @@ export class EstadisticasLocalComponent implements OnInit {
     }
 	if(url == 'evento_estadisticas_columnistas'){
       this.cargarEvento(16, 15);
+    }
+	if(url == 'evento_estadisticas_desayuno'){
+      this.cargarEvento(19, 18);
     }	
     this.cargarCamposEvento();
   }
