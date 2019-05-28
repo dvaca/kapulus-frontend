@@ -80,6 +80,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_coosalud_cali'){
       this.cargarEvento(20, 20);
     }
+	if(url == 'callcenter_estadisticas_movilidad'){
+      this.cargarEvento(21, 21);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
