@@ -30,6 +30,9 @@
   <div *ngIf="variables.idevento == 21" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m. para el proceso de registro</b> 
   </div>
+  <div *ngIf="variables.idevento == 22" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m.</b> 
+  </div>
   <div style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
@@ -130,7 +133,7 @@
 		<br>Con el objetivo de resaltar el rol de las mujeres y su creciente liderazgo profesional y social, Foros Semana, Belcorp, Dinero, Fucsia y Semana Sostenible, con el apoyo de Lenovo, Pepsico y 3M, realizarán el foro “<b>Mujeres Colombianas, Mujeres que inspiran</b>”, el <b>próximo 19 de junio</b> en el <b>hotel JW Marriott de Bogotá</b>.
 	</div>
 	<div *ngIf="variables.idevento == 20">
-		<br> Pending
+		<br> En la Rendición de Cuentas de Coosalud EPS este 7 de junio conoceremos los resultados del 2018 y debatiremos sobre cómo construir un mejor sistema de salud con el doctor Ramiro Guerrero, Director del Centro de Estudios en protección Social y Economía de la Salud de la Universidad del ICESI.
 	</div>
     <br>
   </div>
@@ -163,6 +166,12 @@
 		<a href="https://kapulus.herokuapp.com/registro-foro-mujeres" target="_blank">
 		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
 			alt="Foro Mujeres colombianas, mujeres que inspiran">
+		</a>
+	</div>
+	<div *ngIf="variables.idevento == 20">
+		<a href="https://kapulus.herokuapp.com/registro-coosalud-cali" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Coosalud">
 		</a>
 	</div>
   </div>

@@ -39,6 +39,9 @@ export class EstadisticasLocalComponent implements OnInit {
 	if(url == 'evento_estadisticas_movilidad'){
       this.cargarEvento(21, 21);
     }	
+	if(url == 'evento_estadisticas_contraloria'){
+      this.cargarEvento(22, 22);
+    }	
     this.cargarCamposEvento();
   }
   

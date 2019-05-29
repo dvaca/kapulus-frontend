@@ -19,6 +19,7 @@ app.use("/registro-coosalud-bucaramanga", express.static(__dirname+'/dist'));
 app.use("/registro-autonomia-medica", express.static(__dirname+'/dist'));
 //app.use("/registro-foro-columnistas", express.static(__dirname+'/dist'));
 app.use("/registro-foro-mujeres", express.static(__dirname+'/dist'));
+app.use("/registro-coosalud-cali", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_cerveza", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_orquideas", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_cerveza", express.static(__dirname+'/dist'));
@@ -38,6 +39,7 @@ app.use("/callcenter_registro_coosalud_medellin", express.static(__dirname+'/dis
 app.use("/callcenter_registro_mujeres", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_coosalud_cali", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_movilidad", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_contraloria", express.static(__dirname+'/dist'));
 
 app.use("/callcenter_estadisticas_coosalud_bquilla", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_coosalud_bmanga", express.static(__dirname+'/dist'));
@@ -47,6 +49,7 @@ app.use("/callcenter_estadisticas_coosalud_medellin", express.static(__dirname+'
 app.use("/callcenter_estadisticas_mujeres", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_coosalud_cali", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_movilidad", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_contraloria", express.static(__dirname+'/dist'));
 
 app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud", express.static(__dirname+'/dist'));
@@ -56,6 +59,7 @@ app.use("/evento_estadisticas_columnistas", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_mujeres", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_desayuno", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_movilidad", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_contraloria", express.static(__dirname+'/dist'));
 
 //app.get('/*', function(req,res) {
     

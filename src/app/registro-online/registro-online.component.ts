@@ -46,6 +46,9 @@ export class RegistroOnlineComponent implements OnInit {
 	if(url == 'registro-foro-mujeres'){
       this.cargarEvento(18, 17);
     }
+	if(url == 'registro-coosalud-cali'){
+      this.cargarEvento(20, 20);
+    }
     this.cargarCamposEvento();
 	this.nuevo = true;
   }

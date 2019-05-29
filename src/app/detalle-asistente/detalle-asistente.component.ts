@@ -282,7 +282,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 			correo.subject = "Invitación | Foro 'Mujeres colombianas: mujeres que inspiran' en Bogotá el 19 de junio";
 		}
 		if(this.config.idevento == 20){
-			correo.subject = "Invitación a la rendición de cuentas Coosalud Cali, este 7 de junio";
+			correo.subject = "Participe en la conferencia 'Sector salud: retos y perspectivas después de la Ley de Punto Final' en la ciudad de Cali.";
 		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
@@ -315,6 +315,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		}
 		if(this.config.idevento == 21){
 		    correo.subject = "Bienvenido al foro: ‘Movilidad 2050: Bogotá a la altura de sus proyecciones’";
+		}
+		if(this.config.idevento == 22){
+		    correo.subject = "Bienvenido al foro: 'Hacia un nuevo modelo de control fiscal en Colombia'";
 		}
       }
       /*

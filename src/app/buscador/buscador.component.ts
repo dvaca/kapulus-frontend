@@ -77,6 +77,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_movilidad'){
       this.cargarEvento(21, 21);
     }
+	if(url == 'callcenter_registro_contraloria'){
+      this.cargarEvento(22, 22);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
