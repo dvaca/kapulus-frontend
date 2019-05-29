@@ -24,6 +24,9 @@ export class EstadisticasLocalComponent implements OnInit {
 
   ngOnInit() {
     let url = this.route.snapshot.url.toString();
+	if(url == 'evento_estadisticas_coosalud'){
+      this.cargarEvento(12, 11);
+    }
 	if(url == 'evento_estadisticas_coosalud_medellin'){
       this.cargarEvento(17, 16);
     }
