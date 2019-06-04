@@ -80,6 +80,12 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_contraloria'){
       this.cargarEvento(22, 22);
     }
+	if(url == 'callcenter_registro_coosalud_bogota'){
+      this.cargarEvento(23, 23);
+    }
+	if(url == 'callcenter_registro_rio_bogota'){
+      this.cargarEvento(24, 24);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

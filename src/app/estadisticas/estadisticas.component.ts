@@ -86,6 +86,12 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_contraloria'){
       this.cargarEvento(22, 22);
     }
+	if(url == 'callcenter_estadisticas_coosalud_bogota'){
+      this.cargarEvento(23, 23);
+    }
+	if(url == 'callcenter_estadisticas_rio_bogota'){
+      this.cargarEvento(24, 24);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }

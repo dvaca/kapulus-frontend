@@ -263,6 +263,12 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 	  if(this.config.idevento == 18){
 		correo.subject = "Bienvenido al foro 'Mujeres Colombianas: Mujeres que inspiran'";
 	  }
+	  if(this.config.idevento == 23){
+		correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Bogotá";
+	  }
+	  if(this.config.idevento == 24){
+		correo.subject = "Bienvenido al foro 'RENACER DEL RIO BOGOTÁ: UN ESFUERZO DE TODOS'";
+	  }
     }else{
       if(tipoCorreo == TipoCorreo.Invitacion){
         plantilla = document.getElementById("plantillaCorreoInvitacion").innerHTML;
@@ -283,6 +289,12 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		}
 		if(this.config.idevento == 20){
 			correo.subject = "Participe en la conferencia 'Sector salud: retos y perspectivas después de la Ley de Punto Final' en la ciudad de Cali.";
+		}
+		if(this.config.idevento == 23){
+			correo.subject = "Invitación a la rendición de cuentas Coosalud Bogotá";
+		}
+		if(this.config.idevento == 24){
+			correo.subject = "Invitación | Foro 'Renacer del río Bogotá: un esfuerzo de todos' este 27 de junio en Bogotá";
 		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
@@ -318,6 +330,12 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		}
 		if(this.config.idevento == 22){
 		    correo.subject = "Bienvenido al foro: 'Hacia un nuevo modelo de control fiscal en Colombia'";
+		}
+		if(this.config.idevento == 23){
+			correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Bogotá";
+		}
+		if(this.config.idevento == 24){
+			correo.subject = "Bienvenido al foro 'RENACER DEL RIO BOGOTÁ: UN ESFUERZO DE TODOS'";
 		}
       }
       /*

@@ -49,6 +49,12 @@ export class RegistroOnlineComponent implements OnInit {
 	if(url == 'registro-coosalud-cali'){
       this.cargarEvento(20, 20);
     }
+	if(url == 'registro-coosalud-bogota'){
+      this.cargarEvento(23, 23);
+    }
+	if(url == 'registro-rio-bogota'){
+      this.cargarEvento(24, 24);
+    }
     this.cargarCamposEvento();
 	this.nuevo = true;
   }

@@ -27,6 +27,8 @@ const routes: Routes = [
   { path: 'callcenter_registro_coosalud_cali', component: BuscadorComponent },
   { path: 'callcenter_registro_movilidad', component: BuscadorComponent },
   { path: 'callcenter_registro_contraloria', component: BuscadorComponent },
+  { path: 'callcenter_registro_coosalud_bogota', component: BuscadorComponent },
+  { path: 'callcenter_registro_rio_bogota', component: BuscadorComponent },
   { path: 'callcenter_token_7D5H3N9Y4F', component: EstadisticasComponent },
   { path: 'callcenter_token_4B5O2S8Z0L', component: EstadisticasComponent },
   { path: 'callcenter_token_1T9Y7X1M9A', component: EstadisticasComponent },
@@ -44,6 +46,8 @@ const routes: Routes = [
   { path: 'callcenter_estadisticas_coosalud_cali', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_movilidad', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_contraloria', component: EstadisticasComponent },
+  { path: 'callcenter_estadisticas_coosalud_bogota', component: EstadisticasComponent },
+  { path: 'callcenter_estadisticas_rio_bogota', component: EstadisticasComponent },
   { path: 'control-acceso', component: ControlAccesoComponent },
   { path: 'registro-online', component: RegistroOnlineComponent },
   { path: 'registro-plus-superior', component: RegistroOnlineComponent },
@@ -53,6 +57,8 @@ const routes: Routes = [
   { path: 'registro-autonomia-medica', component: RegistroOnlineComponent },
   { path: 'registro-foro-mujeres', component: RegistroOnlineComponent },
   { path: 'registro-coosalud-cali', component: RegistroOnlineComponent },
+  { path: 'registro-coosalud-bogota', component: RegistroOnlineComponent },
+  { path: 'registro-rio-bogota', component: RegistroOnlineComponent },
   { path: 'evento_estadisticas_semana', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_coosalud', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_coosalud_bmanga', component: EstadisticasLocalComponent },
@@ -60,7 +66,9 @@ const routes: Routes = [
   { path: 'evento_estadisticas_columnistas', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_desayuno', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_movilidad', component: EstadisticasLocalComponent },
-  { path: 'evento_estadisticas_contraloria', component: EstadisticasLocalComponent }
+  { path: 'evento_estadisticas_contraloria', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_coosalud_bogota', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_rio_bogota', component: EstadisticasLocalComponent }
 ]
 
 @NgModule({

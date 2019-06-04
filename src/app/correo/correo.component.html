@@ -33,6 +33,12 @@
   <div *ngIf="variables.idevento == 22" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m.</b> 
   </div>
+  <div *ngIf="variables.idevento == 23" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 8:00 a.m. para el proceso de registro</b> 
+  </div>
+  <div *ngIf="variables.idevento == 24" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m. para el proceso de registro</b> 
+  </div>
   <div style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
@@ -69,6 +75,12 @@
     <br> Le invitamos a presentar este código en el registro del foro para agilizar su proceso de acreditación.
 	</div>
 	<div *ngIf="variables.idevento == 21">
+    <br> Le invitamos a presentar este código en el registro del foro para agilizar su proceso de acreditación.
+	</div>
+	<div *ngIf="variables.idevento == 23">
+    <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
+	</div>
+	<div *ngIf="variables.idevento == 24">
     <br> Le invitamos a presentar este código en el registro del foro para agilizar su proceso de acreditación.
 	</div>
     <br>
@@ -135,6 +147,14 @@
 	<div *ngIf="variables.idevento == 20">
 		<br> En la Rendición de Cuentas de Coosalud EPS este 7 de junio conoceremos los resultados del 2018 y debatiremos sobre cómo construir un mejor sistema de salud con el doctor Ramiro Guerrero, Director del Centro de Estudios en protección Social y Economía de la Salud de la Universidad del ICESI.
 	</div>
+	<div *ngIf="variables.idevento == 23">
+		<br> <b>COOSALUD</b> le quiere invitar a la <b>RENDICIÓN DE CUENTAS A LA CIUDADANÍA</b> que se llevará a cabo el jueves 13 de junio 2019 en Bogotá, con el objetivo de contribuir a una mejor gestión de la salud en Colombia.
+	</div>
+	<div *ngIf="variables.idevento == 24">
+		<br>El Río Bogotá es una de las cuencas hidrográficas más importantes del país. Sin embargo, en los últimos 50 años, ha perdido la mayor parte de sus capacidades naturales por la masiva contaminación. El proyecto de recuperación, que empieza a surtir resultados visibles, involucra una transformación de todas sus cuencas, una recuperación del territorio y la regeneración de la relación que tienen con este.
+		<br>
+		<br>Es por esto que <b>Foros Semana</b>, la <b>Corporación Autónoma de Cundinamarca (CAR), Coca - Cola y PTAR Salitre</b>, realizarán el foro “<b>Renacer del Río Bogotá: un Esfuerzo de Todos</b>”, para discutir sobre su recuperación, la generación de cultura ciudadana y la importancia vital deeste cuerpo de agua para casi diez millones de personas.
+	</div>
     <br>
   </div>
   <div style="text-align:center">
@@ -170,6 +190,18 @@
 	</div>
 	<div *ngIf="variables.idevento == 20">
 		<a href="https://kapulus.herokuapp.com/registro-coosalud-cali" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Coosalud">
+		</a>
+	</div>
+	<div *ngIf="variables.idevento == 23">
+		<a href="https://kapulus.herokuapp.com/registro-coosalud-bogota" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Coosalud">
+		</a>
+	</div>
+	<div *ngIf="variables.idevento == 24">
+		<a href="https://kapulus.herokuapp.com/registro-rio-bogota" target="_blank">
 		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
 			alt="Coosalud">
 		</a>
