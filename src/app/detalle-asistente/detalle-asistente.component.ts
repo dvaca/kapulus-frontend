@@ -263,6 +263,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 	  if(this.config.idevento == 18){
 		correo.subject = "Bienvenido al foro 'Mujeres Colombianas: Mujeres que inspiran'";
 	  }
+	  if(this.config.idevento == 20){
+		correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Cali";	
+	}
 	  if(this.config.idevento == 23){
 		correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Bogotá";
 	  }
@@ -324,6 +327,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		}
 		if(this.config.idevento == 18){
 		    correo.subject = "Bienvenido al foro 'Mujeres Colombianas: Mujeres que inspiran'";
+		}
+		if(this.config.idevento == 20){
+			correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Cali";	
 		}
 		if(this.config.idevento == 21){
 		    correo.subject = "Bienvenido al foro: ‘Movilidad 2050: Bogotá a la altura de sus proyecciones’";
