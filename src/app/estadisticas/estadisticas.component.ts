@@ -92,6 +92,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_rio_bogota'){
       this.cargarEvento(24, 24);
     }
+	if(url == 'callcenter_estadisticas_oracle'){
+      this.cargarEvento(25, 25);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
