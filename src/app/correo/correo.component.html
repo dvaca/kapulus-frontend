@@ -89,6 +89,9 @@
 	<div *ngIf="variables.idevento == 24">
     <br> Le invitamos a presentar este código en el registro del foro para agilizar su proceso de acreditación.
 	</div>
+	<div *ngIf="variables.idevento == 25">
+    <br> No olvide presentar este código QR junto con su cédula al ingreso. Puede llevarlo en su celular o impreso. Se lo pedirán a la entrada y será indispensable para el acceso al evento. 
+	</div>
     <br>
     <br>
     <div style="text-align:center">
@@ -109,9 +112,11 @@
     <br>
 	<br>
 	</div>
+	<div *ngIf="variables.idevento != 25">
     <div style="text-align:center">
       <img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
     </div>
+	</div>
 <!--
     <br>
     <hr />

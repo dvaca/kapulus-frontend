@@ -343,6 +343,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 24){
 			correo.subject = "Bienvenido al foro 'RENACER DEL RIO BOGOTÁ: UN ESFUERZO DE TODOS'";
 		}
+		if(this.config.idevento == 25){
+			correo.subject = "Bienvenido a la fiesta! | FEORACLE";
+		}
       }
       /*
       if(this.config.idevento == 5){
