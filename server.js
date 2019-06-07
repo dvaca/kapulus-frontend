@@ -70,6 +70,7 @@ app.use("/evento_estadisticas_contraloria", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud_bogota", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_rio_bogota", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_autonomia_medica", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_coosalud_cali", express.static(__dirname+'/dist'));
 
 //app.get('/*', function(req,res) {
     
