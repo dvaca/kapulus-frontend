@@ -4,11 +4,11 @@
   <div *ngIf="validar == true">
     <div *ngIf="campo.tipodato == tiposDato.Texto">
       <input [(ngModel)]="atributo.valor" type='text' maxlength="{{campo.longitud}}" class='form-control'
-        placeholder="{{atributo.nombre}}" name="pop_{{atributo.nombre}}">
+        placeholder='' name="pop_{{atributo.nombre}}">
     </div>
     <div *ngIf="campo.tipodato == tiposDato.Celular">
       <input [(ngModel)]="atributo.valor" type='text' maxlength="{{campo.longitud}}" pattern="[3][0-9]{9}"
-        class='form-control' placeholder="{{atributo.nombre}}" name="pop_{{atributo.nombre}}" #pop="ngModel"
+        class='form-control' placeholder='' name="pop_{{atributo.nombre}}" #pop="ngModel"
         [required]="campo.obligatorio == true">
       <div *ngIf="pop.errors?.pattern" class="validacion">
         Campo {{atributo.nombre}} no es un número de celular válido.
@@ -19,7 +19,7 @@
     </div>
     <div *ngIf="campo.tipodato == tiposDato.Correo">
       <input [(ngModel)]="atributo.valor" type='email' email [required]="campo.obligatorio == true"
-        maxlength="{{campo.longitud}}" class='form-control' placeholder="{{atributo.nombre}}"
+        maxlength="{{campo.longitud}}" class='form-control' placeholder=''
         name="pop_{{atributo.nombre}}" #pop="ngModel">
       <div *ngIf="pop.errors?.email" class="validacion">
         Campo {{atributo.nombre}} no es válido.
@@ -33,7 +33,7 @@
     </div>
   </div>
   <div *ngIf="validar == false">
-    <input [(ngModel)]="atributo.valor" type='text' class='form-control' placeholder="{{atributo.nombre}}"
+    <input [(ngModel)]="atributo.valor" type='text' class='form-control' placeholder=''
       name="pop_{{atributo.nombre}}">
   </div>
 </div>
