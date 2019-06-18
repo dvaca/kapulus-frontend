@@ -57,6 +57,12 @@ export class EstadisticasLocalComponent implements OnInit {
 	if(url == 'evento_estadisticas_rio_bogota'){
       this.cargarEvento(24, 24);
     }
+	if(url == 'evento_estadisticas_mujeres'){
+      this.cargarEvento(25, 25);
+    }
+	if(url == 'evento_estadisticas_digital_now'){
+      this.cargarEvento(26, 26);
+    }
     this.cargarCamposEvento();
   }
   

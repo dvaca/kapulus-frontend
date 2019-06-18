@@ -72,7 +72,9 @@ const routes: Routes = [
   { path: 'evento_estadisticas_coosalud_bogota', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_rio_bogota', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_autonomia_medica', component: EstadisticasLocalComponent },
-  { path: 'evento_estadisticas_coosalud_cali', component: EstadisticasLocalComponent }
+  { path: 'evento_estadisticas_coosalud_cali', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_mujeres', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_digital_now', component: EstadisticasLocalComponent }
 ]
 
 @NgModule({
