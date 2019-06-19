@@ -58,7 +58,7 @@ export class EstadisticasLocalComponent implements OnInit {
       this.cargarEvento(24, 24);
     }
 	if(url == 'evento_estadisticas_mujeres'){
-      this.cargarEvento(25, 25);
+      this.cargarEvento(18, 17);
     }
 	if(url == 'evento_estadisticas_digital_now'){
       this.cargarEvento(26, 26);
