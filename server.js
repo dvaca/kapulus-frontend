@@ -75,6 +75,7 @@ app.use("/evento_estadisticas_autonomia_medica", express.static(__dirname+'/dist
 app.use("/evento_estadisticas_coosalud_cali", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_mujeres", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_digital_now", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_defensoria", express.static(__dirname+'/dist'));
 
 //app.get('/*', function(req,res) {
     
