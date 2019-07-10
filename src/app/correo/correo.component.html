@@ -46,10 +46,12 @@
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
   <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
-    <b>ESTIMADO(A) </b>
+    <div *ngIf="variables.idevento != 28">
+	<b>ESTIMADO(A) </b>
     <br>
     <b>{{nombreAsistente}}&nbsp;{{apellidoAsistente}}</b>
     <br>
+	</div>
 	<div *ngIf="variables.idevento == 10">
     <br> Le invitamos a presentar este código en el registro de la ceremonia para agilizar su proceso de acreditación.
 	</div>
@@ -102,9 +104,11 @@
     </div>
     <br>
     <br>
+	<div *ngIf="variables.idevento != 28">
     <b>GRACIAS POR SU PARTICIPACIÓN</b>
     <br>
 	<br>
+	</div>
 	<div *ngIf="variables.idevento == 16">
 	<b>TÉRMINOS Y CONDICIONES DEL EVENTO</b>
 	<br>
