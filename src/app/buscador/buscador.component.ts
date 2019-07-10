@@ -89,6 +89,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_oracle'){
       this.cargarEvento(25, 25);
     }
+	if(url == 'callcenter_registro_ied'){
+      this.cargarEvento(28, 28);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
