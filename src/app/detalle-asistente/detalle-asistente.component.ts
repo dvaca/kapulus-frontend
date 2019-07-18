@@ -265,12 +265,15 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 	  }
 	  if(this.config.idevento == 20){
 		correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Cali";	
-	}
+	  }
 	  if(this.config.idevento == 23){
 		correo.subject = "Bienvenido al la rendición de cuentas - Coosalud Bogotá";
 	  }
 	  if(this.config.idevento == 24){
 		correo.subject = "Bienvenido al foro 'RENACER DEL RIO BOGOTÁ: UN ESFUERZO DE TODOS'";
+	  }
+	  if(this.config.idevento == 29){
+		correo.subject = "Bienvenido al encuentro: Prosegur Soluciones Integrales";
 	  }
     }else{
       if(tipoCorreo == TipoCorreo.Invitacion){
@@ -298,6 +301,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		}
 		if(this.config.idevento == 24){
 			correo.subject = "Invitación | Foro 'Renacer del río Bogotá: un esfuerzo de todos' este 27 de junio en Bogotá";
+		}
+		if(this.config.idevento == 29){
+			correo.subject = "Prográmese para el encuentro: Prosegur Soluciones Integrales (PSI) este 12 de agosto.";
 		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
@@ -347,7 +353,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 			correo.subject = "Bienvenido a la fiesta! | FEORACLE";
 		}
 		if(this.config.idevento == 29){
-			correo.subject = "Prográmese para el encuentro: Prosegur Soluciones Integrales (PSI) este 12 de agosto.";
+			correo.subject = "Bienvenido al encuentro: Prosegur Soluciones Integrales";
 		}
       }
       /*
@@ -364,7 +370,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
       email => {
         correo.email = email.valor;
 		if(terminar){
-		//this.registroService.enviarCorreo(correo).subscribe(mensaje =>{
+		this.registroService.enviarCorreo(correo).subscribe(mensaje =>{
           let asistencia = new AsistenciaZona();
           asistencia.idasistente = this.asistente.id;
           if(tipoCorreo == TipoCorreo.Invitacion){
@@ -375,7 +381,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
           asistencia.idzona = this.config.idZonaRegistro;
           this.registroService.addAsistenciaZona(asistencia)
           .subscribe(asistenciaZona => {});
-		//});	
+		});	
 		}else{
           this.registroService.enviarCorreo(correo).subscribe(mensaje =>{
           let asistencia = new AsistenciaZona();
