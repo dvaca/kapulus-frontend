@@ -22,6 +22,7 @@ app.use("/registro-foro-mujeres", express.static(__dirname+'/dist'));
 app.use("/registro-coosalud-cali", express.static(__dirname+'/dist'));
 app.use("/registro-coosalud-bogota", express.static(__dirname+'/dist'));
 app.use("/registro-rio-bogota", express.static(__dirname+'/dist'));
+app.use("/registro-prosegur", express.static(__dirname+'/dist'));
 
 app.use("/callcenter_registro_cerveza", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_orquideas", express.static(__dirname+'/dist'));
@@ -47,6 +48,7 @@ app.use("/callcenter_registro_coosalud_bogota", express.static(__dirname+'/dist'
 app.use("/callcenter_registro_rio_bogota", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_oracle", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_ied", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_prosegur", express.static(__dirname+'/dist'));
 
 app.use("/callcenter_estadisticas_coosalud_bquilla", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_coosalud_bmanga", express.static(__dirname+'/dist'));
@@ -61,6 +63,7 @@ app.use("/callcenter_estadisticas_coosalud_bogota", express.static(__dirname+'/d
 app.use("/callcenter_estadisticas_rio_bogota", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_oracle", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_ied", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_prosegur", express.static(__dirname+'/dist'));
 
 app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud", express.static(__dirname+'/dist'));

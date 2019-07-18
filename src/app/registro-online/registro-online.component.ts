@@ -55,6 +55,9 @@ export class RegistroOnlineComponent implements OnInit {
 	if(url == 'registro-rio-bogota'){
       this.cargarEvento(24, 24);
     }
+	if(url == 'registro-prosegur'){
+      this.cargarEvento(29, 29);
+    }
     this.cargarCamposEvento();
 	this.nuevo = true;
   }

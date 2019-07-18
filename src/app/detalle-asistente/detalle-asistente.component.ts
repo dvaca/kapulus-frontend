@@ -346,6 +346,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 25){
 			correo.subject = "Bienvenido a la fiesta! | FEORACLE";
 		}
+		if(this.config.idevento == 29){
+			correo.subject = "Prográmese para el encuentro: Prosegur Soluciones Integrales (PSI) este 12 de agosto.";
+		}
       }
       /*
       if(this.config.idevento == 5){

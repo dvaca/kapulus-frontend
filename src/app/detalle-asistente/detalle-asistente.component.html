@@ -37,7 +37,7 @@
                     </div>
                     <div  class="col-lg-4" style="padding: 5% 0;">
 					  <div *ngIf="terminado == true" class="alert alert-success" role="alert">Registro exitoso.</div>
-					  <div *ngIf="config.idevento != 12 && config.idevento != 13 && config.idevento != 14 && config.idevento != 16 && config.idevento != 17 && config.idevento != 20 && config.idevento != 23"> 
+					  <div *ngIf="config.idevento != 12 && config.idevento != 13 && config.idevento != 14 && config.idevento != 16 && config.idevento != 17 && config.idevento != 20 && config.idevento != 23 && config.idevento != 29"> 
 						<img src="../assets/resources/forosSemanaDetalle.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
                             alt="FOROS SEMANA">
 					  </div>
@@ -124,7 +124,7 @@
 							Si deseas conocer nuestras políticas de privacidad por favor visita <a href="http://kapulusinternational.com/privacidad">http://kapulusinternational.com/privacidad</a>
                         </span>
                         -->
-                        <textarea rows="15" cols="100" id="textoHabeasData" style="resize: none; font-size: 12px; text-align: justify;" readonly>
+                        <textarea *ngIf="config.idevento != 29" rows="15" cols="100" id="textoHabeasData" style="resize: none; font-size: 12px; text-align: justify;" readonly>
 En cumplimiento de la ley de protección de Datos Personales, por medio del presente documento solicitamos su autorización para que Publicaciones Semana S.A. y Proyectos Semana S.A. (en adelante SEMANA) recolecten, almacenen y usen sus datos personales registrados en el presente formulario, en su base de datos, única y exclusivamente para los siguientes fines:
 
 1.	Garantizar un óptimo servicio.
@@ -152,6 +152,11 @@ Recuerde que con la presente autorización usted tiene derecho a:
 Sus datos personales se almacenarán de manera segura, habiendo tomado todas las medidas de precaución para proteger su información contra adulteraciones, pérdidas, consultas, uso o acceso no autorizado o fraudulento. Esto con el objetivo de que su información esté protegida. Sus datos serán tratados de acuerdo al Manual de Políticas y Procedimientos para la protección de datos personales de Publicaciones Semana y Proyectos Semana S.A.
 Por medio de la presente aceptación, Usted declara expresamente que la finalidad de la utilización por SEMANA de sus datos personales, le ha sido plenamente informada y autoriza de modo expreso que sus datos sean compartidos con terceros, debidamente autorizados por SEMANA y entregados conforme a las disposiciones de la ley.
                         </textarea>
+						<textarea *ngIf="config.idevento == 29" rows="15" cols="100" id="textoHabeasData" style="resize: none; font-size: 12px; text-align: justify;" readonly>
+Mediante el diligenciamiento del presente formulario usted autoriza a la Compañía PROSEGUR S.A. para tratar sus datos personales con la finalidad XXXXX (Indicar la finalidad)
+
+Los datos otorgados por usted serán tratados de acuerdo a la ley 1581 del 2012 y demás normas reglamentarias. Como titular usted tiene derecho a conocer, actualizar, rectificar, suprimir y revocar su autorización a través de los canales descritos en la política de tratamiento de datos, la cual puede conocer a través de la página (Link donde este publicada su política).						
+						</textarea>
                         <br>
 						<div *ngIf="config.idevento == 16">
                         <span>
@@ -161,6 +166,11 @@ Por medio de la presente aceptación, Usted declara expresamente que la finalida
 						<div *ngIf="config.idevento != 16">
                         <span>
                             Ver políticas de privacidad en <a href="https://www.forossemana.com/habeas-data" target="_blank">https://www.forossemana.com/habeas-data</a>
+                        </span>
+						</div>
+						<div *ngIf="config.idevento == 29">
+                        <span>
+                            Ver políticas de privacidad en <a href="https://www.semana.com/Modal/ModalPolicies.html" target="_blank">https://www.semana.com/</a>
                         </span>
 						</div>
                     </div>

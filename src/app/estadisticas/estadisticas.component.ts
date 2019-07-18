@@ -98,6 +98,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_ied'){
       this.cargarEvento(28, 28);
     }
+	if(url == 'callcenter_estadisticas_prosegur'){
+      this.cargarEvento(29, 29);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
