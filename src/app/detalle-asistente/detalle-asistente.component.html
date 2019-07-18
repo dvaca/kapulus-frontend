@@ -49,6 +49,10 @@
 						<img src="../assets/resources/Logo-Semana.png" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
                             alt="SEMANA">
 					  </div>
+					  <div *ngIf="config.idevento == 29"> 
+						<img src="../assets/resources/logoProsegurSmall.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
+                            alt="PROSEGUR">
+					  </div>
                     </div>
                 </div>
             </div>
@@ -153,9 +157,9 @@ Sus datos personales se almacenarán de manera segura, habiendo tomado todas las
 Por medio de la presente aceptación, Usted declara expresamente que la finalidad de la utilización por SEMANA de sus datos personales, le ha sido plenamente informada y autoriza de modo expreso que sus datos sean compartidos con terceros, debidamente autorizados por SEMANA y entregados conforme a las disposiciones de la ley.
                         </textarea>
 						<textarea *ngIf="config.idevento == 29" rows="15" cols="100" id="textoHabeasData" style="resize: none; font-size: 12px; text-align: justify;" readonly>
-Mediante el diligenciamiento del presente formulario usted autoriza a la Compañía PROSEGUR S.A. para tratar sus datos personales con la finalidad XXXXX (Indicar la finalidad)
+Mediante el diligenciamiento del presente formulario usted autoriza a la Compañía PROSEGUR VIGILANCIA Y SEGURIDAD PRIVADA LTDA para tratar sus datos personales para fines administrativos, comerciales y financieros.
 
-Los datos otorgados por usted serán tratados de acuerdo a la ley 1581 del 2012 y demás normas reglamentarias. Como titular usted tiene derecho a conocer, actualizar, rectificar, suprimir y revocar su autorización a través de los canales descritos en la política de tratamiento de datos, la cual puede conocer a través de la página (Link donde este publicada su política).						
+Los datos otorgados por usted serán tratados de acuerdo a la ley 1581 del 2012 y demás normas reglamentarias. Como titular usted tiene derecho a conocer, actualizar, rectificar, suprimir y revocar su autorización a través de los canales descritos en la política de tratamiento de datos, la cual puede conocer a través de la página www.prosegur.com.co						
 						</textarea>
                         <br>
 						<div *ngIf="config.idevento == 16">
@@ -163,14 +167,14 @@ Los datos otorgados por usted serán tratados de acuerdo a la ley 1581 del 2012 
                             Ver políticas de privacidad en <a href="https://www.semana.com/Modal/ModalPolicies.html" target="_blank">https://www.semana.com/</a>
                         </span>
 						</div>
-						<div *ngIf="config.idevento != 16">
+						<div *ngIf="config.idevento != 16 && config.idevento != 29">
                         <span>
                             Ver políticas de privacidad en <a href="https://www.forossemana.com/habeas-data" target="_blank">https://www.forossemana.com/habeas-data</a>
                         </span>
 						</div>
 						<div *ngIf="config.idevento == 29">
                         <span>
-                            Ver políticas de privacidad en <a href="https://www.semana.com/Modal/ModalPolicies.html" target="_blank">https://www.semana.com/</a>
+                            Ver políticas de privacidad en <a href="https://www.prosegur.com.co/legales" target="_blank">https://www.prosegur.com.co</a>
                         </span>
 						</div>
                     </div>
