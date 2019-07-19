@@ -90,7 +90,8 @@ export class RegistroOnlineComponent implements OnInit {
     this.registroService.getAsistenteOnline(parseInt(criterio))
     .subscribe(asistente =>{
       if(isUndefined(asistente.identificacion)){
-        this.errores.push("La cédula ingresada no fue encontrada");
+		//Para eventos abiertos no se debe mostrar
+        //this.errores.push("La cédula ingresada no fue encontrada");
         this.nuevo = true;
       }else{
         this.nuevo = false;
