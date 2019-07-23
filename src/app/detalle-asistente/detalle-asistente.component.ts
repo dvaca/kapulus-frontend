@@ -303,7 +303,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 			correo.subject = "Invitación | Foro 'Renacer del río Bogotá: un esfuerzo de todos' este 27 de junio en Bogotá";
 		}
 		if(this.config.idevento == 29){
-			correo.subject = "Prográmese para el encuentro: Prosegur Soluciones Integrales (PSI) este 12 de agosto.";
+			correo.subject = "Invitación | Encuentro 'Prosegur Soluciones Integrales (PSI)' próximo 12 de agosto.";
 		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
