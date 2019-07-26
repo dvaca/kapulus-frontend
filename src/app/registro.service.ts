@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ASISTENTES } from './mock.asistente';
 import { Asistente } from "./asistente";
 import { Observable } from 'rxjs/Observable';
 import { catchError } from 'rxjs/operators';
@@ -31,6 +30,7 @@ export class RegistroService {
   
   constructor(private http: HttpClient, public config: VariablesEvento) { }
 
+  /*
   getAsistentesMock(criterio: string): Asistente[] {
     criterio = criterio.toUpperCase();
     let asistentesRes: Asistente[];
@@ -49,6 +49,7 @@ export class RegistroService {
       ASISTENTES[indice] = asistente;
     }
   }
+  */
 
   getCamposEvento(): Observable<CampoEvento[]>{
     const url = `${this.backendUrl}/camposevento/${this.config.idevento}`;
