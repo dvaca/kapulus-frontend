@@ -127,7 +127,8 @@ export class EstadisticasComponent implements OnInit {
       var asistentesExcel: Asistente[];
       var registros = new Array<Array<any>>();
       var titulos : Array<String>;
-      titulos = ["Identificación","Registrado","Preinscrito","Actualizado"];
+      titulos = ["Identificación","Registrado","Preinscrito","Actualizado",
+      "Fecha Creación", "Hora Creación", "Fecha Invitación","Hora Invitación"];
       this.registroService.getAsistentes("")
       .subscribe(asistentes =>{asistentesExcel = asistentes;
           for(var i=0;i<asistentesExcel.length;i++){
@@ -136,8 +137,26 @@ export class EstadisticasComponent implements OnInit {
             linea.push(asistentesExcel[i].registrado?"SI":"NO");
             linea.push(asistentesExcel[i].preinscrito?"SI":"NO");
             linea.push(asistentesExcel[i].actualizado?"SI":"NO");
+			if(asistentesExcel[i].fechacreacion == null){
+              linea.push("");
+              linea.push("");
+            }else{
+              linea.push(asistentesExcel[i].fechacreacion.split("T")[0]);
+              linea.push(asistentesExcel[i].fechacreacion.split("T")[1].split("Z")[0]);
+            }
+            if(asistentesExcel[i].fechainvitacion == null){
+              linea.push("");
+              linea.push("");
+            }else{
+              linea.push(asistentesExcel[i].fechainvitacion.split("T")[0]);
+              linea.push(asistentesExcel[i].fechainvitacion.split("T")[1].split("Z")[0]);
+            }
             for(var j=0;j<asistentesExcel[i].atributos.length;j++){
-              linea.push(asistentesExcel[i].atributos[j].valor);        
+              if(asistentesExcel[i].atributos[j].valor == null){
+                linea.push("");        
+              }else{
+                linea.push(asistentesExcel[i].atributos[j].valor);        
+              }
               if(i == 0){
                 titulos.push(asistentesExcel[i].atributos[j].nombre);
               }

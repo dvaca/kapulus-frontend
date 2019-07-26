@@ -10,4 +10,6 @@ export class Asistente {
   actualizado: boolean;
   atributos: AtributoAsistente[];
   nuevo: boolean;
+  fechacreacion: string;
+  fechainvitacion: string;
 }
