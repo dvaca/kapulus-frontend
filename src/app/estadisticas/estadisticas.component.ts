@@ -127,8 +127,8 @@ export class EstadisticasComponent implements OnInit {
       var asistentesExcel: Asistente[];
       var registros = new Array<Array<any>>();
       var titulos : Array<String>;
-      titulos = ["Identificación","Registrado","Preinscrito","Actualizado",
-      "Fecha Creación", "Hora Creación", "Fecha Invitación","Hora Invitación"];
+      titulos = ["Identificación","Registrado","Preinscrito","Actualizado","Registro Online",
+      "Fecha Creación", "Hora Creación", "Fecha Invitación","Hora Invitación", "Fecha Ingreso Online","Hora Ingreso Online"];
       this.registroService.getAsistentes("")
       .subscribe(asistentes =>{asistentesExcel = asistentes;
           for(var i=0;i<asistentesExcel.length;i++){
@@ -150,6 +150,13 @@ export class EstadisticasComponent implements OnInit {
             }else{
               linea.push(asistentesExcel[i].fechainvitacion.split("T")[0]);
               linea.push(asistentesExcel[i].fechainvitacion.split("T")[1].split("Z")[0]);
+            }
+			if(asistentesExcel[i].fechaingresoonline == null){
+              linea.push("");
+              linea.push("");
+            }else{
+              linea.push(asistentesExcel[i].fechaingresoonline.split("T")[0]);
+              linea.push(asistentesExcel[i].fechaingresoonline.split("T")[1].split("Z")[0]);
             }
             for(var j=0;j<asistentesExcel[i].atributos.length;j++){
               if(asistentesExcel[i].atributos[j].valor == null){

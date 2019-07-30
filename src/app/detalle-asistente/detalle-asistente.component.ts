@@ -97,6 +97,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		  if(registrar){
             this.asistente.registrado = true;
           }
+		  this.asistente.online = (this.origen == "online");
           this.registroService.addAsistente(this.asistente)
           .subscribe(asistente => {this.asistente = asistente;
 		    this.nuevo = false;

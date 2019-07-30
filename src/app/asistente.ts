@@ -8,8 +8,10 @@ export class Asistente {
   registrado: boolean;
   preinscrito: boolean;
   actualizado: boolean;
+  online: boolean;
   atributos: AtributoAsistente[];
   nuevo: boolean;
   fechacreacion: string;
   fechainvitacion: string;
+  fechaingresoonline: string;
 }
