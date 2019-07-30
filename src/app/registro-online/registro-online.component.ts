@@ -6,6 +6,8 @@ import { CampoEvento } from '../camposevento';
 import { ConfiguracionEvento } from '../configuracionEvento';
 import { RegistroService } from '../registro.service';
 import { ActivatedRoute } from '@angular/router';
+import { AsistenciaZona } from '../asistenciazona';
+import { Operacion } from '../enums';
 
 @Component({
   selector: 'app-registro-online',
@@ -14,6 +16,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RegistroOnlineComponent implements OnInit {
   nuevoAsistente: Asistente;
+  asistenteExistente: Asistente;
   camposEvento: CampoEvento[];
   mensajes: string[];
   errores: string[];
@@ -25,6 +28,23 @@ export class RegistroOnlineComponent implements OnInit {
 
   ngOnInit() {
 	let url = this.route.snapshot.url.toString();
+	let origen: string;
+    this.route.queryParams.subscribe(parametro =>{
+      origen = parametro["origen"];
+    });
+    this.registroService.getAsistenteControlAcceso(origen)
+    .subscribe(asistente =>{this.asistenteExistente = asistente;
+      if(isUndefined(this.asistenteExistente.identificacion)){
+        return;
+      }else{
+        let asistencia = new AsistenciaZona();
+        asistencia.idasistente = this.asistenteExistente.id;
+        asistencia.idoperacion = Operacion.IngresoOnline;
+        asistencia.idzona = this.config.variables.idZonaRegistro;
+        this.registroService.addAsistenciaZona(asistencia)
+        .subscribe(asistenciaZona => {});
+      }
+    });
     if(url == 'registro-online'){
       this.cargarEvento(5, 4);
     }
