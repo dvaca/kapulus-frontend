@@ -98,7 +98,7 @@ export class RegistroService {
     );
   }
 
-  getAsistenteControlAcceso(identificacion: number): Observable<Asistente> {
+  getAsistenteControlAcceso(identificacion: string): Observable<Asistente> {
     const url = `${this.backendUrl}/asistente/${this.config.idevento}/controlacceso/` + identificacion;    
     return this.http.get<Asistente>(url).pipe(
       catchError(this.handleError<Asistente>('getAsistenteControlAcceso'))

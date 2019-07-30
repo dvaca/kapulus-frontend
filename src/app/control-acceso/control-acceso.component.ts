@@ -53,13 +53,15 @@ export class ControlAccesoComponent implements OnInit {
       this.problemas.push("Debe seleccionar una zona");
       return;
     }
-    this.registroService.getAsistenteControlAcceso(parseInt(criterio))
+    //this.registroService.getAsistenteControlAcceso(parseInt(criterio))
+	this.registroService.getAsistenteControlAcceso(criterio)
     .subscribe(asistente =>{this.asistente = asistente;
       if(isUndefined(this.asistente.identificacion)){
         this.problemas.push("La cédula ingresada no fue encontrada");
         return;
       }
-      this.registroService.getAsistenteAtributo(parseInt(criterio), "NOMBRE")
+      //this.registroService.getAsistenteAtributo(parseInt(criterio), "NOMBRE")
+	  this.registroService.getAsistenteAtributo(criterio, "NOMBRE")
       .subscribe(nombre => {
         this.nombreAsistente = nombre.valor;
         if(!this.asistente.registrado && this.zonaActual.id != this.config.variables.idZonaRegistro){
