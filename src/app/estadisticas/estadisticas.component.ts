@@ -137,6 +137,7 @@ export class EstadisticasComponent implements OnInit {
             linea.push(asistentesExcel[i].registrado?"SI":"NO");
             linea.push(asistentesExcel[i].preinscrito?"SI":"NO");
             linea.push(asistentesExcel[i].actualizado?"SI":"NO");
+			linea.push(asistentesExcel[i].online?"SI":"NO");
 			if(asistentesExcel[i].fechacreacion == null){
               linea.push("");
               linea.push("");
