@@ -60,8 +60,8 @@ export class ControlAccesoComponent implements OnInit {
         this.problemas.push("La cédula ingresada no fue encontrada");
         return;
       }
-      //this.registroService.getAsistenteAtributo(parseInt(criterio), "NOMBRE")
-	  this.registroService.getAsistenteAtributo(criterio, "NOMBRE")
+      this.registroService.getAsistenteAtributo(parseInt(criterio), "NOMBRE")
+	  //this.registroService.getAsistenteAtributo(criterio, "NOMBRE")
       .subscribe(nombre => {
         this.nombreAsistente = nombre.valor;
         if(!this.asistente.registrado && this.zonaActual.id != this.config.variables.idZonaRegistro){
