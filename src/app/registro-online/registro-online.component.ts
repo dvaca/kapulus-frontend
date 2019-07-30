@@ -32,19 +32,6 @@ export class RegistroOnlineComponent implements OnInit {
     this.route.queryParams.subscribe(parametro =>{
       origen = parametro["origen"];
     });
-    this.registroService.getAsistenteControlAcceso(origen)
-    .subscribe(asistente =>{this.asistenteExistente = asistente;
-      if(isUndefined(this.asistenteExistente.identificacion)){
-        return;
-      }else{
-        let asistencia = new AsistenciaZona();
-        asistencia.idasistente = this.asistenteExistente.id;
-        asistencia.idoperacion = Operacion.IngresoOnline;
-        asistencia.idzona = this.config.variables.idZonaRegistro;
-        this.registroService.addAsistenciaZona(asistencia)
-        .subscribe(asistenciaZona => {});
-      }
-    });
     if(url == 'registro-online'){
       this.cargarEvento(5, 4);
     }
@@ -80,6 +67,19 @@ export class RegistroOnlineComponent implements OnInit {
     }
     this.cargarCamposEvento();
 	this.nuevo = true;
+	this.registroService.getAsistenteControlAcceso(origen)
+    .subscribe(asistente =>{this.asistenteExistente = asistente;
+      if(isUndefined(this.asistenteExistente.identificacion)){
+        return;
+      }else{
+        let asistencia = new AsistenciaZona();
+        asistencia.idasistente = this.asistenteExistente.id;
+        asistencia.idoperacion = Operacion.IngresoOnline;
+        asistencia.idzona = this.config.variables.idZonaRegistro;
+        this.registroService.addAsistenciaZona(asistencia)
+        .subscribe(asistenciaZona => {});
+      }
+    });
   }
 
   cargarEvento(idevento: number, idzona: number): void {
