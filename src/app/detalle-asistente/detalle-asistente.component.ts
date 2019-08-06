@@ -357,7 +357,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 			correo.subject = "Bienvenido al encuentro: Prosegur Soluciones Integrales";
 		}
     if(this.config.idevento == 30){
-			correo.subject = "Bienvenido al foro: Sé lo que como";
+			correo.subject = "Bienvenido al evento: Sé lo que como";
 		}
       }
       /*
