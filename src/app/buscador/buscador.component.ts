@@ -95,6 +95,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_prosegur'){
       this.cargarEvento(29, 29);
     }
+  if(url == 'callcenter_registro_seloquecomo'){
+      this.cargarEvento(30, 30);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
