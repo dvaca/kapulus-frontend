@@ -85,6 +85,7 @@ app.use("/evento_estadisticas_digital_now", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_defensoria", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_ied", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_seloquecomo", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_bvc", express.static(__dirname+'/dist'));
 
 //app.get('/*', function(req,res) {
     
