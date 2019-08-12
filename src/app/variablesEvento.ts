@@ -20,6 +20,6 @@ export class VariablesEvento{
     this.orientacionEscarapela = "portrait";
     this.impresoraSeleccionada = new Impresora();
     this.impresoraSeleccionada.nombre = "DYMO LabelWriter 450";
-    this.impresoraSeleccionada.ip = "http://1.1.2.2:4001";
+    this.impresoraSeleccionada.ip = "http://localhost:4001";
   }
 }
