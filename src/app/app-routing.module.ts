@@ -85,7 +85,8 @@ const routes: Routes = [
   { path: 'evento_estadisticas_defensoria', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_ied', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_seloquecomo', component: EstadisticasLocalComponent },
-  { path: 'evento_estadisticas_bvc', component: EstadisticasLocalComponent }
+  { path: 'evento_estadisticas_bvc', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_usaid', component: EstadisticasLocalComponent }
 ]
 
 @NgModule({
