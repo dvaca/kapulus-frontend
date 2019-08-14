@@ -356,8 +356,11 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 29){
 			correo.subject = "Bienvenido al encuentro: Prosegur Soluciones Integrales";
 		}
-    if(this.config.idevento == 30){
+		if(this.config.idevento == 30){
 			correo.subject = "Bienvenido al evento: Sé lo que como";
+		}
+		if(this.config.idevento == 33){
+			correo.subject = "Bienvenido al evento: II Congreso Internacional de Ética Profesional en Ingeniería - COPNIA";
 		}
       }
       /*

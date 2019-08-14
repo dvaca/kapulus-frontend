@@ -101,8 +101,11 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_prosegur'){
       this.cargarEvento(29, 29);
     }
-  if(url == 'callcenter_estadisticas_seloquecomo'){
+	if(url == 'callcenter_estadisticas_seloquecomo'){
       this.cargarEvento(30, 30);
+    }
+	if(url == 'callcenter_estadisticas_copnia'){
+      this.cargarEvento(33, 33);
     }
     this.cargarZonas();
     this.cargarCamposEvento();

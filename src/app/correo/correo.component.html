@@ -49,7 +49,7 @@
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
   <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
-    <div *ngIf="variables.idevento != 28">
+    <div *ngIf="variables.idevento != 28 && variables.idevento != 33">
 	<b>ESTIMADO(A) </b>
     <br>
     <b>{{nombreAsistente}}&nbsp;{{apellidoAsistente}}</b>
@@ -100,12 +100,41 @@
 	<div *ngIf="variables.idevento == 29">
     <br> Le invitamos a presentar este código en el registro del encuentro para agilizar su proceso de acreditación.  Puede llevarlo en su celular o impreso. 	     
 	</div>
-  <div *ngIf="variables.idevento == 30">
+	<div *ngIf="variables.idevento == 30">
+    <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
+	</div>
+	<div *ngIf="variables.idevento == 33">
+	Apreciado(a) {{nombreAsistente}}&nbsp;{{apellidoAsistente}}:
+	<br>
+	<br>Cordialmente nos permitimos confirmar su registro exitoso al <b>II Congreso Internacional de Ética Profesional en Ingeniería</b>, el cual tendrá lugar el próximo 29 y 30 de agosto de 2019 en la Universidad Pontificia Bolivariana de Medellín.
+	<br>
+	<br>La Mesa Interinstitucional de Consejos Profesionales de Ingeniería y afines (MICPI) y la Asociación Colombiana de Facultades de Ingeniería (ACOFI), le extienden desde ya la más cordial bienvenida a este importante evento de la Ingeniería.
+	<br>
+	<br>Datos del evento:
+	<br>•	Lugar: Universidad Pontificia Bolivariana, Auditorio 
+	<br>•	Circular 1ª 70-01 Campus Laureles
+	<br>•	Fecha y hora: jueves y viernes 29 y 30 de agosto desde las 7:00 a.m.
+	<br>•	Link para tarjeta de negocios: <a href="https://play.google.com/store/apps/details?id=com.veriddica.vecard" target="_blank">https://play.google.com/store/apps/details?id=com.veriddica.vecard</a>
+	<br><a href="https://apps.apple.com/co/app/vecard/id1456300712" target="_blank">https://apps.apple.com/co/app/vecard/id1456300712</a>
+	<br>
+	<br>No olvide presentar su documento de identificación en la entrada de la Universidad.
+	<br>
+	<br>¡Esperamos contar con su valiosa participación!
+	<br>
+	<br>
+	<br>Cordialmente,
+	<br>
+	<br>Ruben Dario Ochoa Arbelaez. 
+	<br>Coordinador de la MICPI
+	<br>
+	</div>
+	<div *ngIf="variables.idevento == 33">
     <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
 	</div>
     <br>
     <br>
-    <div style="text-align:center">
+
+    <div style="text-align:center"> 
       <img src="cid:qr" class="img-fluid" style="max-width: 25%; height: auto; padding-bottom: 20px; padding-top: 20px;"
         alt="QR">
       <qr-code #myQR [value]="identificacion" [size]="300"></qr-code>
@@ -125,7 +154,7 @@
     <br>
 	<br>
 	</div>
-	<div *ngIf="variables.idevento != 25">
+	<div *ngIf="variables.idevento != 25 && variables.idevento != 33">
     <div style="text-align:center">
       <img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
     </div>
