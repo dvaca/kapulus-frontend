@@ -32,6 +32,7 @@ export class ImpresionService {
 
   getListaImpresoras(ip: string): Observable<Impresora[]> {
     const url = `${ip}/listaimpresoras/`;
+	alert(url);
     return this.http.get<Impresora[]>(url)
     .pipe(
       catchError(this.handleError('getListaImpresoras', []))
