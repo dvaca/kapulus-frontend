@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable()
 export class ImpresionService {
 
-  private backendUrl = 'http://localhost:4001';
+  private backendUrl = 'http://192.168.0.31:4001';
   //private backendUrl = 'http://169.254.168.35:4000'; //PEER TO PEER
   //private backendUrl = 'http://192.168.0.100:4000'; //CAPULUS
   //private backendUrl = 'https://kapulus-backend.herokuapp.com'; //LOCAL
