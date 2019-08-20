@@ -45,6 +45,9 @@
   <div *ngIf="variables.idevento == 30" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:30 a.m. para el proceso de registro</b> 
   </div>
+  <div *ngIf="variables.idevento == 34" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m.</b> 
+  </div>
   <div style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
@@ -133,6 +136,9 @@
 	<div *ngIf="variables.idevento == 33">
     <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
 	</div>
+	<div *ngIf="variables.idevento == 34">
+    <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
+	</div>
     <br>
     <br>
 
@@ -157,13 +163,16 @@
 	<br>
 	</div>
 	<div *ngIf="variables.idevento != 25">
-    <div style="text-align:center">
+    <div *ngIf="variables.idevento == 33" style="text-align:center">
 	  <br><b>Clic en la imagen para la tarjeta de negocios</b>
 	  <br>
 	  <a href="https://play.google.com/store/apps/details?id=com.veriddica.vecard" target="_blank">
 		<img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 	  </a>
     </div>
+	<div *ngIf="variables.idevento == 34" style="text-align:center">
+		<img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
+	</div>
 	</div>
 <!--
     <br>

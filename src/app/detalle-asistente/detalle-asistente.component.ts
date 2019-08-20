@@ -362,6 +362,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 33){
 			correo.subject = "Bienvenido al evento: II Congreso Internacional de Ética Profesional en Ingeniería - COPNIA";
 		}
+		if(this.config.idevento == 34){
+			correo.subject = "Bienvenido al foro: 'Juegos de Suerte y Azar'";
+		}
       }
       /*
       if(this.config.idevento == 5){

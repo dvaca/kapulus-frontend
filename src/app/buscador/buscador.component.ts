@@ -101,6 +101,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_copnia'){
       this.cargarEvento(33, 33);
     }
+	if(url == 'callcenter_registro_juegos'){
+      this.cargarEvento(34, 34);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
