@@ -91,6 +91,7 @@ app.use("/evento_estadisticas_ied", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_seloquecomo", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_bvc", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_usaid", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_juegos", express.static(__dirname+'/dist'));
 
 //app.get('/*', function(req,res) {
     
