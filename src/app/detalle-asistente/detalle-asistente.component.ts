@@ -365,6 +365,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 34){
 			correo.subject = "Bienvenido al foro: 'Juegos de Suerte y Azar'";
 		}
+		if(this.config.idevento == 35){
+			correo.subject = "Bienvenido a la 3ra Cumbre de Sostenibilidad 'Bicentenario una mirada de transformación y sostenibilidad'";
+		}
       }
       /*
       if(this.config.idevento == 5){

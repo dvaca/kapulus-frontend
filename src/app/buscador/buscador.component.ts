@@ -104,6 +104,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_juegos'){
       this.cargarEvento(34, 34);
     }
+	if(url == 'callcenter_registro_sostenibilidad'){
+      this.cargarEvento(35, 35);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

@@ -52,6 +52,7 @@ app.use("/callcenter_registro_prosegur", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_seloquecomo", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_copnia", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_juegos", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_sostenibilidad", express.static(__dirname+'/dist'));
 
 app.use("/callcenter_estadisticas_coosalud_bquilla", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_coosalud_bmanga", express.static(__dirname+'/dist'));

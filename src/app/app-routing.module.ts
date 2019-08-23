@@ -35,6 +35,7 @@ const routes: Routes = [
   { path: 'callcenter_registro_seloquecomo', component: BuscadorComponent },
   { path: 'callcenter_registro_copnia', component: BuscadorComponent },
   { path: 'callcenter_registro_juegos', component: BuscadorComponent },
+  { path: 'callcenter_registro_sostenibilidad', component: BuscadorComponent },
   { path: 'callcenter_token_7D5H3N9Y4F', component: EstadisticasComponent },
   { path: 'callcenter_token_4B5O2S8Z0L', component: EstadisticasComponent },
   { path: 'callcenter_token_1T9Y7X1M9A', component: EstadisticasComponent },
