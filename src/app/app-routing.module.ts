@@ -61,6 +61,7 @@ const routes: Routes = [
   { path: 'callcenter_estadisticas_seloquecomo', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_copnia', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_juegos', component: EstadisticasComponent },
+  { path: 'callcenter_estadisticas_sostenibilidad', component: EstadisticasComponent },
   { path: 'control-acceso', component: ControlAccesoComponent },
   { path: 'registro-online', component: RegistroOnlineComponent },
   { path: 'registro-plus-superior', component: RegistroOnlineComponent },

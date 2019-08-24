@@ -71,6 +71,7 @@ app.use("/callcenter_estadisticas_prosegur", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_seloquecomo", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_copnia", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_juegos", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_sostenibilidad", express.static(__dirname+'/dist'));
 
 app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud", express.static(__dirname+'/dist'));
