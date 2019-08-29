@@ -95,6 +95,7 @@ app.use("/evento_estadisticas_bvc", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_usaid", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_juegos", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_sostenibilidad", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_copnia", express.static(__dirname+'/dist'));
 
 //app.get('/*', function(req,res) {
     

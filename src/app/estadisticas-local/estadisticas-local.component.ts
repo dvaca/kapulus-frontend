@@ -78,10 +78,13 @@ export class EstadisticasLocalComponent implements OnInit {
 	if(url == 'evento_estadisticas_usaid'){
       this.cargarEvento(32, 32);
     }
+	if(url == 'evento_estadisticas_copnia'){
+      this.cargarEvento(33, 33);
+    }  
 	if(url == 'evento_estadisticas_juegos'){
       this.cargarEvento(34, 34);
     }
-  if(url == 'evento_estadisticas_sostenibilidad'){
+    if(url == 'evento_estadisticas_sostenibilidad'){
       this.cargarEvento(35, 35);
     }  
     this.cargarCamposEvento();

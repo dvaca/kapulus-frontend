@@ -94,7 +94,8 @@ const routes: Routes = [
   { path: 'evento_estadisticas_bvc', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_usaid', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_juegos', component: EstadisticasLocalComponent },
-  { path: 'evento_estadisticas_sostenibilidad', component: EstadisticasLocalComponent }
+  { path: 'evento_estadisticas_sostenibilidad', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_copnia', component: EstadisticasLocalComponent }
 ]
 
 @NgModule({
