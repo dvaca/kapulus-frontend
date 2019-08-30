@@ -86,7 +86,10 @@ export class EstadisticasLocalComponent implements OnInit {
     }
     if(url == 'evento_estadisticas_sostenibilidad'){
       this.cargarEvento(35, 35);
-    }  
+    }
+	if(url == 'evento_estadisticas_feoracle'){
+      this.cargarEvento(36, 36);
+    }	
     this.cargarCamposEvento();
   }
   

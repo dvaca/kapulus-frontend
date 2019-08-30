@@ -113,6 +113,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_sostenibilidad'){
       this.cargarEvento(35, 35);
     }
+	if(url == 'callcenter_estadisticas_feoracle'){
+      this.cargarEvento(36, 36);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
