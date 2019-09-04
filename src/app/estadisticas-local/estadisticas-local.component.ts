@@ -89,6 +89,9 @@ export class EstadisticasLocalComponent implements OnInit {
     }
 	if(url == 'evento_estadisticas_feoracle'){
       this.cargarEvento(36, 36);
+    }
+	if(url == 'evento_estadisticas_cima'){
+      this.cargarEvento(37, 37);
     }	
     this.cargarCamposEvento();
   }

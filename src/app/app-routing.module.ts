@@ -98,7 +98,8 @@ const routes: Routes = [
   { path: 'evento_estadisticas_juegos', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_sostenibilidad', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_copnia', component: EstadisticasLocalComponent },
-  { path: 'evento_estadisticas_feoracle', component: EstadisticasLocalComponent }
+  { path: 'evento_estadisticas_feoracle', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_cima', component: EstadisticasLocalComponent }
 ]
 
 @NgModule({

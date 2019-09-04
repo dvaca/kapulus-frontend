@@ -99,6 +99,7 @@ app.use("/evento_estadisticas_juegos", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_sostenibilidad", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_copnia", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_feoracle", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_cima", express.static(__dirname+'/dist'));
 
 //app.get('/*', function(req,res) {
     
