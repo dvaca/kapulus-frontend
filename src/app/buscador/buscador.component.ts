@@ -110,6 +110,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_feoracle'){
       this.cargarEvento(36, 36);
     }
+	if(url == 'callcenter_registro_feoracle2'){
+      this.cargarEvento(39, 39);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
