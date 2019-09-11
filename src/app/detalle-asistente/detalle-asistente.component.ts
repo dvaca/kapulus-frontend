@@ -374,6 +374,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 39){
 			correo.subject = "Código para ingreso Evento 5 de septiembre | FEORACLE";
 		}
+		if(this.config.idevento == 40){
+			correo.subject = "Bienvenido al XVII encuentro de jefes de planeación  | POLICÍA NACIONAL";
+		}
       }
       /*
       if(this.config.idevento == 5){

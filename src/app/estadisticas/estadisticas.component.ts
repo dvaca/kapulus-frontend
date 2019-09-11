@@ -119,6 +119,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_feoracle2'){
       this.cargarEvento(39, 39);
     }
+	if(url == 'callcenter_estadisticas_planeacion_policia'){
+      this.cargarEvento(40, 40);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
