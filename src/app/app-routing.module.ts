@@ -6,6 +6,7 @@ import { ControlAccesoComponent } from './control-acceso/control-acceso.componen
 import { RegistroOnlineComponent } from './registro-online/registro-online.component';
 import { LoginComponent } from './login/login.component';
 import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-local.component';
+import { CertificadoComponent } from './certificado/certificado.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/registro-online', pathMatch: 'full' },
@@ -104,7 +105,8 @@ const routes: Routes = [
   { path: 'evento_estadisticas_copnia', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_feoracle', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_cima', component: EstadisticasLocalComponent },
-  { path: 'evento_estadisticas_bvc_cali', component: EstadisticasLocalComponent }
+  { path: 'evento_estadisticas_bvc_cali', component: EstadisticasLocalComponent },
+  { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
 ]
 
 @NgModule({

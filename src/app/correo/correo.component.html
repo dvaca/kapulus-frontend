@@ -209,6 +209,10 @@
       alt="Foros Semana">
   </div>
   -->
+  <div *ngIf="variables.idevento == 33">
+	  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+		alt="COPNIA">
+</div>
   <div style="text-align: justify;">
     <br>
     <br>Estimado (a) <b>{{nombreAsistente}}&nbsp;{{apellidoAsistente}}</b>,
@@ -238,9 +242,15 @@
 		<br>
 		<br>Es por esto que <b>Foros Semana</b>, la <b>Corporación Autónoma de Cundinamarca (CAR), Coca - Cola y PTAR Salitre</b>, realizarán el foro “<b>Renacer del Río Bogotá: un Esfuerzo de Todos</b>”, para discutir sobre su recuperación, la generación de cultura ciudadana y la importancia vital deeste cuerpo de agua para casi diez millones de personas.
 	</div>
+	<div *ngIf="variables.idevento == 33">
+		<br> <b>COPNIA</b> le quiere agradecer por su participación en el <b>II Congreso Internacional de Ética Profesional en Ingeniería</b> que se llevó a cabo el 29 y 30 de agosto de 2019 en la ciudad de Medellín.
+		<br>
+		<br>
+		<br><b>Haga clic <a href="https://kapulus.herokuapp.com/certificado_asistencia_copnia?origen={{identificacion}}" target="_blank">aquí</a> para descargar el certificado de asistencia al evento</b>
+	</div>
     <br>
   </div>
-  <div style="text-align:center">
+  <div *ngIf="variables.idevento != 33" style="text-align:center">
 	<br><b>Clic en la imagen para confirmar su asistencia</b><p> (si ya se inscribió haga caso omiso)</p>
 	<div *ngIf="variables.idevento == 14">
 		<!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSe5Sv5cbmCD4s4bztrgKR216fIyN3Mz6z-3IIUPvqs9ad5Phg/viewform?vc=0&c=0&w=1" target="_blank">

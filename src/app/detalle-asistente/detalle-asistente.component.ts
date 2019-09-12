@@ -306,6 +306,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 29){
 			correo.subject = "Invitación | Encuentro 'Prosegur Soluciones Integrales (PSI)' próximo 12 de agosto.";
 		}
+		if(this.config.idevento == 33){
+			correo.subject = "Certificado de asistencia al evento 'II Congreso Internacional de Ética Profesional en Ingeniería - COPNIA'";
+		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
 		if(this.config.idevento == 10){

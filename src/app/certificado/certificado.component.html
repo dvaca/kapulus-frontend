@@ -1,9 +1,45 @@
-<div id="formCertificado" class="invisible collapse" style="width: 400px; height: 200px;">
-  <p *ngFor="let atributo of asistenteImpresion.atributos" 
-    [style.margin-top.px]="atributo.campo.ycertificado*10" 
-    [style.margin-left.px]="atributo.campo.xcertificado*10"
-    [style.font-size.px]="atributo.campo.tamanocertificado*10"
-    [style.font-weight]="atributo.campo.negritacertificado == true ? 'bold' : 'normal'">
-      {{atributo.valor}}
-  </p>
+<div *ngIf="problemas.length == 0" class="container" id="formCertificado" style="width: 800px; height: 600px; text-align: center;">
+  <!--
+  <div id="formCertificadoImprimir" style="width: 800px; height: 600px; background-image: url('../assets/resources/logoCopnia.png'); background-size: cover;">
+    <p *ngFor="let atributo of asistenteImpresion.atributos" 
+      [style.margin-top.px]="atributo.campo.ycertificado*10" 
+      [style.margin-left.px]="atributo.campo.xcertificado*10"
+      [style.font-size.px]="atributo.campo.tamanocertificado*10"
+      [style.font-weight]="atributo.campo.negritacertificado == true ? 'bold' : 'normal'">
+        {{atributo.valor}}
+    </p>
+  </div>
+  -->
+  <div class="row" style="text-align: center;">
+    <button type="button" class="btn btn-outline-primary" id="btnAceptarCertificado" data-dismiss="modal"
+      (click)="imprimirCertificado();">Descargar</button>
+      <br>
+  </div>
+  <!--
+  <div id="formCertificadoImprimir" style="width: 800px; height: 600px;text-align: center; vertical-align: middle">
+    <img src="../assets/resources/logoCopnia.png" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
+      alt="COPNIA">
+    <br>
+    <h2>El COPNIA certifica que <b>{{nombreAsistente}} {{apellidoAsistente}}</b>, identificado con la cédula <b>{{asistente.identificacion}}</b> ASISTIÓ al evento XXX</h2> 
+  </div>
+  -->
+  <div class="row">
+    <div id="formCertificadoImprimir">
+      <div style="width: 1000px; height: 720px;text-align: center; vertical-align: middle; background-image: url('../assets/resources/certificadoCopnia.png'); background-size: cover;">
+        <div style="text-align: center; vertical-align: middle; position: relative; left:10%; top: 40%;">
+          <h4><b>{{nombreAsistente}} {{apellidoAsistente}}</b></h4>
+           <b>C.C. {{asistente.identificacion}}</b> 
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<div *ngFor="let problema of problemas" class="alert alert-danger" role="alert">
+  <h2>{{problema}}</h2>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
