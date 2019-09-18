@@ -105,6 +105,7 @@ app.use("/evento_estadisticas_copnia", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_feoracle", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_cima", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_bvc_cali", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_planeacion_policia", express.static(__dirname+'/dist'));
 
 app.use("/certificado_asistencia_copnia", express.static(__dirname+'/dist'));
 
