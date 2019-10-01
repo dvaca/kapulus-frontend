@@ -51,6 +51,9 @@
   <div *ngIf="variables.idevento == 35" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m. para el proceso de registro</b> 
   </div>
+  <div *ngIf="variables.idevento == 41" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m. para el proceso de registro</b> 
+  </div>
   <div style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
@@ -152,6 +155,9 @@
     <br> No olvide presentar este código QR junto con su cédula al ingreso. Puede llevarlo en su celular o impreso. Se lo pedirán a la entrada y será indispensable para el acceso al evento. 
 	</div>
 	<div *ngIf="variables.idevento == 40">
+    <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
+	</div>
+	<div *ngIf="variables.idevento == 41">
     <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
 	</div>
     <br>

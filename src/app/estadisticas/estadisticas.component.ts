@@ -122,6 +122,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_planeacion_policia'){
       this.cargarEvento(40, 40);
     }
+	if(url == 'callcenter_estadisticas_cannabis'){
+      this.cargarEvento(41, 41);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }

@@ -380,6 +380,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 40){
 			correo.subject = "Bienvenido al XVII encuentro de jefes de planeación  | POLICÍA NACIONAL";
 		}
+		if(this.config.idevento == 41){
+			correo.subject = "Bienvenido al foro 'DISCUSIONES ÉTICAS EN TORNO AL CANNABIS MEDICINAL";
+		}
       }
       /*
       if(this.config.idevento == 5){
