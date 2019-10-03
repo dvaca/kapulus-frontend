@@ -109,6 +109,7 @@ const routes: Routes = [
   { path: 'evento_estadisticas_cima', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_bvc_cali', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_planeacion_policia', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_cannabis', component: EstadisticasLocalComponent },
   { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
 ]
 

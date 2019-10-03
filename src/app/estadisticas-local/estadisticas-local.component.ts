@@ -99,6 +99,9 @@ export class EstadisticasLocalComponent implements OnInit {
 	if(url == 'evento_estadisticas_planeacion_policia'){
       this.cargarEvento(40, 40);
     }	
+	if(url == 'evento_estadisticas_cannabis'){
+      this.cargarEvento(41, 41);
+    }	
     this.cargarCamposEvento();
   }
   
