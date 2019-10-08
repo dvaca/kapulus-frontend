@@ -309,6 +309,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 33){
 			correo.subject = "Certificado de asistencia al evento 'II Congreso Internacional de Ética Profesional en Ingeniería - COPNIA'";
 		}
+		if(this.config.idevento == 42){
+			correo.subject = "Asista al 'II Congreso Internacional Antidrogas' este 23 y 24 de octubre";
+		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
 		if(this.config.idevento == 10){
