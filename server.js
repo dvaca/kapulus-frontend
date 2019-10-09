@@ -58,6 +58,7 @@ app.use("/callcenter_registro_feoracle2", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_planeacion_policia", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_cannabis", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_antinarcoticos", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_qlik", express.static(__dirname+'/dist'));
 
 app.use("/callcenter_estadisticas_coosalud_bquilla", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_coosalud_bmanga", express.static(__dirname+'/dist'));
@@ -82,6 +83,7 @@ app.use("/callcenter_estadisticas_feoracle2", express.static(__dirname+'/dist'))
 app.use("/callcenter_estadisticas_planeacion_policia", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_cannabis", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_antinarcoticos", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_qlik", express.static(__dirname+'/dist'));
 
 app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud", express.static(__dirname+'/dist'));

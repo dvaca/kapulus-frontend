@@ -386,6 +386,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 41){
 			correo.subject = "Bienvenido al foro 'DISCUSIONES ÉTICAS EN TORNO AL CANNABIS MEDICINAL";
 		}
+		if(this.config.idevento == 43){
+			correo.subject = "Bienvenido al Qlik Analytics Day Colombia";
+		}
       }
       /*
       if(this.config.idevento == 5){

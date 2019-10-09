@@ -57,9 +57,11 @@
   <div style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
-  <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+  <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;"
+  [ngClass]="{'estilo-qlik': variables.idevento == 43}">
     <div *ngIf="variables.idevento != 28 && variables.idevento != 33">
-	<b>ESTIMADO(A) </b>
+	<!--<b>ESTIMADO(A) </b>-->
+	<p>Estimad@ </p>
     <br>
     <b>{{nombreAsistente}}&nbsp;{{apellidoAsistente}}</b>
     <br>
@@ -160,6 +162,9 @@
 	<div *ngIf="variables.idevento == 41">
     <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
 	</div>
+	<div *ngIf="variables.idevento == 43">
+    <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
+	</div>
     <br>
     <br>
 
@@ -171,7 +176,7 @@
     </div>
     <br>
     <br>
-	<div *ngIf="variables.idevento != 28 && variables.idevento != 33">
+	<div *ngIf="variables.idevento != 28 && variables.idevento != 33 && variables.idevento != 43">
     <b>GRACIAS POR SU PARTICIPACIÓN</b>
     <br>
 	<br>
