@@ -58,7 +58,9 @@
             </div>
             <div class="modal-footer">
                 <app-escarapela [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-escarapela>
-                <app-certificado [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-certificado>
+                <!--
+				<app-certificado [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-certificado>
+				-->
                 <button *ngIf="asistente.registrado == false && origen == 'interno'" type="button" class="btn btn-outline-success" data-dismiss="modal" id="btnGuardarYRegistrar"
                     (click)="guardarAsistente(true);">Registrar</button>
                 <button *ngIf="origen == 'interno'"  [disabled]="!atributosForm.form.valid"
