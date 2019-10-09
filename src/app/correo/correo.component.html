@@ -57,7 +57,10 @@
   <div style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
-  <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;"
+  <!--
+  <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+  -->
+  <div style="text-align: center; font-size: 22px; color: gray; max-width: 645px; padding-bottom: 20px; padding-top: 20px;"
   [ngClass]="{'estilo-qlik': variables.idevento == 43}">
     <div *ngIf="variables.idevento != 28 && variables.idevento != 33">
 	<!--<b>ESTIMADO(A) </b>-->
@@ -196,7 +199,7 @@
 		<img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 	  </a>
     </div>
-	<div *ngIf="variables.idevento == 34 || variables.idevento == 35 || variables.idevento == 40 || variables.idevento == 41" style="text-align:center">
+	<div *ngIf="variables.idevento == 34 || variables.idevento == 35 || variables.idevento == 40 || variables.idevento == 41 || variables.idevento == 43" style="text-align:center">
 		<img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 	</div>
 	</div>
