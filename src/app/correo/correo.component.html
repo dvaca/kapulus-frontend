@@ -1,5 +1,6 @@
-<div id="plantillaCorreoConfirmacion" class="invisible collapse" style="width: 100%; height: 100vh; text-align: center;">
-  <div style="font-size: 18px; max-width: 645px; text-align: center;">
+<div id="plantillaCorreoConfirmacion" class="invisible collapse" style="width: 100%; height: 100vh; text-align: center; color: Grey;">
+  <!--<div style="font-size: 18px; max-width: 645px; text-align: center;">-->
+  <div style="font-size: 24px; max-width: 490px; text-align: center;">
   <div *ngIf="variables.idevento == 10" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 6:00 p.m. y tener a la mano su código QR de acceso.</b>
   </div>
@@ -60,7 +61,7 @@
   <!--
   <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
   -->
-  <div style="text-align: center; font-size: 22px; color: gray; max-width: 645px; padding-bottom: 20px; padding-top: 20px;"
+  <div style="text-align: center; font-size: 24px; color: gray; max-width: 490px; padding-bottom: 20px; padding-top: 20px;"
   [ngClass]="{'estilo-qlik': variables.idevento == 43}">
     <div *ngIf="variables.idevento != 28 && variables.idevento != 33">
 	<!--<b>ESTIMADO(A) </b>-->
@@ -166,15 +167,16 @@
     <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
 	</div>
 	<div *ngIf="variables.idevento == 43">
-    <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
+    <br> Le invitamos a presentar este código en su dispositivo móvil en el registro del evento para agilizar su proceso de inscripción.
 	</div>
     <br>
     <br>
 
     <div style="text-align:center"> 
-      <img src="cid:qr" class="img-fluid" style="max-width: 25%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+      <img src="cid:qr" class="img-fluid" style="max-width: 50%; height: auto; padding-bottom: 20px; padding-top: 20px;"
         alt="QR">
-      <qr-code #myQR [value]="identificacion" [size]="300"></qr-code>
+      <!--<qr-code #myQR [value]="identificacion" [size]="300"></qr-code>-->
+	  <qr-code #myQR [value]="identificacion" [size]="450"></qr-code>
       <!--<br> {{identificacion}}-->
     </div>
     <br>
