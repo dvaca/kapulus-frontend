@@ -125,6 +125,12 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_qlik'){
       this.cargarEvento(43, 43);
     }
+	if(url == 'callcenter_registro_seguridad_inteligente'){
+      this.cargarEvento(44, 44);
+    }
+	if(url == 'callcenter_registro_no_repeticion'){
+      this.cargarEvento(45, 45);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

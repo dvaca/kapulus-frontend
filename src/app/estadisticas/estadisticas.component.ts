@@ -131,6 +131,12 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_qlik'){
       this.cargarEvento(43, 43);
     }
+	if(url == 'callcenter_estadisticas_seguridad_inteligente'){
+      this.cargarEvento(44, 44);
+    }
+	if(url == 'callcenter_estadisticas_no_repeticion'){
+      this.cargarEvento(45, 45);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }

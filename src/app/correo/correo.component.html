@@ -264,6 +264,12 @@
 		<br>
 		<br><b>Haga clic <a href="https://kapulus.herokuapp.com/certificado_asistencia_copnia?origen={{identificacion}}" target="_blank">aquí</a> para descargar el certificado de asistencia al evento</b>
 	</div>
+	<div *ngIf="variables.idevento == 44">
+		<br>Según la Cámara de Comercio y la última encuesta de Percepción y Victimización, el 61% de los habitantes de la capital percibieron mayor inseguridad en Bogotá.
+	</div>
+	<div *ngIf="variables.idevento == 45">
+		<br>El Acuerdo de Paz contemplaba una atención diferencial para los pueblos indígenas y afrodescendientes que fueron víctimas del conflicto armado. Asista a este foro para conocer en qué va y qué falta para garantizar la verdad y la no repetición en estas comunidades.
+	</div>
     <br>
   </div>
   <div *ngIf="variables.idevento != 33" style="text-align:center">
@@ -324,6 +330,18 @@
 		<a href="https://www.scia-2019.com/principala.php?utm_source=Icommarketing&utm_medium=email&utm_content=Mailing+Antinarcoticos+2019&utm_campaign=Icommarketing+-+Ana+Carolina+Pardo++-+Mailing+Antinarcoticos+2019" target="_blank">
 		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
 			alt="Antinarcoticos">
+		</a>
+	</div>
+	<div *ngIf="variables.idevento == 44">
+		<a href="https://forossemana.com/evento/id/41394/bogota_seguridad_inteligente?utm_source=Icommarketing&utm_medium=email&utm_content=Save+the+date+foro+Probogota+2&utm_campaign=Icommarketing+-+Ana+Carolina+Pardo++-+Save+the+date+foro+Probogota+2+Seguridad+inteligen" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Seguridad Inteligente">
+		</a>
+	</div>
+	<div *ngIf="variables.idevento == 45">
+		<a href="https://www.forossemana.com/evento/id/41549/la_verdad_para_la_no_repeticion_dialogo_desde_un_enfoque_etnico?utm_source=Icommarketing&utm_medium=email&utm_content=Save+the+date+Coddhes+2019.&utm_campaign=Icommarketing+-+Camilo+Martinez+-+Save+the+date+Coddhes+2019." target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="No Repetición">
 		</a>
 	</div>
 	<div *ngIf="variables.idevento == 29">

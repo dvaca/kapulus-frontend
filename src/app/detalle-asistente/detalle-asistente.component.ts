@@ -312,6 +312,12 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 42){
 			correo.subject = "Asista al 'II Congreso Internacional Antidrogas' este 23 y 24 de octubre";
 		}
+		if(this.config.idevento == 44){
+			correo.subject = "Asista al foro Bogotá: 'SEGURIDAD INTELIGENTE'";
+		}
+		if(this.config.idevento == 45){
+			correo.subject = "Asista al foro 'La verdad para la no repetición: diálogo desde un enfoque étnico'";
+		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
 		if(this.config.idevento == 10){
