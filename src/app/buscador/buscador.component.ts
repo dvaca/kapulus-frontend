@@ -131,6 +131,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_no_repeticion'){
       this.cargarEvento(45, 45);
     }
+	if(url == 'callcenter_registro_democracia'){
+      this.cargarEvento(46, 46);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

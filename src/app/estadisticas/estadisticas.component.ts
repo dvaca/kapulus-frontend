@@ -137,6 +137,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_no_repeticion'){
       this.cargarEvento(45, 45);
     }
+	if(url == 'callcenter_estadisticas_democracia'){
+      this.cargarEvento(46, 46);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
