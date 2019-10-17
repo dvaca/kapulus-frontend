@@ -395,6 +395,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 43){
 			correo.subject = "Bienvenido al Qlik Analytics Day Colombia";
 		}
+		if(this.config.idevento == 45){
+			correo.subject = "Bienvenido al Foro: 'Bogotá: Seguridad Inteligente'";
+		}
 		if(this.config.idevento == 46){
 			correo.subject = "Bienvenido al Foro 'Democracia a prueba: participación política, violencia y elecciones'.";
 		}
