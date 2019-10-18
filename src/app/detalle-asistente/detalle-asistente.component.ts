@@ -318,6 +318,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 45){
 			correo.subject = "Asista al foro 'La verdad para la no repetición: diálogo desde un enfoque étnico'";
 		}
+		if(this.config.idevento == 47){
+			correo.subject = "Asista al foro 'Educación Ambiental como herramienta de desarrollo sostenible'";
+		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
 		if(this.config.idevento == 10){

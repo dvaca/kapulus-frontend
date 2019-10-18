@@ -134,6 +134,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_democracia'){
       this.cargarEvento(46, 46);
     }
+	if(url == 'callcenter_registro_educacion_ambiental'){
+      this.cargarEvento(47, 47);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

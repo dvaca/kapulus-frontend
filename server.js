@@ -62,6 +62,7 @@ app.use("/callcenter_registro_qlik", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_seguridad_inteligente", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_no_repeticion", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_democracia", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_educacion_ambiental", express.static(__dirname+'/dist'));
 
 app.use("/callcenter_estadisticas_coosalud_bquilla", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_coosalud_bmanga", express.static(__dirname+'/dist'));
@@ -90,6 +91,7 @@ app.use("/callcenter_estadisticas_qlik", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_seguridad_inteligente", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_no_repeticion", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_democracia", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_educacion_ambiental", express.static(__dirname+'/dist'));
 
 app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud", express.static(__dirname+'/dist'));
