@@ -123,6 +123,7 @@ const routes: Routes = [
   { path: 'evento_estadisticas_planeacion_policia', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_cannabis', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_democracia', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_seguridad_inteligente', component: EstadisticasLocalComponent },
   { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
 ]
 
