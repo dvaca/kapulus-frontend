@@ -404,6 +404,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 46){
 			correo.subject = "Bienvenido al Foro 'Democracia a prueba: participación política, violencia y elecciones'.";
 		}
+		if(this.config.idevento == 47){
+			correo.subject = "Bienvenido al Foro: Educación Ambiental como herramienta de desarrollo sostenible";
+		}
       }
       /*
       if(this.config.idevento == 5){

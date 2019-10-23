@@ -61,6 +61,9 @@
   <div *ngIf="variables.idevento == 46" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 8:30 a.m. </b> 
   </div>
+  <div *ngIf="variables.idevento == 47" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m. </b> 
+  </div>
   <div style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
@@ -181,6 +184,9 @@
 	<div *ngIf="variables.idevento == 46">
     <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
 	</div>
+	<div *ngIf="variables.idevento == 47">
+    <br> Le invitamos a presentar este código en el registro del evento para agilizar su proceso de acreditación.
+	</div>
     <br>
     <br>
 
@@ -205,6 +211,13 @@
     <br>
 	<br>
 	</div>
+	<div *ngIf="variables.idevento != 28 && variables.idevento != 33 && variables.idevento != 43">
+    <b>*Recuerde que el Club el Nogal tiene código de vestimenta formal</b>
+    <br>
+	<b>**El Código de vestir para el ingreso al Club El Nogal es: Hombres y  Mujeres (traje formal). No se permite el ingreso de personas en jeans, ni zapatos tennis. Indispensable presentar su documento de identidad.</b>
+    <br>
+	<br>
+	</div>
 	<div *ngIf="variables.idevento != 25">
     <div *ngIf="variables.idevento == 33" style="text-align:center">
 	  <br><b>Clic en la imagen para la tarjeta de negocios</b>
@@ -213,7 +226,7 @@
 		<img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 	  </a>
     </div>
-	<div *ngIf="variables.idevento == 34 || variables.idevento == 35 || variables.idevento == 40 || variables.idevento == 41 || variables.idevento == 43 || variables.idevento == 44 || variables.idevento == 46" style="text-align:center">
+	<div *ngIf="variables.idevento == 34 || variables.idevento == 35 || variables.idevento == 40 || variables.idevento == 41 || variables.idevento == 43 || variables.idevento == 44 || variables.idevento == 46 || variables.idevento == 47" style="text-align:center">
 		<img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 	</div>
 	</div>
