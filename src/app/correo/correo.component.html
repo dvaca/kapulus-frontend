@@ -65,7 +65,7 @@
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m. </b> 
   </div>
   <div *ngIf="variables.idevento == 48" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
-    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m. para el proceso de registro</b> 
+    <b>El ingreso al salón depende del aforo y su puntualidad*. Le recomendamos llegar a las 7:00 a.m. para el proceso de registro</b> 
   </div>
   <div style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
@@ -205,7 +205,7 @@
     </div>
     <br>
     <br>
-	<div *ngIf="variables.idevento != 28 && variables.idevento != 33 && variables.idevento != 43">
+	<div *ngIf="variables.idevento != 28 && variables.idevento != 33 && variables.idevento != 43 && variables.idevento != 48">
     <b>GRACIAS POR SU PARTICIPACIÓN</b>
     <br>
 	<br>
@@ -224,10 +224,10 @@
     <br>
 	<br>
 	</div>
-	<div *ngIf="variables.idevento == 48">
+	<div *ngIf="variables.idevento == 48" style="text-align:left;font-style:italic">
 	<b>TÉRMINOS Y CONDICIONES DEL EVENTO</b>
 	<br>
-	Los cupos al evento son limitados. Su inscripción al evento no garantiza la entrada al mismo. El derecho al ingreso es determinado por el orden de llegada y no por el orden de inscripción. Recomendamos llegar con tiempo al lugar del evento para garantizar su cupo. 
+	* Los cupos al evento son limitados. Su inscripción al evento no garantiza la entrada al mismo. El derecho al ingreso es determinado por el orden de llegada y no por el orden de inscripción. Recomendamos llegar con tiempo al lugar del evento para garantizar su cupo. 
     <br>
 	<br>
 	<b>GRACIAS POR SU PARTICIPACIÓN</b>
