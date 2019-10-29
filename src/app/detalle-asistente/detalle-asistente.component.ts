@@ -407,6 +407,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 47){
 			correo.subject = "Bienvenido al Foro: Educación Ambiental como herramienta de desarrollo sostenible";
 		}
+		if(this.config.idevento == 48){
+			correo.subject = "Bienvenido a la primera Gran Cumbre Colombia Rural";
+		}
       }
       /*
       if(this.config.idevento == 5){

@@ -137,6 +137,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_educacion_ambiental'){
       this.cargarEvento(47, 47);
     }
+	if(url == 'callcenter_registro_colombia_rural'){
+      this.cargarEvento(48, 48);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

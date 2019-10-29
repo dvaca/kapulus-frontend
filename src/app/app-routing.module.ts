@@ -47,6 +47,7 @@ const routes: Routes = [
   { path: 'callcenter_registro_no_repeticion', component: BuscadorComponent },
   { path: 'callcenter_registro_democracia', component: BuscadorComponent },
   { path: 'callcenter_registro_educacion_ambiental', component: BuscadorComponent },
+  { path: 'callcenter_registro_colombia_rural', component: BuscadorComponent },
   { path: 'callcenter_token_7D5H3N9Y4F', component: EstadisticasComponent },
   { path: 'callcenter_token_4B5O2S8Z0L', component: EstadisticasComponent },
   { path: 'callcenter_token_1T9Y7X1M9A', component: EstadisticasComponent },
@@ -83,6 +84,7 @@ const routes: Routes = [
   { path: 'callcenter_estadisticas_no_repeticion', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_democracia', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_educacion_ambiental', component: EstadisticasComponent },
+  { path: 'callcenter_estadisticas_colombia_rural', component: EstadisticasComponent },
   { path: 'control-acceso', component: ControlAccesoComponent },
   { path: 'registro-online', component: RegistroOnlineComponent },
   { path: 'registro-plus-superior', component: RegistroOnlineComponent },
@@ -125,6 +127,7 @@ const routes: Routes = [
   { path: 'evento_estadisticas_democracia', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_seguridad_inteligente', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_educacion_ambiental', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_colombia_rural', component: EstadisticasLocalComponent },
   { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
 ]
 
