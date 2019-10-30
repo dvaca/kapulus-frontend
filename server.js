@@ -126,6 +126,7 @@ app.use("/evento_estadisticas_cannabis", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_democracia", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_seguridad_inteligente", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_educacion_ambiental", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_colombia_rural", express.static(__dirname+'/dist'));
 
 app.use("/certificado_asistencia_copnia", express.static(__dirname+'/dist'));
 
