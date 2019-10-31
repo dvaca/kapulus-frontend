@@ -140,6 +140,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_colombia_rural'){
       this.cargarEvento(48, 48);
     }
+	if(url == 'callcenter_registro_arkadia'){
+      this.cargarEvento(49, 49);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
