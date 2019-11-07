@@ -322,7 +322,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 			correo.subject = "Asista al foro 'Educación Ambiental como herramienta de desarrollo sostenible'";
 		}
 		if(this.config.idevento == 49){
-			correo.subject = "Inauguración Arkadia Centro Comercial";
+			correo.subject = "Inauguración Arkadia Centro Comercial: Confirma tu asistencia";
 		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
