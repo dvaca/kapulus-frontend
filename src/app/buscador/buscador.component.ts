@@ -143,6 +143,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_arkadia'){
       this.cargarEvento(49, 49);
     }
+	if(url == 'callcenter_registro_diabetes'){
+      this.cargarEvento(50, 50);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

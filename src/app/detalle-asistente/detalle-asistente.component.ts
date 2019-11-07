@@ -413,6 +413,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 48){
 			correo.subject = "Bienvenido a la primera Gran Cumbre Colombia Rural";
 		}
+		if(this.config.idevento == 50){
+			correo.subject = "Bienvenido al CONVERSATORIO 'TENDENCIAS EN EL CUIDADO DE LA DIABETES: HACIA UN ESTILO DE VIDA PLENO Y LIBRE'";
+		}
       }
       /*
       if(this.config.idevento == 5){
