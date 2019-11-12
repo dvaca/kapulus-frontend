@@ -1,3 +1,6 @@
+import { FileUploadModule } from './file-upload/file-upload.module';
+import { EventManagerModule } from './event-manager/event-manager.module';
+import { DataLoaderModule } from './data-loader/data-loader.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -47,7 +50,10 @@ import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-lo
     HttpClientModule,
     NgxBarcodeModule,
     QRCodeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DataLoaderModule,
+    EventManagerModule,
+    FileUploadModule
   ],
   providers: [
     RegistroService,

@@ -33,6 +33,8 @@
     "core-js": "^2.4.1",
     "enhanced-resolve": "^3.3.0",
     "express": "^4.16.3",
+    "font-awesome": "^4.7.0",
+    "glyphicons": "^0.2.0",
     "html2canvas": "^1.0.0-rc.1",
     "jquery": "^3.3.1",
     "jspdf": "^1.5.3",
@@ -40,9 +42,7 @@
     "path": "^0.12.7",
     "popper.js": "^1.14.3",
     "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14",
-	"@angular/cli": "1.3.1",
-    "@angular/compiler-cli": "^4.2.4"
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular/cli": "1.3.1",

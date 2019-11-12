@@ -1,0 +1,265 @@
+<nav class="navbar navbar-expand-sm bg-success navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">
+        <img src="/assets/resources/LogoKapulus.png" height="28" alt="kapulus">
+    </a>
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Acciones
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a (click)="processFile(files[active])" class="dropdown-item">Procesar
+                    Archivo </a>
+                <a (click)="toDatabase(files[active])" class="dropdown-item">Enviar a Base de
+                    Datos</a>
+                <a class="dropdown-item" (click)="saveFile()">Guardar Configuración</a>
+                <div role="separator" class="dropdown-divider"></div>
+
+                <a class="dropdown-item" (click)="deleteDataLoaded(files[active])">Eliminar
+                    Datos Subidos</a>
+            </div>
+        </li>
+        <li class="nav-item active ">
+            <a class="nav-link" href="/eventManager">Eventos <span class="sr-only">(current)</span></a>
+        </li>
+    </ul>
+</nav>
+
+<!-- <div class="container " style="font-size: .875rem"></div> -->
+<div class="container-fluid text-left" style="margin-top:80px; font-size: .875rem">
+    <div *ngIf="message != undefined" class="alert alert-{{messageType}} alert-dismissible fade show">
+        {{message}}</div>
+    <div>
+    </div>
+    <div class="col-0 col-md-1">
+    </div>
+    <div class="col-12 col-md-11">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h6>Información del Evento</h6>
+                    <div *ngIf="inProcess==true">
+                        <div class="spinner-border text-primary mr-2" role="status">
+                            <span class="sr-only">Cargando...</span>
+                        </div>
+                        Cargando ...
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="event" class="card-body">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="text-muted">Nombre del Evento</div>
+                        <strong>{{event.nombre}}</strong>
+                        <div class="text-muted">Fecha</div>
+                        <strong>{{event.fecha| date: 'dd/MM/yyyy'}}</strong>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="text-muted">Descripción del evento</div>
+                        <strong>{{event.nombre}}</strong>
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <div styles="height:150px;">
+                            <img src="{{backendUrl}}/static/{{event.logo}}" class="img-fluid"
+                                onError="this.src='assets/resources/img.png'" alt="...">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header">
+
+                <div class="card-title">
+                    <h6>Carga Masiva de Información de Asistentes</h6>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <file-upload [eventId]=eventId [showPreview]=true [sizeLimit]="'5 MB'"
+                            (onUpload)="onUploadFile()">
+                        </file-upload>
+                    </div>
+                    <div *ngIf="files?.length > 0" class="col-md-8 card-title">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Listado de Archivos</h6>
+                            </div>
+                            <div>
+                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                    aria-orientation="vertical">
+                                    <a *ngFor="let file of files; let i = index" [class.active]="active  === i"
+                                        (click)="onClick(i)" class="nav-link" id="v-pills-home-tab" data-toggle="pill"
+                                        href="#{{file.original_name}}{{i}}" role="tab" aria-controls="v-pills-home"
+                                        aria-selected="true">
+                                        <span>{{file.original_name}}</span>
+                                        <div class="card-actions float-right">
+                                            <span (click)="deleteStorage(file)"><i class="fa fa-trash"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p></p>
+
+            <div *ngIf="files?.length > 0" class="card">
+                <!-- <p>
+                    Form Value: {{ settingsForm.value | json }}
+                </p>  -->
+                <form [formGroup]="settingsForm">
+                    <div class="card-header">
+                        <div class="card-title mb-0">
+                            <div class="row no-gutters justify-content-between">
+                                <h6>Configuración del evento</h6>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-1">
+
+                        <div class="row">
+                            <div *ngIf="files?.length > 0" class="col-md-5 tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                    aria-labelledby="v-pills-home-tab">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-12 col">
+                                            <div class="widget-flat card">
+                                                <div class="card-header">
+                                                    <div class="card-title">Información del Archivo:</div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="text-muted">Nombre del Archivo</div>
+                                                    <strong>{{files[active].original_name}}</strong>
+                                                    <p></p>
+                                                    <div class="text-muted">Fecha de Creación</div>
+                                                    {{files[active].create_date | date:'medium' }}
+                                                    <div *ngIf="settings[selectedFile.storage_id]">
+                                                        <div class="text-muted">Total Registros</div>
+                                                        {{settings[selectedFile.storage_id].totalRows}}
+                                                        <div class="text-muted">Total Registros Válidos</div>
+                                                        {{settings[selectedFile.storage_id].validRows}}
+                                                        <div class="text-muted">Estado</div>
+                                                        {{settings[selectedFile.storage_id].status}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="event?.settings" class="col-md-5 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-title">Columnas Identificadas</div>
+                                        <small class="form-text text-muted">
+                                            De click para abrir las propiedades de la columna.</small>
+                                    </div>
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="card" formArrayName="mergeColumns">
+                                            <div *ngFor="let column of settingsForm.get('mergeColumns').controls; let k=index"
+                                                [formGroupName]="k" class="nav flex-column nav-pills">
+                                                <div class="" id="headingOne">
+                                                    <a [class.active]="activeColumn === k" (click)="onClickColumn(k)"
+                                                        class="nav-link" data-toggle="collapse"
+                                                        [attr.data-target]="'#'+column.value.name+k"
+                                                        aria-expanded="false"
+                                                        [attr.aria-controls]="'#'+column.value.name+k" role="tab">
+                                                        <span>{{column.value.order}}</span>
+                                                        {{column.value.description}} <i
+                                                            class="fa fa-chevron-down float-right"></i>
+                                                    </a>
+                                                </div>
+                                                <div id="{{column.value.name}}{{k}}" class="collapse"
+                                                    aria-labelledby="headingOne" data-parent="#accordionExample">
+                                                    <div class="card-body">
+                                                        <small id="emailHelp" class="form-text text-muted">
+                                                            Seleccione las propiedades de la columna.</small>
+                                                        <div class="custom-control custom-switch">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="columnId{{k}}" formControlName="id">
+                                                            <label class="custom-control-label"
+                                                                for="columnId{{k}}">Id</label>
+                                                        </div>
+                                                        <div class="custom-control custom-switch">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="columnFilter{{k}}" formControlName="filter">
+                                                            <label class="custom-control-label"
+                                                                for="columnFilter{{k}}">Filtrar</label>
+                                                        </div>
+                                                        <div class="custom-control custom-switch">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="columnStatistics{{k}}" formControlName="statistics">
+                                                            <label class="custom-control-label"
+                                                                for="columnStatistics{{k}}">Aplica
+                                                                Estadísticas</label>
+                                                        </div>
+                                                        <small class="form-text text-muted">
+                                                            Valores Permitidos.</small>
+                                                        <div formArrayName="allowedValues">
+                                                            <div class="col py-md-0.2" *ngFor="let allowedValue of column.get('allowedValues').controls;
+                                                                    let allowedValueIndex=index"
+                                                                [formGroupName]="allowedValueIndex">
+                                                                <input formControlName="name" />
+                                                                <button class="btn"
+                                                                    (click)="dellAllowedValue(column,allowedValueIndex)"><i
+                                                                        class="fa fa-minus-square"></i></button>
+                                                            </div>
+                                                        </div>
+                                                        <p></p>
+                                                        <button class="btn btn-success btn-sm"
+                                                            (click)="addAllowedValue(column)">Adicionar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-4 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-title">Columnas Personalizadas</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Adicionar Columna</label>
+                                            <input type="input" class="form-control" id="exampleInputEmail1"
+                                                aria-describedby="emailHelp" placeholder="Nombre de Columna">
+                                            <small id="txCustom" class="form-text text-muted">
+                                                Ingrese el nombre de la columna personalizada.</small>
+                                        </div>
+                                        <button (click)="processFile(files[active])" class="btn btn-success btn-sm">
+                                            Adicionar</button>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <p></p>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" #toast id="toast">
+        <div class="toast-header">
+            <img src="..." class="rounded mr-2" alt="...">
+            <strong class="mr-auto">Bootstrap</strong>
+            <small class="text-muted">just now</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            See? Just like this.
+        </div>
+    </div>

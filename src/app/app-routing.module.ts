@@ -1,3 +1,4 @@
+import { FileUploadComponent } from './file-upload/file-upload.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BuscadorComponent } from './buscador/buscador.component';
@@ -7,9 +8,11 @@ import { RegistroOnlineComponent } from './registro-online/registro-online.compo
 import { LoginComponent } from './login/login.component';
 import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-local.component';
 import { CertificadoComponent } from './certificado/certificado.component';
+import { DataLoaderComponent } from './data-loader/data-loader.component';
+import { EventManagerComponent } from './event-manager/event-manager.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/registro-online', pathMatch: 'full' },
+  { path: '', redirectTo: '/registro-online', pathMatch: 'full'}, 
   { path: 'login', component: LoginComponent },
   { path: 'callcenter_token_9B0I4J8R2T', component: BuscadorComponent },
   { path: 'callcenter_token_6J2N4P6Q3K', component: BuscadorComponent },
@@ -133,7 +136,14 @@ const routes: Routes = [
   { path: 'evento_estadisticas_educacion_ambiental', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_colombia_rural', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_diabetes', component: EstadisticasLocalComponent },
-  { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
+  { path: 'certificado_asistencia_copnia', component: CertificadoComponent },
+  { path: 'dataLoader', component: DataLoaderComponent },
+  { path: 'eventManager', component: EventManagerComponent },
+  { path: 'dataLoader/:eventId', component: DataLoaderComponent},  
+  { path: 'search/:eventId:zone', component: BuscadorComponent},
+  { path: 'search', component: BuscadorComponent},
+  { path: 'dataLoader', component: DataLoaderComponent },  
+  { path: 'fileUpload', component: FileUploadComponent }
 ]
 
 @NgModule({

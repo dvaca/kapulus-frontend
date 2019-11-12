@@ -1,0 +1,18 @@
+<div *ngIf="showPreview" class="img-preview">
+  <img [src]="imgURL" height="200" *ngIf="imgURL">
+</div>
+
+<label>
+  <span class="btn btn-primary btn-sm"><i class="fa fa-upload"></i> Subir Archivo</span>
+  <!-- <input type="file" name="file" #imageInput (change)="processFile(imageInput)" hidden> -->
+  <input #file type="file" name="file" hidden (change)="preview(file.files);processFile(file)">
+</label>
+
+<div>
+  <span>El máximo tamaño permitido es {{sizeLimit}}</span>
+  <div *ngIf="selectedFile" class="img-preview-container">
+    <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Archivo Cargado Exitosamente!</div>
+    <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Falla en la carga del archivo!</div>
+  </div>
+</div>
+<!-- <i class="fa fa-heart"></i> -->
