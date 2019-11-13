@@ -134,6 +134,7 @@ const routes: Routes = [
   { path: 'evento_estadisticas_colombia_rural', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_diabetes', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_policia', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_nutricion', component: EstadisticasLocalComponent },
   { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
 ]
 

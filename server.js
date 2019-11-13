@@ -133,6 +133,7 @@ app.use("/evento_estadisticas_educacion_ambiental", express.static(__dirname+'/d
 app.use("/evento_estadisticas_colombia_rural", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_diabetes", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_policia", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_nutricion", express.static(__dirname+'/dist'));
 
 app.use("/certificado_asistencia_copnia", express.static(__dirname+'/dist'));
 
