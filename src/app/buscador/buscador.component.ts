@@ -146,6 +146,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_diabetes'){
       this.cargarEvento(50, 50);
     }
+	if(url == 'callcenter_registro_almuerzo_bvc'){
+      this.cargarEvento(53, 53);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
