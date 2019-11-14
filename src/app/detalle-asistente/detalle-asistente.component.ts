@@ -416,6 +416,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 50){
 			correo.subject = "Bienvenido al CONVERSATORIO 'TENDENCIAS EN EL CUIDADO DE LA DIABETES: HACIA UN ESTILO DE VIDA PLENO Y LIBRE'";
 		}
+		if(this.config.idevento == 54){
+			correo.subject = "Bienvenido al foro 'TRATAMIENTO DE AGUA Y SANEAMIENTO BÁSICO: UNA NECESIDAD DE PAIS'";
+		}
       }
       /*
       if(this.config.idevento == 5){

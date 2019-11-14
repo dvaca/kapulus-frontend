@@ -149,6 +149,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_almuerzo_bvc'){
       this.cargarEvento(53, 53);
     }
+	if(url == 'callcenter_registro_ptar'){
+      this.cargarEvento(54, 54);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

@@ -155,6 +155,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_almuerzo_bvc'){
       this.cargarEvento(53, 53);
     }
+	if(url == 'callcenter_estadisticas_ptar'){
+      this.cargarEvento(54, 54);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
