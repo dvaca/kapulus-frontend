@@ -419,6 +419,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 54){
 			correo.subject = "Bienvenido al foro 'TRATAMIENTO DE AGUA Y SANEAMIENTO BÁSICO: UNA NECESIDAD DE PAIS'";
 		}
+		if(this.config.idevento == 55){
+			correo.subject = "Inscríbete ahora y reserva tu puesto en este gran Almuerzo";
+		}
       }
       /*
       if(this.config.idevento == 5){

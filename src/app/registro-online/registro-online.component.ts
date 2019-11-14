@@ -65,6 +65,9 @@ export class RegistroOnlineComponent implements OnInit {
 	if(url == 'registro-prosegur'){
       this.cargarEvento(29, 29);
     }
+	if(url == 'registro-credibanco'){
+      this.cargarEvento(55, 55);
+    }
     this.cargarCamposEvento();
 	this.nuevo = true;
 	this.registroService.getAsistenteControlAcceso(origen)
