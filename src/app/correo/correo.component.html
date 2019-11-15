@@ -73,7 +73,7 @@
   <div *ngIf="variables.idevento == 54" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m. para el proceso de registro</b> 
   </div>
-  <div style="text-align:center">
+  <div *ngIf="variables.idevento != 55" style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
   
@@ -208,7 +208,7 @@
 	<div *ngIf="variables.idevento == 55">
     <br> ¡Estamos listos, te esperamos a compartir unas horas de esta navidad con nosotros!
 	<br>
-	<br> Si te encuentras en una ciudad diferente a Medellín, pronto nos comunicaremos contigo para coordinar tu llegada.
+	<br> Presenta este código QR  para el ingreso al evento.
 	</div>
     <br>
     <br>
@@ -362,8 +362,11 @@
     <br>
   </div>
   <div *ngIf="variables.idevento != 33" style="text-align:center">
-	<div *ngIf="variables.idevento != 49" 
+	<div *ngIf="variables.idevento != 49 && variables.idevento != 55" 
 	<br><b>Clic en la imagen para confirmar su asistencia</b><p> (si ya se inscribió haga caso omiso)</p>
+	</div>
+	<div *ngIf="variables.idevento = 55" 
+	<br><b>Haz clic en la imagen para registrarte</p>
 	</div>
 	<div *ngIf="variables.idevento == 14">
 		<!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSe5Sv5cbmCD4s4bztrgKR216fIyN3Mz6z-3IIUPvqs9ad5Phg/viewform?vc=0&c=0&w=1" target="_blank">
@@ -450,11 +453,17 @@
 			alt="Arkadia Centro Comercial">
 		-->
 	</div>
+	<div *ngIf="variables.idevento == 55">
+		<a href="https://kapulus.herokuapp.com/registro-credibanco" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Almuerzo Aliados CredibanCo 2019">
+		</a>
+	</div>
 	<div *ngIf="variables.idevento == 29">
 		<b>Para más información comuníquese al 350 316 0070</b>
 	</div>
 	<br>
-	<div *ngIf="variables.idevento != 49" style="font-size: 10px; max-width: 645px; text-align: left;">
+	<div *ngIf="variables.idevento != 49 && variables.idevento != 55" style="font-size: 10px; max-width: 645px; text-align: left;">
 	<b><i>Términos y condiciones del foro</i></b>
 	<br>
 	<i>El Código de vestir para el ingreso al Club El Nogal es: Hombres (Saco y Corbata), Mujeres (traje formal). Indispensable presentar su documento de identidad.</i>

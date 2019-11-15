@@ -107,6 +107,7 @@ const routes: Routes = [
   { path: 'registro-coosalud-bogota', component: RegistroOnlineComponent },
   { path: 'registro-rio-bogota', component: RegistroOnlineComponent },
   { path: 'registro-prosegur', component: RegistroOnlineComponent },
+  { path: 'registro-credibanco', component: RegistroOnlineComponent },
   { path: 'evento_estadisticas_semana', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_coosalud', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_coosalud_bmanga', component: EstadisticasLocalComponent },

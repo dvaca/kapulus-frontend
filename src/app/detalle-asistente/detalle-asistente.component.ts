@@ -280,6 +280,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 	  if(this.config.idevento == 29){
 		correo.subject = "Bienvenido al encuentro: Prosegur Soluciones Integrales";
 	  }
+	  if(this.config.idevento == 55){
+		correo.subject = "Confirmación Almuerzo Aliados CredibanCo 2019";
+	  }
     }else{
       if(tipoCorreo == TipoCorreo.Invitacion){
         plantilla = document.getElementById("plantillaCorreoInvitacion").innerHTML;
@@ -327,6 +330,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		}
 		if(this.config.idevento == 49){
 			correo.subject = "Inauguración Arkadia Centro Comercial: Confirma tu asistencia";
+		}
+		if(this.config.idevento == 55){
+			correo.subject = "Invitación Almuerzo Aliados CredibanCo 2019";
 		}
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
@@ -424,7 +430,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 			correo.subject = "Bienvenido al foro 'TRATAMIENTO DE AGUA Y SANEAMIENTO BÁSICO: UNA NECESIDAD DE PAIS'";
 		}
 		if(this.config.idevento == 55){
-			correo.subject = "Inscríbete ahora y reserva tu puesto en este gran Almuerzo";
+			correo.subject = "Confirmación Almuerzo Aliados CredibanCo 2019";
 		}
       }
       /*
