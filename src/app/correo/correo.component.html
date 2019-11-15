@@ -311,7 +311,9 @@
 </div>
   <div style="text-align: justify;">
     <br>
+	<div *ngIf="variables.idevento != 55">
     <br>Estimado (a) <b>{{nombreAsistente}}&nbsp;{{apellidoAsistente}}</b>,
+	</div>
     <br>
 	<div *ngIf="variables.idevento == 14">
 		<br> Coosalud lo invita a conocer de qué manera los colombianos podemos construir un mejor sistema de salud el próximo 31 de mayo en Bucaramanga en la Rendición de cuentas a la ciudadanía. 
@@ -366,7 +368,7 @@
 	<br><b>Clic en la imagen para confirmar su asistencia</b><p> (si ya se inscribió haga caso omiso)</p>
 	</div>
 	<div *ngIf="variables.idevento == 55" 
-	<br><p><b>Haz clic en la imagen para registrarte</b></p>
+	<br><p style="color: white;"><b>Haz clic en la imagen para registrarte</b></p>
 	</div>
 	<div *ngIf="variables.idevento == 14">
 		<!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSe5Sv5cbmCD4s4bztrgKR216fIyN3Mz6z-3IIUPvqs9ad5Phg/viewform?vc=0&c=0&w=1" target="_blank">
