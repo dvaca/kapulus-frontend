@@ -173,15 +173,16 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 						this.apellidoAsistente = atr.valor;
 					}
 				  });
-				  this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
+				  //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
+				  this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE COMPLETO").subscribe(
             nombre => {
-              this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
-                apellido => {
+              //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
+                //apellido => {
                   this.nombreAsistente = nombre.valor;
-                  this.apellidoAsistente = apellido.valor;
+                  //this.apellidoAsistente = apellido.valor;
 					        this.identificacion = this.asistente.identificacion.toString();
                       this.confirmado = true;
-                    });    
+                    //});    
                   });
             });
         });
