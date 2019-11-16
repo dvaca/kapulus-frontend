@@ -144,6 +144,7 @@ app.use("/evento_estadisticas_nutricion", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_ptar", express.static(__dirname+'/dist'));
 
 app.use("/certificado_asistencia_copnia", express.static(__dirname+'/dist'));
+app.use("/registro_credibanco", express.static(__dirname+'/dist'));
 
 //app.get('/*', function(req,res) {
     
