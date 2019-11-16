@@ -1,21 +1,18 @@
-.control-label{
-  text-align: left;
-  font-weight: 700;
-  margin-bottom: 0%;
-  max-width: 100%;
-  display: block;
+/* Set a background image by replacing the URL below */
+body {
+  background: url('/assets/landingCredibanco.svg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 
-.modal-body{
-  background-color: white;
+#mmenu_screen > .row {
+  min-height: 100vh;
 }
 
-.modal-header{
-  background-color: white;
-  color: black;
+.flex-fill {
+  flex:1 1 auto;
 }
 
-.close{
-  color: black;
-  opacity: 1;
-}
+

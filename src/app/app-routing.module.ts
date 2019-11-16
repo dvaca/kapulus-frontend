@@ -7,6 +7,7 @@ import { RegistroOnlineComponent } from './registro-online/registro-online.compo
 import { LoginComponent } from './login/login.component';
 import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-local.component';
 import { CertificadoComponent } from './certificado/certificado.component';
+import { DetalleAsistenteComponent } from './detalle-asistente/detalle-asistente.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/registro-online', pathMatch: 'full' },
@@ -143,7 +144,8 @@ const routes: Routes = [
   { path: 'evento_estadisticas_policia', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_nutricion', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_ptar', component: EstadisticasLocalComponent },
-  { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
+  { path: 'certificado_asistencia_copnia', component: CertificadoComponent },
+  { path: 'detalle_asistente', component: DetalleAsistenteComponent }
 ]
 
 @NgModule({
