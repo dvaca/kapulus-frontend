@@ -5,6 +5,7 @@ import { CampoEvento } from '../camposevento';
 import { AsistenciaZona } from '../asistenciazona';
 import { Operacion, TipoCorreo } from '../enums';
 import { VariablesEvento } from '../variablesEvento';
+import { ConfiguracionEvento } from '../configuracionEvento';
 import { Impresion } from '../impresion';
 import { ImpresionService } from '../impresion.service';
 import { Correo } from '../correo';
