@@ -35,11 +35,13 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
   identificacion: string;
   public tiposCorreo = TipoCorreo;
 
-  constructor(private registroService: RegistroService, private impresionService: ImpresionService, private config: VariablesEvento) { }
+  constructor(private registroService: RegistroService, private impresionService: ImpresionService, private config: VariablesEvento,
+              private configuracion: ConfiguracionEvento) { }
 
   ngOnInit() {
     this.asistente = new Asistente();
     this.nuevo = true;
+    this.cargarCamposEvento();
   }
 
   ngOnChanges(){
@@ -85,6 +87,12 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     }
   }
 
+  cargarCamposEvento(): void {
+    this.configuracion.getCamposEvento().subscribe(camposEvento => {
+      this.camposEvento = camposEvento;
+    });
+  }
+  
   guardarAsistente(registrar: boolean): void {
     let asistencia: AsistenciaZona;
     let asistenteExistente: Asistente;
