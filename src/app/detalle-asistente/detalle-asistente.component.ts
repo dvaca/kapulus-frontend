@@ -57,6 +57,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
         this.nuevo = false;
       }
     }
+    this.asistente = new Asistente();
     if(!this.nuevo && !isUndefined(this.asistente)){
 	  this.registroService.getAsistenteImpresion(this.asistente.identificacion).subscribe(
 		x => {this.asistenteImpresion = x; 
