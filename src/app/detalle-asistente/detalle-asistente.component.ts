@@ -38,6 +38,8 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
   constructor(private registroService: RegistroService, private impresionService: ImpresionService, private config: VariablesEvento) { }
 
   ngOnInit() {
+    this.asistente = new Asistente();
+    this.nuevo = true;
   }
 
   ngOnChanges(){
