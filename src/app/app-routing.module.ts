@@ -145,7 +145,7 @@ const routes: Routes = [
   { path: 'evento_estadisticas_nutricion', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_ptar', component: EstadisticasLocalComponent },
   { path: 'certificado_asistencia_copnia', component: CertificadoComponent },
-  { path: 'detalle_asistente', component: DetalleAsistenteComponent }
+  { path: 'registro_credibanco', component: DetalleAsistenteComponent }
 ]
 
 @NgModule({
