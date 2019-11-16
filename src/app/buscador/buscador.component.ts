@@ -21,7 +21,9 @@ export class BuscadorComponent implements OnInit {
   criterioBusqueda: string;
   impresoras: Impresora[];
   impresoraSeleccionada: Impresora;
-
+  eventId=0;
+  zone=0;
+  
   constructor( private route: ActivatedRoute, 
     private registroService: RegistroService, 
     private config: ConfiguracionEvento) { 
@@ -29,127 +31,19 @@ export class BuscadorComponent implements OnInit {
 
   ngOnInit() {
 	let url = this.route.snapshot.url.toString();
-    if(url == 'callcenter_token_9B0I4J8R2T'){
-      this.cargarEvento(5, 4);
-    }
-    if(url == 'callcenter_token_6J2N4P6Q3K'){
-      this.cargarEvento(6, 5);
-    }
-	if(url == 'callcenter_token_3N8P3H6V1L'){
-      this.cargarEvento(7, 6);
-    }
-	if(url == 'callcenter_registro_cerveza'){
-      this.cargarEvento(8, 7);
-    }
-	if(url == 'callcenter_registro_orquideas'){
-      this.cargarEvento(9, 8);
-    }
-	if(url == 'callcenter_registro_semana'){
-      this.cargarEvento(10, 9);
-    }
-	if(url == 'callcenter_registro_cartagena'){
-      this.cargarEvento(11, 10);
-    }
-	if(url == 'callcenter_registro_coosalud'){
-      this.cargarEvento(12, 11);
-    }
-	if(url == 'callcenter_registro_coosalud_bquilla'){
-      this.cargarEvento(13, 12);
-    }
-	if(url == 'callcenter_registro_coosalud_bmanga'){
-      this.cargarEvento(14, 13);
-    }
-	if(url == 'callcenter_registro_autonomia_medica'){
-      this.cargarEvento(15, 14);
-    }
-	if(url == 'callcenter_registro_columnistas'){
-      this.cargarEvento(16, 15);
-    }
-	if(url == 'callcenter_registro_coosalud_medellin'){
-      this.cargarEvento(17, 16);
-    }
-	if(url == 'callcenter_registro_mujeres'){
-      this.cargarEvento(18, 17);
-    }
-	if(url == 'callcenter_registro_coosalud_cali'){
-      this.cargarEvento(20, 20);
-    }
-	if(url == 'callcenter_registro_movilidad'){
-      this.cargarEvento(21, 21);
-    }
-	if(url == 'callcenter_registro_contraloria'){
-      this.cargarEvento(22, 22);
-    }
-	if(url == 'callcenter_registro_coosalud_bogota'){
-      this.cargarEvento(23, 23);
-    }
-	if(url == 'callcenter_registro_rio_bogota'){
-      this.cargarEvento(24, 24);
-    }
-	if(url == 'callcenter_registro_oracle'){
-      this.cargarEvento(25, 25);
-    }
-	if(url == 'callcenter_registro_ied'){
-      this.cargarEvento(28, 28);
-    }
-	if(url == 'callcenter_registro_prosegur'){
-      this.cargarEvento(29, 29);
-    }
-	if(url == 'callcenter_registro_seloquecomo'){
-      this.cargarEvento(30, 30);
-    }
-	if(url == 'callcenter_registro_copnia'){
-      this.cargarEvento(33, 33);
-    }
-	if(url == 'callcenter_registro_juegos'){
-      this.cargarEvento(34, 34);
-    }
-	if(url == 'callcenter_registro_sostenibilidad'){
-      this.cargarEvento(35, 35);
-    }
-	if(url == 'callcenter_registro_feoracle'){
-      this.cargarEvento(36, 36);
-    }
-	if(url == 'callcenter_registro_feoracle2'){
-      this.cargarEvento(39, 39);
-    }
-	if(url == 'callcenter_registro_planeacion_policia'){
-      this.cargarEvento(40, 40);
-    }
-	if(url == 'callcenter_registro_cannabis'){
-      this.cargarEvento(41, 41);
-    }
-	if(url == 'callcenter_registro_antinarcoticos'){
-      this.cargarEvento(42, 42);
-    }
-	if(url == 'callcenter_registro_qlik'){
-      this.cargarEvento(43, 43);
-    }
-	if(url == 'callcenter_registro_seguridad_inteligente'){
-      this.cargarEvento(44, 44);
-    }
-	if(url == 'callcenter_registro_no_repeticion'){
-      this.cargarEvento(45, 45);
-    }
-	if(url == 'callcenter_registro_democracia'){
-      this.cargarEvento(46, 46);
-    }
-	if(url == 'callcenter_registro_educacion_ambiental'){
-      this.cargarEvento(47, 47);
-    }
-	if(url == 'callcenter_registro_colombia_rural'){
-      this.cargarEvento(48, 48);
-    }
-	if(url == 'callcenter_registro_arkadia'){
-      this.cargarEvento(49, 49);
-    }
-	if(url == 'callcenter_registro_diabetes'){
-      this.cargarEvento(50, 50);
-    }
+  this.route.params.subscribe(params => {
+    this.eventId = params.eventId;
+    this.zone = params.zone;
+    console.log(this.eventId);
+  });
+  if (this.eventId != 0) {
+    this.cargarEvento(this.eventId, this.zone);
+  }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
     this.asistentes = new Array<Asistente>();
+    
   }
 
   buscarAsistente(criterio: string): void {

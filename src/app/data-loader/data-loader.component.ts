@@ -155,8 +155,8 @@ export class DataLoaderComponent implements OnInit {
         description: '',
         id: '',
         filter: '',
-        statistics: ''
-      });
+       statistics: ''
+      }) ;
       column.patchValue(validColumn);
       //Second Level
       const allowedValuesArray = column.get("allowedValues") as FormArray;
