@@ -26,6 +26,7 @@ import { RegistroOnlineComponent } from './registro-online/registro-online.compo
 import { CorreoComponent } from './correo/correo.component';
 import { LoginComponent } from './login/login.component';
 import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-local.component';
+import { RegistroCredibancoComponent } from './registro-credibanco/registro-credibanco.component';
 
 @NgModule({
   declarations: [
