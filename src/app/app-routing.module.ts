@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-local.component';
 import { CertificadoComponent } from './certificado/certificado.component';
 import { DetalleAsistenteComponent } from './detalle-asistente/detalle-asistente.component';
-import { RegistroCredibancoComponent } from './registro-credibanco/registro-credibanco';
+import { RegistroCredibancoComponent } from './registro-credibanco/registro-credibanco.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/registro-online', pathMatch: 'full' },
