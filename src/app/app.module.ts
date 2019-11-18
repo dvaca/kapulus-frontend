@@ -1,4 +1,4 @@
-import { RegistroCredibancoComponent } from './registro_credibanco/registro-credibanco';
+import { RegistroCredibancoComponent } from './registro_credibanco/registro-credibanco.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
