@@ -66,7 +66,7 @@ export class RegistroOnlineComponent implements OnInit {
       this.cargarEvento(29, 29);
     }
 	if(url == 'registro-credibanco'){
-      this.cargarEvento(55, 55);
+      this.cargarEvento(37, 37);
     }
     this.cargarCamposEvento();
 	this.nuevo = true;

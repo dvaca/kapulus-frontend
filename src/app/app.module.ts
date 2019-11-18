@@ -1,9 +1,11 @@
+import { RegistroCredibancoComponent } from './registro_credibanco/registro-credibanco';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { NgxBarcodeModule, NgxBarcodeComponent } from 'ngx-barcode';
 import { QRCodeModule} from 'angular2-qrcode';
+import { ReactiveFormsModule } from '@angular/forms';  // <-- #1 import module
 
 import { AppComponent } from './app.component';
 import { BuscadorComponent } from './buscador/buscador.component';
@@ -39,7 +41,8 @@ import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-lo
     RegistroOnlineComponent,
     CorreoComponent,
     LoginComponent,
-    EstadisticasLocalComponent
+    EstadisticasLocalComponent,
+    RegistroCredibancoComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-lo
     HttpClientModule,
     NgxBarcodeModule,
     QRCodeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     RegistroService,

@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-local.component';
 import { CertificadoComponent } from './certificado/certificado.component';
 import { DetalleAsistenteComponent } from './detalle-asistente/detalle-asistente.component';
+import { RegistroCredibancoComponent } from './registro_credibanco/registro-credibanco';
 
 const routes: Routes = [
   { path: '', redirectTo: '/registro-online', pathMatch: 'full' },
@@ -108,7 +109,7 @@ const routes: Routes = [
   { path: 'registro-coosalud-bogota', component: RegistroOnlineComponent },
   { path: 'registro-rio-bogota', component: RegistroOnlineComponent },
   { path: 'registro-prosegur', component: RegistroOnlineComponent },
-  { path: 'registro-credibanco', component: RegistroOnlineComponent },
+  { path: 'registro-credibanco', component: RegistroCredibancoComponent },
   { path: 'evento_estadisticas_semana', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_coosalud', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_coosalud_bmanga', component: EstadisticasLocalComponent },
@@ -144,8 +145,7 @@ const routes: Routes = [
   { path: 'evento_estadisticas_policia', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_nutricion', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_ptar', component: EstadisticasLocalComponent },
-  { path: 'certificado_asistencia_copnia', component: CertificadoComponent },
-  { path: 'registro_credibanco', component: DetalleAsistenteComponent }
+  { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
 ]
 
 @NgModule({

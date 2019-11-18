@@ -12,6 +12,7 @@ import { Correo } from '../correo';
 import { isUndefined } from 'util';
 import * as jsPDF from 'jspdf'; 
 import html2canvas from 'html2canvas';  
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-detalle-asistente',
@@ -91,6 +92,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
   cargarCamposEvento(): void {
     this.configuracion.getCamposEvento().subscribe(camposEvento => {
       this.camposEvento = camposEvento;
+      console.log('Campos Evento' + JSON.stringify(camposEvento));
     });
   }
   
@@ -487,4 +489,20 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		}
     });
   }
+
+createDinamicForm(){
+
+
+}
+
+formAsistente = new FormGroup({
+  name: new FormControl(''),
+  lastName: new FormControl(''),
+  mobile: new FormControl(''),
+  email: new FormControl(''),
+  company: new FormControl(''),
+  vegatarian: new FormControl(''),
+});
+
+
 }

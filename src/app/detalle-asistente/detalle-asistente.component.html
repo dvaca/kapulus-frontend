@@ -1,85 +1,193 @@
-<body class="img-fluid mw-50" alt="Responsive image">
-    <div class="container">
-        <div>
-            <div class="card-body p-5">
-                <div style="height: 850px">
-                    <div id="container" class="container" style="padding-top: 40%;">
-                        <div class="row text-white mt-100px">
-                            <div class="col-sm-6 offset-sm-3 text-center">
-                                <h1 class="display-4"></h1>
-                                <div class="card pb-20" style="background-color: rgba(245, 245, 245, 0.4);">
-                                    <div class="card-transparent">
-                                        <div class="card-header">
-                                            <h6>Por favor completa los campos a continuacion para reservar tu regalo con
-                                                sentido.</h6>
+<!-- Modal -->
+<div *ngIf="asistente" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" show="true" focus="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Registro de asistentes</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <form class="form-horizontal" #atributosForm="ngForm">
+                            <div class="form-group">
+                                <div class='row'>
+                                    <div class='col-sm-12'>
+                                        <div *ngIf="existe == true" class="alert alert-danger" role="alert">
+                                            El asistente {{asistente.identificacion}} ya existe
                                         </div>
-                                        <div class="card-block special-card"
-                                            style="background-color: rgba(245, 245, 245, 0.4); ">
-                                            <form action="" class="form-inlin justify-content-center">
-												<div class="form-group">
-                                                    <label class="sr-only">Número de identificación</label>
-                                                    <input [(ngModel)]="asistente.identificacion" type="text" class="form-control"
-                                                        placeholder="Número de identificación" name="pop_identificacion">
-                                                </div>
-                                                <div *ngFor="let atributo of asistente.atributos" class="form-group">
-                                                    <label class="sr-only">{{atributo.nombre}}</label>
-                                                    <input type="text" class="form-control" [(ngModel)]="atributo.valor"
-                                                        placeholder="Nombre Completo" >
-                                                </div>
-												<!--
-												<div class="form-group">
-                                                    <label class="sr-only">Name</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Nombre Completo">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="sr-only">Número celular</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Número celular">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="sr-only">Correo Electrónico</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Correo Electrónico">
-                                                </div>
-                                                <div class="text-left">
-                                                    <label>Eres Vegetariano?</label>+
-                                                    <div class="form-check-inline">
-                                                        <input class="form-check-input" type="radio"
-                                                            name="exampleRadios" id="exampleRadios1" value="option1"
-                                                            checked>
-                                                        <label class="form-check-label" for="exampleRadios1">
-                                                            Siaa
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check-inline">
-                                                        <input class="form-check-input" type="radio"
-                                                            name="exampleRadios" id="exampleRadios2" value="option2">
-                                                        <label class="form-check-label" for="exampleRadios2">
-                                                            No
-                                                        </label>
-                                                    </div>
-                                                </div>
-												-->
-                                            </form>
+                                        <div *ngIf="asistente.registrado == true" class="alert alert-success" role="alert">
+                                            El asistente {{asistente.identificacion}} se encuentra registrado
                                         </div>
-                                        <div class="card-footer"></div>
+                                    </div>
+                                    <div class='col-sm-6'>
+                                        <label for='pop_documento' class='control-label'>Identificacion</label>  
+                                        <!--<input [(ngModel)]="asistente.identificacion" type='text' class='form-control' 
+                                            placeholder="Identificacion" name="pop_identificacion" [readonly]="!nuevo">-->
+                                        <input [(ngModel)]="asistente.identificacion" type='text' class='form-control' 
+                                            placeholder="" name="pop_identificacion">
+                                    </div>
+                                    <div *ngFor="let atributo of asistente.atributos" class='col-sm-6'>
+                                        <!-- Control Atributo Asistente -->
+                                        <app-control-atributo-asistente [atributo]="atributo" [camposEvento]="camposEvento" [validar]="origen == 'online'"></app-control-atributo-asistente>
                                     </div>
                                 </div>
-                                <br>
-                                <a *ngIf="origen == 'online' && guardado == false" href="#nav-main" class="btn btn-outline-secondary btn-sm" role="button" id="btnGuardar"
-								(click)="guardarAsistente(false);">
-                                    Registrarse
-                                </a>
-								<a *ngIf="origen == 'online' && guardado == true" href="#nav-main" class="btn btn-outline-secondary btn-sm" role="button" id="btnGuardarOnline"
-								(click)="enviarCorreo(true, tiposCorreo.Confirmacion);">
-                                    Terminar
-                                </a>
                             </div>
-                        </div>
+                        </form>
+                    </div>
+                    <div  class="col-lg-4" style="padding: 5% 0;">
+					  <div *ngIf="terminado == true" class="alert alert-success" role="alert">Registro exitoso.</div>
+					  <div *ngIf="config.idevento != 12 && config.idevento != 13 && config.idevento != 14 && config.idevento != 16 && config.idevento != 17 && config.idevento != 20 && config.idevento != 23 && config.idevento != 29&& config.idevento != 55"> 
+						<img src="../assets/resources/forosSemanaDetalle.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
+                            alt="FOROS SEMANA">
+					  </div>
+					  <div *ngIf="config.idevento == 12 || config.idevento == 13 || config.idevento == 14 || config.idevento == 17 || config.idevento == 20 || config.idevento == 23"> 
+						<img src="../assets/resources/logoCoosaludSmall.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
+                            alt="COOSALUD">
+					  </div>
+					  <div *ngIf="config.idevento == 16"> 
+						<img src="../assets/resources/Logo-Semana.png" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
+                            alt="SEMANA">
+					  </div>
+					  <div *ngIf="config.idevento == 29"> 
+						<img src="../assets/resources/logoProsegurSmall.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
+                            alt="PROSEGUR">
+					  </div>
                     </div>
                 </div>
             </div>
+            <div class="modal-footer">
+                <app-escarapela [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-escarapela>
+                <!--
+				<app-certificado [asistente]="asistente" [asistenteImpresion]="asistenteImpresion"></app-certificado>
+				-->
+                <button *ngIf="asistente.registrado == false && origen == 'interno'" type="button" class="btn btn-outline-success" data-dismiss="modal" id="btnGuardarYRegistrar"
+                    (click)="guardarAsistente(true);">Registrar</button>
+                <button *ngIf="origen == 'interno'"  [disabled]="!atributosForm.form.valid"
+                    type="button" class="btn btn-outline-primary" id="btnGuardar"
+                    (click)="guardarAsistente(false);">Guardar</button>
+                <!--
+                    <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true" data-dismiss="modal"
+                    type="button" class="btn btn-outline-primary" id="btnGuardarOnline"
+                    (click)="enviarCorreo();">Terminar</button>
+                -->
+				<button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == false" data-dismiss="modal"
+                    type="button" class="btn btn-outline-primary" id="btnGuardarOnline"
+                    (click)="enviarCorreo(true, tiposCorreo.Confirmacion);">Terminar</button>
+				<!--
+                <a href="https://biz.payulatam.com/L0bfff05DB590A6" target="_blank"
+                    *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == true && config.idevento != 7" >
+                    <img src="http://www.payulatam.com/img-secure-2015/boton_pagar_grande.png">
+                </a>
+				-->
+				<button data-dismiss="modal" *ngIf="origen == 'interno' && guardado"
+                    type="button" class="btn btn-outline-danger" id="btnEnviarCorreoInvitacion"
+                    (click)="enviarCorreo(false, tiposCorreo.Invitacion);">Correo Invitación</button>
+                <button data-dismiss="modal" *ngIf="origen == 'interno' && guardado"
+                    type="button" class="btn btn-outline-danger" id="btnEnviarCorreoConfirmacion"
+                    (click)="enviarCorreo(false, tiposCorreo.Confirmacion);">Correo Confirmación</button>	
+                <button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == false"
+                    type="button" class="btn btn-outline-primary" id="btnConfirmar"
+                    (click)="guardarAsistente(false);">Confirmar</button>
+                <button *ngIf="origen == 'online' && habeasDataAceptado == false" [disabled]="!atributosForm.form.valid"
+                    type="button" class="btn btn-outline-primary" id="btnHabeasData"
+                    data-toggle="modal" data-target="#modalHabeasData" >Siguiente</button>
+                <button *ngIf="origen == 'noAplica'" type="button" class="btn btn-outline-info" data-dismiss="modal" id="btnImprimirBrowser" 
+                    (click)="guardarAsistente(false);imprimirBrowser('formEscarapela');">Escarapela</button>
+                <button *ngIf="asistente.registrado == true && guardado == true && origen == 'interno'" 
+                    type="button" class="btn btn-outline-info" data-dismiss="modal" id="btnImprimirDymo" 
+                    (click)="imprimirServicioDymo('formEscarapela');">Escarapela</button>
+                <button *ngIf="asistente.registrado == true && guardado == true && origen == 'interno'" 
+                    type="button" class="btn btn-outline-secondary" data-dismiss="modal" id="btnCertificado" 
+                    (click)="guardarAsistente(false);imprimir('formCertificado');">Certificado</button>
+                <button *ngIf="confirmado == false" type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
+            </div>
         </div>
     </div>
-</body>
+</div>
+<!-- Modal Habeas Data -->
+<div *ngIf="asistente" class="modal fade" id="modalHabeasData" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" show="false" focus="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalHDLabel">Privacidad, protección y manejo seguro de datos</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12" style="text-align: left">
+                        <!--
+                        <span>
+                            Declaras que ingresaste información completa y verdadera, de acuerdo a lo que aparece en el documento de identidad. 
+							<br>
+                            <br>
+							Cualquier inconsistencia en la información podría causar la denegación de ingreso al escenario. 
+							<br>
+                            <br>
+							Declaras conocer y aceptar nuestra política de seguridad que busca brindar total seguridad a tu información.
+							<br>
+                            <br>
+							Si deseas conocer nuestras políticas de privacidad por favor visita <a href="http://kapulusinternational.com/privacidad">http://kapulusinternational.com/privacidad</a>
+                        </span>
+                        -->
+                        <textarea *ngIf="config.idevento != 29" rows="15" cols="100" id="textoHabeasData" style="resize: none; font-size: 12px; text-align: justify;" readonly>
+En cumplimiento de la ley de protección de Datos Personales, por medio del presente documento solicitamos su autorización para que Publicaciones Semana S.A. y Proyectos Semana S.A. (en adelante SEMANA) recolecten, almacenen y usen sus datos personales registrados en el presente formulario, en su base de datos, única y exclusivamente para los siguientes fines:
+
+1.	Garantizar un óptimo servicio.
+2.	Contactarlo por cualquier medio, ya sea correo electrónico, teléfono fijo, celular, o en la dirección registrada.
+3.	Facilitar la correcta ejecución de las compras y prestación de los servicios contratados.
+4.	Realizar estudios estadísticos que permitan diseñar mejoras en los servicios prestados.
+5.	Gestionar tareas básicas de administración.
+6.	Informar por cualquier medio, las promociones, novedades, productos y servicios relacionados con los eventos y productos editoriales editados y/o comercializados por Publicaciones Semana S.A. y Proyectos Semana S.A., productos y servicios promovidos directamente por los Aliados estratégicos de Publicaciones Semana S.A. y Proyectos Semana S.A., que generen valores agregados para usted.
+7.	Contabilización.
+8.	Cumplimiento de obligaciones contractuales, por lo cual la información podrá ser transferida a terceros.
+9.	Cumplimiento de decisiones judiciales y disposiciones administrativas y legales, fiscales y regulatorias.
+10.	Transmisión de información y datos personales en procesos de auditorías.
+11.	Facturación.
+
+Para los mismos propósitos la autorización se entenderá impartida cuando sea intercambiada con las empresas que conforman el grupo empresarial SEMANA.
+
+Recuerde que con la presente autorización usted tiene derecho a:
+
+1.	Conocer, actualizar y solicitar la rectificación en cualquier tiempo de sus datos personales. Este derecho se podrá ejercer, entre otros frente a datos parciales, inexactos, incompletos, fraccionados, que induzcan a error, o aquellos cuyo tratamiento esté expresamente prohibido o no haya sido autorizado.
+2.	Solicitar prueba del otorgamiento de la presente autorización.
+3.	Ser informado por SEMANA sobre el uso que se le ha dado a sus datos personales.
+4.	Revocar la presente autorización y/o solicitar la supresión de sus datos en caso de incumplimiento de los derechos anteriormente enunciados.
+5.	Acceder sin costo alguno a sus datos personales a través de la línea de ATENCION AL CLIENTE: 01 8000 511100 o en Bogotá al 6073000, e-mail servicioalcliente@semana.com, o acudir directamente a la sede de SEMANA en la Calle 78 No. 11 – 17, en Bogotá D.C.
+
+Sus datos personales se almacenarán de manera segura, habiendo tomado todas las medidas de precaución para proteger su información contra adulteraciones, pérdidas, consultas, uso o acceso no autorizado o fraudulento. Esto con el objetivo de que su información esté protegida. Sus datos serán tratados de acuerdo al Manual de Políticas y Procedimientos para la protección de datos personales de Publicaciones Semana y Proyectos Semana S.A.
+Por medio de la presente aceptación, Usted declara expresamente que la finalidad de la utilización por SEMANA de sus datos personales, le ha sido plenamente informada y autoriza de modo expreso que sus datos sean compartidos con terceros, debidamente autorizados por SEMANA y entregados conforme a las disposiciones de la ley.
+                        </textarea>
+						<textarea *ngIf="config.idevento == 29" rows="15" cols="100" id="textoHabeasData" style="resize: none; font-size: 16px; text-align: justify;" readonly>
+Mediante el diligenciamiento del presente formulario usted autoriza a la Compañía PROSEGUR VIGILANCIA Y SEGURIDAD PRIVADA LTDA para tratar sus datos personales para fines administrativos, comerciales y financieros.
+
+Los datos otorgados por usted serán tratados de acuerdo a la ley 1581 del 2012 y demás normas reglamentarias. Como titular usted tiene derecho a conocer, actualizar, rectificar, suprimir y revocar su autorización a través de los canales descritos en la política de tratamiento de datos, la cual puede conocer a través de la página www.prosegur.com.co						
+						</textarea>
+                        <br>
+						<div *ngIf="config.idevento == 16">
+                        <span>
+                            Ver políticas de privacidad en <a href="https://www.semana.com/Modal/ModalPolicies.html" target="_blank">https://www.semana.com/</a>
+                        </span>
+						</div>
+						<div *ngIf="config.idevento != 16 && config.idevento != 29">
+                        <span>
+                            Ver políticas de privacidad en <a href="https://www.forossemana.com/habeas-data" target="_blank">https://www.forossemana.com/habeas-data</a>
+                        </span>
+						</div>
+						<div *ngIf="config.idevento == 29">
+                        <span>
+                            Ver políticas de privacidad en <a href="https://www.prosegur.com.co/legales" target="_blank">https://www.prosegur.com.co</a>
+                        </span>
+						</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" id="btnAceptarHD" data-dismiss="modal"
+                    (click)="aceptarHabeasData()">Aceptar</button>
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>          
+            </div>
+        </div>
+    </div>
+</div>
+<app-correo [asistente]="asistente" [nombreAsistente]="nombreAsistente" [apellidoAsistente]="apellidoAsistente" [identificacion]="identificacion"></app-correo>
