@@ -468,6 +468,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
     this.registroService.getAsistenteAtributo(this.asistente.identificacion, "EMAIL").subscribe(
       email => {
         correo.email = email.valor;
+        /*
 		if(terminar){
 		this.registroService.enviarCorreo(correo).subscribe(mensaje =>{
           let asistencia = new AsistenciaZona();
@@ -495,6 +496,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
           .subscribe(asistenciaZona => {});
 		  });
 		}
+        */
     });
   }
 }
