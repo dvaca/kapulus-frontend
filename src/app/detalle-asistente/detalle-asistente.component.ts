@@ -264,6 +264,12 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
   aceptarHabeasData(){
     this.habeasDataAceptado = true;
   }
+  
+  terminar(){
+    this.habeasDataAceptado = true;
+	this.confirmado = true; 
+	this.terminado = false;
+  }
 
   enviarCorreo(terminar: boolean, tipoCorreo: TipoCorreo): void{
     var plantilla;
