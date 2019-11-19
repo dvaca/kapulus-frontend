@@ -20,32 +20,34 @@ export class CorreoComponent implements OnInit {
   ngOnInit() {
   }
 
-  ngOnChanges(){
-	  if(!isUndefined(this.asistente)){
-	  this.registroService.getAsistenteImpresion(this.asistente.identificacion).subscribe(
-		x => {
-		  x.atributos.forEach(atr => {
-			if(atr.nombre =="PRIMER NOMBRE"){
-				this.nombreAsistente = atr.valor;
-			}
-			if(atr.nombre =="PRIMER APELLIDO"){
-				this.apellidoAsistente = atr.valor;
-			}
-		  });
-		}
-	   );
-	  }
-	if(isUndefined(this.nombreAsistente)){
+  ngOnChanges() {
+    if (!isUndefined(this.asistente)) {
+      this.registroService.getAsistenteImpresion(this.asistente.identificacion).subscribe(
+        x => {
+          if (x.atributos != undefined) {
+            x.atributos.forEach(atr => {
+              if (atr.nombre == "PRIMER NOMBRE") {
+                this.nombreAsistente = atr.valor;
+              }
+              if (atr.nombre == "PRIMER APELLIDO") {
+                this.apellidoAsistente = atr.valor;
+              }
+            });
+          }
+        }
+      );
+    }
+    if (isUndefined(this.nombreAsistente)) {
       this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
         nombre => {
           this.nombreAsistente = nombre.valor;
-      });
+        });
     }
-    if(isUndefined(this.apellidoAsistente)){
+    if (isUndefined(this.apellidoAsistente)) {
       this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
         apellido => {
           this.apellidoAsistente = apellido.valor;
-      });
+        });
     }
   }
 

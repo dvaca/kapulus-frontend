@@ -31,10 +31,10 @@
 			<img src="../assets/resources/QueEsLoQueComoLogo.jpg" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
 				alt="Sé lo que como">
 		</div>
-		<div *ngIf="config.variables.idevento == 33"> 
+		<!-- <div *ngIf="config.variables.idevento == 33"> 
 			<img src="../assets/resources/BannerConfirmacionCorreo.png" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
 				alt="II Congreso Internacional de Ética Profesional en Ingeniería">
-		</div>
+		</div> -->
 		<div *ngIf="config.variables.idevento == 34"> 
 			<img src="../assets/resources/JuegosHeader.jpg" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
 				alt="Juegos de suerte y azar">
@@ -47,10 +47,10 @@
 			<img src="../assets/resources/LogoOracle.png" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
 				alt="Fondo de Empleados de Oracle">
 		</div>
-		<div *ngIf="config.variables.idevento == 37"> 
+		<!-- <div *ngIf="config.variables.idevento == 37"> 
 			<img src="../assets/resources/logoCima.png" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
 				alt="CIMA 2019">
-		</div>
+		</div> -->
 		<div *ngIf="config.variables.idevento == 38"> 
 			<img src="../assets/resources/logoSemana.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
 				alt="FOROS SEMANA">
@@ -99,10 +99,10 @@
 			<img src="../assets/resources/logoSemana.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
 				alt="FOROS SEMANA">
 		</div>
-		<div *ngIf="config.variables.idevento == 55"> 
+		<!-- <div *ngIf="config.variables.idevento == 55"> 
 			<img src="../assets/resources/logoCredibanco.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
 				alt="CREDIBANCO">
-		</div>
+		</div> -->
 	</div>
 	<!--
 	<div class="col-lg-5" style="text-align:right">    
@@ -136,7 +136,7 @@
 	-->
     <router-outlet></router-outlet>
 	<div>
-		<div class="row">        
+		<div *ngIf="false" class="row">        
             <div class="col-lg-4">
             </div>
             <div class="col-lg-4" style="text-align:center">

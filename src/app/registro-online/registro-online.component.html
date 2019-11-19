@@ -1,53 +1,64 @@
-<h2>Formulario de autoregistro</h2>
-<div class="row">
-  <div class="col-lg-2">
+<div class="container h-100">
+  <div>
+
+      <img src="/assets/resources/headerCredibanco.png" class="img-fluid" alt="Responsive image" style="height: 300px;">
   </div>
-  <div class="col-lg-8 alert alert-success" role="alert">
-      <span>
-        Debe ingresar su número de identificación. Dando click en <b>Comenzar</b>, siga todos los pasos hasta <b>Terminar</b><!--, y posteriormente podrás hacer tu pago en línea dando click en <b>Paga con PayU</b>-->
-      </span>
-  </div>
-  <div class="col-lg-2">
-  </div>
-</div>
-<div class="row">
-  <div class="col-lg-4">
-  </div>
-  <div class="col-lg-4">
-    <label for='txtBusqueda' class='control-label'>Ingrese su número de Identificación</label>  
-    <input #txtBusqueda id="txtBusqueda" type="text" class="form-control" title="Número de identificación" 
-      placeholder="Número de identificación" name="txtBusqueda">
-      <br>
-      &nbsp;
-    <button id="btnNuevo" class="btn btn-outline-success" type="button" 
-        (click)="crearRegistro(txtBusqueda.value);txtBusqueda.value='';">Comenzar
-    </button>
-	<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
-  </div>
-  <div class="col-lg-4">    
-  </div>
-</div>
-<br>
-<div class="row">
-  <div class="col-lg-4">
-  </div>
-  <div class="col-lg-4">
-      <div *ngFor="let mensaje of mensajes" class="alert alert-success" role="alert">
+  <div class="m-5">
+  <div class="card">
+    <h2>Formulario de autoregistro</h2>
+    <div class="row">
+      <div class="col-lg-2">
+      </div>
+      <div class="col-lg-8 alert alert-success" role="alert">
+        <span>
+          Debe ingresar su número de identificación. Dando click en <b>Comenzar</b>, siga todos los pasos hasta
+          <b>Terminar</b>
+          <!--, y posteriormente podrás hacer tu pago en línea dando click en <b>Paga con PayU</b>-->
+        </span>
+      </div>
+      <div class="col-lg-2">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+      </div>
+      <div class="col-lg-4">
+        <label for='txtBusqueda' class='control-label'>Ingrese su número de Identificación</label>
+        <input #txtBusqueda id="txtBusqueda" type="text" class="form-control" title="Número de identificación"
+          placeholder="Número de identificación" name="txtBusqueda">
+        <br>
+        &nbsp;
+        <button id="btnNuevo" class="btn btn-outline-success" type="button"
+          (click)="crearRegistro(txtBusqueda.value);txtBusqueda.value='';">Comenzar
+        </button>
+        <button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
+      </div>
+      <div class="col-lg-4">
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-lg-4">
+      </div>
+      <div class="col-lg-4">
+        <div *ngFor="let mensaje of mensajes" class="alert alert-success" role="alert">
           {{mensaje}}
-      </div>
-      <div *ngFor="let error of errores" class="alert alert-danger" role="alert">
+        </div>
+        <div *ngFor="let error of errores" class="alert alert-danger" role="alert">
           {{error}}
+        </div>
       </div>
-  </div>
-  <div class="col-lg-4">
-  </div>
-</div>
-<div>
-  &nbsp;
-</div>
-<div *ngIf="config.variables.idevento == 5">
-  <!--<img src="../assets/resources/imagenCongreso.jpg" class="img-fluid" style="max-width: 75%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
+      <div class="col-lg-4">
+      </div>
+    </div>
+    <div>
+      &nbsp;
+    </div>
+    <div *ngIf="config.variables.idevento == 5">
+      <!--<img src="../assets/resources/imagenCongreso.jpg" class="img-fluid" style="max-width: 75%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
         alt="1er Congreso de Propiedad Horizontal">-->
+    </div>
+    <app-detalle-asistente [asistente]="nuevoAsistente" [camposEvento]="camposEvento" [nuevo]="nuevo"
+      [origen]="'online'" [mensajes]="mensajes" [errores]="errores"></app-detalle-asistente>
+  </div>
 </div>
-<app-detalle-asistente [asistente]="nuevoAsistente" [camposEvento]="camposEvento" 
-[nuevo]="nuevo" [origen]="'online'" [mensajes]="mensajes" [errores]="errores"></app-detalle-asistente>

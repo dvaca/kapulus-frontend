@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input} from '@angular/core';
+import { Component, OnInit, OnChanges, Input, ElementRef, AfterViewInit} from '@angular/core';
 import { Asistente } from '../asistente';
 import { RegistroService } from '../registro.service';
 import { CampoEvento } from '../camposevento';
@@ -17,7 +17,7 @@ import html2canvas from 'html2canvas';
   templateUrl: './detalle-asistente.component.html',
   styleUrls: ['./detalle-asistente.component.css']
 })
-export class DetalleAsistenteComponent implements OnInit, OnChanges {
+export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() asistente: Asistente;
   asistenteImpresion: Asistente;
   @Input() camposEvento: CampoEvento[];
@@ -35,10 +35,22 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
   identificacion: string;
   public tiposCorreo = TipoCorreo;
 
-  constructor(private registroService: RegistroService, private impresionService: ImpresionService, private config: VariablesEvento) { }
+  constructor(private registroService: RegistroService, 
+    private impresionService: ImpresionService, 
+    private config: VariablesEvento, private elementRef: ElementRef) { }
 
   ngOnInit() {
   }
+
+  ngAfterViewInit(){
+    //this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'black';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundImage = 
+    'url(\'/assets/resources/landingCredibanco.svg\')';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize = 'cover';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundRepeat = 'no-repeat';
+    this.elementRef.nativeElement.ownerDocument.body.style.color = 'white';
+ }
+
 
   ngOnChanges(){
     this.guardado = false;

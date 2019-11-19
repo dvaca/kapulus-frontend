@@ -10,25 +10,25 @@
       <input [(ngModel)]="atributo.valor" type='text' maxlength="{{campo.longitud}}" pattern="[3][0-9]{9}"
         class='form-control' placeholder='' name="pop_{{atributo.nombre}}" #pop="ngModel"
         [required]="campo.obligatorio == true">
-      <div *ngIf="pop.errors?.pattern" class="validacion">
-        Campo {{atributo.nombre}} no es un número de celular válido.
+      <div *ngIf="pop.errors?.pattern" class="validacion text-left">
+        *Campo {{atributo.nombre}} no es un número de celular válido.
       </div>
-      <div *ngIf="pop.errors?.required" class="validacion">
-        Campo {{atributo.nombre}} es requerido.
+      <div *ngIf="pop.errors?.required" class="validacion text-left">
+        *Campo {{atributo.nombre}} es requerido.
       </div>
     </div>
     <div *ngIf="campo.tipodato == tiposDato.Correo">
       <input [(ngModel)]="atributo.valor" type='email' email [required]="campo.obligatorio == true"
         maxlength="{{campo.longitud}}" class='form-control' placeholder=''
         name="pop_{{atributo.nombre}}" #pop="ngModel">
-      <div *ngIf="pop.errors?.email" class="validacion">
-        Campo {{atributo.nombre}} no es válido.
+      <div *ngIf="pop.errors?.email" class="validacion text-left">
+        *Campo {{atributo.nombre}} no es válido.
       </div>
-      <div *ngIf="pop.errors?.required" class="validacion">
-        Campo {{atributo.nombre}} es requerido.
+      <div *ngIf="pop.errors?.required" class="validacion text-left">
+        *Campo {{atributo.nombre}} es requerido.
       </div>
-      <div *ngIf="pop.errors?.maxlength" class="validacion">
-        Campo {{atributo.nombre}} debe ser máximo de {{campo.longitud}}.
+      <div *ngIf="pop.errors?.maxlength" class="validaciontext-left ">
+        *Campo {{atributo.nombre}} debe ser máximo de {{campo.longitud}}.
       </div>
     </div>
   </div>

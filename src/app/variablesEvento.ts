@@ -13,8 +13,8 @@ export class VariablesEvento{
   }
 
   inicializar(): void {
-    this.idevento = 33;
-    this.idZonaRegistro = 33;
+    this.idevento = 37;
+    this.idZonaRegistro = 37;
     this.orientacionCertificado = "portrait";
     //this.orientacionEscarapela = "landscape";
     this.orientacionEscarapela = "portrait";
