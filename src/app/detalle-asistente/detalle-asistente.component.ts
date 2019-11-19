@@ -179,7 +179,8 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
             x => {this.asistenteImpresion = x; 
                   this.asistenteImpresion.atributos.forEach(atr => {
 					atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
-					if(atr.nombre =="PRIMER NOMBRE"){
+					//if(atr.nombre =="PRIMER NOMBRE"){
+					if(atr.nombre =="NOMBRE COMPLETO"){
 						this.nombreAsistente = atr.valor;
 					}
 					if(atr.nombre =="PRIMER APELLIDO"){
