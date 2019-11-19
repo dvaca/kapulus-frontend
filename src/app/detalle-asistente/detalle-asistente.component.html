@@ -72,7 +72,7 @@
                     (click)="enviarCorreo();">Terminar</button>
                 -->
 				<button *ngIf="origen == 'online' && habeasDataAceptado == true && confirmado == true && terminado == false" data-dismiss="modal"
-                    type="button" class="btn btn-outline-primary" id="btnGuardarOnline"
+                    type="button" class="btn btn-primary" id="btnGuardarOnline"
                     (click)="enviarCorreo(true, tiposCorreo.Confirmacion);">Terminar</button>
 				<!--
                 <a href="https://biz.payulatam.com/L0bfff05DB590A6" target="_blank"
@@ -93,7 +93,7 @@
                     type="button" class="btn btn-outline-primary" id="btnHabeasData"
                     data-toggle="modal" data-target="#modalHabeasData" >Siguiente</button>
 				<button *ngIf="origen == 'online' && habeasDataAceptado == false && config.idevento == 55" [disabled]="!atributosForm.form.valid"
-                    type="button" class="btn btn-outline-primary" id="btnHabeasDataCredi" 
+                    type="button" class="btn btn-primary" id="btnHabeasDataCredi" 
 					(click)="guardarAsistente(false);terminar();">Siguiente</button>
                 <button *ngIf="origen == 'noAplica'" type="button" class="btn btn-outline-info" data-dismiss="modal" id="btnImprimirBrowser" 
                     (click)="guardarAsistente(false);imprimirBrowser('formEscarapela');">Escarapela</button>
