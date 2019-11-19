@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
 import { isUndefined } from 'util';
 import { Asistente } from '../asistente';
 import { AtributoAsistente } from '../atributosasistente';
@@ -14,7 +14,7 @@ import { Operacion } from '../enums';
   templateUrl: './registro-online.component.html',
   styleUrls: ['./registro-online.component.css']
 })
-export class RegistroOnlineComponent implements OnInit {
+export class RegistroOnlineComponent implements OnInit, AfterViewInit {
   nuevoAsistente: Asistente;
   asistenteExistente: Asistente;
   camposEvento: CampoEvento[];
@@ -24,7 +24,7 @@ export class RegistroOnlineComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private registroService: RegistroService, 
-    public config: ConfiguracionEvento) { }
+    public config: ConfiguracionEvento, private elementRef: ElementRef) { }
 
   ngOnInit() {
 	let url = this.route.snapshot.url.toString();
@@ -66,7 +66,7 @@ export class RegistroOnlineComponent implements OnInit {
       this.cargarEvento(29, 29);
     }
 	if(url == 'registro-credibanco'){
-      this.cargarEvento(55, 55);
+      this.cargarEvento(37, 37);
     }
     this.cargarCamposEvento();
 	this.nuevo = true;
@@ -84,6 +84,16 @@ export class RegistroOnlineComponent implements OnInit {
       }
     });
   }
+
+
+  ngAfterViewInit(){
+    //this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'black';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundImage = 
+    'url(\'/assets/resources/landingCredibanco.svg\')';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize = 'cover';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundRepeat = 'repeat-y';
+
+ }
 
   cargarEvento(idevento: number, idzona: number): void {
     this.config.cargarEvento(idevento, idzona);

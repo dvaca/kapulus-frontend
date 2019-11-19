@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div *ngIf="asistente" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" show="true" focus="true">
+<div *ngIf="asistente" class="modal fade" id="myModal" tabindex="1" role="dialog" aria-labelledby="myModalLabel" show="true" focus="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <form class="form-horizontal" #atributosForm="ngForm">
                             <div class="form-group">
                                 <div class='row'>
@@ -37,7 +37,7 @@
                     </div>
                     <div  class="col-lg-4" style="padding: 5% 0;">
 					  <div *ngIf="terminado == true" class="alert alert-success" role="alert">Registro exitoso.</div>
-					  <div *ngIf="config.idevento != 12 && config.idevento != 13 && config.idevento != 14 && config.idevento != 16 && config.idevento != 17 && config.idevento != 20 && config.idevento != 23 && config.idevento != 29&& config.idevento != 55"> 
+					  <!-- <div *ngIf="config.idevento != 12 && config.idevento != 13 && config.idevento != 14 && config.idevento != 16 && config.idevento != 17 && config.idevento != 20 && config.idevento != 23 && config.idevento != 29&& config.idevento != 55"> 
 						<img src="../assets/resources/forosSemanaDetalle.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
                             alt="FOROS SEMANA">
 					  </div>
@@ -52,7 +52,7 @@
 					  <div *ngIf="config.idevento == 29"> 
 						<img src="../assets/resources/logoProsegurSmall.jpg" class="img-fluid" style="max-width: 80%; height: auto; padding-bottom: 20px; padding-top: 20px;" 
                             alt="PROSEGUR">
-					  </div>
+					  </div> -->
                     </div>
                 </div>
             </div>

@@ -5,3 +5,18 @@
     max-width: 100%;
     display: block;
   }
+
+  svg {
+    max-width: 100%;
+    height: auto;
+}
+
+body{
+    background-size: contain;
+    margin: 20px;
+}
+
+.card{
+  background-color: rgba(245, 245, 245, 0.4);
+ /* opacity: .8;*/
+} 
