@@ -73,11 +73,15 @@
   <div *ngIf="variables.idevento == 54" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m. para el proceso de registro</b> 
   </div>
+  <div *ngIf="variables.idevento == 56" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a la 1:00 p.m.</b> 
+  </div>
   <div *ngIf="variables.idevento != 55" style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
-  
-  <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+    
+  <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;"
+  [ngClass]="{'estilo-credibanco': variables.idevento == 55}">
   
   <!-- ESTILO QLIK <div style="text-align: center; font-size: 22px; color: dimgray; max-width: 490px; padding-bottom: 20px; padding-top: 20px;"
   [ngClass]="{'estilo-qlik': variables.idevento == 43}">-->
@@ -215,6 +219,9 @@
 	-->
 	<br><img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 	</div>
+	<div *ngIf="variables.idevento == 56">
+    <br> Le invitamos a presentar este código en el registro del foro para agilizar su proceso de acreditación.
+	</div>
     <br>
     <br>
 
@@ -227,7 +234,7 @@
     </div>
     <br>
     <br>
-	<div *ngIf="variables.idevento != 28 && variables.idevento != 33 && variables.idevento != 43 && variables.idevento != 48">
+	<div *ngIf="variables.idevento != 28 && variables.idevento != 33 && variables.idevento != 43 && variables.idevento != 48 && variables.idevento != 55">
     <b>GRACIAS POR SU PARTICIPACIÓN</b>
     <br>
 	<br>
@@ -286,7 +293,7 @@
 		<img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 	  </a>
     </div>
-	<div *ngIf="variables.idevento == 34 || variables.idevento == 35 || variables.idevento == 40 || variables.idevento == 41 || variables.idevento == 43 || variables.idevento == 44 || variables.idevento == 46 || variables.idevento == 47 || variables.idevento == 48 || variables.idevento == 50 || variables.idevento == 54 || variables.idevento == 55" style="text-align:center">
+	<div *ngIf="variables.idevento == 34 || variables.idevento == 35 || variables.idevento == 40 || variables.idevento == 41 || variables.idevento == 43 || variables.idevento == 44 || variables.idevento == 46 || variables.idevento == 47 || variables.idevento == 48 || variables.idevento == 50 || variables.idevento == 54 || variables.idevento == 55 || variables.idevento == 56" style="text-align:center">
 		<img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 	</div>
 	</div>
