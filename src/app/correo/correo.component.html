@@ -80,7 +80,8 @@
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
     
-  <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+  <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;"
+  [ngClass]="{'estilo-credibanco': variables.idevento == 55}">
   
   <!-- ESTILO QLIK <div style="text-align: center; font-size: 22px; color: dimgray; max-width: 490px; padding-bottom: 20px; padding-top: 20px;"
   [ngClass]="{'estilo-qlik': variables.idevento == 43}">-->
@@ -233,7 +234,7 @@
     </div>
     <br>
     <br>
-	<div *ngIf="variables.idevento != 28 && variables.idevento != 33 && variables.idevento != 43 && variables.idevento != 48">
+	<div *ngIf="variables.idevento != 28 && variables.idevento != 33 && variables.idevento != 43 && variables.idevento != 48 && variables.idevento != 55">
     <b>GRACIAS POR SU PARTICIPACIÓN</b>
     <br>
 	<br>
