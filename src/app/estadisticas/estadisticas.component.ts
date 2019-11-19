@@ -161,6 +161,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_credibanco'){
       this.cargarEvento(55, 55);
     }
+	if(url == 'callcenter_estadisticas_energetico'){
+      this.cargarEvento(56, 56);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
