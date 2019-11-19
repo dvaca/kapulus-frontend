@@ -92,7 +92,7 @@
                 <button *ngIf="origen == 'online' && habeasDataAceptado == false config.idevento != 55" [disabled]="!atributosForm.form.valid"
                     type="button" class="btn btn-outline-primary" id="btnHabeasData"
                     data-toggle="modal" data-target="#modalHabeasData" >Siguiente</button>
-				<button *ngIf="origen == 'online' && habeasDataAceptado == false config.idevento == 55" [disabled]="!atributosForm.form.valid"
+				<button *ngIf="origen == 'online' && habeasDataAceptado == false && config.idevento == 55" [disabled]="!atributosForm.form.valid"
                     type="button" class="btn btn-outline-primary" id="btnHabeasDataCredi" 
 					(click)="guardarAsistente(false);terminar();">Siguiente</button>
                 <button *ngIf="origen == 'noAplica'" type="button" class="btn btn-outline-info" data-dismiss="modal" id="btnImprimirBrowser" 
