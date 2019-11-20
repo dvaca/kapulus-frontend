@@ -3,6 +3,7 @@ import { AtributoAsistente } from '../atributosasistente';
 import { CampoEvento } from '../camposevento';
 import { TipoCampo, TipoDato } from '../enums';
 import { ControlContainer, NgForm } from '@angular/forms';
+import { FormBuilder, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-control-atributo-asistente',
@@ -15,16 +16,31 @@ export class ControlAtributoAsistenteComponent implements OnInit, OnChanges {
   @Input() atributo: AtributoAsistente;
   @Input() camposEvento: CampoEvento[];
   @Input() validar: boolean;
+  @Input() atributosForm: FormGroup;
+  camposEventoForm;
   
   public campo: CampoEvento;
   public tipoCampo: TipoCampo;
   public tiposCampo = TipoCampo;
   public tiposDato = TipoDato;
 
-  constructor() { }
+  
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.cargarCampo();
+    this.loadValidator();
+  }
+
+  loadValidator(){
+    //this.camposEventoForm = this.atributosForm.get('camposEvento');
+    this.camposEvento.map(campo=>{
+      if( campo.tipodato == this.tiposDato.Correo){
+        this.atributosForm.addControl(campo.nombre,new FormControl('', [Validators.required, Validators.email]));
+      }
+      this.atributosForm.addControl(campo.nombre,new FormControl('', Validators.required));
+    });
+    
   }
 
   ngOnChanges() {
@@ -34,5 +50,7 @@ export class ControlAtributoAsistenteComponent implements OnInit, OnChanges {
   cargarCampo(): void {
     this.campo = this.camposEvento.filter(x => x.id == this.atributo.idcampo)[0];
   }
+
+ 
 
 }

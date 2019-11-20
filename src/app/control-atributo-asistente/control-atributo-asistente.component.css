@@ -12,3 +12,9 @@
     color: white;
   }
   
+  input.ng-invalid {
+    border-color: pink;
+  }
+  input.ng-valid {
+    border-color: lightgreen;
+  }

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { NgxBarcodeModule, NgxBarcodeComponent } from 'ngx-barcode';
 import { QRCodeModule} from 'angular2-qrcode';
@@ -47,7 +47,8 @@ import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-lo
     HttpClientModule,
     NgxBarcodeModule,
     QRCodeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     RegistroService,

@@ -1,10 +1,26 @@
-<label for='pop_{{atributo.nombre}}' class='control-label'>{{atributo.nombre}}</label>
+<div [formGroup]="atributosForm">
+  <label for='pop_{{atributo.nombre}}' class='control-label'>{{atributo.nombre}}</label>
+  <div *ngIf="campo.tipocampo == tiposCampo.CajaDeTexto">
+    <input [formControlName]="atributo.nombre" type='text' maxlength="{{campo.longitud}}" 
+    class='form-control' placeholder='' name="atributo.nombre" id="atributo.nombre">
+  </div>
+  <!-- TipoCampo.SeleccionUnica-->
+  <div *ngIf="campo.tipocampo == tiposCampo.SeleccionUnica">
+    <select class="form-control" [formControlName]="atributo.nombre" id="atributo.nombre">
+      <option *ngFor="let posibleValor of campo.posiblesvalores">{{posibleValor.valor}}</option>
+    </select>
+  </div>
+</div>
+
+
+<!-- <label for='pop_{{atributo.nombre}}' class='control-label'>{{atributo.nombre}}</label>-->
 <!-- TipoCampo.CajaDeTexto-->
-<div *ngIf="campo.tipocampo == tiposCampo.CajaDeTexto">
+
+<!-- <div *ngIf="campo.tipocampo == tiposCampo.CajaDeTexto">
   <div *ngIf="validar == true">
     <div *ngIf="campo.tipodato == tiposDato.Texto">
-      <input [(ngModel)]="atributo.valor" type='text' maxlength="{{campo.longitud}}" class='form-control'
-        placeholder='' name="pop_{{atributo.nombre}}">
+      <input [(ngModel)]="atributo.valor" type='text' maxlength="{{campo.longitud}}" class='form-control' placeholder=''
+        name="pop_{{atributo.nombre}}" id="pop_{{atributo.nombre}}" required>
     </div>
     <div *ngIf="campo.tipodato == tiposDato.Celular">
       <input [(ngModel)]="atributo.valor" type='text' maxlength="{{campo.longitud}}" pattern="[3][0-9]{9}"
@@ -19,8 +35,8 @@
     </div>
     <div *ngIf="campo.tipodato == tiposDato.Correo">
       <input [(ngModel)]="atributo.valor" type='email' email [required]="campo.obligatorio == true"
-        maxlength="{{campo.longitud}}" class='form-control' placeholder=''
-        name="pop_{{atributo.nombre}}" #pop="ngModel">
+        maxlength="{{campo.longitud}}" class='form-control' placeholder='' name="pop_{{atributo.nombre}}"
+        #pop="ngModel">
       <div *ngIf="pop.errors?.email" class="validacion text-left">
         *Campo {{atributo.nombre}} no es válido.
       </div>
@@ -33,13 +49,12 @@
     </div>
   </div>
   <div *ngIf="validar == false">
-    <input [(ngModel)]="atributo.valor" type='text' class='form-control' placeholder=''
-      name="pop_{{atributo.nombre}}">
+    <input [(ngModel)]="atributo.valor" type='text' class='form-control' placeholder='' name="pop_{{atributo.nombre}}">
   </div>
-</div>
+</div> -->
 <!-- TipoCampo.SeleccionUnica-->
-<div *ngIf="campo.tipocampo == tiposCampo.SeleccionUnica">
+<!-- <div *ngIf="campo.tipocampo == tiposCampo.SeleccionUnica">
   <select class="form-control" id="pop_{{atributo.nombre}}" [(ngModel)]="atributo.valor">
     <option *ngFor="let posibleValor of campo.posiblesvalores">{{posibleValor.valor}}</option>
   </select>
-</div>
+</div> -->
