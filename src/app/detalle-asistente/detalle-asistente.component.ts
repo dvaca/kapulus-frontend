@@ -113,7 +113,13 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
     this.loadForm();
   }
 
+  setValues(){
+    this.asistente.atributos.map(atributo=>{
+      atributo.valor = this.atributosForm.value[atributo.nombre];
+    });
+  }
   guardarAsistente(registrar: boolean): void {
+    this.setValues();
     let asistencia: AsistenciaZona;
     let asistenteExistente: Asistente;
     this.existe = false;

@@ -30,6 +30,7 @@ export class ControlAtributoAsistenteComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.cargarCampo();
     this.loadValidator();
+    this.onChanges();
   }
 
   loadValidator(){
@@ -51,6 +52,8 @@ export class ControlAtributoAsistenteComponent implements OnInit, OnChanges {
     this.campo = this.camposEvento.filter(x => x.id == this.atributo.idcampo)[0];
   }
 
- 
+  onChanges(): void {
+
+}
 
 }
