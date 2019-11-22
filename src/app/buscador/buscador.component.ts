@@ -158,6 +158,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_energetico'){
       this.cargarEvento(56, 56);
     }
+	if(url == 'callcenter_registro_geb'){
+      this.cargarEvento(57, 57);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

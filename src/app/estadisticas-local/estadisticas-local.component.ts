@@ -129,6 +129,9 @@ export class EstadisticasLocalComponent implements OnInit {
 	if(url == 'evento_estadisticas_energetico'){
       this.cargarEvento(56, 56);
     }	
+	if(url == 'evento_estadisticas_infectologia'){
+      this.cargarEvento(58, 58);
+    }
     this.cargarCamposEvento();
   }
   
