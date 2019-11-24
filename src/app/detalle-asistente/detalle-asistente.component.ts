@@ -334,6 +334,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
       if (this.config.idevento == 55) {
         correo.subject = "Confirmación Almuerzo Aliados CredibanCo 2019";
       }
+	  if (this.config.idevento == 59) {
+        correo.subject = "Confirmación Almuerzo Aliados CredibanCo 2019";
+      }
     } else {
       if (tipoCorreo == TipoCorreo.Invitacion) {
         plantilla = document.getElementById("plantillaCorreoInvitacion").innerHTML;
@@ -383,6 +386,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
           correo.subject = "Inauguración Arkadia Centro Comercial: Confirma tu asistencia";
         }
         if (this.config.idevento == 55) {
+          correo.subject = "Invitación Almuerzo Aliados CredibanCo 2019";
+        }
+		if (this.config.idevento == 59) {
           correo.subject = "Invitación Almuerzo Aliados CredibanCo 2019";
         }
       } else {
@@ -485,6 +491,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
         }
         if (this.config.idevento == 56) {
           correo.subject = "Bienvenido al Foro: Hacia una transformación energética innovadora y sostenible";
+        }
+		if (this.config.idevento == 59) {
+          correo.subject = "Confirmación Almuerzo Aliados CredibanCo 2019";
         }
       }
       /*
