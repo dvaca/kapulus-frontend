@@ -164,6 +164,9 @@ export class BuscadorComponent implements OnInit {
 	if(url == 'callcenter_registro_credibanco_call'){
       this.cargarEvento(59, 59);
     }
+	if(url == 'callcenter_registro_lideres'){
+      this.cargarEvento(60, 60);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");

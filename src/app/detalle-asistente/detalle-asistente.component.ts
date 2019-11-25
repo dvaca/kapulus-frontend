@@ -391,6 +391,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
 		if (this.config.idevento == 59) {
           correo.subject = "Invitación Almuerzo Aliados CredibanCo 2019";
         }
+		if (this.config.idevento == 60) {
+          correo.subject = "Invitación Ceremonia de Premiación: Los Mejores Líderes de Colombia 2019";
+        }
       } else {
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
         if (this.config.idevento == 10) {
