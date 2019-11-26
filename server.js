@@ -71,6 +71,9 @@ app.use("/callcenter_registro_almuerzo_bvc", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_ptar", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_credibanco", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_energetico", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_geb", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_credibanco_call", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_lideres", express.static(__dirname+'/dist'));
 
 app.use("/callcenter_estadisticas_coosalud_bquilla", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_coosalud_bmanga", express.static(__dirname+'/dist'));
@@ -107,6 +110,9 @@ app.use("/callcenter_estadisticas_almuerzo_bvc", express.static(__dirname+'/dist
 app.use("/callcenter_estadisticas_ptar", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_credibanco", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_energetico", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_geb", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_credibanco_call", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_lideres", express.static(__dirname+'/dist'));
 
 app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud", express.static(__dirname+'/dist'));
@@ -145,6 +151,7 @@ app.use("/evento_estadisticas_policia", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_nutricion", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_ptar", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_energetico", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_infectologia", express.static(__dirname+'/dist'));
 
 app.use("/certificado_asistencia_copnia", express.static(__dirname+'/dist'));
 

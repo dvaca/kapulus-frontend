@@ -334,6 +334,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
       if (this.config.idevento == 55) {
         correo.subject = "Confirmación Almuerzo Aliados CredibanCo 2019";
       }
+	  if (this.config.idevento == 59) {
+        correo.subject = "Confirmación Almuerzo Aliados CredibanCo 2019";
+      }
     } else {
       if (tipoCorreo == TipoCorreo.Invitacion) {
         plantilla = document.getElementById("plantillaCorreoInvitacion").innerHTML;
@@ -384,6 +387,12 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
         }
         if (this.config.idevento == 55) {
           correo.subject = "Invitación Almuerzo Aliados CredibanCo 2019";
+        }
+		if (this.config.idevento == 59) {
+          correo.subject = "Invitación Almuerzo Aliados CredibanCo 2019";
+        }
+		if (this.config.idevento == 60) {
+          correo.subject = "Invitación Ceremonia de Premiación: Los Mejores Líderes de Colombia 2019";
         }
       } else {
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
@@ -485,6 +494,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
         }
         if (this.config.idevento == 56) {
           correo.subject = "Bienvenido al Foro: Hacia una transformación energética innovadora y sostenible";
+        }
+		if (this.config.idevento == 59) {
+          correo.subject = "Confirmación Almuerzo Aliados CredibanCo 2019";
         }
       }
       /*

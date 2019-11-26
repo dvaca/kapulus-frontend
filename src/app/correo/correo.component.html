@@ -76,18 +76,18 @@
   <div *ngIf="variables.idevento == 56" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a la 1:00 p.m.</b> 
   </div>
-  <div *ngIf="variables.idevento != 55" style="text-align:center">
+  <div *ngIf="variables.idevento != 55 && variables.idevento != 59" style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
     
   <div style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;"
-  [ngClass]="{'estilo-credibanco': variables.idevento == 55}">
+  [ngClass]="{'estilo-credibanco': variables.idevento == 55 || variables.idevento == 59}">
   
   <!-- ESTILO QLIK <div style="text-align: center; font-size: 22px; color: dimgray; max-width: 490px; padding-bottom: 20px; padding-top: 20px;"
   [ngClass]="{'estilo-qlik': variables.idevento == 43}">-->
     <div *ngIf="variables.idevento != 28 && variables.idevento != 33">
 	<!--<b>ESTIMADO(A) </b>-->
-	<div *ngIf="variables.idevento != 55">
+	<div *ngIf="variables.idevento != 55 && variables.idevento != 59">
 	<p>Estimad@ </p>
 	</div>
     <br>
@@ -222,6 +222,9 @@
 	<div *ngIf="variables.idevento == 56">
     <br> Le invitamos a presentar este código en el registro del foro para agilizar su proceso de acreditación.
 	</div>
+	<div *ngIf="variables.idevento == 59">
+	<br><img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
+	</div>
     <br>
     <br>
 
@@ -234,7 +237,7 @@
     </div>
     <br>
     <br>
-	<div *ngIf="variables.idevento != 28 && variables.idevento != 33 && variables.idevento != 43 && variables.idevento != 48 && variables.idevento != 55">
+	<div *ngIf="variables.idevento != 28 && variables.idevento != 33 && variables.idevento != 43 && variables.idevento != 48 && variables.idevento != 55 && variables.idevento != 59">
     <b>GRACIAS POR SU PARTICIPACIÓN</b>
     <br>
 	<br>
@@ -293,7 +296,7 @@
 		<img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 	  </a>
     </div>
-	<div *ngIf="variables.idevento == 34 || variables.idevento == 35 || variables.idevento == 40 || variables.idevento == 41 || variables.idevento == 43 || variables.idevento == 44 || variables.idevento == 46 || variables.idevento == 47 || variables.idevento == 48 || variables.idevento == 50 || variables.idevento == 54 || variables.idevento == 55 || variables.idevento == 56" style="text-align:center">
+	<div *ngIf="variables.idevento == 34 || variables.idevento == 35 || variables.idevento == 40 || variables.idevento == 41 || variables.idevento == 43 || variables.idevento == 44 || variables.idevento == 46 || variables.idevento == 47 || variables.idevento == 48 || variables.idevento == 50 || variables.idevento == 54 || variables.idevento == 55 || variables.idevento == 56 || variables.idevento == 59" style="text-align:center">
 		<img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 	</div>
 	</div>
@@ -326,7 +329,7 @@
 </div>
   <div style="text-align: justify;">
     <br>
-	<div *ngIf="variables.idevento != 55">
+	<div *ngIf="variables.idevento != 55 && variables.idevento != 59">
     <br>Estimado (a) <b>{{nombreAsistente}}&nbsp;{{apellidoAsistente}}</b>,
 	</div>
     <br>
@@ -379,8 +382,11 @@
     <br>
   </div>
   <div *ngIf="variables.idevento != 33" style="text-align:center">
-	<div *ngIf="variables.idevento != 49 && variables.idevento != 55">
+	<div *ngIf="variables.idevento != 49 && variables.idevento != 55  && variables.idevento != 57 && variables.idevento != 59 && variables.idevento != 60">
 	<br><b>Clic en la imagen para confirmar su asistencia</b><p> (si ya se inscribió haga caso omiso)</p>
+	</div>
+	<div *ngIf="variables.idevento == 60">
+	<br><b>Clic en la imagen para confirmar su asistencia</b>
 	</div>
 	<div *ngIf="variables.idevento == 14">
 		<!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSe5Sv5cbmCD4s4bztrgKR216fIyN3Mz6z-3IIUPvqs9ad5Phg/viewform?vc=0&c=0&w=1" target="_blank">
@@ -473,12 +479,35 @@
 			alt="Almuerzo Aliados CredibanCo 2019">
 		</a>
 	</div>
+	<div *ngIf="variables.idevento == 57">
+		<img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Cuarto encuentro de proveedores">
+	</div>
+	<div *ngIf="variables.idevento == 59">
+		<a href="https://kapulus.herokuapp.com/registro-credibanco" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Almuerzo Aliados CredibanCo 2019">
+		</a>
+	</div>
+	<div *ngIf="variables.idevento == 60">
+		<a href="https://docs.google.com/forms/d/e/1FAIpQLSeuncKCf1p8VOf9Cxe03e5awp26qGtv09sSXHTfExSlE2DRRg/viewform?vc=0&c=0&w&c=0&w" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Ceremonia premiación líderes 2019">
+		</a>
+	</div>
 	<div *ngIf="variables.idevento == 29">
 		<b>Para más información comuníquese al 350 316 0070</b>
 	</div>
 	<br>
-	<div *ngIf="variables.idevento != 49 && variables.idevento != 55" style="font-size: 10px; max-width: 645px; text-align: left;">
+	<div *ngIf="variables.idevento != 49 && variables.idevento != 55 && variables.idevento != 57 && variables.idevento != 60" style="font-size: 10px; max-width: 645px; text-align: left;">
 	<b><i>Términos y condiciones del foro</i></b>
+	<br>
+	<i>El Código de vestir para el ingreso al Club El Nogal es: Hombres (Saco y Corbata), Mujeres (traje formal). Indispensable presentar su documento de identidad.</i>
+	<br>
+	<i>Los cupos del foro son limitados, su inscripción no garantiza la entrada al mismo. El derecho al ingreso es determinado por el orden de llegada y no por el orden de inscripción. Recomendamos llegar con tiempo al lugar del evento para garantizar su cupo.</i>
+	</div>
+	<div *ngIf="variables.idevento == 60" style="font-size: 10px; max-width: 645px; text-align: left;">
+	<b><i>Términos y condiciones de la ceremonia</i></b>
 	<br>
 	<i>El Código de vestir para el ingreso al Club El Nogal es: Hombres (Saco y Corbata), Mujeres (traje formal). Indispensable presentar su documento de identidad.</i>
 	<br>
