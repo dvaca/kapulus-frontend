@@ -133,7 +133,7 @@ export class DataLoaderComponent implements OnInit {
 
 
   loadSettingsForEdit(): void {
-    if (this.event.settings != undefined) {
+    if (this.event.settings != undefined && this.event.settings!="") {
       this.settings = JSON.parse(this.event.settings);
       this.settingsForm.patchValue(this.settings);
       this.setValidColumns(this.settings);
@@ -245,8 +245,8 @@ export class DataLoaderComponent implements OnInit {
     var object = { 'storageId': selectedFile.storage_id };
     this.dataLoaderService.deleteStorage(object).subscribe(data => {
       console.log('ProcessResponse' + JSON.stringify(data));
-      this.settings[selectedFile.storage_id] = null;
-      this.event.settings = this.settings;
+      //this.settings[selectedFile.storage_id] = null;
+      this.event.settings = '';
       this.dataLoaderService.updateEvent(this.event).subscribe(res => {
         console.debug('Update Response:' + res);
       })
