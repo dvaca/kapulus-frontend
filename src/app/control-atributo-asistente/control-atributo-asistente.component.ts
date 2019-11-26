@@ -35,11 +35,23 @@ export class ControlAtributoAsistenteComponent implements OnInit, OnChanges {
 
   loadValidator(){
     //this.camposEventoForm = this.atributosForm.get('camposEvento');
+    console.log('Atributo'+JSON.stringify(this.atributo));
+    console.log(this.camposEvento);
+
+
     this.camposEvento.map(campo=>{
-      if( campo.tipodato == this.tiposDato.Correo){
-        this.atributosForm.addControl(campo.nombre,new FormControl('', [Validators.required, Validators.email]));
+      this.atributosForm.addControl(campo.nombre,new FormControl('', []));
+
+      var control = this.atributosForm.get(campo.nombre);
+      if( campo.obligatorio==true){
+        control.setValidators([Validators.required]);
       }
-      this.atributosForm.addControl(campo.nombre,new FormControl('', Validators.required));
+      if( campo.tipodato == this.tiposDato.Correo){
+        control.setValidators([Validators.email]);
+      }
+      if(campo.nombre == this.campo.nombre){
+      control.setValue(this.atributo.valor);
+      }
     });
     
   }
