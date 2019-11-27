@@ -498,6 +498,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
 		if (this.config.idevento == 59) {
           correo.subject = "Confirmación Almuerzo Aliados CredibanCo 2019";
         }
+		if (this.config.idevento == 62) {
+          correo.subject = "Bienvenido al foro ¿Cómo promover la cultura de la libre competencia?";
+        }
       }
       /*
       if(this.config.idevento == 5){

@@ -173,6 +173,12 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_lideres'){
       this.cargarEvento(60, 60);
     }
+	if(url == 'callcenter_estadisticas_corpochivor'){
+      this.cargarEvento(61, 61);
+    }
+	if(url == 'callcenter_estadisticas_sic'){
+      this.cargarEvento(62, 62);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
