@@ -394,6 +394,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
 		if (this.config.idevento == 60) {
           correo.subject = "Invitación Ceremonia de Premiación: Los Mejores Líderes de Colombia 2019";
         }
+		if (this.config.idevento == 63) {
+          correo.subject = "Invitación al Foro 'REGIÓN CENTRAL: POR UN SISTEMA AGROALIMENTARIO SALUDABLE Y SOSTENIBLE'";
+        }
       } else {
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
         if (this.config.idevento == 10) {

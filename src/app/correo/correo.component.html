@@ -398,10 +398,10 @@
     <br>
   </div>
   <div *ngIf="variables.idevento != 33" style="text-align:center">
-	<div *ngIf="variables.idevento != 49 && variables.idevento != 55  && variables.idevento != 57 && variables.idevento != 59 && variables.idevento != 60">
+	<div *ngIf="variables.idevento != 49 && variables.idevento != 55  && variables.idevento != 57 && variables.idevento != 59 && variables.idevento != 60 && variables.idevento != 63">
 	<br><b>Clic en la imagen para confirmar su asistencia</b><p> (si ya se inscribió haga caso omiso)</p>
 	</div>
-	<div *ngIf="variables.idevento == 60">
+	<div *ngIf="variables.idevento == 60 || variables.idevento == 63">
 	<br><b>Clic en la imagen para confirmar su asistencia</b>
 	</div>
 	<div *ngIf="variables.idevento == 14">
@@ -511,11 +511,17 @@
 			alt="Ceremonia premiación líderes 2019">
 		</a>
 	</div>
+	<div *ngIf="variables.idevento == 63">
+		<a href="https://www.forossemana.com/evento/id/42880/region_central_por_un_sistema_agroalimentario_saludable_y_sostenible?utm_source=emBlue&utm_medium=email&utm_campaign=Mailing%201%20save%20the%20date%20RAP-E&utm_content=https://www.forossemana.com/evento/id/42880/region_central_por_un_sistema_agroalimentario_saludable_y_sostenible&utm_term=" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Foro Región Central">
+		</a>
+	</div>
 	<div *ngIf="variables.idevento == 29">
 		<b>Para más información comuníquese al 350 316 0070</b>
 	</div>
 	<br>
-	<div *ngIf="variables.idevento != 49 && variables.idevento != 55 && variables.idevento != 57 && variables.idevento != 60" style="font-size: 10px; max-width: 645px; text-align: left;">
+	<div *ngIf="variables.idevento != 49 && variables.idevento != 55 && variables.idevento != 57 && variables.idevento != 60 && variables.idevento != 63" style="font-size: 10px; max-width: 645px; text-align: left;">
 	<b><i>Términos y condiciones del foro</i></b>
 	<br>
 	<i>El Código de vestir para el ingreso al Club El Nogal es: Hombres (Saco y Corbata), Mujeres (traje formal). Indispensable presentar su documento de identidad.</i>
@@ -526,6 +532,11 @@
 	<b><i>Términos y condiciones de la ceremonia</i></b>
 	<br>
 	<i>El Código de vestir para el ingreso al Club El Nogal es: Hombres (Saco y Corbata), Mujeres (traje formal). Indispensable presentar su documento de identidad.</i>
+	<br>
+	<i>Los cupos del foro son limitados, su inscripción no garantiza la entrada al mismo. El derecho al ingreso es determinado por el orden de llegada y no por el orden de inscripción. Recomendamos llegar con tiempo al lugar del evento para garantizar su cupo.</i>
+	</div>
+	<div *ngIf="variables.idevento == 63" style="font-size: 10px; max-width: 645px; text-align: left;">
+	<b><i>Términos y condiciones del foro</i></b>
 	<br>
 	<i>Los cupos del foro son limitados, su inscripción no garantiza la entrada al mismo. El derecho al ingreso es determinado por el orden de llegada y no por el orden de inscripción. Recomendamos llegar con tiempo al lugar del evento para garantizar su cupo.</i>
 	</div>

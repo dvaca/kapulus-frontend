@@ -59,6 +59,7 @@ const routes: Routes = [
   { path: 'callcenter_registro_lideres', component: BuscadorComponent },
   { path: 'callcenter_registro_corpochivor', component: BuscadorComponent },
   { path: 'callcenter_registro_sic', component: BuscadorComponent },
+  { path: 'callcenter_registro_region_central', component: BuscadorComponent },
   { path: 'callcenter_token_7D5H3N9Y4F', component: EstadisticasComponent },
   { path: 'callcenter_token_4B5O2S8Z0L', component: EstadisticasComponent },
   { path: 'callcenter_token_1T9Y7X1M9A', component: EstadisticasComponent },
@@ -107,6 +108,7 @@ const routes: Routes = [
   { path: 'callcenter_estadisticas_lideres', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_corpochivor', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_sic', component: EstadisticasComponent },
+  { path: 'callcenter_estadisticas_region_central', component: EstadisticasComponent },
   { path: 'control-acceso', component: ControlAccesoComponent },
   { path: 'registro-online', component: RegistroOnlineComponent },
   { path: 'registro-plus-superior', component: RegistroOnlineComponent },
@@ -159,6 +161,7 @@ const routes: Routes = [
   { path: 'evento_estadisticas_infectologia', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_corpochivor', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_sic', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_region_central', component: EstadisticasLocalComponent },
   { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
 ]
 

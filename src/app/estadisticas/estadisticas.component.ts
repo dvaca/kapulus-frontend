@@ -179,6 +179,9 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_sic'){
       this.cargarEvento(62, 62);
     }
+	if(url == 'callcenter_estadisticas_region_central'){
+      this.cargarEvento(63, 63);
+    }
     this.cargarZonas();
     this.cargarCamposEvento();
   }
