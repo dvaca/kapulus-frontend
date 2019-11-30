@@ -53,7 +53,7 @@ export class CorreoComponent implements OnInit {
         apellido => {
           this.apellidoAsistente = apellido.valor;
         });
-		+/
+		*/
     }
   }
 
