@@ -21,6 +21,8 @@ export class EventManagerComponent implements OnInit {
   createEventResult: any;
   events: any;
   private backendUrl = environment.URLBack;
+  message: string;
+  messageType: string;
 
   constructor(private eventManagerService: EventManagerService, private fb: FormBuilder,
     private route: ActivatedRoute, private router: Router) { }
@@ -51,7 +53,7 @@ export class EventManagerComponent implements OnInit {
       let zones = data;
       if (zones != undefined) {
         console.log("GoToSearch Zones" + JSON.stringify(zones));
-        this.router.navigate(['/search', { eventId: event.id, zone:zones.id }]);
+        this.router.navigate(['/search', { eventId: event.id, zone: zones.id }]);
       }
     });
 
@@ -76,13 +78,17 @@ export class EventManagerComponent implements OnInit {
   deleteEvent(eventId) {
     this.eventManagerService.deleteEvent(eventId)
       .subscribe(result => {
+        if(result == undefined){
+          this.messageType="danger";
+          this.message="No fue posible eliminar el evento. Valida que no existan datos asociados."
+        }
         console.log(result);
-        this.loadEvents();
+
       },
         error => {
-          console.log(error);
+          console.log('Error en:'+ error);
         });
-
+    this.loadEvents();
   }
 
 

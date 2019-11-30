@@ -13,110 +13,118 @@
 <div class="container-fluid" style="margin-top:80px">
     <h3>Administración de Eventos</h3>
     <p></p>
-    <button type="button" class="btn btn-default" aria-label="Left Align">
+    <!-- <button type="button" class="btn btn-default" aria-label="Left Align">
         <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-    </button>
+    </button> -->
 </div>
 <div class="container p-10">
-    <div class="row card-group">
-        <div class="col-1 col-md-4" *ngFor="let event of events">
-            <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-                <div class="card-header d-flex  h-100 .bg-gradient-secondary float-right">
-                    <div class="card-actions float-right">
-                        <div class="d-inline-block dropdown show">
-                            <a href="#" data-toggle="dropdown" data-display="static">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-more-vertical align-middle">
-                                    <circle cx="12" cy="12" r="1"></circle>
-                                    <circle cx="12" cy="5" r="1"></circle>
-                                    <circle cx="12" cy="19" r="1"></circle>
-                                </svg>
-                            </a>
+    <div *ngIf="message != undefined" class="alert alert-{{messageType}} alert-dismissible fade show">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div>
+        <div class="row card-group">
+            <div class="col-1 col-md-4" *ngFor="let event of events">
+                <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                    <div class="card-header d-flex  h-100 .bg-gradient-secondary float-right">
+                        <div class="card-actions float-right">
+                            <div class="d-inline-block dropdown show">
+                                <a href="#" data-toggle="dropdown" data-display="static">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-more-vertical align-middle">
+                                        <circle cx="12" cy="12" r="1"></circle>
+                                        <circle cx="12" cy="5" r="1"></circle>
+                                        <circle cx="12" cy="19" r="1"></circle>
+                                    </svg>
+                                </a>
 
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" (click)="deleteEvent(event.id)">Eliminar Evento </a>
-                                <!-- <div class="custom-control custom-switch">
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" (click)="deleteEvent(event.id)">Eliminar Evento </a>
+                                    <!-- <div class="custom-control custom-switch">
                                         <label class="custom-control-label"
                                         for="active">Habilitado</label>
                                         <input type="checkbox" class="custom-control-input"
                                             id="active">
                                         
                                     </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div styles="height:150px;">
-                    <img src="{{backendUrl}}/static/{{event.logo}}" class="img-fluid"
-                        onError="this.src='assets/resources/img.png'" alt="...">
-                    <label class="btn btn-outline-secondary btn-sm">
-                        Cambiar Imagen
-                        <input type="file" #imageInput (change)="processFile(imageInput)" hidden>
-                    </label>
+                    <div styles="height:150px;">
+                        <img src="{{backendUrl}}/static/{{event.logo}}" class="img-fluid"
+                            onError="this.src='assets/resources/img.png'" alt="...">
+                        <label class="btn btn-outline-secondary btn-sm">
+                            Cambiar Imagen
+                            <input type="file" #imageInput (change)="processFile(imageInput)" hidden>
+                        </label>
 
-                </div>
+                    </div>
 
-                <div class="card-body text-light bg-dark mh">
-                    <h5 class="card-title">{{event.nombre}}</h5>
-                    <p class="card-text">{{event.descripcion}}</p>
-                </div>
-                <div class="card-footer">
-                    <div class="row justify-content-between">
-                        <button type="button" class="btn btn-success btn-sm float-right"
-                            (click)="goToDetails(event)">Administrar 
-                        </button>
-                        <button type="button" class="btn btn-success btn-sm float-right"
-                            (click)="goToSearch(event)">Registro
-                        </button>
+                    <div class="card-body text-light bg-dark mh">
+                        <h5 class="card-title">{{event.nombre}}</h5>
+                        <p class="card-text">{{event.descripcion}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row justify-content-between">
+                            <button type="button" class="btn btn-success btn-sm float-right"
+                                (click)="goToDetails(event)">Administrar
+                            </button>
+                            <button type="button" class="btn btn-success btn-sm float-right"
+                                (click)="goToSearch(event)">Registro
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="createEventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Crear nuevo evento</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="card-content clearfix text-left">
-
-                        <form [formGroup]="eventManagerForm" (ngSubmit)="onSubmitEvent()" novalidate>
-                            <div class="form-group">
-                                <fieldset class="form-group">
-                                    <label for="first_name">Nombre del Evento</label>
-                                    <input type="text" class="form-control" id="name" formControlName="name">
-                                </fieldset>
-                                <fieldset class="form-group">
-                                    <label for="first_name">Descripción</label>
-                                    <input type="text" class="form-control" id="description"
-                                        formControlName="description">
-                                </fieldset>
-                                <fieldset class="form-group">
-                                    <label for="first_name">Fecha</label>
-                                    <input type="date" class="form-control" id="dateEvent" formControlName="eventDate">
-                                </fieldset>
-                            </div>
-                            <button type="submit" [disabled]="!eventManagerForm.valid"
-                                class="btn btn-success btn-block">Crear Evento</button>
-                        </form>
+        <!-- Modal -->
+        <div class="modal fade" id="createEventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Crear nuevo evento</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <div class="modal-body">
+
+                        <div class="card-content clearfix text-left">
+
+                            <form [formGroup]="eventManagerForm" (ngSubmit)="onSubmitEvent()" novalidate>
+                                <div class="form-group">
+                                    <fieldset class="form-group">
+                                        <label for="first_name">Nombre del Evento</label>
+                                        <input type="text" class="form-control" id="name" formControlName="name">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label for="first_name">Descripción</label>
+                                        <input type="text" class="form-control" id="description"
+                                            formControlName="description">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label for="first_name">Fecha</label>
+                                        <input type="date" class="form-control" id="dateEvent"
+                                            formControlName="eventDate">
+                                    </fieldset>
+                                </div>
+                                <button type="submit" [disabled]="!eventManagerForm.valid"
+                                    class="btn btn-success btn-block">Crear Evento</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
                 </div>
             </div>
         </div>
+
+
     </div>
-
-
-</div>

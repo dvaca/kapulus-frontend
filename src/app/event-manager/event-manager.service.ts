@@ -24,7 +24,7 @@ export class EventManagerService {
     const url = `${this.backendUrl}`+`/v2/events`;
     var response = this.http.post<any>(url, eventRequest, httpOptions)
       .pipe(
-        catchError(this.handleError('pay', eventRequest))
+        catchError(this.handleError('createEvent', eventRequest))
       );
     return response;
   }
@@ -73,7 +73,7 @@ getZoneByEvent(eventId) {
 deleteEvent(eventId) {
   const url = `${this.backendUrl}/v2/events/`+eventId;
   return this.http.delete<any>(url).pipe(
-    catchError(this.handleError<any>('events'))
+    catchError(this.handleError<any>('deleteEvent'))
   )
 }
 

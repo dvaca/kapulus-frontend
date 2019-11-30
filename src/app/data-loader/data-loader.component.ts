@@ -221,10 +221,10 @@ export class DataLoaderComponent implements OnInit {
     this.dataLoaderService.toDatabase(object).subscribe(
       result => {
         console.log('Upload Data response:' + JSON.stringify(result));
-        this.showMessage("Datos cargados exitosamente", "success");
+        this.showMessage(result.message, "success");
       },
-      (err: string) => {
-        this.showMessage("Error al Cargar la base de datos, Valide la configuración e intente nuevamente.",
+      (err: any) => {
+        this.showMessage("Error al Cargar la base de datos, Valide la configuración e intente nuevamente. ",
           "warning");
       });
       this.loadEvent();

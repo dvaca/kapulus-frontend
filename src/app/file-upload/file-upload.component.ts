@@ -99,3 +99,4 @@ class UploadFile {
 
   constructor(public src: string, public file: File) { }
 }
+
