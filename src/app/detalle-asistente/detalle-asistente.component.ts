@@ -504,6 +504,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
 		if (this.config.idevento == 62) {
           correo.subject = "Bienvenido al foro ¿Cómo promover la cultura de la libre competencia?";
         }
+		if (this.config.idevento == 64) {
+          correo.subject = "Bienvenido a la fiesta de fin de año FEORACLE 2019";
+        }
       }
       /*
       if(this.config.idevento == 5){
