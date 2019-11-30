@@ -164,6 +164,10 @@ export class EstadisticasComponent implements OnInit {
 	if(url == 'callcenter_estadisticas_energetico'){
       this.cargarEvento(56, 56);
     }
+  if(url == 'callcenter_registro_oracle_fin1'){
+      this.cargarEvento(64, 64);
+    }
+    
     this.cargarZonas();
     this.cargarCamposEvento();
   }
