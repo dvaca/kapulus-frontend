@@ -435,6 +435,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 56){
 			correo.subject = "Bienvenido al Foro: Hacia una transformación energética innovadora y sostenible";
 		}
+    if (this.config.idevento == 64) {
+          correo.subject = "Bienvenido a la fiesta de fin de año FEORACLE 2019";
+        }
       }
       /*
       if(this.config.idevento == 5){
