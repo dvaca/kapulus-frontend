@@ -141,7 +141,7 @@ export class EstadisticasLocalComponent implements OnInit {
 	if(url == 'evento_estadisticas_region_central'){
       this.cargarEvento(63, 63);
     }
-	if(url == 'evento_estadisticas_canal_one'){
+	if(url == 'evento_estadisticas_canal_uno'){
       this.cargarEvento(65, 65);
     }
     this.cargarCamposEvento();
