@@ -171,11 +171,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
                           nombre => {
                             //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
                             //apellido => {
-								alert("1");
-								alert(nombre.valor);
                             this.nombreAsistente = nombre.valor;
-							alert("2");
-							alert(this.nombreAsistente);
                             //this.apellidoAsistente = apellido.valor;
                             this.identificacion = this.asistente.identificacion.toString();
                             this.confirmado = true;
@@ -216,8 +212,6 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
                     //if(atr.nombre =="PRIMER NOMBRE"){
                     if (atr.nombre == "NOMBRE COMPLETO") {
                       this.nombreAsistente = atr.valor;
-					  alert("3");
-					  alert(this.nombreAsistente);
                     }
                     if (atr.nombre == "PRIMER APELLIDO") {
                       this.apellidoAsistente = atr.valor;
@@ -228,11 +222,7 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
                     nombre => {
                       //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
                       //apellido => {
-						  alert("4");
-						  alert(nombre.valor);
                       this.nombreAsistente = nombre.valor;
-					  alert("5");
-					  alert(this.nombreAsistente);
                       //this.apellidoAsistente = apellido.valor;
                       this.identificacion = this.asistente.identificacion.toString();
                       this.confirmado = true;
