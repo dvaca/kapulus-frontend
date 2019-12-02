@@ -163,6 +163,7 @@ app.use("/evento_estadisticas_infectologia", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_corpochivor", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_sic", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_region_central", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas_canal_one", express.static(__dirname+'/dist'));
 
 app.use("/certificado_asistencia_copnia", express.static(__dirname+'/dist'));
 

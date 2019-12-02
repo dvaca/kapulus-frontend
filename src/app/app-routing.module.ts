@@ -164,6 +164,7 @@ const routes: Routes = [
   { path: 'evento_estadisticas_corpochivor', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_sic', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_region_central', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_canal_one', component: EstadisticasLocalComponent },
   { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
 ]
 
