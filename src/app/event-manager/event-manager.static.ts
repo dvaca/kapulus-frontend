@@ -3,4 +3,5 @@ export class KEvent {
     description:string
     eventDate:Date;
     settings:any;
+    status:string;
   }

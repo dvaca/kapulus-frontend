@@ -27,16 +27,17 @@ export class DataLoaderComponent implements OnInit {
   private events: any;
   files: any;
   processResponse: any = {};
-  active: number;
+  active: number = 0;
   activeColumn: number;
   selectedFile: any;
   settings: any;
-  settingsForm: FormGroup;
+  settingsForm: FormGroup = new FormGroup({});
   mergeColumns: FormArray;
   customColumnName: string;
   message: string;
   messageType: string;
   inProcess: boolean;
+  fileOptionsAvailable = { "process": false, "load": false, "deleteData": false };
 
   @ViewChild("toastMessage", { read: ElementRef }) toastMessage: ElementRef;
 
@@ -44,6 +45,7 @@ export class DataLoaderComponent implements OnInit {
   onClick(index: number) {
     this.active = index;
     this.selectedFile = this.files[index];
+    this.navManager();
   }
 
   onClickColumn(index: number) {
@@ -65,8 +67,11 @@ export class DataLoaderComponent implements OnInit {
 
     this.loadEvent();
     this.loadFiles();
+    this.onClick(0);
 
   }
+
+
 
   private loadEvent() {
     this.eventManagerService.getEvent(this.eventId).subscribe(data => {
@@ -75,6 +80,8 @@ export class DataLoaderComponent implements OnInit {
       this.loadSettingsForEdit();
       console.log(this.event);
       this.inProcess = false;
+      this.onChanges();
+      this.navManager();
     });
   }
 
@@ -84,6 +91,7 @@ export class DataLoaderComponent implements OnInit {
       this.onClick(0);
       console.log(JSON.stringify(this.events));
     });
+    this.navManager();
   }
 
   /**Init the settings */
@@ -97,7 +105,7 @@ export class DataLoaderComponent implements OnInit {
 
   get columns(): FormGroup {
     return this.fb.group({
-      allowedValues: this.fb.array([this.allowedValues]),
+      allowedValues: this.fb.array([]),
       index: '',
       order: '',
       name: '',
@@ -109,9 +117,7 @@ export class DataLoaderComponent implements OnInit {
   }
 
   get allowedValues(): FormGroup {
-    return this.fb.group({
-      name: ''
-    });
+    return this.fb.group([]);
   }
 
 
@@ -133,7 +139,7 @@ export class DataLoaderComponent implements OnInit {
 
 
   loadSettingsForEdit(): void {
-    if (this.event.settings != undefined && this.event.settings!="") {
+    if (this.event.settings != undefined && this.event.settings != "") {
       this.settings = JSON.parse(this.event.settings);
       this.settingsForm.patchValue(this.settings);
       this.setValidColumns(this.settings);
@@ -142,6 +148,11 @@ export class DataLoaderComponent implements OnInit {
     }
   }
 
+  onChanges(): void {
+    this.settingsForm.valueChanges.subscribe(val => {
+      this.saveFile();
+    });
+  }
 
   setValidColumns(processResponse) {
     const mergeColumnsArray = this.settingsForm.get("mergeColumns") as FormArray;
@@ -155,8 +166,8 @@ export class DataLoaderComponent implements OnInit {
         description: '',
         id: '',
         filter: '',
-       statistics: ''
-      }) ;
+        statistics: ''
+      });
       column.patchValue(validColumn);
       //Second Level
       const allowedValuesArray = column.get("allowedValues") as FormArray;
@@ -185,9 +196,9 @@ export class DataLoaderComponent implements OnInit {
     };
     this.dataLoaderService.processFile(object).subscribe(data => {
       selectedFile.processResponse = data.resume;
-      this.loadEvent();
       this.showMessage("Archivo Procesado Exitosamente", 'success');
       console.log('ProcessResponse' + JSON.stringify(selectedFile.processResponse));
+      this.loadEvent();
     });
     this.onClickColumn(0);
 
@@ -221,13 +232,20 @@ export class DataLoaderComponent implements OnInit {
     this.dataLoaderService.toDatabase(object).subscribe(
       result => {
         console.log('Upload Data response:' + JSON.stringify(result));
-        this.showMessage(result.message, "success");
+        this.showMessage(result.message + " Registros Exitosos:" + result.success +
+          " Registros Fallidos:" + result.errors, "success");
+          this.loadEvent();
       },
       (err: any) => {
-        this.showMessage("Error al Cargar la base de datos, Valide la configuración e intente nuevamente. ",
-          "warning");
+        var message = "Error al Cargar la base de datos, Valide la configuración e intente nuevamente. ";
+        if (err.error != undefined) {
+          message = message.concat(err.error.message);
+        }
+        this.showMessage(message, "warning");
+        this.loadEvent();
+        this.onClick(0);
       });
-      this.loadEvent();
+    
 
   }
 
@@ -258,6 +276,33 @@ export class DataLoaderComponent implements OnInit {
     this.message = message;
     this.messageType = type;
     jQuery('#toast').show();
+  }
+
+  navManager() {
+    this.fileOptionsAvailable.process = false;
+    this.fileOptionsAvailable.load = false;
+    this.fileOptionsAvailable.deleteData = false;
+    if (this.selectedFile != undefined) {
+      if (this.settings != undefined) {
+        var settingsFile = this.settings[this.selectedFile.storage_id];
+        if (settingsFile != undefined) {
+          if (settingsFile.status != undefined) {
+            if (settingsFile.status == 'Procesado') {
+              this.fileOptionsAvailable.load = true;
+            }
+            else if (settingsFile.status == 'Datos Cargados') {
+              this.fileOptionsAvailable.deleteData = true;
+            }
+          }
+        }
+        else{
+          this.fileOptionsAvailable.process = true;
+        }
+      }
+      else {
+        this.fileOptionsAvailable.process = true;
+      }
+    }
   }
 
 }

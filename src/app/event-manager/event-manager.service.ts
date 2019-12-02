@@ -30,6 +30,19 @@ export class EventManagerService {
   }
 
   /**
+   * Call service to update event
+   * @param eventRequest 
+   */
+  updateEvent(eventRequest) {
+    const url = `${this.backendUrl}`+`/v2/events`;
+    var response = this.http.put<any>(url, eventRequest, httpOptions)
+      .pipe(
+        catchError(this.handleError('updateEvent', eventRequest))
+      );
+    return response;
+  }
+
+  /**
  * Get Events
  * @author Ricardo Carvajal 
  * @param
@@ -64,6 +77,7 @@ getZoneByEvent(eventId) {
     catchError(this.handleError<any>('events'))
   )
 }
+
 
  /**
  * Delete Events

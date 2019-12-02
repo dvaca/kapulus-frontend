@@ -139,6 +139,7 @@ const routes: Routes = [
   { path: 'certificado_asistencia_copnia', component: CertificadoComponent },
   { path: 'dataLoader', component: DataLoaderComponent },
   { path: 'eventManager', component: EventManagerComponent },
+  { path: 'eventManager/:rol', component: EventManagerComponent },
   { path: 'dataLoader/:eventId', component: DataLoaderComponent},  
   { path: 'search/:eventId:zone', component: BuscadorComponent},
   { path: 'search', component: BuscadorComponent},

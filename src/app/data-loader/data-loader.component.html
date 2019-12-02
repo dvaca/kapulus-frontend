@@ -9,15 +9,20 @@
                 Acciones
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a (click)="processFile(files[active])" class="dropdown-item">Procesar
-                    Archivo </a>
-                <a (click)="toDatabase(files[active])" class="dropdown-item">Enviar a Base de
-                    Datos</a>
-                <a class="dropdown-item" (click)="saveFile()">Guardar Configuración</a>
+                <div *ngIf="fileOptionsAvailable.process==true">
+                    <a (click)="processFile(files[active])" class="dropdown-item">Procesar
+                        Archivo </a>
+                </div>
+                <div *ngIf="fileOptionsAvailable.load==true">
+                    <a (click)="toDatabase(files[active])" class="dropdown-item">Enviar a Base de
+                        Datos</a>
+                </div>
+                <!-- <a class="dropdown-item" (click)="saveFile()">Guardar Configuración</a> -->
                 <div role="separator" class="dropdown-divider"></div>
-
-                <a class="dropdown-item" (click)="deleteDataLoaded(files[active])">Eliminar
-                    Datos Subidos</a>
+                <div *ngIf="fileOptionsAvailable.deleteData==true">
+                    <a class="dropdown-item" (click)="deleteDataLoaded(files[active])">Eliminar
+                        Datos Subidos</a>
+                </div>
             </div>
         </li>
         <li class="nav-item active ">
@@ -28,6 +33,7 @@
 
 <!-- <div class="container " style="font-size: .875rem"></div> -->
 <div class="container-fluid text-left" style="margin-top:80px; font-size: .875rem">
+    <!-- {{fileOptionsAvailable|json}} -->
     <div *ngIf="message != undefined" class="alert alert-{{messageType}} alert-dismissible fade show">
         {{message}}</div>
     <div>
@@ -96,7 +102,7 @@
                                         href="#{{file.original_name}}{{i}}" role="tab" aria-controls="v-pills-home"
                                         aria-selected="true">
                                         <span>{{file.original_name}}</span>
-                                        <div class="card-actions float-right">
+                                        <div *ngIf="fileOptionsAvailable.load==true" class="card-actions float-right">
                                             <span (click)="deleteStorage(file)"><i class="fa fa-trash"></i></span>
                                         </div>
                                     </a>
@@ -117,9 +123,6 @@
                         <div class="card-title mb-0">
                             <div class="row no-gutters justify-content-between">
                                 <h6>Configuración del evento</h6>
-
-
-
                             </div>
                         </div>
                     </div>
@@ -141,7 +144,8 @@
                                                     <p></p>
                                                     <div class="text-muted">Fecha de Creación</div>
                                                     {{files[active].create_date | date:'medium' }}
-                                                    <div *ngIf="settings!= undefined && settings[selectedFile.storage_id]">
+                                                    <div
+                                                        *ngIf="settings!= undefined && settings[selectedFile.storage_id]">
                                                         <div class="text-muted">Total Registros</div>
                                                         {{settings[selectedFile.storage_id].totalRows}}
                                                         <div class="text-muted">Total Registros Válidos</div>

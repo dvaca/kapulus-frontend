@@ -29,7 +29,7 @@
             <div class="col-1 col-md-4" *ngFor="let event of events">
                 <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
                     <div class="card-header d-flex  h-100 .bg-gradient-secondary float-right">
-                        <div class="card-actions float-right">
+                        <div *ngIf="rol=='admin'" class="card-actions float-right">
                             <div class="d-inline-block dropdown show">
                                 <a href="#" data-toggle="dropdown" data-display="static">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -42,17 +42,25 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" (click)="deleteEvent(event.id)">Eliminar Evento </a>
+                                    <div *ngIf="event.status!='disabled'">
+                                        <a class="dropdown-item" (click)="disableEvent(event)">Deshabilitar Evento </a>
+                                    </div>
+                                    <div *ngIf="event.status!='enabled'">
+                                        <a class="dropdown-item" (click)="enableEvent(event)">Habilitar Evento </a>
+                                    </div>
+
+                                    <a class="dropdown-item" (click)="deleteEvent(event.id)">Eliminar Evento</a>
+
                                     <!-- <div class="custom-control custom-switch">
                                         <label class="custom-control-label"
                                         for="active">Habilitado</label>
                                         <input type="checkbox" class="custom-control-input"
-                                            id="active">
-                                        
+                                            id="active">  
                                     </div> -->
                                 </div>
                             </div>
                         </div>
+                        <div *ngIf="event.status=='disabled'"><i class="fa fa-ban"></i></div>
                     </div>
                     <div styles="height:150px;">
                         <img src="{{backendUrl}}/static/{{event.logo}}" class="img-fluid"
@@ -70,9 +78,11 @@
                     </div>
                     <div class="card-footer">
                         <div class="row justify-content-between">
-                            <button type="button" class="btn btn-success btn-sm float-right"
-                                (click)="goToDetails(event)">Administrar
-                            </button>
+                            <div *ngIf="rol=='admin'">
+                                <button type="button" class="btn btn-success btn-sm float-right"
+                                    (click)="goToDetails(event)">Administrar
+                                </button>
+                            </div>
                             <button type="button" class="btn btn-success btn-sm float-right"
                                 (click)="goToSearch(event)">Registro
                             </button>
