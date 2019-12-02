@@ -41,9 +41,7 @@ export class CorreoComponent implements OnInit {
     if (isUndefined(this.nombreAsistente)) {
       this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE COMPLETO").subscribe(
         nombre => {
-			alert(nombre.valor);
           this.nombreAsistente = nombre.valor;
-		  alert(this.nombreAsistente);
         });
     }
 	alert("ape");
