@@ -37,14 +37,12 @@ export class CorreoComponent implements OnInit {
         }
       );
     }
-	alert("nom");
     if (isUndefined(this.nombreAsistente)) {
       this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE COMPLETO").subscribe(
         nombre => {
           this.nombreAsistente = nombre.valor;
         });
     }
-	alert("ape");
     if (isUndefined(this.apellidoAsistente)) {
 		/*
       this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
