@@ -126,19 +126,19 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
                       this.asistenteImpresion.atributos.forEach(atr => {
                         atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
                       });
-                      //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
-					  this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE COMPLETO").subscribe(
+                      this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
+					  //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE COMPLETO").subscribe(
                         nombre => {
-                          //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
-                            //apellido => {
+                          this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
+                            apellido => {
                               this.nombreAsistente = nombre.valor;
-                              //this.apellidoAsistente = apellido.valor;
+                              this.apellidoAsistente = apellido.valor;
                               this.identificacion = this.asistente.identificacion.toString();
                               this.confirmado = true;
                               this.mensajes.push("Sus datos han sido guardados exitosamente!");
                               this.mensajes.push("Recibirá un correo electrónico con la información y el código QR de acceso al evento");
-                            //}
-                          //);
+                            }
+                          );
                         }
                       );
                     });
@@ -174,16 +174,16 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 						this.apellidoAsistente = atr.valor;
 					}
 				  });
-				  //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
-				  this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE COMPLETO").subscribe(
+				  this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
+				  //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE COMPLETO").subscribe(
             nombre => {
-              //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
-                //apellido => {
+              this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
+                apellido => {
                   this.nombreAsistente = nombre.valor;
-                  //this.apellidoAsistente = apellido.valor;
+                  this.apellidoAsistente = apellido.valor;
 					        this.identificacion = this.asistente.identificacion.toString();
                       this.confirmado = true;
-                    //});    
+                    });    
                   });
             });
         });
@@ -334,6 +334,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 55){
 			correo.subject = "Invitación Almuerzo Aliados CredibanCo 2019";
 		}
+    if (this.config.idevento == 63) {
+      correo.subject = "Invitación al Foro 'REGIÓN CENTRAL: POR UN SISTEMA AGROALIMENTARIO SALUDABLE Y SOSTENIBLE'";
+    }
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
 		if(this.config.idevento == 10){
@@ -435,10 +438,13 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		if(this.config.idevento == 56){
 			correo.subject = "Bienvenido al Foro: Hacia una transformación energética innovadora y sostenible";
 		}
+    if (this.config.idevento == 63) {
+          correo.subject = "Bienvenido al foro Región Central: por un sistema agroalimentario saludable y sostenible";
+    }
     if (this.config.idevento == 64) {
-          correo.subject = "Bienvenido a la fiesta de fin de año FEORACLE 2019";
-        }
-      }
+      correo.subject = "Bienvenido a la fiesta de fin de año FEORACLE 2019";
+    }
+    }
       /*
       if(this.config.idevento == 5){
         correo.subject = "Invitación - Congreso de Actualización en Propiedad Horizontal";
