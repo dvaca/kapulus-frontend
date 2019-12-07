@@ -75,11 +75,12 @@ export class EventManagerComponent implements OnInit {
       .subscribe(result => {
         this.createEventResult = result;
         this.loadEvents();
+        this.eventManagerForm.reset;
       },
         error => {
           this.createEventResult = error;
         });
-
+        
 
   }
 
@@ -88,15 +89,14 @@ export class EventManagerComponent implements OnInit {
       .subscribe(result => {
         if (result == undefined) {
           this.messageType = "danger";
-          this.message = "No fue posible eliminar el evento. Valida que no existan datos asociados."
+          this.message = "No fue posible eliminar el evento. Valida que no existan datos asociados.";
         }
         console.log(result);
-
+        this.loadEvents();
       },
         error => {
           console.log('Error en:' + error);
         });
-    this.loadEvents();
   }
 
   disableEvent(event) {

@@ -4,7 +4,7 @@
         <img src="/assets/resources/LogoKapulus.png" height="28" alt="kapulus">
     </a>
     <ul class="navbar-nav">
-        <li class="nav-item">
+        <li *ngIf="rol=='admin'" class="nav-item">
             <a class="nav-link" href="#createEventModal" data-toggle="modal" data-target="#createEventModal">
                 Nuevo Evento<span class="my-2 my-sm-0 sr-only">(current)</span></a>
         </li>
