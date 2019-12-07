@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  URLBack: 'http://kapulus.dynu.net:4000'
+  URLBack: 'http://back.kapulus.com:4000'
 };

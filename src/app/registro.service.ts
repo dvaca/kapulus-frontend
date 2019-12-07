@@ -24,7 +24,8 @@ export class RegistroService {
   //private backendUrl = 'http://localhost:4000';
   //private backendUrl = 'http://169.254.168.35:4000'; //PEER TO PEER
   //private backendUrl = 'http://192.168.0.100:4000'; //CAPULUS
-  private backendUrl = 'https://kapulus-backend.herokuapp.com'; //LOCAL
+  //private backendUrl = 'https://kapulus-backend.herokuapp.com'; //LOCAL
+  private backendUrl = 'http://back.kapulus.com:4000';
   //private backendUrl = 'http://192.168.0.102:4000'; //LOCAL
   //private backendUrl = 'http://172.20.10.6:4000'; //INTERNET
   
