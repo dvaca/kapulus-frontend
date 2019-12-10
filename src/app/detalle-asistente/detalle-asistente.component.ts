@@ -62,9 +62,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
 		x => {this.asistenteImpresion = x; 
 		  this.asistenteImpresion.atributos.forEach(atr => {
 			atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
-			//if(atr.nombre =="PRIMER NOMBRE"){
+			if(atr.nombre =="PRIMER NOMBRE"){
 				
-			if(atr.nombre =="NOMBRE COMPLETO"){
+			//if(atr.nombre =="NOMBRE COMPLETO"){
 				this.nombreAsistente = atr.valor;
 			}
 			if(atr.nombre =="PRIMER APELLIDO"){
@@ -443,6 +443,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     }
     if (this.config.idevento == 64) {
       correo.subject = "Bienvenido a la fiesta de fin de año FEORACLE 2019";
+    }
+    if (this.config.idevento == 66) {
+      correo.subject = "Bienvenido al foro Defender a los defensores: 71 años de la declaración universal de los derechos humanos";
     }
     }
       /*
