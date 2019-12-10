@@ -92,9 +92,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
           this.asistenteImpresion = x;
           this.asistenteImpresion.atributos.forEach(atr => {
             atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
-            //if(atr.nombre =="PRIMER NOMBRE"){
+            if(atr.nombre =="PRIMER NOMBRE"){
 
-            if (atr.nombre == "NOMBRE COMPLETO") {
+            //if (atr.nombre == "NOMBRE COMPLETO") {
               this.nombreAsistente = atr.valor;
             }
             if (atr.nombre == "PRIMER APELLIDO") {
@@ -166,19 +166,19 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
                         this.asistenteImpresion.atributos.forEach(atr => {
                           atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
                         });
-                        //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
-                        this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE COMPLETO").subscribe(
+                        this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
+                        //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE COMPLETO").subscribe(
                           nombre => {
-                            //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
-                            //apellido => {
+                            this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
+                            apellido => {
                             this.nombreAsistente = nombre.valor;
-                            //this.apellidoAsistente = apellido.valor;
+                            this.apellidoAsistente = apellido.valor;
                             this.identificacion = this.asistente.identificacion.toString();
                             this.confirmado = true;
                             this.mensajes.push("Sus datos han sido guardados exitosamente!");
                             this.mensajes.push("Recibirá un correo electrónico con la información y el código QR de acceso al evento");
-                            //}
-                            //);
+                            }
+                            );
                           }
                         );
                       });
@@ -209,8 +209,8 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
                   this.asistenteImpresion = x;
                   this.asistenteImpresion.atributos.forEach(atr => {
                     atr.campo = this.camposEvento.filter(y => y.id == atr.idcampo)[0];
-                    //if(atr.nombre =="PRIMER NOMBRE"){
-                    if (atr.nombre == "NOMBRE COMPLETO") {
+                    if(atr.nombre =="PRIMER NOMBRE"){
+                    //if (atr.nombre == "NOMBRE COMPLETO") {
                       this.nombreAsistente = atr.valor;
                     }
                     if (atr.nombre == "PRIMER APELLIDO") {
@@ -220,13 +220,13 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
                   //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER NOMBRE").subscribe(
                   this.registroService.getAsistenteAtributo(this.asistente.identificacion, "NOMBRE COMPLETO").subscribe(
                     nombre => {
-                      //this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
-                      //apellido => {
+                      this.registroService.getAsistenteAtributo(this.asistente.identificacion, "PRIMER APELLIDO").subscribe(
+                      apellido => {
                       this.nombreAsistente = nombre.valor;
-                      //this.apellidoAsistente = apellido.valor;
+                      this.apellidoAsistente = apellido.valor;
                       this.identificacion = this.asistente.identificacion.toString();
                       this.confirmado = true;
-                      //});    
+                      });    
                     });
                 });
             });
@@ -509,6 +509,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
         }
 		if (this.config.idevento == 64) {
           correo.subject = "Bienvenido a la fiesta de fin de año FEORACLE 2019";
+        }
+		if (this.config.idevento == 66) {
+          correo.subject = "Bienvenido al foro Defender a los defensores: 71 años de la declaración universal de los derechos humanos";
         }
       }
       /*
