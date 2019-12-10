@@ -132,6 +132,9 @@ export class EstadisticasLocalComponent implements OnInit {
     if(url == 'evento_estadisticas_region_central'){
       this.cargarEvento(63, 63);
     }
+    if(url == 'evento_estadisticas_defender'){
+      this.cargarEvento(66, 66);
+    }
     this.cargarCamposEvento();
   }
   
