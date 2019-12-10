@@ -56,6 +56,7 @@ const routes: Routes = [
   { path: 'callcenter_registro_energetico', component: BuscadorComponent },
   { path: 'callcenter_registro_oracle_fin1', component: BuscadorComponent },
   { path: 'callcenter_registro_region_central', component: BuscadorComponent },
+  { path: 'callcenter_registro_defender', component: BuscadorComponent },
   { path: 'callcenter_token_7D5H3N9Y4F', component: EstadisticasComponent },
   { path: 'callcenter_token_4B5O2S8Z0L', component: EstadisticasComponent },
   { path: 'callcenter_token_1T9Y7X1M9A', component: EstadisticasComponent },
@@ -101,6 +102,7 @@ const routes: Routes = [
   { path: 'callcenter_estadisticas_energetico', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_oracle_fin1', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_region_central', component: EstadisticasComponent },
+  { path: 'callcenter_estadisticas_defender', component: EstadisticasComponent },
   { path: 'control-acceso', component: ControlAccesoComponent },
   { path: 'registro-online', component: RegistroOnlineComponent },
   { path: 'registro-plus-superior', component: RegistroOnlineComponent },
@@ -151,6 +153,7 @@ const routes: Routes = [
   { path: 'evento_estadisticas_ptar', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_energetico', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_region_central', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_defender', component: EstadisticasLocalComponent },
   { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
 ]
 
