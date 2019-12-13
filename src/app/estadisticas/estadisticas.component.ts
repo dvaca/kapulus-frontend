@@ -173,6 +173,10 @@ export class EstadisticasComponent implements OnInit {
   if(url == 'callcenter_estadisticas_defender'){
       this.cargarEvento(66, 66);
     }
+  
+  if(url == 'callcenter_estadisticas_bvc'){
+      this.cargarEvento(67, 68);
+    }
     
     this.cargarZonas();
     this.cargarCamposEvento();
