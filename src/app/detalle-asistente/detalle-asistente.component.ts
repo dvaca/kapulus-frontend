@@ -513,6 +513,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
 		if (this.config.idevento == 66) {
           correo.subject = "Bienvenido al foro Defender a los defensores: 71 años de la declaración universal de los derechos humanos";
         }
+		if (this.config.idevento == 67) {
+          correo.subject = "Bienvenido al Future White Party | BVC";
+        }
       }
       /*
       if(this.config.idevento == 5){
