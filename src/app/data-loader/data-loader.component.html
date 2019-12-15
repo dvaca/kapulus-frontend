@@ -13,9 +13,13 @@
                     <a (click)="processFile(files[active])" class="dropdown-item">Procesar
                         Archivo </a>
                 </div>
-                <div *ngIf="fileOptionsAvailable.load==true">
+                <div *ngIf="fileOptionsAvailable.load==true && loadingData==false">
                     <a (click)="toDatabase(files[active])" class="dropdown-item">Enviar a Base de
                         Datos</a>
+                </div>
+                <div *ngIf="loadingData==true">
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                    Cargando Datos...
                 </div>
                 <!-- <a class="dropdown-item" (click)="saveFile()">Guardar Configuración</a> -->
                 <div role="separator" class="dropdown-divider"></div>
@@ -25,15 +29,18 @@
                 </div>
             </div>
         </li>
+        <li class="nav-item dropdown">
+        </li>
         <li class="nav-item active ">
             <a class="nav-link" href="/eventManager">Eventos <span class="sr-only">(current)</span></a>
         </li>
     </ul>
+
 </nav>
 
 <!-- <div class="container " style="font-size: .875rem"></div> -->
 <div class="container-fluid text-left" style="margin-top:80px; font-size: .875rem">
-     <!-- {{fileOptionsAvailable|json}}  -->
+    <!-- {{fileOptionsAvailable|json}}  -->
     <div *ngIf="message != undefined" class="alert alert-{{messageType}} alert-dismissible fade show">
         {{message}}</div>
     <div>
@@ -102,7 +109,8 @@
                                         href="#{{file.original_name}}{{i}}" role="tab" aria-controls="v-pills-home"
                                         aria-selected="true">
                                         <span>{{file.original_name}}</span>
-                                        <div *ngIf="fileOptionsAvailable.deleteFile==true" class="card-actions float-right">
+                                        <div *ngIf="fileOptionsAvailable.deleteFile==true"
+                                            class="card-actions float-right">
                                             <span (click)="deleteStorage(file)"><i class="fa fa-trash"></i></span>
                                         </div>
                                     </a>
@@ -159,12 +167,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div *ngIf="event?.settings" class="col-md-5 col-sm-12">
+                            <div *ngIf="event?.settings" class="col-md-6 col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
                                         <div class="card-title">Columnas Identificadas</div>
                                         <small class="form-text text-muted">
                                             De click para abrir las propiedades de la columna.</small>
+                                        <div *ngIf="settingsForm.dirty">
+                                            <button type="button" class="btn btn-primary btn-sm"
+                                            (click)="updateEventFields()">Guardar Cambios</button>
+                                        </div>
                                     </div>
                                     <div class="accordion" id="accordionExample">
                                         <div class="card" formArrayName="mergeColumns">
@@ -204,6 +216,12 @@
                                                             <label class="custom-control-label"
                                                                 for="columnStatistics{{k}}">Aplica
                                                                 Estadísticas</label>
+                                                        </div>
+                                                        <div class="custom-control custom-switch">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="columnRequired{{k}}" formControlName="required">
+                                                            <label class="custom-control-label"
+                                                                for="columnRequired{{k}}">Obligatorio</label>
                                                         </div>
                                                         <small class="form-text text-muted">
                                                             Valores Permitidos.</small>
@@ -253,11 +271,12 @@
             </div>
         </div>
     </div>
-<!-- Modal -->
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-      <div class="modal-content">
-        ...
-      </div>
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                ...
+            </div>
+        </div>
     </div>
-  </div>
