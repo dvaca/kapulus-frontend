@@ -450,6 +450,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     if (this.config.idevento == 67) {
       correo.subject = "Bienvenido al Future White Party | BVC";
     }
+    if (this.config.idevento == 68) {
+      correo.subject = "Bienvenido al foro 'Arte, cultura e historia, un recorrido por Bolívar'";
+    }
     }
       /*
       if(this.config.idevento == 5){
