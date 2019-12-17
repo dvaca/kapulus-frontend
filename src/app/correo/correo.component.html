@@ -82,6 +82,9 @@
   <div *ngIf="variables.idevento == 66" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
     <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 7:00 a.m. para el proceso de registro</b> 
   </div>
+  <div *ngIf="variables.idevento == 68" style="text-align: center; font-size: 18px; max-width: 645px; padding-bottom: 20px; padding-top: 20px;">
+    <b>El ingreso al salón depende del aforo y su puntualidad. Le recomendamos llegar a las 2:00 p.m. para el proceso de registro</b> 
+  </div>  
   <div *ngIf="variables.idevento != 55" style="text-align:center">
     <img src="cid:confirmacionheader" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
   </div>
@@ -236,6 +239,9 @@
   <div *ngIf="variables.idevento == 66">
     <br> Le invitamos a presentar este código en el registro del foro para agilizar su proceso de acreditación.
 	</div>
+  <div *ngIf="variables.idevento == 68">
+    <br> Le invitamos a presentar este código en el registro del foro para agilizar su proceso de acreditación.
+	</div>  
     <br>
     <br>
 
@@ -324,6 +330,16 @@
 	No olvides llevar contigo este código QR, con este ingresaras al evento y posteriormente, lo necesitarás para la entrega de los consumos (alimentos y bebidas) en la fiesta. Puedes llevarlo en el celular o impreso. 
     <br>
 	<br>
+	</div> 
+  <div *ngIf="variables.idevento == 68" style="text-align:left;font-style:italic;padding:40px;font-size:12px;">
+	<b>TÉRMINOS Y CONDICIONES DEL EVENTO</b>
+	<br>
+	Los cupos del foro son limitados. Su inscripción no garantiza la entrada al mismo. El derecho al ingreso es determinado por el orden de llegada y no por el orden de inscripción. Recomendamos llegar con tiempo al lugar del evento para garantizar su cupo. 
+    <br>
+	<br>
+	<b>GRACIAS POR SU PARTICIPACIÓN</b>
+    <br>
+	<br>
 	</div>  
 	<div *ngIf="variables.idevento != 25">
     <div *ngIf="variables.idevento == 33" style="text-align:center">
@@ -333,7 +349,7 @@
 		<img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 	  </a>
     </div>
-	<div *ngIf="variables.idevento == 34 || variables.idevento == 35 || variables.idevento == 40 || variables.idevento == 41 || variables.idevento == 43 || variables.idevento == 44 || variables.idevento == 46 || variables.idevento == 47 || variables.idevento == 48 || variables.idevento == 50 || variables.idevento == 54 || variables.idevento == 55 || variables.idevento == 56 || variables.idevento == 63 || variables.idevento == 66 || variables.idevento == 67" style="text-align:center">
+	<div *ngIf="variables.idevento == 34 || variables.idevento == 35 || variables.idevento == 40 || variables.idevento == 41 || variables.idevento == 43 || variables.idevento == 44 || variables.idevento == 46 || variables.idevento == 47 || variables.idevento == 48 || variables.idevento == 50 || variables.idevento == 54 || variables.idevento == 55 || variables.idevento == 56 || variables.idevento == 63 || variables.idevento == 66 || variables.idevento == 67 || variables.idevento == 68" style="text-align:center">
 		<img src="cid:confirmacionfooter" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;">
 	</div>
 	</div>
