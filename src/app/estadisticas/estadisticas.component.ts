@@ -177,6 +177,10 @@ export class EstadisticasComponent implements OnInit {
   if(url == 'callcenter_estadisticas_bvc'){
       this.cargarEvento(67, 68);
     }
+  
+  if(url == 'callcenter_estadisticas_arte_bolivar'){
+      this.cargarEvento(68, 69);
+    }
     
     this.cargarZonas();
     this.cargarCamposEvento();
