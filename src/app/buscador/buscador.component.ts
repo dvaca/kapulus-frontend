@@ -170,6 +170,9 @@ export class BuscadorComponent implements OnInit {
   if(url == 'callcenter_registro_bvc'){
       this.cargarEvento(67, 68);
     }
+  if(url == 'callcenter_registro_arte_bolivar'){
+      this.cargarEvento(68, 69);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
