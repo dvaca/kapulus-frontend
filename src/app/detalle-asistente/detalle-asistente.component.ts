@@ -453,6 +453,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     if (this.config.idevento == 68) {
       correo.subject = "Bienvenido al foro 'Arte, cultura e historia, un recorrido por Bolívar'";
     }
+    if (this.config.idevento == 69) {
+      correo.subject = "Código QR evento de fin de año, Canales Comerciales de Vanti.";
+    }
     }
       /*
       if(this.config.idevento == 5){
