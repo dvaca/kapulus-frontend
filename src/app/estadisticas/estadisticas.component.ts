@@ -181,6 +181,9 @@ export class EstadisticasComponent implements OnInit {
   if(url == 'callcenter_estadisticas_arte_bolivar'){
       this.cargarEvento(68, 69);
     }
+  if(url == 'callcenter_estadisticas_vanti'){
+      this.cargarEvento(69, 70);
+    }
     
     this.cargarZonas();
     this.cargarCamposEvento();
