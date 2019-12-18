@@ -76,6 +76,7 @@ app.use("/callcenter_registro_region_central", express.static(__dirname+'/dist')
 app.use("/callcenter_registro_defender", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_bvc", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_arte_bolivar", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_vanti", express.static(__dirname+'/dist'));
 
 app.use("/callcenter_estadisticas_coosalud_bquilla", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_coosalud_bmanga", express.static(__dirname+'/dist'));
@@ -117,6 +118,7 @@ app.use("/callcenter_estadisticas_region_central", express.static(__dirname+'/di
 app.use("/callcenter_estadisticas_defender", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_bvc", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_arte_bolivar", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_vanti", express.static(__dirname+'/dist'));
 
 app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud", express.static(__dirname+'/dist'));
