@@ -78,7 +78,7 @@ export class DataLoaderComponent implements OnInit {
       this.event = data;
       this.initSettingsForm();
       this.loadSettingsForEdit();
-      console.log(this.event);
+      console.log(JSON.stringify(this.event));
       this.inProcess = false;
       this.onChanges();
       this.navManager();
