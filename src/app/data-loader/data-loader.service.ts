@@ -67,6 +67,19 @@ export class DataLoaderService {
   }
 
   /**
+   * Updata event fields info
+   * @param event
+   */
+  updateEventFields(event){
+    const url = `${this.backendUrl}/v2/eventFields/`+event.id;
+    var response = this.http.put<any>(url,event, httpOptions)
+      .pipe(
+        catchError(this.handleError('updateEventFields', response))
+      );
+    return response;
+  }
+
+  /**
    * Load the data from csv to database after save the settings file
    * @param storage 
    */

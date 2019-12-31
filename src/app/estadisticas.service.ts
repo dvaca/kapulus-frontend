@@ -7,6 +7,7 @@ import { VariablesEvento } from './variablesEvento';
 import { CampoEvento } from './camposevento';
 import { Zona } from './zona';
 import { Estadistica } from './estadistica';
+import { environment } from '../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,12 +16,13 @@ const httpOptions = {
 @Injectable()
 export class EstadisticasService {
 
+  private backendUrl = environment.URLBack;
+
   //private backendUrl = 'http://localhost:4000';
   //private backendUrl = 'http://169.254.168.35:4000'; //PEER TO PEER
   //private backendUrl = 'http://192.168.0.100:4000'; //CAPULUS
   //private backendUrl = 'https://kapulus-backend.herokuapp.com'; //LOCAL
   private backendUrl = 'http://back.kapulus.com:4000';
-  //private backendUrl = 'http://192.168.0.102:4000'; //ADRIAN
   //private backendUrl = 'http://192.168.0.7:4000'; //INTERNET
   
   constructor(private http: HttpClient, public config: VariablesEvento) { }

@@ -23,7 +23,7 @@ export class DataLoaderComponent implements OnInit {
   eventId = 0;
   event: KEvent;
   private events: any;
-  files: any=[];
+  files: any = [];
   processResponse: any = {};
   active: number = 0;
   activeColumn: number;
@@ -35,7 +35,8 @@ export class DataLoaderComponent implements OnInit {
   message: string;
   messageType: string;
   inProcess: boolean;
-  fileOptionsAvailable = { "process": false, "load": false, "deleteData": false, "deleteFile":false };
+  loadingData: boolean = false;
+  fileOptionsAvailable = { "process": false, "load": false, "deleteData": false, "deleteFile": false };
 
   @ViewChild("toastMessage", { read: ElementRef }) toastMessage: ElementRef;
 
@@ -48,6 +49,7 @@ export class DataLoaderComponent implements OnInit {
 
   onClickColumn(index: number) {
     this.activeColumn = index;
+
   }
 
   constructor(private fb: FormBuilder, private dataLoaderService: DataLoaderService, private router: Router,
@@ -76,7 +78,7 @@ export class DataLoaderComponent implements OnInit {
       this.event = data;
       this.initSettingsForm();
       this.loadSettingsForEdit();
-      console.log(this.event);
+      console.log(JSON.stringify(this.event));
       this.inProcess = false;
       this.onChanges();
       this.navManager();
@@ -110,7 +112,8 @@ export class DataLoaderComponent implements OnInit {
       description: '',
       id: '',
       filter: '',
-      statistics: ''
+      statistics: '',
+      required: false,
     });
   }
 
@@ -164,7 +167,8 @@ export class DataLoaderComponent implements OnInit {
         description: '',
         id: '',
         filter: '',
-        statistics: ''
+        statistics: '',
+        required: false
       });
       column.patchValue(validColumn);
       //Second Level
@@ -212,8 +216,20 @@ export class DataLoaderComponent implements OnInit {
     }
   }
 
+  updateEventFields() {
+    this.dataLoaderService.updateEventFields(this.event).subscribe(
+      res => {
+        this.showMessage("La configuración del evento fue actualizada exitosamente.", "success");
+        this.settingsForm.markAsPristine();
+      },
+      (err: any) => {
+        this.showMessage("Error al actualizar la configuración del evento", "warning");
+        this.settingsForm.markAsPristine();
+      }
+    );
+  }
+
   saveFile() {
-    console.log("SettingsForm Value" + this.settingsForm.value);
     //fileSettings[this.selectedFile.storage_id] = this.settingsForm.value;
     var settingsColumns = this.settingsForm.value.mergeColumns;
     this.settings.mergeColumns = settingsColumns;
@@ -227,23 +243,27 @@ export class DataLoaderComponent implements OnInit {
 
   toDatabase(selectedFile) {
     var object = { 'storageId': selectedFile.storage_id };
+    this.loadingData = true;
     this.dataLoaderService.toDatabase(object).subscribe(
       result => {
         console.log('Upload Data response:' + JSON.stringify(result));
         this.showMessage(result.message + " Registros Exitosos:" + result.success +
           " Registros Fallidos:" + result.errors, "success");
-          this.loadEvent();
+        this.loadEvent();
+        this.loadingData = false;
       },
       (err: any) => {
         var message = "Error al Cargar la base de datos, Valide la configuración e intente nuevamente. ";
         if (err.error != undefined) {
           message = message.concat(err.error.message);
+          this.loadingData = false;
         }
         this.showMessage(message, "warning");
         this.loadEvent();
         this.onClick(0);
+
       });
-    
+
 
   }
 
@@ -295,13 +315,13 @@ export class DataLoaderComponent implements OnInit {
             }
           }
         }
-        else{
+        else {
           this.fileOptionsAvailable.process = true;
         }
       }
       else {
         this.fileOptionsAvailable.process = true;
-        this.fileOptionsAvailable.deleteFile=true;
+        this.fileOptionsAvailable.deleteFile = true;
       }
     }
   }

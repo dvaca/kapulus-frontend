@@ -41,7 +41,7 @@ import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-lo
     RegistroOnlineComponent,
     CorreoComponent,
     LoginComponent,
-    EstadisticasLocalComponent
+    EstadisticasLocalComponent,
   ],
   imports: [
     BrowserModule,
