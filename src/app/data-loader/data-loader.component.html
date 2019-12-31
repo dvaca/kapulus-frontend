@@ -33,7 +33,7 @@
 
 <!-- <div class="container " style="font-size: .875rem"></div> -->
 <div class="container-fluid text-left" style="margin-top:80px; font-size: .875rem">
-    <!-- {{fileOptionsAvailable|json}} -->
+     <!-- {{fileOptionsAvailable|json}}  -->
     <div *ngIf="message != undefined" class="alert alert-{{messageType}} alert-dismissible fade show">
         {{message}}</div>
     <div>
@@ -102,7 +102,7 @@
                                         href="#{{file.original_name}}{{i}}" role="tab" aria-controls="v-pills-home"
                                         aria-selected="true">
                                         <span>{{file.original_name}}</span>
-                                        <div *ngIf="fileOptionsAvailable.load==true" class="card-actions float-right">
+                                        <div *ngIf="fileOptionsAvailable.deleteFile==true" class="card-actions float-right">
                                             <span (click)="deleteStorage(file)"><i class="fa fa-trash"></i></span>
                                         </div>
                                     </a>
@@ -253,3 +253,11 @@
             </div>
         </div>
     </div>
+<!-- Modal -->
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        ...
+      </div>
+    </div>
+  </div>

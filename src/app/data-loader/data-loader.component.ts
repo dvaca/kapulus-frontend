@@ -1,13 +1,11 @@
 import { EventManagerService } from './../event-manager/event-manager.service';
 import { DataLoaderService } from './data-loader.service';
-
 import { OnInit, Component, Input } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Router, ActivatedRoute } from '@angular/router';
 import { KEvent } from '../event-manager/event-manager.static';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { ViewChild, ElementRef } from '@angular/core';
-import { Type } from '@angular/compiler/src/output/output_ast';
 declare var jQuery: any;
 
 
@@ -25,7 +23,7 @@ export class DataLoaderComponent implements OnInit {
   eventId = 0;
   event: KEvent;
   private events: any;
-  files: any;
+  files: any=[];
   processResponse: any = {};
   active: number = 0;
   activeColumn: number;
@@ -37,7 +35,7 @@ export class DataLoaderComponent implements OnInit {
   message: string;
   messageType: string;
   inProcess: boolean;
-  fileOptionsAvailable = { "process": false, "load": false, "deleteData": false };
+  fileOptionsAvailable = { "process": false, "load": false, "deleteData": false, "deleteFile":false };
 
   @ViewChild("toastMessage", { read: ElementRef }) toastMessage: ElementRef;
 
@@ -282,6 +280,7 @@ export class DataLoaderComponent implements OnInit {
     this.fileOptionsAvailable.process = false;
     this.fileOptionsAvailable.load = false;
     this.fileOptionsAvailable.deleteData = false;
+    this.fileOptionsAvailable.deleteFile = false;
     if (this.selectedFile != undefined) {
       if (this.settings != undefined) {
         var settingsFile = this.settings[this.selectedFile.storage_id];
@@ -289,6 +288,7 @@ export class DataLoaderComponent implements OnInit {
           if (settingsFile.status != undefined) {
             if (settingsFile.status == 'Procesado') {
               this.fileOptionsAvailable.load = true;
+              this.fileOptionsAvailable.deleteFile = true;
             }
             else if (settingsFile.status == 'Datos Cargados') {
               this.fileOptionsAvailable.deleteData = true;
@@ -301,6 +301,7 @@ export class DataLoaderComponent implements OnInit {
       }
       else {
         this.fileOptionsAvailable.process = true;
+        this.fileOptionsAvailable.deleteFile=true;
       }
     }
   }
