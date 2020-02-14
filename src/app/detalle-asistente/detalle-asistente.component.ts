@@ -397,6 +397,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges, AfterViewIn
 		if (this.config.idevento == 63) {
           correo.subject = "Invitación al Foro 'REGIÓN CENTRAL: POR UN SISTEMA AGROALIMENTARIO SALUDABLE Y SOSTENIBLE'";
         }
+		if (this.config.idevento == 70) {
+          correo.subject = "Invitación al Conversatorio INVESTIGAR PARA INNOVAR: EL FUTURO DE LA SALUD";
+        }
       } else {
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
         if (this.config.idevento == 10) {
