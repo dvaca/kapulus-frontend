@@ -176,6 +176,9 @@ export class BuscadorComponent implements OnInit {
   if(url == 'callcenter_registro_vanti'){
       this.cargarEvento(69, 70);
     }
+  if(url == 'callcenter_registro_investigar'){
+      this.cargarEvento(70, 71);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
