@@ -61,6 +61,7 @@ const routes: Routes = [
   { path: 'callcenter_registro_arte_bolivar', component: BuscadorComponent },
   { path: 'callcenter_registro_vanti', component: BuscadorComponent },
   { path: 'callcenter_registro_investigar', component: BuscadorComponent },
+  { path: 'data_clientes', component: BuscadorComponent },
   { path: 'callcenter_token_7D5H3N9Y4F', component: EstadisticasComponent },
   { path: 'callcenter_token_4B5O2S8Z0L', component: EstadisticasComponent },
   { path: 'callcenter_token_1T9Y7X1M9A', component: EstadisticasComponent },
