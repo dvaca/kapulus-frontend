@@ -179,6 +179,9 @@ export class BuscadorComponent implements OnInit {
   if(url == 'callcenter_registro_investigar'){
       this.cargarEvento(70, 71);
     }
+  if(url == 'data_clientes'){
+      this.cargarEvento(71, 72);
+    }
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
