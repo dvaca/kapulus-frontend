@@ -122,6 +122,7 @@ app.use("/callcenter_estadisticas_bvc", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_arte_bolivar", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_vanti", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_investigar", express.static(__dirname+'/dist'));
+app.use("/estadisticas_data_clientes", express.static(__dirname+'/dist'));
 
 app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud", express.static(__dirname+'/dist'));
