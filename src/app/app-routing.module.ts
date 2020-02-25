@@ -112,6 +112,7 @@ const routes: Routes = [
   { path: 'callcenter_estadisticas_arte_bolivar', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_vanti', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_investigar', component: EstadisticasComponent },
+  { path: 'estadisticas_data_clientes', component: EstadisticasComponent },
   { path: 'control-acceso', component: ControlAccesoComponent },
   { path: 'registro-online', component: RegistroOnlineComponent },
   { path: 'registro-plus-superior', component: RegistroOnlineComponent },
