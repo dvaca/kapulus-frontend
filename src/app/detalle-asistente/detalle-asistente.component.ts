@@ -340,6 +340,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     if (this.config.idevento == 70) {
       correo.subject = "Invitación al Conversatorio INVESTIGAR PARA INNOVAR: EL FUTURO DE LA SALUD";
     }
+    if (this.config.idevento == 73) {
+      correo.subject = "Invitación al foro 'Lanzamiento canal digital semana tv'";
+    }
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
 		if(this.config.idevento == 10){
