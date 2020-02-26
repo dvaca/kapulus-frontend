@@ -138,6 +138,9 @@ export class EstadisticasLocalComponent implements OnInit {
     if(url == 'evento_estadisticas_arte_bolivar'){
       this.cargarEvento(68, 69);
     }
+    if(url == 'evento_estadisticas_investigar'){
+      this.cargarEvento(72, 73);
+    }
     this.cargarCamposEvento();
   }
   
