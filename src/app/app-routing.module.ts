@@ -63,6 +63,7 @@ const routes: Routes = [
   { path: 'callcenter_registro_investigar', component: BuscadorComponent },
   { path: 'data_clientes', component: BuscadorComponent },
   { path: 'callcenter_registro_investigar_nuevo', component: BuscadorComponent },
+  { path: 'callcenter_registro_canal_digital', component: BuscadorComponent },
   { path: 'callcenter_token_7D5H3N9Y4F', component: EstadisticasComponent },
   { path: 'callcenter_token_4B5O2S8Z0L', component: EstadisticasComponent },
   { path: 'callcenter_token_1T9Y7X1M9A', component: EstadisticasComponent },
@@ -115,6 +116,7 @@ const routes: Routes = [
   { path: 'callcenter_estadisticas_investigar', component: EstadisticasComponent },
   { path: 'estadisticas_data_clientes', component: EstadisticasComponent },
   { path: 'callcenter_estadisticas_investigar_nuevo', component: EstadisticasComponent },
+  { path: 'callcenter_estadisticas_canal_digital', component: EstadisticasComponent },
   { path: 'control-acceso', component: ControlAccesoComponent },
   { path: 'registro-online', component: RegistroOnlineComponent },
   { path: 'registro-plus-superior', component: RegistroOnlineComponent },
@@ -168,6 +170,7 @@ const routes: Routes = [
   { path: 'evento_estadisticas_defender', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_bvc', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_arte_bolivar', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas_investigar', component: EstadisticasLocalComponent },
   { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
 ]
 
