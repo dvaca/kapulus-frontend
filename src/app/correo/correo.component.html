@@ -597,11 +597,17 @@
 			alt="Lanzamiento Canal Digital">
 		</a>
 	</div>
+  <div *ngIf="variables.idevento == 74">
+		<a href="https://gruposemana.typeform.com/to/azqQMk?utm_source=emBlue&utm_medium=email&utm_campaign=E_172_20200227_AMARILORESTOSDELSECTORCONSTRUCTOR&utm_content=https://gruposemana.typeform.com/to/azqQMk&utm_term=" target="_blank">
+		  <img src="cid:invitacion" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 20px; padding-top: 20px;"
+			alt="Invitación al conversatorio- Amarilo">
+		</a>
+	</div>
 	<div *ngIf="variables.idevento == 29">
 		<b>Para más información comuníquese al 350 316 0070</b>
 	</div>
 	<br>
-	<div *ngIf="variables.idevento != 49 && variables.idevento != 55 && variables.idevento != 63 && variables.idevento != 70 && variables.idevento != 73" style="font-size: 10px; max-width: 645px; text-align: left;">
+	<div *ngIf="variables.idevento != 49 && variables.idevento != 55 && variables.idevento != 63 && variables.idevento != 70 && variables.idevento != 73 && variables.idevento != 74" style="font-size: 10px; max-width: 645px; text-align: left;">
 	<b><i>Términos y condiciones del foro</i></b>
 	<br>
 	<i>El Código de vestir para el ingreso al Club El Nogal es: Hombres (Saco y Corbata), Mujeres (traje formal). Indispensable presentar su documento de identidad.</i>
@@ -612,6 +618,11 @@
 	<b><i>Términos y condiciones del foro</i></b>
 	<br>
 	<i>Los cupos del foro son limitados, su inscripción no garantiza la entrada al mismo. El derecho al ingreso es determinado por el orden de llegada y no por el orden de inscripción. Recomendamos llegar con tiempo al lugar del evento para garantizar su cupo.</i>
+	</div>
+  <div *ngIf="variables.idevento == 74" style="font-size: 10px; max-width: 645px; text-align: left;">
+	<b><i>Términos y condiciones del conversatorio</i></b>
+	<br>
+	<i>Los cupos al conversatorio son limitados, su inscripción no garantiza la entrada al mismo. El derecho al ingreso es determinado por el orden de llegada y no por el orden de inscripción. Recomendamos llegar con tiempo al lugar del evento para garantizar su cupo.</i>
 	</div>
   </div>
   </div>  
