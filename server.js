@@ -81,6 +81,7 @@ app.use("/callcenter_registro_investigar", express.static(__dirname+'/dist'));
 app.use("/data_clientes", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_investigar_nuevo", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_canal_digital", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_amarilo", express.static(__dirname+'/dist'));
 
 app.use("/callcenter_estadisticas_coosalud_bquilla", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_coosalud_bmanga", express.static(__dirname+'/dist'));
@@ -127,6 +128,7 @@ app.use("/callcenter_estadisticas_investigar", express.static(__dirname+'/dist')
 app.use("/estadisticas_data_clientes", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_investigar_nuevo", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_canal_digital", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_amarilo", express.static(__dirname+'/dist'));
 
 app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud", express.static(__dirname+'/dist'));
