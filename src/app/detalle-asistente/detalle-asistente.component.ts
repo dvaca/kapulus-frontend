@@ -343,6 +343,9 @@ export class DetalleAsistenteComponent implements OnInit, OnChanges {
     if (this.config.idevento == 73) {
       correo.subject = "Invitación al foro 'Lanzamiento canal digital semana tv'";
     }
+    if (this.config.idevento == 74) {
+      correo.subject = "Invitación al Conversatorio 'Retos del sector constructor en materia de sostenibilidad'";
+    }
       }else{
         plantilla = document.getElementById("plantillaCorreoConfirmacion").innerHTML;
 		if(this.config.idevento == 10){
