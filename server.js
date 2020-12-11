@@ -24,6 +24,7 @@ app.use("/registro-coosalud-bogota", express.static(__dirname+'/dist'));
 app.use("/registro-rio-bogota", express.static(__dirname+'/dist'));
 app.use("/registro-prosegur", express.static(__dirname+'/dist'));
 app.use("/registro-credibanco", express.static(__dirname+'/dist'));
+app.use("/registro-andi-procultivos", express.static(__dirname+'/dist'));
 
 app.use("/callcenter_registro_cerveza", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_orquideas", express.static(__dirname+'/dist'));
