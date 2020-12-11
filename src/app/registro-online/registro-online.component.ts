@@ -68,6 +68,9 @@ export class RegistroOnlineComponent implements OnInit {
 	if(url == 'registro-credibanco'){
       this.cargarEvento(55, 55);
     }
+	if(url == 'registro-andi-procultivos'){
+      this.cargarEvento(76, 77);
+    }
     this.cargarCamposEvento();
 	this.nuevo = true;
 	this.registroService.getAsistenteControlAcceso(origen)
