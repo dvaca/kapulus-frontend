@@ -3,7 +3,12 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
+              <div *ngIf="config.idevento == 76>
+                <h4 class="modal-title" id="myModalLabel">Actualización de asistentes</h4>
+              </div>
+              <div *ngIf="config.idevento != 76>
                 <h4 class="modal-title" id="myModalLabel">Registro de asistentes</h4>
+              </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
@@ -136,6 +141,8 @@
                         -->
                        <div>
                         <span>
+                            Al dar clic en aceptar declaras conocer y aceptar nuestra política de privacidad que busca brindar total seguridad a tu información.
+                            <br>
                             Ver políticas de privacidad en <a href="http://www.andi.com.co/Uploads/Politicas%20de%20Tratamiento%20para%20la%20Protecci%C3%B3n%20de%20Datos%20Personales.pdf" target="_blank">http://www.andi.com.co</a>
                         </span>
 						           </div>  
