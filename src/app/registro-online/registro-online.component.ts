@@ -74,6 +74,9 @@ export class RegistroOnlineComponent implements OnInit {
   if(url == 'registro-rtvc-colaboradores'){
       this.cargarEvento(78, 79);
     }
+  if(url == 'registro-rtvc-personal'){
+      this.cargarEvento(79, 80);
+    }
     this.cargarCamposEvento();
 	this.nuevo = true;
 	this.registroService.getAsistenteControlAcceso(origen)
