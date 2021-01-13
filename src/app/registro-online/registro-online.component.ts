@@ -71,6 +71,9 @@ export class RegistroOnlineComponent implements OnInit {
 	if(url == 'registro-andi-procultivos'){
       this.cargarEvento(76, 77);
     }
+  if(url == 'registro-rtvc-colaboradores'){
+      this.cargarEvento(78, 79);
+    }
     this.cargarCamposEvento();
 	this.nuevo = true;
 	this.registroService.getAsistenteControlAcceso(origen)
