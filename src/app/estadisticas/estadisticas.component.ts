@@ -202,9 +202,11 @@ export class EstadisticasComponent implements OnInit {
   if(url == 'callcenter_estadisticas_andi'){
       this.cargarEvento(76, 77);
     }
-    
   if(url == 'callcenter_estadisticas_rtvc_usuarios'){
       this.cargarEvento(77, 78);
+    }
+  if(url == 'callcenter_estadisticas_rtvc_colaboradores'){
+      this.cargarEvento(78, 79);
     }
     
     this.cargarZonas();
