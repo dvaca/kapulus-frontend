@@ -26,6 +26,7 @@ app.use("/registro-prosegur", express.static(__dirname+'/dist'));
 app.use("/registro-credibanco", express.static(__dirname+'/dist'));
 app.use("/registro-andi-procultivos", express.static(__dirname+'/dist'));
 app.use("/registro-rtvc-colaboradores", express.static(__dirname+'/dist'));
+app.use("/registro-rtvc-personal", express.static(__dirname+'/dist'));
 
 app.use("/callcenter_registro_cerveza", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_orquideas", express.static(__dirname+'/dist'));
@@ -87,6 +88,7 @@ app.use("/callcenter_registro_amarilo", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_andi", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_rtvc_usuarios", express.static(__dirname+'/dist'));
 app.use("/callcenter_registro_rtvc_colaboradores", express.static(__dirname+'/dist'));
+app.use("/callcenter_registro_rtvc_personal", express.static(__dirname+'/dist'));
 
 app.use("/callcenter_estadisticas_coosalud_bquilla", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_coosalud_bmanga", express.static(__dirname+'/dist'));
@@ -137,6 +139,7 @@ app.use("/callcenter_estadisticas_amarilo", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_andi", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_rtvc_usuarios", express.static(__dirname+'/dist'));
 app.use("/callcenter_estadisticas_rtvc_colaboradores", express.static(__dirname+'/dist'));
+app.use("/callcenter_estadisticas_rtvc_personal", express.static(__dirname+'/dist'));
 
 app.use("/evento_estadisticas_semana", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_coosalud", express.static(__dirname+'/dist'));
