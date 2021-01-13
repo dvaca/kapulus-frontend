@@ -197,6 +197,9 @@ export class BuscadorComponent implements OnInit {
    if(url == 'callcenter_registro_rtvc_usuarios'){
       this.cargarEvento(77, 78);
    } 
+   if(url == 'callcenter_registro_rtvc_colaboradores'){
+      this.cargarEvento(78, 79);
+   } 
     this.cargarCamposEvento();
     this.cargarImpresoras();
     this.buscarAsistente("");
