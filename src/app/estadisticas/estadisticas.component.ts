@@ -283,7 +283,7 @@ export class EstadisticasComponent implements OnInit {
             registros.push(linea);
           }
           var options = { 
-            fieldSeparator: ',',
+            fieldSeparator: '|',
             showLabels: true, 
             headers: titulos,
             showTitle: true,
