@@ -12,7 +12,7 @@ RUN npm install -g @angular/cli @angular-devkit/build-angular nodemon && npm ins
 COPY . .
 #COPY --chown=node:node . .
 # Expose app port
-EXPOSE 8095
+EXPOSE 8080
 #Execute the app
 CMD [ "npm", "start" ]
 

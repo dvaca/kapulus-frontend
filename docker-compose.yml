@@ -9,7 +9,7 @@ services:
       - ../kapulus-frontend:/usr/src/app/kapulus-frontend
       - /usr/src/app/kapulus-frontend/node_modules
     ports:
-      - '5001:8095'
+      - '5001:8080'
 networks:
       default:        
           name: kapulus-network

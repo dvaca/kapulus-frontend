@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon ./server.js localhost 8095 ",
+    "dev": "nodemon ./server.js localhost 8080 ",
     "ng": "ng",
-    "start": "ng serve --host=0.0.0.0 --port 8095 --disable-host-check",
+    "start": "ng serve --host=0.0.0.0 --port 8080 --disable-host-check",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

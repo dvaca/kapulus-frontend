@@ -1,7 +1,3 @@
-import { FileUploadModule } from './file-upload/file-upload.module';
-import { EventManagerModule } from './event-manager/event-manager.module';
-import { NewloginModule} from './newlogin/newlogin.module';
-import { DataLoaderModule } from './data-loader/data-loader.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -52,10 +48,6 @@ import { from } from 'rxjs/observable/from';
     NgxBarcodeModule,
     QRCodeModule,
     AppRoutingModule,
-    DataLoaderModule,
-    EventManagerModule,
-    FileUploadModule,
-    NewloginModule
   ],
   providers: [
     RegistroService,
