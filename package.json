@@ -36,7 +36,7 @@
     "font-awesome": "^4.7.0",
     "glyphicons": "^0.2.0",
     "html2canvas": "1.0.0-rc.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "jspdf": "^1.5.3",
     "ngx-barcode": "^0.2.4",
     "path": "^0.12.7",
