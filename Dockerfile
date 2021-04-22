@@ -7,7 +7,7 @@ WORKDIR /usr/src/app/kapulus-frontend
 COPY package*.json ./
 #USER node
 # Installing Angular cli and node modules in angular directory
-RUN npm install -g @angular/cli @angular-devkit/build-angular nodemon && npm install
+RUN npm install -g @angular/cli @angular-devkit/build-angular nodemon && npm install 
 # Copy app code
 COPY . .
 #COPY --chown=node:node . .
