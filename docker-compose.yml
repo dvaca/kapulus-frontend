@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  frontend:
+    container_name: kapulus-frontend
+    build:
+        context: ../kapulus-frontend
+    restart: always
+    volumes:
+      - ../kapulus-frontend:/usr/src/app/kapulus-frontend
+      - /usr/src/app/kapulus-frontend/node_modules
+    ports:
+      - '5001:8095'
+networks:
+      default:        
+          name: kapulus-network
