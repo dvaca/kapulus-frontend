@@ -13,6 +13,7 @@ import { VariablesEvento } from './variablesEvento';
 import { Impresora } from './impresora';
 import { Correo } from './correo';
 import { Usuario } from './usuario';
+import { environment } from '../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -24,9 +25,11 @@ export class RegistroService {
   //private backendUrl = 'http://localhost:4000';
   //private backendUrl = 'http://169.254.168.35:4000'; //PEER TO PEER
   //private backendUrl = 'http://192.168.0.100:4000'; //CAPULUS
-  private backendUrl = 'https://kapulus-backend.herokuapp.com'; //LOCAL
+  //private backendUrl = 'https://kapulus-backend.herokuapp.com'; //LOCAL
+  //private backendUrl = 'http://kapulus.dynu.net:4000'; //LOCAL
   //private backendUrl = 'http://192.168.0.102:4000'; //LOCAL
   //private backendUrl = 'http://172.20.10.6:4000'; //INTERNET
+    private backendUrl = 'http://kapulus-backend:5000'; //INTERNET
   
   constructor(private http: HttpClient, public config: VariablesEvento) { }
 
@@ -171,8 +174,8 @@ export class RegistroService {
       // TODO: send the error to remote logging infrastructure
       console.error(error.message); // log to console instead
       console.error(operation);
-      alert(error.message);
-      alert(operation);
+     // alert(error.message);
+     // alert(operation);
       // TODO: better job of transforming error for user consumption
       //this.log(`${operation} failed: ${error.message}`);
 

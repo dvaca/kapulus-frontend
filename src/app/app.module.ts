@@ -1,10 +1,13 @@
+import { FileUploadModule } from './file-upload/file-upload.module';
+import { EventManagerModule } from './event-manager/event-manager.module';
+import { NewloginModule} from './newlogin/newlogin.module';
+import { DataLoaderModule } from './data-loader/data-loader.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { NgxBarcodeModule, NgxBarcodeComponent } from 'ngx-barcode';
 import { QRCodeModule} from 'angular2-qrcode';
-
 import { AppComponent } from './app.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { RegistroService } from './registro.service';
@@ -24,6 +27,7 @@ import { RegistroOnlineComponent } from './registro-online/registro-online.compo
 import { CorreoComponent } from './correo/correo.component';
 import { LoginComponent } from './login/login.component';
 import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-local.component';
+import { from } from 'rxjs/observable/from';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,7 @@ import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-lo
     RegistroOnlineComponent,
     CorreoComponent,
     LoginComponent,
-    EstadisticasLocalComponent
+    EstadisticasLocalComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,11 @@ import { EstadisticasLocalComponent } from './estadisticas-local/estadisticas-lo
     HttpClientModule,
     NgxBarcodeModule,
     QRCodeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DataLoaderModule,
+    EventManagerModule,
+    FileUploadModule,
+    NewloginModule
   ],
   providers: [
     RegistroService,

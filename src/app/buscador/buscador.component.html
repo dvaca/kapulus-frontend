@@ -1,33 +1,49 @@
-<div class="buscador">
-    <h2>Registro de Asistentes</h2>
+<div>
+    <div class="row">
+        <nav class="navbar navbar-expand-sm bg-success navbar-dark fixed-top">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/resources/LogoKapulus.png" height="28" alt="kapulus">
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item active ">
+                    <a class="nav-link" href="/eventManager">Eventos <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </nav>
+        <h2>Registros de Asistentes</h2>
+    </div>
+
+</div>
+
+<div class="container-fluid text-left" style="margin-top:30px;font-size: .875rem">
     <div class="row">
         <div class="col-lg-3">
-            
         </div>
         <div class="col-lg-6">
             <div class="input-group">
-                <input #txtBusqueda id="txtBusqueda" type="text" class="form-control" title="Buscar por cedula o por nombre" 
-                    placeholder="Cédula o Nombre " (keyup.enter)="buscarAsistente(txtBusqueda.value); txtBusqueda.value=''">
-                    &nbsp;
+                <input #txtBusqueda id="txtBusqueda" type="text" class="form-control"
+                    title="Buscar por cedula o por nombre" placeholder="Cédula o Nombre "
+                    (keyup.enter)="buscarAsistente(txtBusqueda.value); txtBusqueda.value=''">
+                &nbsp;
                 <span class="input-group-btn">
-                    <button id="btnBuscar" class="btn btn-outline-primary" type="button" 
+                    <button id="btnBuscar" class="btn btn-outline-primary" type="button"
                         (click)="buscarAsistente(txtBusqueda.value); txtBusqueda.value=''">Buscar
                     </button>
-                    <button id="btnNuevo" class="btn btn-outline-success" type="button" 
-                        data-toggle="modal" data-target="#myModal"
-                        (click)="crearRegistro(); txtBusqueda.value=''">Nuevo
+                    <button id="btnNuevo" class="btn btn-outline-success" type="button" data-toggle="modal"
+                        data-target="#myModal" (click)="crearRegistro(); txtBusqueda.value=''">Nuevo
                     </button>
                 </span>
             </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
-        <div class="col-lg-3">    
-            <select (change)="seleccionarImpresora();" class="form-control" id="cbo_impresoras" [(ngModel)]="impresoraSeleccionada">
+        <div class="col-lg-3">
+            <select (change)="seleccionarImpresora();" class="form-control" id="cbo_impresoras"
+                [(ngModel)]="impresoraSeleccionada">
                 <option *ngFor="let impresora of impresoras" [ngValue]="impresora">{{impresora.nombre}}</option>
             </select>
         </div>
     </div><!-- /.row -->
 </div><!-- /.buscador -->
-<br/>
+<br />
 <div style="text-align: left" *ngIf="asistentes.length > 0" id="resultadoBuscador">
     <table class="table table-hover" id="tablaAsistentes">
         <caption>{{asistentes.length}} resultados encontrados</caption>
@@ -40,14 +56,12 @@
             -->
         </thead>
         <tbody>
-        <tr *ngFor="let asistente of asistentes" id='asistente_{{asistente.identificacion}}' 
-            data-toggle="modal" data-target="#myModal" 
-            (click)="onSelect(asistente)">
-            <th scope="row" 
-                [ngClass]="{'table-success': asistente.registrado}" >{{asistente.identificacion}}</th>
-            <td [ngClass]="{'table-success': asistente.registrado}" 
-                *ngFor="let atributo of asistente.atributos">{{atributo.valor}}</td>
-            <!--
+            <tr *ngFor="let asistente of asistentes" id='asistente_{{asistente.identificacion}}' data-toggle="modal"
+                data-target="#myModal" (click)="onSelect(asistente)">
+                <th scope="row" [ngClass]="{'table-success': asistente.registrado}">{{asistente.identificacion}}</th>
+                <td [ngClass]="{'table-success': asistente.registrado}" *ngFor="let atributo of asistente.atributos">
+                    {{atributo.valor}}</td>
+                <!--
             <td><span class='glyphicon glyphicon-print' aria-hidden='true'></span></td>
             <td><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></td>
             -->
@@ -59,14 +73,14 @@
     </span>
 </div>
 <!-- Modal -->
-<div id="modalNuevo" [ngClass]="{'visible': popUpNuevo, 'invisible': !popUpNuevo}" 
-    tabindex="-1" (keyup.escape)="ocultar(false)" class="invisible">
+<div id="modalNuevo" [ngClass]="{'visible': popUpNuevo, 'invisible': !popUpNuevo}" tabindex="-1"
+    (keyup.escape)="ocultar(false)" class="invisible">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Asistente no encontrado</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" (click)="ocultar(false)">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
@@ -75,10 +89,12 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
                     (click)="ocultar(true)" id="botonCrear">Crear</button>
-                <button type="button" class="btn btn-secondary" (click)="ocultar(false)" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary" (click)="ocultar(false)"
+                    data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
 </div>
 <!-- Detalle Asistente Seleccionado -->
-<app-detalle-asistente [asistente]="selectedAsistente" [camposEvento]="camposEvento" [nuevo]="nuevoRegistro" [origen]="'interno'"></app-detalle-asistente>
+<app-detalle-asistente [asistente]="selectedAsistente" [camposEvento]="camposEvento" [nuevo]="nuevoRegistro"
+    [origen]="'interno'"></app-detalle-asistente>

@@ -1,4 +1,4 @@
-<div id="formEscarapela" class="invisible collapse" style="width: 400px; height: 200px;">
+<div *ngIf="asistenteImpresion" id="formEscarapela" class="invisible collapse" style="width: 400px; height: 200px;">
   <p *ngFor="let atributo of asistenteImpresion.atributos" 
     [style.margin-top.px]="atributo.campo.yescarapela*10" 
     [style.margin-left.px]="atributo.campo.xescarapela*10"

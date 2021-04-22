@@ -9,6 +9,12 @@
   .validacion{
     margin-top: .25rem;
     font-size: 80%;
-    color: red;
+    color: white;
   }
   
+  input.ng-invalid {
+    border-color: pink;
+  }
+  input.ng-valid {
+    border-color: lightgreen;
+  }
