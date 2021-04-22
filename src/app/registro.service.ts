@@ -29,7 +29,7 @@ export class RegistroService {
   //private backendUrl = 'http://kapulus.dynu.net:4000'; //LOCAL
   //private backendUrl = 'http://192.168.0.102:4000'; //LOCAL
   //private backendUrl = 'http://172.20.10.6:4000'; //INTERNET
-    private backendUrl = 'http://kapulus-backend:5000'; //INTERNET
+    private backendUrl = 'http://18.217.137.231:5000'; //INTERNET
   
   constructor(private http: HttpClient, public config: VariablesEvento) { }
 

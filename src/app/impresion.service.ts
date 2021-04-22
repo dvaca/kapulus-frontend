@@ -15,7 +15,7 @@ const httpOptions = {
 export class ImpresionService {
 
   //private backendUrl = 'http://192.168.0.31:4001';
-  private backendUrl = 'https://kapulus-backend:4000';
+  private backendUrl = 'https://18.217.137.231:4000';
   //private backendUrl = 'http://169.254.168.35:4000'; //PEER TO PEER
   //private backendUrl = 'http://192.168.0.100:4000'; //CAPULUS
   //private backendUrl = 'https://kapulus-backend.herokuapp.com'; //LOCAL
