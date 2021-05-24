@@ -28,7 +28,7 @@
     "angular2-qrcode": "^2.0.1",
     "autoprefixer": "^9.1.5",
     "bootstrap": "^4.2.1",
-    "browserslist": "^4.2.0",
+    "browserslist": "^4.16.5",
     "chart.js": "^2.7.2",
     "core-js": "^2.4.1",
     "enhanced-resolve": "^3.3.0",
