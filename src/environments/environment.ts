@@ -12,5 +12,6 @@
 
 export const environment = {
   production: false,
-  URLBack: '18.217.137.231:5000/'
+  //URLBack: '18.217.137.231:5000/'
+  URLBack: 'https://backend-kapulus.herokuapp.com'; 
 };
