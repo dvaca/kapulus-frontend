@@ -187,6 +187,7 @@ const routes: Routes = [
   { path: 'evento_estadisticas_canal_digital', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_canal_uno', component: EstadisticasLocalComponent },
   { path: 'evento_estadisticas_tecno_edificios', component: EstadisticasLocalComponent },
+  { path: 'evento_estadisticas', component: EstadisticasLocalComponent },
   { path: 'certificado_asistencia_copnia', component: CertificadoComponent }
 ]
 
