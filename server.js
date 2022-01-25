@@ -185,6 +185,7 @@ app.use("/evento_estadisticas_investigar", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_canal_digital", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_canal_uno", express.static(__dirname+'/dist'));
 app.use("/evento_estadisticas_tecno_edificios", express.static(__dirname+'/dist'));
+app.use("/evento_estadisticas", express.static(__dirname+'/dist'));
 
 app.use("/certificado_asistencia_copnia", express.static(__dirname+'/dist'));
 
