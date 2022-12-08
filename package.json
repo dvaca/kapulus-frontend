@@ -32,7 +32,7 @@
     "chart.js": "^2.7.2",
     "core-js": "^2.4.1",
     "enhanced-resolve": "^3.3.0",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "font-awesome": "^4.7.0",
     "glyphicons": "^0.2.0",
     "html2canvas": "1.0.0-rc.1",
