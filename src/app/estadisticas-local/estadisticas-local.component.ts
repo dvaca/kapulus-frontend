@@ -138,13 +138,13 @@ export class EstadisticasLocalComponent implements OnInit {
     if(url == 'evento_estadisticas_arte_bolivar'){
       this.cargarEvento(68, 69);
     }
-    if(url == 'evento_estadisticas_investigar'){
+    if(url == 'evento_estadisticas_72'){
       this.cargarEvento(72, 73);
     }
-    if(url == 'evento_estadisticas_canal_digital'){
+    if(url == 'evento_estadisticas_73'){
       this.cargarEvento(73, 74);
     }
-    if(url == 'evento_estadisticas_canal_uno'){
+    if(url == 'evento_estadisticas_75'){
       this.cargarEvento(75, 76);
     }
     if(url == 'evento_estadisticas_tecno_edificios'){
